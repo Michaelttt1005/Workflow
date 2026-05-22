@@ -19,6 +19,8 @@ FONT_CANDIDATES = [
     Path("C:/Windows/Fonts/NotoSansSC-Medium.otf"),
     Path("C:/Windows/Fonts/msyh.ttc"),
     Path("C:/Windows/Fonts/simhei.ttf"),
+    Path("/usr/share/fonts/truetype/droid/DroidSansFallbackFull.ttf"),
+    Path("/usr/share/fonts/truetype/droid/DroidSansFallback.ttf"),
     Path("/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"),
     Path("/usr/share/fonts/opentype/noto/NotoSansCJKsc-Regular.otf"),
     Path("/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc"),
@@ -40,25 +42,51 @@ def find_font() -> Path | None:
 
 def build_pdf(report: dict, output_path: Path) -> Path:
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    font_path = find_font()
-    if font_path:
+    expected_links = _expected_link_count(report)
+    errors: list[str] = []
+
+    for attempt, (font_path, subfont_index) in enumerate(_font_attempts(), 1):
+        font_name = f"BriefCJK{attempt}"
         try:
-            _build_reportlab_pdf(report, output_path, font_path)
-            if has_embedded_font(output_path):
+            _build_reportlab_pdf(report, output_path, font_path, font_name, subfont_index)
+            embedded = has_embedded_font(output_path)
+            link_count = count_uri_annotations(output_path)
+            if embedded and link_count >= expected_links:
                 return output_path
-        except Exception:
-            pass
+            errors.append(f"{font_path}#{subfont_index}: embedded={embedded}, links={link_count}/{expected_links}")
+        except Exception as exc:
+            errors.append(f"{font_path}#{subfont_index}: {type(exc).__name__}: {exc}")
+
+    if expected_links:
+        detail = "; ".join(errors[-8:]) if errors else "no candidate CJK fonts found"
+        raise RuntimeError(
+            "Could not build a vector PDF with clickable links. "
+            "Refusing to fall back to image PDF because image PDFs lose links. "
+            f"Attempts: {detail}"
+        )
+
+    font_path = find_font()
     _build_image_pdf(report, output_path, font_path)
     return output_path
+
+
+def _font_attempts() -> list[tuple[Path, int]]:
+    attempts: list[tuple[Path, int]] = []
+    for path in FONT_CANDIDATES:
+        if not path.exists():
+            continue
+        max_subfonts = 6 if path.suffix.lower() in {".ttc", ".otc"} else 1
+        attempts.extend((path, index) for index in range(max_subfonts))
+    return attempts
 
 
 def _escape(value: object) -> str:
     return str(value).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
-def _build_reportlab_pdf(report: dict, output_path: Path, font_path: Path) -> None:
-    pdfmetrics.registerFont(TTFont("BriefCJK", str(font_path)))
-    styles = _styles()
+def _build_reportlab_pdf(report: dict, output_path: Path, font_path: Path, font_name: str, subfont_index: int) -> None:
+    pdfmetrics.registerFont(TTFont(font_name, str(font_path), subfontIndex=subfont_index))
+    styles = _styles(font_name)
     page_width = A4[0] - 32 * mm
 
     story: list = [
@@ -89,15 +117,19 @@ def _build_reportlab_pdf(report: dict, output_path: Path, font_path: Path) -> No
         topMargin=16 * mm,
         bottomMargin=16 * mm,
     )
-    doc.build(story, onFirstPage=_page_number, onLaterPages=_page_number)
+    doc.build(
+        story,
+        onFirstPage=lambda canvas, doc: _page_number(canvas, doc, font_name),
+        onLaterPages=lambda canvas, doc: _page_number(canvas, doc, font_name),
+    )
 
 
-def _styles() -> dict[str, ParagraphStyle]:
+def _styles(font_name: str) -> dict[str, ParagraphStyle]:
     sample = getSampleStyleSheet()
     base = ParagraphStyle(
         "BriefBase",
         parent=sample["Normal"],
-        fontName="BriefCJK",
+        fontName=font_name,
         fontSize=9.4,
         leading=13.6,
         textColor=INK,
@@ -108,7 +140,13 @@ def _styles() -> dict[str, ParagraphStyle]:
     return {
         "base": base,
         "title": ParagraphStyle("BriefTitle", parent=base, fontSize=21, leading=27, textColor=colors.white),
-        "subtitle": ParagraphStyle("BriefSubtitle", parent=base, fontSize=9, leading=13, textColor=colors.HexColor("#dbeafe")),
+        "subtitle": ParagraphStyle(
+            "BriefSubtitle",
+            parent=base,
+            fontSize=9,
+            leading=13,
+            textColor=colors.HexColor("#dbeafe"),
+        ),
         "section": ParagraphStyle("BriefSection", parent=base, fontSize=11.5, leading=15, textColor=INK),
         "item_title": ParagraphStyle("BriefItemTitle", parent=base, fontSize=12.6, leading=16.5, textColor=INK),
         "meta": ParagraphStyle("BriefMeta", parent=base, fontSize=7.8, leading=10.5, textColor=MUTED),
@@ -189,10 +227,9 @@ def _entry_card(index: int, entry: dict, styles: dict[str, ParagraphStyle], widt
         link_lines = []
         for number, url in enumerate(urls, 1):
             prefix = "直达链接" if len(urls) == 1 else f"直达链接 {number}"
-            visible = _visible_url(url)
             link_lines.append(
                 Paragraph(
-                    f'<b>{_escape(prefix)}:</b> <link href="{_escape(url)}" color="blue"><u>{_escape(visible)}</u></link>',
+                    f'<b>{_escape(prefix)}:</b> <link href="{_escape(url)}" color="blue"><u>{_escape(url)}</u></link>',
                     styles["link"],
                 )
             )
@@ -249,9 +286,9 @@ def _soft_table_style() -> TableStyle:
     )
 
 
-def _page_number(canvas, doc) -> None:
+def _page_number(canvas, doc, font_name: str) -> None:
     canvas.saveState()
-    canvas.setFont("BriefCJK", 8)
+    canvas.setFont(font_name, 8)
     canvas.setFillColor(MUTED)
     canvas.drawRightString(A4[0] - 16 * mm, 10 * mm, f"第 {doc.page} 页")
     canvas.restoreState()
@@ -285,12 +322,24 @@ def has_embedded_font(path: Path) -> bool:
     return False
 
 
+def count_uri_annotations(path: Path) -> int:
+    reader = PdfReader(str(path))
+    count = 0
+    for page in reader.pages:
+        for annot_ref in page.get("/Annots") or []:
+            annot = annot_ref.get_object()
+            action = annot.get("/A")
+            if action and action.get("/URI"):
+                count += 1
+    return count
+
+
+def _expected_link_count(report: dict) -> int:
+    return sum(len(_split_links(entry.get("link", ""))) for entry in report.get("entries", []))
+
+
 def _split_links(value: object) -> list[str]:
     return [part.strip() for part in str(value or "").replace("\r", "\n").split("\n") if part.strip()]
-
-
-def _visible_url(url: str) -> str:
-    return url
 
 
 def _flatten_report(report: dict) -> list[str]:
