@@ -259,6 +259,36 @@
       "first_seen_at": "2026-05-22T20:59:28.869157+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22786v1|lcguard: latent communication guard for safe kv sharing in multi-agent systems",
+      "title": "LCGuard: Latent Communication Guard for Safe KV Sharing in Multi-Agent Systems",
+      "url": "https://arxiv.org/abs/2605.22786v1",
+      "source": "arXiv cs.AI",
+      "published_at": "2026-05-21T17:42:12+00:00",
+      "first_seen_at": "2026-05-22T21:45:36.810820+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22779v1|fame: failure-aware mixture-of-experts for message-level log anomaly detection",
+      "title": "FAME: Failure-Aware Mixture-of-Experts for Message-Level Log Anomaly Detection",
+      "url": "https://arxiv.org/abs/2605.22779v1",
+      "source": "arXiv cs.LG",
+      "published_at": "2026-05-21T17:34:53+00:00",
+      "first_seen_at": "2026-05-22T21:45:36.810830+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22775v1|mambagaze: bidirectional mamba with explicit missing data modeling for cognitive load assessment from eye-gaze tracking ",
+      "title": "MambaGaze: Bidirectional Mamba with Explicit Missing Data Modeling for Cognitive Load Assessment from Eye-Gaze Tracking Data",
+      "url": "https://arxiv.org/abs/2605.22775v1",
+      "source": "arXiv cs.AI",
+      "published_at": "2026-05-21T17:33:41+00:00",
+      "first_seen_at": "2026-05-22T21:45:36.810839+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
