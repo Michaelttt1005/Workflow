@@ -2,8 +2,6 @@ name: Weekly Tech Brief
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 14 * * 6"
 
 permissions:
   contents: write
@@ -34,8 +32,8 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install --upgrade pip && pip install -r requirements.txt
 
-      - name: Generate and send weekly brief
-        run: python scripts/run_brief.py --mode weekly --send
+      - name: Generate weekly brief
+        run: python scripts/run_brief.py --mode weekly
 
       - name: Commit generated state and output
         run: |

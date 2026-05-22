@@ -2,8 +2,6 @@ name: Major Tech Update Radar
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 */2 * * *"
 
 permissions:
   contents: write
@@ -34,8 +32,8 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install --upgrade pip && pip install -r requirements.txt
 
-      - name: Scan and send major update alert
-        run: python scripts/run_brief.py --mode alert --send
+      - name: Scan major update alert
+        run: python scripts/run_brief.py --mode alert
 
       - name: Commit generated state and output
         run: |
