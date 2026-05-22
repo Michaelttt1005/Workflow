@@ -106,7 +106,16 @@ def _build_reportlab_pdf(report: dict, output_path: Path, font_path: Path) -> No
                 story.append(Paragraph(f"<b>{label}:</b> {_escape(value)}", base))
         link = entry.get("link")
         if link:
-            story.append(Paragraph(f"<b>直达链接:</b> {_escape(link)}", base))
+            story.append(Paragraph("<b>直达链接:</b>", base))
+            urls = _split_links(link)
+            for number, url in enumerate(urls, 1):
+                label = "打开原文" if len(urls) == 1 else f"打开原文 {number}"
+                story.append(
+                    Paragraph(
+                        f'<link href="{_escape(url)}" color="blue"><u>{_escape(label)}</u></link>',
+                        base,
+                    )
+                )
         story.append(Spacer(1, 3 * mm))
 
     if report.get("footer"):
@@ -128,7 +137,7 @@ def _page_number(canvas, doc) -> None:
     canvas.saveState()
     canvas.setFont("BriefCJK", 8)
     canvas.setFillColor(colors.HexColor("#64748b"))
-    canvas.drawRightString(A4[0] - 16 * mm, 10 * mm, f"Page {doc.page}")
+    canvas.drawRightString(A4[0] - 16 * mm, 10 * mm, f"第 {doc.page} 页")
     canvas.restoreState()
 
 
@@ -158,6 +167,10 @@ def has_embedded_font(path: Path) -> bool:
                         if any(key in descriptor for key in ["/FontFile", "/FontFile2", "/FontFile3"]):
                             return True
     return False
+
+
+def _split_links(value: str) -> list[str]:
+    return [part.strip() for part in str(value).replace("\r", "\n").split("\n") if part.strip()]
 
 
 def _flatten_report(report: dict) -> list[str]:
@@ -236,4 +249,3 @@ def _wrap_line(line: str, draw: ImageDraw.ImageDraw, font: ImageFont.FreeTypeFon
         if current:
             result.append(current)
     return result
-

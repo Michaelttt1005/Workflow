@@ -47,7 +47,7 @@ def write_json(path: Path, report: dict, candidates: list) -> None:
     payload = {
         "generated_at": datetime.utcnow().isoformat() + "Z",
         "report": report,
-        "candidates": [candidate.to_dict() for candidate in candidates],
+        "candidate_count": len(candidates),
     }
     path.with_suffix(".json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
@@ -110,4 +110,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
