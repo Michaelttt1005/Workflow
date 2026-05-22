@@ -289,6 +289,36 @@
       "first_seen_at": "2026-05-22T21:45:36.810839+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22774v1|cogadapt: transferring clinical ecg foundation models to wearable cognitive load assessment via lead adaptation",
+      "title": "CogAdapt: Transferring Clinical ECG Foundation Models to Wearable Cognitive Load Assessment via Lead Adaptation",
+      "url": "https://arxiv.org/abs/2605.22774v1",
+      "source": "arXiv cs.AI",
+      "published_at": "2026-05-21T17:33:35+00:00",
+      "first_seen_at": "2026-05-22T21:57:36.281348+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22773v1|deep reinforcement learning for flexible job shop scheduling with random job arrivals",
+      "title": "Deep Reinforcement Learning for Flexible Job Shop Scheduling with Random Job Arrivals",
+      "url": "https://arxiv.org/abs/2605.22773v1",
+      "source": "arXiv cs.AI",
+      "published_at": "2026-05-21T17:33:09+00:00",
+      "first_seen_at": "2026-05-22T21:57:36.281357+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22756v1|lumberjack: better differentially private random forests through heavy hitter detection in trees",
+      "title": "Lumberjack: Better Differentially Private Random Forests through Heavy Hitter Detection in Trees",
+      "url": "https://arxiv.org/abs/2605.22756v1",
+      "source": "arXiv cs.LG",
+      "published_at": "2026-05-21T17:23:04+00:00",
+      "first_seen_at": "2026-05-22T21:57:36.281363+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
