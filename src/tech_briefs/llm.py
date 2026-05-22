@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import os
 import re
+from contextlib import suppress
 from dataclasses import dataclass
 from datetime import datetime
 
@@ -70,12 +71,19 @@ def build_ai_report(mode: str, candidates: list[Candidate]) -> dict:
         json=payload,
         timeout=90,
     )
-    response.raise_for_status()
+    if response.status_code >= 400:
+        raise RuntimeError(
+            f"LLM request failed with HTTP {response.status_code}. "
+            f"url={settings.chat_completions_url}, model={settings.model}, "
+            f"body={_redact(response.text[:1200])}"
+        )
     data = response.json()
-    content = data["choices"][0]["message"]["content"]
-    report = _load_json_object(content)
-    _normalize_report(report, mode, candidates)
-    return report
+    with suppress(KeyError, IndexError, TypeError):
+        content = data["choices"][0]["message"]["content"]
+        report = _load_json_object(content)
+        _normalize_report(report, mode, candidates)
+        return report
+    raise RuntimeError(f"LLM response did not contain choices[0].message.content: {_redact(json.dumps(data)[:1200])}")
 
 
 def _build_prompt(mode: str, candidates: list[Candidate]) -> str:
@@ -154,6 +162,10 @@ def _load_json_object(content: str) -> dict:
         if not match:
             raise
         return json.loads(match.group(0))
+
+
+def _redact(text: str) -> str:
+    return re.sub(r"sk-[A-Za-z0-9_\-]{8,}", "sk-***", text)
 
 
 def _normalize_report(report: dict, mode: str, candidates: list[Candidate]) -> None:

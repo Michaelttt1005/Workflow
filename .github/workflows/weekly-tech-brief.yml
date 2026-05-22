@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       LANG: C.UTF-8
-      LLM_API_KEY: ${{ secrets.LLM_API_KEY || secrets.DEEPSEEK_API_KEY || secrets.OPENAI_API_KEY }}
+      LLM_API_KEY: ${{ secrets.LLM_API_KEY || secrets.DEEPSEEK_API_KEY || secrets.OPENAI_API_KEY || vars.LLM_API_KEY || vars.DEEPSEEK_API_KEY || vars.OPENAI_API_KEY }}
       LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
       LLM_MODEL: ${{ vars.LLM_MODEL }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN || vars.TELEGRAM_BOT_TOKEN }}
