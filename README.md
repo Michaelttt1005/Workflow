@@ -1,117 +1,100 @@
-# 科技快报自动化
+# AI 简报自动化
 
-这个仓库用于在 GitHub Actions 云端自动生成科技快报，并通过 Telegram bot 推送 PDF。
+这个仓库用于在 GitHub Actions 云端生成 AI 相关简报，并可选择通过 Telegram bot 推送 PDF。
 
-它不依赖你的电脑开机。只要代码已经推到 GitHub，并且 Actions secrets 配好，GitHub 会按计划在云端运行。
+它不依赖你的电脑开机。只要代码已经推到 GitHub，并且 Actions secrets 配好，GitHub 会在云端运行；你的电脑息屏、关机都不影响。
+
+## 现在这版到底有没有 AI
+
+有。当前版本会先抓取 RSS / GitHub Release / arXiv 候选，然后强制调用 LLM 生成中文报告。
+
+如果没有配置 `LLM_API_KEY`，脚本会直接失败，不会生成函数模板 PDF。
+
+核心入口：
+
+- `scripts/run_brief.py`：抓取候选、调用 LLM、校验、生成 PDF、可选发送 Telegram
+- `src/tech_briefs/llm.py`：调用 OpenAI-compatible `chat/completions`
+- `src/tech_briefs/reporting.py`：校验输出，拦截模板句、空链接、过短正文
 
 ## 功能
 
-- 每日科技快报：每天生成 `MM-DD-科技快报.pdf`
-- 每周科技深度周报：每周六生成 `MM-DD-科技深度周报.pdf`
-- 重大科技更新提醒：每 2 小时扫描一次，只有高分重大更新才推送 `MM-DD-HHMM-重大科技更新提醒.pdf`
+- 每日 AI 简报：生成 `MM-DD-AI简报.pdf`
+- 每周 AI 深度周报：生成 `MM-DD-AI深度周报.pdf`
+- 重大 AI 更新提醒：生成 `MM-DD-HHMM-重大AI更新提醒.pdf`
 - PDF 使用嵌入中文字体，避免 Telegram 打开空白
-- 去重状态保存到 `data/state/seen-alerts.json`
-- 生成文件保存到 `output/`
+- 没有真实 LLM 输出或校验不通过时，拒绝发送模板附件
 
-## 你需要配置的 GitHub Secrets
+## 必须配置的 GitHub Secret
 
-打开 GitHub 网页里的仓库：
+打开仓库：
 
 `https://github.com/Michaelttt1005/Workflow`
 
-然后进入：
+进入：
 
 `Settings` -> `Secrets and variables` -> `Actions` -> `New repository secret`
 
-添加两个 secret：
+至少添加：
+
+```text
+LLM_API_KEY
+```
+
+默认按 DeepSeek 的 OpenAI-compatible API 调用：
+
+```text
+LLM_BASE_URL=https://api.deepseek.com
+LLM_MODEL=deepseek-chat
+```
+
+`LLM_BASE_URL` 和 `LLM_MODEL` 可以放在 Actions Variables，也可以不配，使用默认值。
+
+如果你想换 OpenAI 或其他兼容接口：
+
+```text
+LLM_BASE_URL=https://api.openai.com/v1
+LLM_MODEL=你的模型名
+```
+
+## Telegram 推送
+
+当前我已经先停掉自动发送：workflow 只保留手动触发，命令里不带 `--send`。
+
+确认样例没问题后，再恢复发送。需要的 secret：
 
 ```text
 TELEGRAM_BOT_TOKEN
 TELEGRAM_CHAT_ID
 ```
 
-值就是你的 Telegram bot token 和 chat id。
+发送命令形式是：
 
-## GitHub Desktop 这个界面怎么操作
-
-你截图里的界面是 GitHub Desktop。
-
-因为我已经把仓库克隆到了本地：
-
-```text
-D:\Michael\Workflow
+```powershell
+python scripts\run_brief.py --mode daily --send
 ```
 
-你现在应该这样做：
-
-1. 在 GitHub Desktop 点右侧的 `Add an Existing Repository from your local drive...`
-2. 选择这个文件夹：`D:\Michael\Workflow`
-3. 点 `Add Repository`
-4. 左侧应该会出现这个 repo，或者顶部仓库名会切到 `Workflow`
-5. 左边 `Changes` 页面会看到我新增的文件
-6. 在左下角 Summary 写：`Add tech brief automation`
-7. 点 `Commit to main`
-8. 点顶部或右上角的 `Push origin`
-
-推送完成后，GitHub 网页上的仓库会出现 `.github/workflows`，然后 Actions 才能在云端运行。
-
-如果你还没有用我克隆好的文件夹，也可以在截图里点 `Clone Michaelttt1005/Workflow`，但本机已经有 `D:\Michael\Workflow` 时，更推荐用 `Add an Existing Repository`。
-
-## 手动测试 GitHub Actions
-
-推送后，打开 GitHub 网页：
-
-`Actions`
-
-你会看到三个 workflow：
-
-- `Daily Tech Brief`
-- `Weekly Tech Brief`
-- `Major Tech Update Radar`
-
-点其中一个，再点右侧 `Run workflow`，就能手动触发一次。
-
-如果 Telegram 收到 PDF，说明云端跑通了。
-
 ## 本地测试
-
-在本地 PowerShell 中运行：
 
 ```powershell
 cd D:\Michael\Workflow
 python -m pip install -r requirements.txt
+$env:LLM_API_KEY="你的 key"
 python scripts\run_brief.py --mode daily
 ```
 
 这会生成 PDF，但不会发送 Telegram。
 
-如果要本地发送，需要先设置环境变量：
+## GitHub Actions
 
-```powershell
-$env:TELEGRAM_BOT_TOKEN="你的 token"
-$env:TELEGRAM_CHAT_ID="你的 chat id"
-python scripts\run_brief.py --mode daily --send
-```
+现在三个 workflow 都只支持手动触发：
 
-## 修改时间
+- `Daily Tech Brief`
+- `Weekly Tech Brief`
+- `Major Tech Update Radar`
 
-GitHub Actions 的 cron 使用 UTC。
+等你确认样例后，可以恢复 schedule 和 `--send`，这样电脑息屏后也会在 GitHub 云端自动运行并发到手机。
 
-现在的设置：
-
-- 每日：`.github/workflows/daily-tech-brief.yml`
-  - `0 14 * * *`
-  - 当前夏令时约等于美国中部时间早上 9 点
-- 周报：`.github/workflows/weekly-tech-brief.yml`
-  - `0 14 * * 6`
-  - 当前夏令时约等于周六早上 9 点
-- 高频雷达：`.github/workflows/tech-alert.yml`
-  - `0 */2 * * *`
-  - 每 2 小时运行一次
-
-冬令时如果你仍想严格保持早上 9 点，需要把 `14` 改成 `15`。
-
-## 修改信息来源
+## 信息来源
 
 主要来源在：
 
@@ -120,10 +103,3 @@ config/sources.yaml
 ```
 
 可以加 RSS、GitHub release 仓库、arXiv 分类和关键词。
-
-## 注意
-
-这个项目优先做低成本筛选：先抓标题、摘要、发布时间、链接，再用规则评分。它不会默认打开大量网页，也不会把整页 HTML 交给模型。
-
-如果以后你想接入 DeepSeek 做更好的摘要，可以在这个项目里加一个可选的 LLM summarizer，但目前版本不需要任何 LLM API key，也能稳定生成和推送。
-

@@ -12,12 +12,10 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from tech_briefs.config import ensure_dirs, load_config
 from tech_briefs.fetchers import fetch_all
+from tech_briefs.llm import build_ai_report
 from tech_briefs.models import is_major_alert_candidate
 from tech_briefs.pdf import build_pdf
 from tech_briefs.reporting import (
-    build_alert_report,
-    build_daily_report,
-    build_weekly_report,
     mmdd,
     mmdd_hhmm,
     telegram_summary,
@@ -39,10 +37,10 @@ def parse_args() -> argparse.Namespace:
 
 def output_path(mode: str) -> Path:
     if mode == "daily":
-        return ROOT / "output" / "daily" / f"{mmdd()}-科技快报.pdf"
+        return ROOT / "output" / "daily" / f"{mmdd()}-AI简报.pdf"
     if mode == "weekly":
-        return ROOT / "output" / "weekly" / f"{mmdd()}-科技深度周报.pdf"
-    return ROOT / "output" / "alerts" / f"{mmdd_hhmm()}-重大科技更新提醒.pdf"
+        return ROOT / "output" / "weekly" / f"{mmdd()}-AI深度周报.pdf"
+    return ROOT / "output" / "alerts" / f"{mmdd_hhmm()}-重大AI更新提醒.pdf"
 
 
 def write_json(path: Path, report: dict, candidates: list) -> None:
@@ -65,7 +63,7 @@ def usable_candidates(candidates: list) -> list:
 
 
 def notify_validation_failure(mode: str, errors: list[str], send: bool) -> None:
-    message = f"{mode} 科技快报生成失败：内容校验未通过。\n" + "\n".join(f"- {error}" for error in errors[:8])
+    message = f"{mode} AI 简报生成失败：内容校验未通过。\n" + "\n".join(f"- {error}" for error in errors[:8])
     print(message)
     if not send:
         return
@@ -94,14 +92,13 @@ def main() -> int:
         if not new_alerts:
             print("No new major tech updates. Telegram push skipped.")
             return 0
-        selected = new_alerts[:3]
-        report = build_alert_report(selected)
+        selected = new_alerts[:8]
     elif args.mode == "weekly":
         selected = candidates[:20]
-        report = build_weekly_report(selected)
     else:
-        selected = candidates[:8]
-        report = build_daily_report(selected)
+        selected = candidates[:12]
+
+    report = build_ai_report(args.mode, selected)
 
     validation_errors = validate_report(report, args.mode)
     if validation_errors:
@@ -124,9 +121,9 @@ def main() -> int:
             raise RuntimeError("TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID are required when --send is used.")
         send_message(token, chat_id, telegram_summary(report))
         caption = {
-            "daily": f"每日科技快报 - {mmdd()}",
-            "weekly": f"每周科技深度周报 - {mmdd()}",
-            "alert": f"重大科技更新提醒 - {datetime.now().strftime('%m-%d %H:%M')}",
+            "daily": f"每日 AI 简报 - {mmdd()}",
+            "weekly": f"每周 AI 深度周报 - {mmdd()}",
+            "alert": f"重大 AI 更新提醒 - {datetime.now().strftime('%m-%d %H:%M')}",
         }[args.mode]
         send_document(token, chat_id, pdf_path, caption)
         print("Telegram push sent.")
