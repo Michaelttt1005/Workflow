@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 import textwrap
 from pathlib import Path
 
@@ -34,6 +35,8 @@ BLUE = colors.HexColor("#2563eb")
 LIGHT_BLUE = colors.HexColor("#eff6ff")
 PAPER = colors.HexColor("#f8fafc")
 BORDER = colors.HexColor("#dbe3ef")
+ASCII_RUN_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9 .,:;/\\'\"()\[\]{}_\-+#%&=!?@|~]*")
+CHINESE_DIGITS = "零一二三四五六七八九"
 
 
 def find_font() -> Path | None:
@@ -84,6 +87,18 @@ def _escape(value: object) -> str:
     return str(value).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
+def _rich(value: object) -> str:
+    text = str(value)
+    parts: list[str] = []
+    cursor = 0
+    for match in ASCII_RUN_RE.finditer(text):
+        parts.append(_escape(text[cursor : match.start()]))
+        parts.append(f'<font name="Helvetica">{_escape(match.group(0))}</font>')
+        cursor = match.end()
+    parts.append(_escape(text[cursor:]))
+    return "".join(parts)
+
+
 def _build_reportlab_pdf(report: dict, output_path: Path, font_path: Path, font_name: str, subfont_index: int) -> None:
     pdfmetrics.registerFont(TTFont(font_name, str(font_path), subfontIndex=subfont_index))
     styles = _styles(font_name)
@@ -107,7 +122,7 @@ def _build_reportlab_pdf(report: dict, output_path: Path, font_path: Path, font_
 
     if report.get("footer"):
         story.append(Spacer(1, 3 * mm))
-        story.append(Paragraph(_escape(report["footer"]), styles["small"]))
+        story.append(Paragraph(_rich(report["footer"]), styles["small"]))
 
     doc = SimpleDocTemplate(
         str(output_path),
@@ -158,8 +173,8 @@ def _styles(font_name: str) -> dict[str, ParagraphStyle]:
 
 def _header_block(report: dict, width: float, styles: dict[str, ParagraphStyle]) -> Table:
     content = [
-        Paragraph(_escape(report.get("title", "科技快报")), styles["title"]),
-        Paragraph(_escape(report.get("subtitle", "")), styles["subtitle"]),
+        Paragraph(_rich(report.get("title", "科技快报")), styles["title"]),
+        Paragraph(_rich(report.get("subtitle", "")), styles["subtitle"]),
     ]
     table = Table([[content]], colWidths=[width])
     table.setStyle(
@@ -180,8 +195,8 @@ def _header_block(report: dict, width: float, styles: dict[str, ParagraphStyle])
 def _info_block(title: str, body: str, styles: dict[str, ParagraphStyle], width: float) -> Table:
     table = Table(
         [
-            [Paragraph(f"<b>{_escape(title)}</b>", styles["section"])],
-            [Paragraph(_escape(body), styles["base"])],
+            [Paragraph(f"<b>{_rich(title)}</b>", styles["section"])],
+            [Paragraph(_rich(body), styles["base"])],
         ],
         colWidths=[width],
     )
@@ -208,8 +223,8 @@ def _entry_card(index: int, entry: dict, styles: dict[str, ParagraphStyle], widt
         ]
         if not part.endswith(": ")
     )
-    rows.append([Paragraph(f"<b>{_escape(title)}</b>", styles["item_title"])])
-    rows.append([Paragraph(_escape(meta), styles["meta"])])
+    rows.append([Paragraph(f"<b>{_rich(title)}</b>", styles["item_title"])])
+    rows.append([Paragraph(_rich(meta), styles["meta"])])
 
     for label, key in [
         ("是什么", "what"),
@@ -229,7 +244,8 @@ def _entry_card(index: int, entry: dict, styles: dict[str, ParagraphStyle], widt
             prefix = "直达链接" if len(urls) == 1 else f"直达链接 {number}"
             link_lines.append(
                 Paragraph(
-                    f'<b>{_escape(prefix)}:</b> <link href="{_escape(url)}" color="blue"><u>{_escape(url)}</u></link>',
+                    f'<b>{_rich(prefix)}:</b> '
+                    f'<link href="{_escape(url)}" color="blue"><u><font name="Helvetica">{_escape(url)}</font></u></link>',
                     styles["link"],
                 )
             )
@@ -255,7 +271,7 @@ def _entry_card(index: int, entry: dict, styles: dict[str, ParagraphStyle], widt
 
 def _label_value(label: str, value: str, styles: dict[str, ParagraphStyle]) -> Table:
     table = Table(
-        [[Paragraph(f"<b>{_escape(label)}</b>", styles["label"]), Paragraph(_escape(value), styles["base"])]],
+        [[Paragraph(f"<b>{_rich(label)}</b>", styles["label"]), Paragraph(_rich(value), styles["base"])]],
         colWidths=[22 * mm, None],
     )
     table.setStyle(
@@ -290,8 +306,19 @@ def _page_number(canvas, doc, font_name: str) -> None:
     canvas.saveState()
     canvas.setFont(font_name, 8)
     canvas.setFillColor(MUTED)
-    canvas.drawRightString(A4[0] - 16 * mm, 10 * mm, f"第 {doc.page} 页")
+    canvas.drawRightString(A4[0] - 16 * mm, 10 * mm, f"第 {_chinese_number(doc.page)} 页")
     canvas.restoreState()
+
+
+def _chinese_number(value: int) -> str:
+    if value < 10:
+        return CHINESE_DIGITS[value]
+    if value < 20:
+        return "十" + (CHINESE_DIGITS[value % 10] if value % 10 else "")
+    if value < 100:
+        tens, ones = divmod(value, 10)
+        return CHINESE_DIGITS[tens] + "十" + (CHINESE_DIGITS[ones] if ones else "")
+    return str(value)
 
 
 def has_embedded_font(path: Path) -> bool:
