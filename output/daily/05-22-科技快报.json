@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T18:20:01.522754Z",
+  "generated_at": "2026-05-22T20:37:11.585295Z",
   "report": {
     "title": "每日科技快报",
     "subtitle": "05-22 | 轻量版 | 官方发布、GitHub Release、论文与开发者生态优先",
@@ -68,24 +68,24 @@
         "source": "arXiv stat.ML"
       },
       {
-        "title": "Google Tensor SDK Beta with LiteRT",
-        "what": "Google Developers Blog 发布或更新的内容。The Google Tensor ML SDK is graduating to its Beta phase, allowing developers to build and deploy high-performance machine learning models directly onto the TPU of Google Pixel 10 devices. By integrating with LiteRT, Google's edge deployment framework, the SDK provides a unified workflow for developers to convert, compile, and run PyTorch or TFLite models wi",
+        "title": "A2UI v0.9: The New Standard for Portable, Framework-Agnostic Generative UI",
+        "what": "Google Developers Blog 发布或更新的内容。A2UI v0.9 introduces a framework-agnostic standard designed to help AI agents generate real-time, tailored UI widgets using a company’s existing design system. This update simplifies the developer experience with a new Agent SDK for Python, a shared web-core library, and official support for renderers like React, Flutter, and Angular. By decoupling UI intent",
         "purpose": "帮助开发者、数据科学或 AI 工程团队判断是否值得进一步阅读、试用或纳入技术储备。",
         "features": "请以原始链接中的官方说明、release note、模型卡或论文摘要为准；本快报只做低成本初筛。",
         "comparison": "若原始来源没有明确 benchmark、价格或性能数据，则暂无可信公开对比数据。",
         "who": "适合关注 AI 工具、数据科学、机器学习平台、开发者基础设施和开源生态的人。",
-        "link": "https://developers.googleblog.com/google-tensor-sdk-beta-with-litert/",
+        "link": "https://developers.googleblog.com/a2ui-v0-9-generative-ui/",
         "score": "8",
         "source": "Google Developers Blog"
       },
       {
-        "title": "Blazing fast on-device GenAI with LiteRT-LM",
-        "what": "Google Developers Blog 发布或更新的内容。Google AI Edge’s LiteRT-LM provides a production-proven, highly optimized infrastructure for running Gemma 4 across cross-platform mobile and edge environments. It actively unlocks the model's native multimodal and agentic features on-device by utilizing memory-efficient dynamic loading, Multi-Token Prediction for up to a 2.2x speedup, and advanced orchestra",
+        "title": "Building real-world on-device AI with LiteRT and NPU",
+        "what": "Google Developers Blog 发布或更新的内容。LiteRT is a production-ready framework designed to help mobile developers unlock the power of Neural Processing Units (NPUs), overcoming the performance and battery limitations of traditional CPU or GPU processing. By providing a unified API that abstracts away hardware complexities, it allows industry leaders like Google Meet and Epic Games to deploy sophis",
         "purpose": "帮助开发者、数据科学或 AI 工程团队判断是否值得进一步阅读、试用或纳入技术储备。",
         "features": "请以原始链接中的官方说明、release note、模型卡或论文摘要为准；本快报只做低成本初筛。",
         "comparison": "若原始来源没有明确 benchmark、价格或性能数据，则暂无可信公开对比数据。",
         "who": "适合关注 AI 工具、数据科学、机器学习平台、开发者基础设施和开源生态的人。",
-        "link": "https://developers.googleblog.com/blazing-fast-on-device-genai-with-litert-lm/",
+        "link": "https://developers.googleblog.com/building-real-world-on-device-ai-with-litert-and-npu/",
         "score": "8",
         "source": "Google Developers Blog"
       },
@@ -185,39 +185,40 @@
       ]
     },
     {
-      "title": "Google Tensor SDK Beta with LiteRT",
-      "url": "https://developers.googleblog.com/google-tensor-sdk-beta-with-litert/",
+      "title": "A2UI v0.9: The New Standard for Portable, Framework-Agnostic Generative UI",
+      "url": "https://developers.googleblog.com/a2ui-v0-9-generative-ui/",
       "source": "Google Developers Blog",
-      "published_at": "2026-05-22T18:19:32.100539+00:00",
-      "summary": "The Google Tensor ML SDK is graduating to its Beta phase, allowing developers to build and deploy high-performance machine learning models directly onto the TPU of Google Pixel 10 devices. By integrating with LiteRT, Google's edge deployment framework, the SDK provides a unified workflow for developers to convert, compile, and run PyTorch or TFLite models with robust fallback options. Additionally, a new model garden offers over 100 classic and generative AI models, including Gemma 3, enabling low-latency, private features like speech recognition, computer vision, and text generation.",
+      "published_at": "2026-05-22T20:36:57.992045+00:00",
+      "summary": "A2UI v0.9 introduces a framework-agnostic standard designed to help AI agents generate real-time, tailored UI widgets using a company’s existing design system. This update simplifies the developer experience with a new Agent SDK for Python, a shared web-core library, and official support for renderers like React, Flutter, and Angular. By decoupling UI intent from specific platforms, the release enables seamless, low-latency streaming of generative interfaces across web and mobile applications. Integrating with broader ecosystems like AG2 and Vercel, A2UI v0.9 aims to move generative UI from experimental demos to production-ready digital products.",
       "item_type": "official",
       "score": 8,
       "reasons": [
         "高可信来源",
-        "命中强信号关键词: new model, pytorch, latency",
-        "命中弱信号关键词: model, framework",
+        "命中强信号关键词: agent, latency",
+        "命中弱信号关键词: release, framework",
         "含可比较性能/成本线索"
       ]
     },
     {
-      "title": "Blazing fast on-device GenAI with LiteRT-LM",
-      "url": "https://developers.googleblog.com/blazing-fast-on-device-genai-with-litert-lm/",
+      "title": "Building real-world on-device AI with LiteRT and NPU",
+      "url": "https://developers.googleblog.com/building-real-world-on-device-ai-with-litert-and-npu/",
       "source": "Google Developers Blog",
-      "published_at": "2026-05-22T18:19:32.100539+00:00",
-      "summary": "Google AI Edge’s LiteRT-LM provides a production-proven, highly optimized infrastructure for running Gemma 4 across cross-platform mobile and edge environments. It actively unlocks the model's native multimodal and agentic features on-device by utilizing memory-efficient dynamic loading, Multi-Token Prediction for up to a 2.2x speedup, and advanced orchestration tools like Thinking Mode and Constrained Decoding. Furthermore, the engine is rapidly expanding its integration surfaces beyond Android, introducing new native Swift APIs for Apple ecosystems and WebGPU-accelerated JavaScript APIs for high-performance, serverless browser inference.",
+      "published_at": "2026-05-22T20:36:57.991999+00:00",
+      "summary": "LiteRT is a production-ready framework designed to help mobile developers unlock the power of Neural Processing Units (NPUs), overcoming the performance and battery limitations of traditional CPU or GPU processing. By providing a unified API that abstracts away hardware complexities, it allows industry leaders like Google Meet and Epic Games to deploy sophisticated AI models for real-time video, animation, and speech recognition with significantly higher efficiency. The platform further supports developers through benchmarking tools and cross-platform compatibility, enabling seamless AI deployment across mobile devices, AI PCs, and industrial IoT hardware.",
       "item_type": "official",
       "score": 8,
       "reasons": [
         "高可信来源",
-        "命中强信号关键词: inference, agent, multimodal, api",
-        "命中弱信号关键词: model, gpu, coding"
+        "命中强信号关键词: benchmark, api",
+        "命中弱信号关键词: model, gpu, framework",
+        "含可比较性能/成本线索"
       ]
     },
     {
       "title": "Speeding Up AI: Bringing Google Colossus to PyTorch via GCSFS and Rapid Bucket",
       "url": "https://developers.googleblog.com/speeding-up-ai-bringing-google-colossus-to-pytorch-via-gcsfs-and-rapid-bucket/",
       "source": "Google Developers Blog",
-      "published_at": "2026-05-22T18:19:32.100539+00:00",
+      "published_at": "2026-05-22T20:36:57.991982+00:00",
       "summary": "Google Cloud has introduced a high-performance integration that connects Rapid Storage directly to PyTorch via the fsspec interface to eliminate AI training bottlenecks. By utilizing Google’s Colossus architecture and bidirectional gRPC streaming, the solution offers up to 15 TiB/s aggregate throughput and significant reductions in latency. These improvements allow developers to speed up total training time by 23% with zero code changes required beyond updating the storage bucket type.",
       "item_type": "official",
       "score": 8,
