@@ -229,6 +229,36 @@
       "first_seen_at": "2026-05-22T18:21:12.525532+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22817v1|vector policy optimization: training for diversity improves test-time search",
+      "title": "Vector Policy Optimization: Training for Diversity Improves Test-Time Search",
+      "url": "https://arxiv.org/abs/2605.22817v1",
+      "source": "arXiv cs.AI",
+      "published_at": "2026-05-21T17:59:26+00:00",
+      "first_seen_at": "2026-05-22T20:59:28.869139+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22816v1|awarevln: reasoning with self-awareness for vision-language navigation",
+      "title": "AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation",
+      "url": "https://arxiv.org/abs/2605.22816v1",
+      "source": "arXiv cs.CV",
+      "published_at": "2026-05-21T17:58:26+00:00",
+      "first_seen_at": "2026-05-22T20:59:28.869148+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22809v1|sensor2sensor: cross-embodiment sensor conversion for autonomous driving",
+      "title": "Sensor2Sensor: Cross-Embodiment Sensor Conversion for Autonomous Driving",
+      "url": "https://arxiv.org/abs/2605.22809v1",
+      "source": "arXiv cs.CV",
+      "published_at": "2026-05-21T17:57:17+00:00",
+      "first_seen_at": "2026-05-22T20:59:28.869157+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
