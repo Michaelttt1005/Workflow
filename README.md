@@ -59,9 +59,9 @@ LLM_MODEL=你的模型名
 
 ## Telegram 推送
 
-当前我已经先停掉自动发送：workflow 只保留手动触发，命令里不带 `--send`。
+当前三个 GitHub workflow 已恢复自动发送 Telegram：定时触发和手动触发都会带 `--send`。
 
-确认样例没问题后，再恢复发送。需要的 secret：
+需要的 Telegram secret：
 
 ```text
 TELEGRAM_BOT_TOKEN
@@ -87,7 +87,7 @@ python scripts\run_brief.py --mode daily
 
 ## GitHub Actions
 
-现在三个 workflow 都只支持手动触发：
+现在三个 workflow 同时支持定时触发和手动触发：
 
 - `Daily Tech Brief`
 - `Weekly Tech Brief`
@@ -99,9 +99,15 @@ python scripts\run_brief.py --mode daily
 - `weekly-ai-brief`
 - `major-ai-update-alert`
 
-可以先下载 artifact 或查看仓库 `output/` 里的 PDF/JSON，确认正文质量后再恢复 Telegram 自动发送。
+每次成功生成后，也会保留 artifact 和仓库 `output/` 里的 PDF/JSON，方便回看。
 
-等你确认样例后，可以恢复 schedule 和 `--send`，这样电脑息屏后也会在 GitHub 云端自动运行并发到手机。
+当前 schedule 已恢复：
+
+- Daily：每天 14:00 UTC
+- Weekly：每周六 14:00 UTC
+- Major alert：每 2 小时
+
+这些都在 GitHub 云端运行；电脑息屏、关机都不影响。
 
 ## 信息来源
 

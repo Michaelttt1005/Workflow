@@ -1,6 +1,8 @@
 name: Major Tech Update Radar
 
 on:
+  schedule:
+    - cron: "0 */2 * * *"
   workflow_dispatch:
 
 permissions:
@@ -45,7 +47,7 @@ jobs:
           PY
 
       - name: Scan major update alert
-        run: python scripts/run_brief.py --mode alert
+        run: python scripts/run_brief.py --mode alert --send
 
       - name: Commit generated state and output
         run: |

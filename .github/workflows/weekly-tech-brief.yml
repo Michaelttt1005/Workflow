@@ -1,6 +1,8 @@
 name: Weekly Tech Brief
 
 on:
+  schedule:
+    - cron: "0 14 * * 6"
   workflow_dispatch:
 
 permissions:
@@ -45,7 +47,7 @@ jobs:
           PY
 
       - name: Generate weekly brief
-        run: python scripts/run_brief.py --mode weekly
+        run: python scripts/run_brief.py --mode weekly --send
 
       - name: Commit generated state and output
         run: |

@@ -121,10 +121,6 @@ def main() -> int:
 
     report = build_valid_report(args.mode, selected, args.send)
 
-    if args.mode == "alert" and args.send:
-        for item in selected:
-            state.remember(item, alert_sent=True)
-        state.save()
     pdf_path = output_path(args.mode)
     build_pdf(report, pdf_path)
     write_json(pdf_path, report, selected)
@@ -143,6 +139,10 @@ def main() -> int:
         }[args.mode]
         send_document(token, chat_id, pdf_path, caption)
         print("Telegram push sent.")
+        if args.mode == "alert":
+            for item in selected:
+                state.remember(item, alert_sent=True)
+            state.save()
 
     return 0
 

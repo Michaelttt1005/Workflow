@@ -1,6 +1,8 @@
 name: Daily Tech Brief
 
 on:
+  schedule:
+    - cron: "0 14 * * *"
   workflow_dispatch:
 
 permissions:
@@ -45,7 +47,7 @@ jobs:
           PY
 
       - name: Generate daily brief
-        run: python scripts/run_brief.py --mode daily
+        run: python scripts/run_brief.py --mode daily --send
 
       - name: Commit generated state and output
         run: |
