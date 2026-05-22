@@ -15,6 +15,7 @@
 - `scripts/run_brief.py`：抓取候选、调用 LLM、校验、生成 PDF、可选发送 Telegram
 - `src/tech_briefs/llm.py`：调用 OpenAI-compatible `chat/completions`
 - `src/tech_briefs/reporting.py`：校验输出，拦截模板句、空链接、过短正文
+- LLM 输出如果第一次没过校验，会把具体错误发回模型重写，最多重试 3 次；仍不合格才失败，避免把模板/短正文发出去。
 
 ## 功能
 
@@ -91,6 +92,14 @@ python scripts\run_brief.py --mode daily
 - `Daily Tech Brief`
 - `Weekly Tech Brief`
 - `Major Tech Update Radar`
+
+每次成功生成后，workflow 会上传 artifact：
+
+- `daily-ai-brief`
+- `weekly-ai-brief`
+- `major-ai-update-alert`
+
+可以先下载 artifact 或查看仓库 `output/` 里的 PDF/JSON，确认正文质量后再恢复 Telegram 自动发送。
 
 等你确认样例后，可以恢复 schedule 和 `--send`，这样电脑息屏后也会在 GitHub 云端自动运行并发到手机。
 

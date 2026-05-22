@@ -35,6 +35,15 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install --upgrade pip && pip install -r requirements.txt
 
+      - name: Check LLM configuration
+        run: |
+          python - <<'PY'
+          import os
+          print("LLM key present:", bool(os.getenv("LLM_API_KEY")))
+          print("LLM base:", os.getenv("LLM_BASE_URL") or "https://api.deepseek.com")
+          print("LLM model:", os.getenv("LLM_MODEL") or "deepseek-chat")
+          PY
+
       - name: Generate weekly brief
         run: python scripts/run_brief.py --mode weekly
 
@@ -49,3 +58,12 @@ jobs:
             git commit -m "Update weekly tech brief"
             git push
           fi
+
+      - name: Upload generated brief artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-ai-brief
+          path: |
+            output/weekly/*.pdf
+            output/weekly/*.json
+          if-no-files-found: error

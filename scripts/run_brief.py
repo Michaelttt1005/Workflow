@@ -73,6 +73,27 @@ def notify_validation_failure(mode: str, errors: list[str], send: bool) -> None:
         send_message(token, chat_id, message)
 
 
+def build_valid_report(mode: str, selected: list, send: bool) -> dict:
+    previous_report: dict | None = None
+    validation_errors: list[str] | None = None
+
+    for attempt in range(1, 4):
+        report = build_ai_report(mode, selected, validation_errors, previous_report)
+        validation_errors = validate_report(report, mode)
+        if not validation_errors:
+            if attempt > 1:
+                print(f"LLM report passed validation on attempt {attempt}.")
+            return report
+
+        print(f"LLM report attempt {attempt} failed validation:")
+        for error in validation_errors[:8]:
+            print(f"- {error}")
+        previous_report = report
+
+    notify_validation_failure(mode, validation_errors or ["unknown validation failure"], send)
+    raise RuntimeError("Content validation failed after LLM repair attempts; PDF was not generated or sent.")
+
+
 def main() -> int:
     args = parse_args()
     ensure_dirs(ROOT)
@@ -98,12 +119,7 @@ def main() -> int:
     else:
         selected = candidates[:12]
 
-    report = build_ai_report(args.mode, selected)
-
-    validation_errors = validate_report(report, args.mode)
-    if validation_errors:
-        notify_validation_failure(args.mode, validation_errors, args.send)
-        raise RuntimeError("Content validation failed; PDF was not generated or sent.")
+    report = build_valid_report(args.mode, selected, args.send)
 
     if args.mode == "alert" and args.send:
         for item in selected:

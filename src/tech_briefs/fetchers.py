@@ -38,6 +38,44 @@ def _clean(value: str | None, limit: int = 900) -> str:
     return text[:limit]
 
 
+def _is_generic_release_title(title: str) -> bool:
+    value = title.strip().lower()
+    if not value:
+        return True
+    if re.fullmatch(r"[a-f0-9]{5,16}", value):
+        return True
+    if re.fullmatch(r"v?\d[\w.\-+]*", value):
+        return True
+    if re.fullmatch(r"(release|build|nightly)[\s_\-]*[\w.\-+]+", value):
+        return True
+    return False
+
+
+def _release_summary_lead(summary: str) -> str:
+    text = re.sub(r"[*_`#>]+", "", summary)
+    chunks = re.split(r"(?:\s+-\s+|\.\s+|;\s+)", text)
+    for chunk in chunks:
+        value = chunk.strip(" -:。")
+        if len(value) >= 24:
+            return value[:140]
+    return text[:140].strip()
+
+
+def _github_release_title(repo: str, release: dict, summary: str) -> str:
+    raw_title = _clean(release.get("name") or release.get("tag_name") or repo, 240)
+    tag = _clean(release.get("tag_name") or "", 80)
+    if not _is_generic_release_title(raw_title):
+        if repo.split("/")[-1].lower() in raw_title.lower():
+            return raw_title
+        return _clean(f"{repo}: {raw_title}", 240)
+
+    lead = _release_summary_lead(summary)
+    suffix = f" {tag}" if tag else ""
+    if lead:
+        return _clean(f"{repo} release{suffix}: {lead}", 240)
+    return _clean(f"{repo} release{suffix}", 240)
+
+
 def fetch_rss_sources(config: dict, days: int) -> list[Candidate]:
     cutoff = datetime.now(timezone.utc) - timedelta(days=days)
     candidates: list[Candidate] = []
@@ -85,13 +123,14 @@ def fetch_github_releases(config: dict, days: int, token: str | None = None) -> 
             published = _parse_date(release.get("published_at") or release.get("created_at"))
             if published < cutoff:
                 continue
+            summary = _clean(release.get("body") or "")
             candidates.append(
                 Candidate(
-                    title=_clean(release.get("name") or release.get("tag_name") or repo, 240),
+                    title=_github_release_title(repo, release, summary),
                     url=release.get("html_url") or f"https://github.com/{repo}/releases",
                     source=f"GitHub Release: {repo}",
                     published_at=published,
-                    summary=_clean(release.get("body") or ""),
+                    summary=summary,
                     item_type="github_release",
                     raw={"repo": repo, "tag": release.get("tag_name")},
                 )

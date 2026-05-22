@@ -35,6 +35,15 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install --upgrade pip && pip install -r requirements.txt
 
+      - name: Check LLM configuration
+        run: |
+          python - <<'PY'
+          import os
+          print("LLM key present:", bool(os.getenv("LLM_API_KEY")))
+          print("LLM base:", os.getenv("LLM_BASE_URL") or "https://api.deepseek.com")
+          print("LLM model:", os.getenv("LLM_MODEL") or "deepseek-chat")
+          PY
+
       - name: Scan major update alert
         run: python scripts/run_brief.py --mode alert
 
@@ -49,3 +58,12 @@ jobs:
             git commit -m "Update tech alert state"
             git push
           fi
+
+      - name: Upload generated alert artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: major-ai-update-alert
+          path: |
+            output/alerts/*.pdf
+            output/alerts/*.json
+          if-no-files-found: ignore
