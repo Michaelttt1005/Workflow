@@ -1,0 +1,80 @@
+rss_sources:
+  - name: OpenAI News
+    url: https://openai.com/news/rss.xml
+  - name: Anthropic News
+    url: https://www.anthropic.com/news/rss.xml
+  - name: Google DeepMind Blog
+    url: https://deepmind.google/discover/blog/rss.xml
+  - name: Google Developers Blog
+    url: https://developers.googleblog.com/feeds/posts/default
+  - name: Meta AI Blog
+    url: https://ai.meta.com/blog/rss
+  - name: Microsoft Research Blog
+    url: https://www.microsoft.com/en-us/research/feed/
+  - name: NVIDIA Developer Blog
+    url: https://developer.nvidia.com/blog/feed/
+  - name: PyTorch Blog
+    url: https://pytorch.org/blog/feed.xml
+  - name: TensorFlow Blog
+    url: https://blog.tensorflow.org/feeds/posts/default
+  - name: Hugging Face Blog
+    url: https://huggingface.co/blog/feed.xml
+
+github_releases:
+  - pytorch/pytorch
+  - tensorflow/tensorflow
+  - jax-ml/jax
+  - huggingface/transformers
+  - huggingface/diffusers
+  - vllm-project/vllm
+  - ggml-org/llama.cpp
+  - langchain-ai/langchain
+  - run-llama/llama_index
+  - mlflow/mlflow
+  - ray-project/ray
+  - apache/arrow
+  - pandas-dev/pandas
+  - numpy/numpy
+  - scikit-learn/scikit-learn
+
+arxiv_categories:
+  - cs.AI
+  - cs.LG
+  - cs.CL
+  - cs.CV
+  - stat.ML
+
+keywords:
+  strong:
+    - launch
+    - released
+    - new model
+    - frontier
+    - general availability
+    - benchmark
+    - sota
+    - cuda
+    - pytorch
+    - tensorflow
+    - inference
+    - agent
+    - multimodal
+    - open source
+    - weights
+    - dataset
+    - security
+    - pricing
+    - latency
+    - throughput
+    - api
+  weak:
+    - model
+    - llm
+    - rag
+    - embedding
+    - gpu
+    - release
+    - framework
+    - paper
+    - reasoning
+    - coding

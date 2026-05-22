@@ -1,0 +1,234 @@
+{
+  "seen": [
+    {
+      "key": "https://arxiv.org/abs/2605.22819v1|cambrian-p: pose-grounded video understanding",
+      "title": "Cambrian-P: Pose-Grounded Video Understanding",
+      "url": "https://arxiv.org/abs/2605.22819v1",
+      "source": "arXiv cs.CV",
+      "published_at": "2026-05-21T17:59:45+00:00",
+      "first_seen_at": "2026-05-22T18:20:01.286097+00:00",
+      "score": 9,
+      "alert_sent": false
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22781v1|deltabox: scaling stateful ai agents with millisecond-level sandbox checkpoint/rollback",
+      "title": "DeltaBox: Scaling Stateful AI Agents with Millisecond-Level Sandbox Checkpoint/Rollback",
+      "url": "https://arxiv.org/abs/2605.22781v1",
+      "source": "arXiv cs.AI",
+      "published_at": "2026-05-21T17:36:17+00:00",
+      "first_seen_at": "2026-05-22T18:20:01.286097+00:00",
+      "score": 9,
+      "alert_sent": false
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22718v1|worldkv: efficient world memory with world retrieval and compression",
+      "title": "WorldKV: Efficient World Memory with World Retrieval and Compression",
+      "url": "https://arxiv.org/abs/2605.22718v1",
+      "source": "arXiv cs.CV",
+      "published_at": "2026-05-21T16:55:04+00:00",
+      "first_seen_at": "2026-05-22T18:20:01.286097+00:00",
+      "score": 9,
+      "alert_sent": false
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22608v1|agentic clear: automating multi-level evaluation of llm agents",
+      "title": "Agentic CLEAR: Automating Multi-Level Evaluation of LLM Agents",
+      "url": "https://arxiv.org/abs/2605.22608v1",
+      "source": "arXiv cs.CL",
+      "published_at": "2026-05-21T15:26:02+00:00",
+      "first_seen_at": "2026-05-22T18:20:01.286097+00:00",
+      "score": 9,
+      "alert_sent": false
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22374v1|guiding multi-objective genetic programming with description length improves symbolic regression solutions",
+      "title": "Guiding Multi-Objective Genetic Programming with Description Length Improves Symbolic Regression Solutions",
+      "url": "https://arxiv.org/abs/2605.22374v1",
+      "source": "arXiv stat.ML",
+      "published_at": "2026-05-21T12:07:05+00:00",
+      "first_seen_at": "2026-05-22T18:20:01.286097+00:00",
+      "score": 9,
+      "alert_sent": false
+    },
+    {
+      "key": "https://developers.googleblog.com/google-tensor-sdk-beta-with-litert/|google tensor sdk beta with litert",
+      "title": "Google Tensor SDK Beta with LiteRT",
+      "url": "https://developers.googleblog.com/google-tensor-sdk-beta-with-litert/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-05-22T18:19:32.100539+00:00",
+      "first_seen_at": "2026-05-22T18:20:01.286097+00:00",
+      "score": 8,
+      "alert_sent": false
+    },
+    {
+      "key": "https://developers.googleblog.com/blazing-fast-on-device-genai-with-litert-lm/|blazing fast on-device genai with litert-lm",
+      "title": "Blazing fast on-device GenAI with LiteRT-LM",
+      "url": "https://developers.googleblog.com/blazing-fast-on-device-genai-with-litert-lm/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-05-22T18:19:32.100539+00:00",
+      "first_seen_at": "2026-05-22T18:20:01.286097+00:00",
+      "score": 8,
+      "alert_sent": false
+    },
+    {
+      "key": "https://developers.googleblog.com/speeding-up-ai-bringing-google-colossus-to-pytorch-via-gcsfs-and-rapid-bucket/|speeding up ai: bringing google colossus to pytorch via gcsfs and rapid bucket",
+      "title": "Speeding Up AI: Bringing Google Colossus to PyTorch via GCSFS and Rapid Bucket",
+      "url": "https://developers.googleblog.com/speeding-up-ai-bringing-google-colossus-to-pytorch-via-gcsfs-and-rapid-bucket/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-05-22T18:19:32.100539+00:00",
+      "first_seen_at": "2026-05-22T18:20:01.286097+00:00",
+      "score": 8,
+      "alert_sent": false
+    },
+    {
+      "key": "https://developers.googleblog.com/building-real-world-on-device-ai-with-litert-and-npu/|building real-world on-device ai with litert and npu",
+      "title": "Building real-world on-device AI with LiteRT and NPU",
+      "url": "https://developers.googleblog.com/building-real-world-on-device-ai-with-litert-and-npu/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-05-22T18:20:45.307368+00:00",
+      "first_seen_at": "2026-05-22T18:21:12.511527+00:00",
+      "score": 8,
+      "alert_sent": false
+    },
+    {
+      "key": "https://developers.googleblog.com/a2ui-v0-9-generative-ui/|a2ui v0.9: the new standard for portable, framework-agnostic generative ui",
+      "title": "A2UI v0.9: The New Standard for Portable, Framework-Agnostic Generative UI",
+      "url": "https://developers.googleblog.com/a2ui-v0-9-generative-ui/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-05-22T18:20:45.307368+00:00",
+      "first_seen_at": "2026-05-22T18:21:12.511527+00:00",
+      "score": 8,
+      "alert_sent": false
+    },
+    {
+      "key": "https://github.com/mlflow/mlflow/releases/tag/v3.13.0rc0|v3.13.0rc0",
+      "title": "v3.13.0rc0",
+      "url": "https://github.com/mlflow/mlflow/releases/tag/v3.13.0rc0",
+      "source": "GitHub Release: mlflow/mlflow",
+      "published_at": "2026-05-22T07:41:13+00:00",
+      "first_seen_at": "2026-05-22T18:21:12.511527+00:00",
+      "score": 8,
+      "alert_sent": false
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22820v1|integrable elasticity via neural demand potentials",
+      "title": "Integrable Elasticity via Neural Demand Potentials",
+      "url": "https://arxiv.org/abs/2605.22820v1",
+      "source": "arXiv cs.LG",
+      "published_at": "2026-05-21T17:59:47+00:00",
+      "first_seen_at": "2026-05-22T18:21:12.511527+00:00",
+      "score": 8,
+      "alert_sent": false
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22771v1|reducing political manipulation with consistency training",
+      "title": "Reducing Political Manipulation with Consistency Training",
+      "url": "https://arxiv.org/abs/2605.22771v1",
+      "source": "arXiv cs.AI",
+      "published_at": "2026-05-21T17:32:40+00:00",
+      "first_seen_at": "2026-05-22T18:21:12.511527+00:00",
+      "score": 8,
+      "alert_sent": false
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22769v1|understanding data temporality impact on large language models pre-training",
+      "title": "Understanding Data Temporality Impact on Large Language Models Pre-training",
+      "url": "https://arxiv.org/abs/2605.22769v1",
+      "source": "arXiv cs.AI",
+      "published_at": "2026-05-21T17:31:17+00:00",
+      "first_seen_at": "2026-05-22T18:21:12.511527+00:00",
+      "score": 8,
+      "alert_sent": false
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22763v1|advancing mathematics research with ai-driven formal proof search",
+      "title": "Advancing Mathematics Research with AI-Driven Formal Proof Search",
+      "url": "https://arxiv.org/abs/2605.22763v1",
+      "source": "arXiv cs.AI",
+      "published_at": "2026-05-21T17:24:57+00:00",
+      "first_seen_at": "2026-05-22T18:21:12.511527+00:00",
+      "score": 8,
+      "alert_sent": false
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22734v1|chronomedkg: a temporally-grounded biomedical knowledge graph and benchmark for clinical reasoning",
+      "title": "ChronoMedKG: A Temporally-Grounded Biomedical Knowledge Graph and Benchmark for Clinical Reasoning",
+      "url": "https://arxiv.org/abs/2605.22734v1",
+      "source": "arXiv cs.CL",
+      "published_at": "2026-05-21T17:04:28+00:00",
+      "first_seen_at": "2026-05-22T18:21:12.511527+00:00",
+      "score": 8,
+      "alert_sent": false
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22733v1|harnessapi: a skill-first framework for unified streaming apis and mcp tools",
+      "title": "HarnessAPI: A Skill-First Framework for Unified Streaming APIs and MCP Tools",
+      "url": "https://arxiv.org/abs/2605.22733v1",
+      "source": "arXiv cs.AI",
+      "published_at": "2026-05-21T17:03:44+00:00",
+      "first_seen_at": "2026-05-22T18:21:12.511527+00:00",
+      "score": 8,
+      "alert_sent": false
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22732v1|beyond acoustic emotion recognition: multimodal pathos analysis in political speech using llm-based and acoustic emotion",
+      "title": "Beyond Acoustic Emotion Recognition: Multimodal Pathos Analysis in Political Speech Using LLM-Based and Acoustic Emotion Models",
+      "url": "https://arxiv.org/abs/2605.22732v1",
+      "source": "arXiv cs.CL",
+      "published_at": "2026-05-21T17:03:37+00:00",
+      "first_seen_at": "2026-05-22T18:21:12.511527+00:00",
+      "score": 8,
+      "alert_sent": false
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22677v1|slimmable convnext: width-adaptive inference for efficient multi-device deployment",
+      "title": "Slimmable ConvNeXt: Width-Adaptive Inference for Efficient Multi-Device Deployment",
+      "url": "https://arxiv.org/abs/2605.22677v1",
+      "source": "arXiv cs.CV",
+      "published_at": "2026-05-21T16:20:18+00:00",
+      "first_seen_at": "2026-05-22T18:21:12.511527+00:00",
+      "score": 8,
+      "alert_sent": false
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22675v1|self-policy distillation via capability-selective subspace projection",
+      "title": "Self-Policy Distillation via Capability-Selective Subspace Projection",
+      "url": "https://arxiv.org/abs/2605.22675v1",
+      "source": "arXiv cs.CL",
+      "published_at": "2026-05-21T16:18:41+00:00",
+      "first_seen_at": "2026-05-22T18:21:12.511527+00:00",
+      "score": 8,
+      "alert_sent": false
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22643v1|boiling the frog: a multi-turn benchmark for agentic safety",
+      "title": "Boiling the Frog: A Multi-Turn Benchmark for Agentic Safety",
+      "url": "https://arxiv.org/abs/2605.22643v1",
+      "source": "arXiv cs.CL",
+      "published_at": "2026-05-21T15:50:18+00:00",
+      "first_seen_at": "2026-05-22T18:21:12.525532+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/building-with-gemini-embedding-2/|building with gemini embedding 2: agentic multimodal rag and beyond",
+      "title": "Building with Gemini Embedding 2: Agentic multimodal RAG and beyond",
+      "url": "https://developers.googleblog.com/building-with-gemini-embedding-2/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-05-22T18:20:41.848046+00:00",
+      "first_seen_at": "2026-05-22T18:21:12.525532+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://arxiv.org/abs/2605.22823v1|which way did it move? diagnosing and overcoming directional motion blindness in video-llms",
+      "title": "Which Way Did It Move? Diagnosing and Overcoming Directional Motion Blindness in Video-LLMs",
+      "url": "https://arxiv.org/abs/2605.22823v1",
+      "source": "arXiv cs.CV",
+      "published_at": "2026-05-21T17:59:56+00:00",
+      "first_seen_at": "2026-05-22T18:21:12.525532+00:00",
+      "score": 7,
+      "alert_sent": true
+    }
+  ]
+}

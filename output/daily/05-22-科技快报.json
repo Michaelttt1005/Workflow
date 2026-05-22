@@ -1,0 +1,232 @@
+{
+  "generated_at": "2026-05-22T18:20:01.522754Z",
+  "report": {
+    "title": "每日科技快报",
+    "subtitle": "05-22 | 轻量版 | 官方发布、GitHub Release、论文与开发者生态优先",
+    "overview": "本期按高可信来源、影响范围、可验证性和新颖性筛选。没有可靠 benchmark 的条目会明确标注暂无可信公开对比数据。",
+    "checked_sources": [
+      "Google Developers Blog",
+      "arXiv cs.AI",
+      "arXiv cs.CL",
+      "arXiv cs.CV",
+      "arXiv stat.ML"
+    ],
+    "entries": [
+      {
+        "title": "Cambrian-P: Pose-Grounded Video Understanding",
+        "what": "arXiv cs.CV 发布或更新的内容。Camera pose matters. The position and orientation of each viewpoint define a shared spatial coordinate frame that relates observations across video frames. Yet this signal is largely absent from multimodal LLMs (MLLMs) for video understanding, which process frames as isolated 2D snapshots, instead of the persistent scene humans perceive. We revisit pose as a",
+        "purpose": "帮助开发者、数据科学或 AI 工程团队判断是否值得进一步阅读、试用或纳入技术储备。",
+        "features": "请以原始链接中的官方说明、release note、模型卡或论文摘要为准；本快报只做低成本初筛。",
+        "comparison": "若原始来源没有明确 benchmark、价格或性能数据，则暂无可信公开对比数据。",
+        "who": "适合关注 AI 工具、数据科学、机器学习平台、开发者基础设施和开源生态的人。",
+        "link": "https://arxiv.org/abs/2605.22819v1",
+        "score": "9",
+        "source": "arXiv cs.CV"
+      },
+      {
+        "title": "DeltaBox: Scaling Stateful AI Agents with Millisecond-Level Sandbox Checkpoint/Rollback",
+        "what": "arXiv cs.AI 发布或更新的内容。LLM-powered AI agents require high-frequency state exploration (e.g., test-time tree search and reinforcement learning), relying on rapid checkpoint and rollback (C/R) of the complete sandbox state, including files and process state (e.g., memory, contexts, etc.). Existing mechanisms duplicate the entire state, causing hundreds of milliseconds to seconds of ",
+        "purpose": "帮助开发者、数据科学或 AI 工程团队判断是否值得进一步阅读、试用或纳入技术储备。",
+        "features": "请以原始链接中的官方说明、release note、模型卡或论文摘要为准；本快报只做低成本初筛。",
+        "comparison": "若原始来源没有明确 benchmark、价格或性能数据，则暂无可信公开对比数据。",
+        "who": "适合关注 AI 工具、数据科学、机器学习平台、开发者基础设施和开源生态的人。",
+        "link": "https://arxiv.org/abs/2605.22781v1",
+        "score": "9",
+        "source": "arXiv cs.AI"
+      },
+      {
+        "title": "WorldKV: Efficient World Memory with World Retrieval and Compression",
+        "what": "arXiv cs.CV 发布或更新的内容。Autoregressive video diffusion models have enabled real-time, action-conditioned world generation. However, sustaining a persistent world, where revisiting a previously seen viewpoint yields consistent content, remains an open problem. Full KV-cache attention preserves this consistency but breaks real-time constraints: memory footprint and attention cost gro",
+        "purpose": "帮助开发者、数据科学或 AI 工程团队判断是否值得进一步阅读、试用或纳入技术储备。",
+        "features": "请以原始链接中的官方说明、release note、模型卡或论文摘要为准；本快报只做低成本初筛。",
+        "comparison": "若原始来源没有明确 benchmark、价格或性能数据，则暂无可信公开对比数据。",
+        "who": "适合关注 AI 工具、数据科学、机器学习平台、开发者基础设施和开源生态的人。",
+        "link": "https://arxiv.org/abs/2605.22718v1",
+        "score": "9",
+        "source": "arXiv cs.CV"
+      },
+      {
+        "title": "Agentic CLEAR: Automating Multi-Level Evaluation of LLM Agents",
+        "what": "arXiv cs.CL 发布或更新的内容。Agentic systems are becoming more capable: agents define strategies, take actions, and interact with different environments. This autonomy poses serious challenges for overseeing and assessing agent behavior. Most current tools are limited, focusing on observability with basic evaluation capabilities or imposing static, hand-crafted error taxonomies that can",
+        "purpose": "帮助开发者、数据科学或 AI 工程团队判断是否值得进一步阅读、试用或纳入技术储备。",
+        "features": "请以原始链接中的官方说明、release note、模型卡或论文摘要为准；本快报只做低成本初筛。",
+        "comparison": "若原始来源没有明确 benchmark、价格或性能数据，则暂无可信公开对比数据。",
+        "who": "适合关注 AI 工具、数据科学、机器学习平台、开发者基础设施和开源生态的人。",
+        "link": "https://arxiv.org/abs/2605.22608v1",
+        "score": "9",
+        "source": "arXiv cs.CL"
+      },
+      {
+        "title": "Guiding Multi-Objective Genetic Programming with Description Length Improves Symbolic Regression Solutions",
+        "what": "arXiv stat.ML 发布或更新的内容。Symbolic regression with genetic programming (GPSR) may suffer from overfitting and structural bloat, especially when noise is present. In this paper we evaluate description length (DL) and fractional Bayes factor (FBF) criteria as principled, data-efficient alternatives to heuristics for selecting compact expressions that generalise well. We implement DL us",
+        "purpose": "帮助开发者、数据科学或 AI 工程团队判断是否值得进一步阅读、试用或纳入技术储备。",
+        "features": "请以原始链接中的官方说明、release note、模型卡或论文摘要为准；本快报只做低成本初筛。",
+        "comparison": "若原始来源没有明确 benchmark、价格或性能数据，则暂无可信公开对比数据。",
+        "who": "适合关注 AI 工具、数据科学、机器学习平台、开发者基础设施和开源生态的人。",
+        "link": "https://arxiv.org/abs/2605.22374v1",
+        "score": "9",
+        "source": "arXiv stat.ML"
+      },
+      {
+        "title": "Google Tensor SDK Beta with LiteRT",
+        "what": "Google Developers Blog 发布或更新的内容。The Google Tensor ML SDK is graduating to its Beta phase, allowing developers to build and deploy high-performance machine learning models directly onto the TPU of Google Pixel 10 devices. By integrating with LiteRT, Google's edge deployment framework, the SDK provides a unified workflow for developers to convert, compile, and run PyTorch or TFLite models wi",
+        "purpose": "帮助开发者、数据科学或 AI 工程团队判断是否值得进一步阅读、试用或纳入技术储备。",
+        "features": "请以原始链接中的官方说明、release note、模型卡或论文摘要为准；本快报只做低成本初筛。",
+        "comparison": "若原始来源没有明确 benchmark、价格或性能数据，则暂无可信公开对比数据。",
+        "who": "适合关注 AI 工具、数据科学、机器学习平台、开发者基础设施和开源生态的人。",
+        "link": "https://developers.googleblog.com/google-tensor-sdk-beta-with-litert/",
+        "score": "8",
+        "source": "Google Developers Blog"
+      },
+      {
+        "title": "Blazing fast on-device GenAI with LiteRT-LM",
+        "what": "Google Developers Blog 发布或更新的内容。Google AI Edge’s LiteRT-LM provides a production-proven, highly optimized infrastructure for running Gemma 4 across cross-platform mobile and edge environments. It actively unlocks the model's native multimodal and agentic features on-device by utilizing memory-efficient dynamic loading, Multi-Token Prediction for up to a 2.2x speedup, and advanced orchestra",
+        "purpose": "帮助开发者、数据科学或 AI 工程团队判断是否值得进一步阅读、试用或纳入技术储备。",
+        "features": "请以原始链接中的官方说明、release note、模型卡或论文摘要为准；本快报只做低成本初筛。",
+        "comparison": "若原始来源没有明确 benchmark、价格或性能数据，则暂无可信公开对比数据。",
+        "who": "适合关注 AI 工具、数据科学、机器学习平台、开发者基础设施和开源生态的人。",
+        "link": "https://developers.googleblog.com/blazing-fast-on-device-genai-with-litert-lm/",
+        "score": "8",
+        "source": "Google Developers Blog"
+      },
+      {
+        "title": "Speeding Up AI: Bringing Google Colossus to PyTorch via GCSFS and Rapid Bucket",
+        "what": "Google Developers Blog 发布或更新的内容。Google Cloud has introduced a high-performance integration that connects Rapid Storage directly to PyTorch via the fsspec interface to eliminate AI training bottlenecks. By utilizing Google’s Colossus architecture and bidirectional gRPC streaming, the solution offers up to 15 TiB/s aggregate throughput and significant reductions in latency. These improvement",
+        "purpose": "帮助开发者、数据科学或 AI 工程团队判断是否值得进一步阅读、试用或纳入技术储备。",
+        "features": "请以原始链接中的官方说明、release note、模型卡或论文摘要为准；本快报只做低成本初筛。",
+        "comparison": "若原始来源没有明确 benchmark、价格或性能数据，则暂无可信公开对比数据。",
+        "who": "适合关注 AI 工具、数据科学、机器学习平台、开发者基础设施和开源生态的人。",
+        "link": "https://developers.googleblog.com/speeding-up-ai-bringing-google-colossus-to-pytorch-via-gcsfs-and-rapid-bucket/",
+        "score": "8",
+        "source": "Google Developers Blog"
+      }
+    ],
+    "footer": "备注：本 PDF 由 GitHub Actions 自动生成并通过 Telegram 推送。"
+  },
+  "candidates": [
+    {
+      "title": "Cambrian-P: Pose-Grounded Video Understanding",
+      "url": "https://arxiv.org/abs/2605.22819v1",
+      "source": "arXiv cs.CV",
+      "published_at": "2026-05-21T17:59:45+00:00",
+      "summary": "Camera pose matters. The position and orientation of each viewpoint define a shared spatial coordinate frame that relates observations across video frames. Yet this signal is largely absent from multimodal LLMs (MLLMs) for video understanding, which process frames as isolated 2D snapshots, instead of the persistent scene humans perceive. We revisit pose as a lightweight supervisory signal and introduce Cambrian-P, a video MLLM augmented with per-frame learnable camera tokens and a pose regression head. With a carefully designed sampling scheme, the model achieves substantial gains of 4.5-6.5% on spatial reasoning benchmarks such as VSI-Bench, generalizes across eight additional spatial and general video QA benchmarks, and, as a byproduct, achieves state of the art streaming pose estimation on ScanNet. Surprisingly, training on pseudo-annotated poses from in-the-wild video further improve",
+      "item_type": "paper",
+      "score": 9,
+      "reasons": [
+        "高可信来源",
+        "命中强信号关键词: benchmark, multimodal",
+        "命中弱信号关键词: model, llm, reasoning",
+        "最新论文",
+        "含可比较性能/成本线索"
+      ]
+    },
+    {
+      "title": "DeltaBox: Scaling Stateful AI Agents with Millisecond-Level Sandbox Checkpoint/Rollback",
+      "url": "https://arxiv.org/abs/2605.22781v1",
+      "source": "arXiv cs.AI",
+      "published_at": "2026-05-21T17:36:17+00:00",
+      "summary": "LLM-powered AI agents require high-frequency state exploration (e.g., test-time tree search and reinforcement learning), relying on rapid checkpoint and rollback (C/R) of the complete sandbox state, including files and process state (e.g., memory, contexts, etc.). Existing mechanisms duplicate the entire state, causing hundreds of milliseconds to seconds of latency per C/R, which severely bottlenecks deep search and large-scale fan-outs. This paper observes that subsequent checkpoints in AI agents are highly similar. Therefore, instead of full duplication, a sandbox should only duplicate the changes between consecutive checkpoints (Key Insight). However, it is non-trivial to realize the idea, mainly due to the missing OS supports. This paper proposes a new OS-level abstraction, DeltaState, to enable the change-based transactional C/R for AI agents with two co-designed OS mechanisms. Firs",
+      "item_type": "paper",
+      "score": 9,
+      "reasons": [
+        "高可信来源",
+        "命中强信号关键词: agent, latency, api",
+        "命中弱信号关键词: llm, paper",
+        "最新论文",
+        "含可比较性能/成本线索"
+      ]
+    },
+    {
+      "title": "WorldKV: Efficient World Memory with World Retrieval and Compression",
+      "url": "https://arxiv.org/abs/2605.22718v1",
+      "source": "arXiv cs.CV",
+      "published_at": "2026-05-21T16:55:04+00:00",
+      "summary": "Autoregressive video diffusion models have enabled real-time, action-conditioned world generation. However, sustaining a persistent world, where revisiting a previously seen viewpoint yields consistent content, remains an open problem. Full KV-cache attention preserves this consistency but breaks real-time constraints: memory footprint and attention cost grow linearly with rollout length. Sliding window inference restores throughput but discards long-term consistency. We propose WorldKV, a training-free framework with two components: World Retrieval and World Compression. World Retrieval stores evicted KV-cache chunks in GPU/CPU memory and selectively retrieves scene-relevant chunks via camera/ action correspondence, inserting them back into the native attention window without re-encoding. World Compression prunes redundant tokens within each chunk via key-key similarity to an anchor fra",
+      "item_type": "paper",
+      "score": 9,
+      "reasons": [
+        "高可信来源",
+        "命中强信号关键词: inference, throughput",
+        "命中弱信号关键词: model, gpu, framework, coding",
+        "最新论文",
+        "含可比较性能/成本线索"
+      ]
+    },
+    {
+      "title": "Agentic CLEAR: Automating Multi-Level Evaluation of LLM Agents",
+      "url": "https://arxiv.org/abs/2605.22608v1",
+      "source": "arXiv cs.CL",
+      "published_at": "2026-05-21T15:26:02+00:00",
+      "summary": "Agentic systems are becoming more capable: agents define strategies, take actions, and interact with different environments. This autonomy poses serious challenges for overseeing and assessing agent behavior. Most current tools are limited, focusing on observability with basic evaluation capabilities or imposing static, hand-crafted error taxonomies that cannot adapt to new domains. To address this gap, we present Agentic CLEAR, an automatic, dynamic, and easy-to-use evaluation framework. It produces textual insights into the agent behavior on three levels of granularity: system, trace, and node. Agentic CLEAR operates above the observability layer, enabling seamless integration and featuring an intuitive UI that makes agent evaluation highly accessible. In our experiments on four benchmarks, seven agentic settings, and tens of thousands of LLM calls, we show that Agentic CLEAR produces ",
+      "item_type": "paper",
+      "score": 9,
+      "reasons": [
+        "高可信来源",
+        "命中强信号关键词: benchmark, agent",
+        "命中弱信号关键词: llm, framework",
+        "最新论文",
+        "含可比较性能/成本线索"
+      ]
+    },
+    {
+      "title": "Guiding Multi-Objective Genetic Programming with Description Length Improves Symbolic Regression Solutions",
+      "url": "https://arxiv.org/abs/2605.22374v1",
+      "source": "arXiv stat.ML",
+      "published_at": "2026-05-21T12:07:05+00:00",
+      "summary": "Symbolic regression with genetic programming (GPSR) may suffer from overfitting and structural bloat, especially when noise is present. In this paper we evaluate description length (DL) and fractional Bayes factor (FBF) criteria as principled, data-efficient alternatives to heuristics for selecting compact expressions that generalise well. We implement DL using a Fisher-information-based parameter encoding and compare it to AIC and BIC across multiple datasets, including noisy synthetic benchmarks and real-world regression problems. We study three search/selection strategies: (i) multi-objective search for accuracy and program length followed by DL/FBF selection; (ii) multi-objective search using DL directly as an objective; and (iii) single-objective optimisation with DL/FBF as the fitness. Across datasets we find that DL/FBF post-selection improves test performance compared to AIC/BIC ",
+      "item_type": "paper",
+      "score": 9,
+      "reasons": [
+        "高可信来源",
+        "命中强信号关键词: benchmark, dataset",
+        "命中弱信号关键词: paper, coding",
+        "最新论文",
+        "含可比较性能/成本线索"
+      ]
+    },
+    {
+      "title": "Google Tensor SDK Beta with LiteRT",
+      "url": "https://developers.googleblog.com/google-tensor-sdk-beta-with-litert/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-05-22T18:19:32.100539+00:00",
+      "summary": "The Google Tensor ML SDK is graduating to its Beta phase, allowing developers to build and deploy high-performance machine learning models directly onto the TPU of Google Pixel 10 devices. By integrating with LiteRT, Google's edge deployment framework, the SDK provides a unified workflow for developers to convert, compile, and run PyTorch or TFLite models with robust fallback options. Additionally, a new model garden offers over 100 classic and generative AI models, including Gemma 3, enabling low-latency, private features like speech recognition, computer vision, and text generation.",
+      "item_type": "official",
+      "score": 8,
+      "reasons": [
+        "高可信来源",
+        "命中强信号关键词: new model, pytorch, latency",
+        "命中弱信号关键词: model, framework",
+        "含可比较性能/成本线索"
+      ]
+    },
+    {
+      "title": "Blazing fast on-device GenAI with LiteRT-LM",
+      "url": "https://developers.googleblog.com/blazing-fast-on-device-genai-with-litert-lm/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-05-22T18:19:32.100539+00:00",
+      "summary": "Google AI Edge’s LiteRT-LM provides a production-proven, highly optimized infrastructure for running Gemma 4 across cross-platform mobile and edge environments. It actively unlocks the model's native multimodal and agentic features on-device by utilizing memory-efficient dynamic loading, Multi-Token Prediction for up to a 2.2x speedup, and advanced orchestration tools like Thinking Mode and Constrained Decoding. Furthermore, the engine is rapidly expanding its integration surfaces beyond Android, introducing new native Swift APIs for Apple ecosystems and WebGPU-accelerated JavaScript APIs for high-performance, serverless browser inference.",
+      "item_type": "official",
+      "score": 8,
+      "reasons": [
+        "高可信来源",
+        "命中强信号关键词: inference, agent, multimodal, api",
+        "命中弱信号关键词: model, gpu, coding"
+      ]
+    },
+    {
+      "title": "Speeding Up AI: Bringing Google Colossus to PyTorch via GCSFS and Rapid Bucket",
+      "url": "https://developers.googleblog.com/speeding-up-ai-bringing-google-colossus-to-pytorch-via-gcsfs-and-rapid-bucket/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-05-22T18:19:32.100539+00:00",
+      "summary": "Google Cloud has introduced a high-performance integration that connects Rapid Storage directly to PyTorch via the fsspec interface to eliminate AI training bottlenecks. By utilizing Google’s Colossus architecture and bidirectional gRPC streaming, the solution offers up to 15 TiB/s aggregate throughput and significant reductions in latency. These improvements allow developers to speed up total training time by 23% with zero code changes required beyond updating the storage bucket type.",
+      "item_type": "official",
+      "score": 8,
+      "reasons": [
+        "高可信来源",
+        "命中强信号关键词: pytorch, latency, throughput, api",
+        "命中弱信号关键词: rag",
+        "含可比较性能/成本线索"
+      ]
+    }
+  ]
+}
