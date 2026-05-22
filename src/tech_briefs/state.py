@@ -18,7 +18,11 @@ class SeenState:
 
     @property
     def seen_keys(self) -> set[str]:
-        return {item.get("key", "") for item in self.data.get("seen", [])}
+        return {
+            item.get("key", "")
+            for item in self.data.get("seen", [])
+            if item.get("alert_sent") is True
+        }
 
     def has_seen(self, candidate: Candidate) -> bool:
         return candidate.key in self.seen_keys
@@ -46,4 +50,3 @@ class SeenState:
             json.dumps(self.data, ensure_ascii=False, indent=2),
             encoding="utf-8",
         )
-

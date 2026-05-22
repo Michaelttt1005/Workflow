@@ -1,16 +1,21 @@
 from __future__ import annotations
 
+import re
 from collections import defaultdict
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
 from .models import (
     Candidate,
+    audience_note,
     chinese_summary,
     chinese_title,
     comparison_note,
+    feature_note,
     item_type_label,
+    purpose_note,
     readable_source,
+    summary_excerpt,
     topic_label,
 )
 
@@ -32,10 +37,10 @@ def candidate_to_entry(candidate: Candidate) -> dict[str, str]:
     return {
         "title": chinese_title(candidate),
         "what": chinese_summary(candidate),
-        "purpose": "快速判断这条更新是否值得继续阅读、试用、收藏或纳入技术储备。",
-        "features": _feature_note(candidate),
+        "purpose": purpose_note(candidate),
+        "features": feature_note(candidate),
         "comparison": comparison_note(candidate),
-        "who": "适合关注人工智能、数据科学、机器学习平台、开发者基础设施和开源生态的人。",
+        "who": audience_note(candidate),
         "link": candidate.url,
         "score": str(candidate.score),
         "source": readable_source(candidate.source),
@@ -43,14 +48,6 @@ def candidate_to_entry(candidate: Candidate) -> dict[str, str]:
         "topic": topic_label(candidate),
         "published": candidate.published_at.astimezone(CENTRAL).strftime("%m-%d %H:%M"),
     }
-
-
-def _feature_note(candidate: Candidate) -> str:
-    if candidate.item_type == "github_release":
-        return "重点看新功能、破坏性变更、迁移成本、依赖升级、性能变化和已修复问题。"
-    if candidate.item_type == "paper" or "arxiv" in candidate.source.lower():
-        return "重点看问题定义、方法差异、实验设置、公开数据、代码可用性和失败案例。"
-    return "重点看功能入口、适用地区、价格或接口变化、调用限制、发布时间表和官方示例。"
 
 
 def build_daily_report(candidates: list[Candidate]) -> dict:
@@ -85,16 +82,20 @@ def build_weekly_report(candidates: list[Candidate]) -> dict:
 
     entries: list[dict[str, str]] = []
     for theme, items in list(grouped.items())[:5]:
-        titles = "；".join(chinese_title(item) for item in items[:3])
-        links = "\n".join(item.url for item in items[:3])
+        support = [
+            f"{chinese_title(item)}（{readable_source(item.source)}，{item.published_at.astimezone(CENTRAL).strftime('%m-%d')}）：{summary_excerpt(item, 180)}"
+            for item in items[:3]
+        ]
+        links = "\n".join(f"{chinese_title(item)}: {item.url}" for item in items[:3])
+        comparisons = [comparison_note(item) for item in items[:2]]
         entries.append(
             {
                 "title": theme,
-                "what": f"本周该主题下最值得看的更新包括：{titles}",
-                "purpose": "用于判断这一方向是否正在形成新的产品能力、开源生态变化或工程实践变化。",
-                "features": "横向关注能力、性能、成本、生态成熟度、迁移成本和采用门槛。",
-                "comparison": "周报只引用原始来源里的公开指标；没有统一数据时，标注暂无可信公开对比数据。",
-                "who": "适合需要做技术选型、学习路线调整或产品/研究方向判断的人。",
+                "what": "本周该主题下的真实支撑条目：" + "；".join(support),
+                "purpose": f"判断“{theme}”方向是否出现值得调整技术选型、学习重点或产品路线的变化。",
+                "features": "支撑条目来自原始标题、摘要或 release notes：" + "；".join(summary_excerpt(item, 130) for item in items[:2]),
+                "comparison": "；".join(comparisons),
+                "who": audience_note(items[0]),
                 "link": links,
                 "score": str(max(item.score for item in items)),
                 "source": "、".join(sorted({readable_source(item.source) for item in items})[:4]),
@@ -130,7 +131,75 @@ def theme_for(candidate: Candidate) -> str:
 
 
 def telegram_summary(report: dict, max_items: int = 3) -> str:
-    lines = [report["title"], report.get("subtitle", ""), ""]
+    lines = [report["title"], report.get("subtitle", ""), report.get("overview", ""), ""]
     for entry in report.get("entries", [])[:max_items]:
-        lines.append(f"- {entry['title']}")
+        lines.append(f"- {entry['title']} | {entry.get('source', '')} | {entry.get('link', '').splitlines()[0]}")
     return "\n".join(line for line in lines if line is not None).strip()
+
+
+PLACEHOLDER_PHRASES = [
+    "建议先看摘要、方法、实验设置",
+    "快速判断这条更新是否值得继续阅读",
+    "核心信息来自官方发布、代码仓库发布说明、论文摘要或开发者博客",
+    "帮助开发者、数据科学或人工智能工程团队判断是否值得进一步阅读",
+    "适合关注人工智能、数据科学、机器学习平台、开发者基础设施和开源生态的人",
+    "当前来源没有稳定可比的公开指标时",
+    "模型训练与推理能力新论文",
+    "多模态与视频理解新论文",
+    "机器学习研究新论文",
+    "研究与工程进展",
+    "未命名科技更新",
+    "待补充",
+    "示例",
+    "模板",
+    "占位",
+    "TODO",
+    "N/A",
+]
+
+
+def validate_report(report: dict, mode: str) -> list[str]:
+    errors: list[str] = []
+    entries = report.get("entries") or []
+    min_entries = {"daily": 5, "weekly": 3, "alert": 1}[mode]
+    if len(entries) < min_entries:
+        errors.append(f"{mode} report has only {len(entries)} entries; expected at least {min_entries}.")
+
+    checked_sources = report.get("checked_sources") or []
+    if not checked_sources:
+        errors.append("checked_sources is empty.")
+
+    text = _report_text(report)
+    for phrase in PLACEHOLDER_PHRASES:
+        if phrase in text:
+            errors.append(f"placeholder phrase found: {phrase}")
+
+    if mode == "daily" and len(text) < 1800:
+        errors.append("daily report text is too short to be substantive.")
+    if mode == "weekly" and len(text) < 3000:
+        errors.append("weekly report text is too short to be substantive.")
+    if mode == "alert" and len(text) < 800:
+        errors.append("alert report text is too short to be substantive.")
+
+    for index, entry in enumerate(entries, start=1):
+        for field in ("title", "what", "purpose", "features", "comparison", "who", "link", "source", "published"):
+            value = str(entry.get(field, "")).strip()
+            if not value:
+                errors.append(f"entry {index} missing {field}.")
+        link = str(entry.get("link", "")).strip()
+        urls = re.findall(r"https?://\S+", link)
+        if not urls or not all(url.startswith(("http://", "https://")) for url in urls):
+            errors.append(f"entry {index} has no valid URL.")
+        title = str(entry.get("title", "")).strip()
+        if len(title) < 8 or title.endswith("新论文"):
+            errors.append(f"entry {index} has generic title: {title}")
+
+    return errors
+
+
+def _report_text(value) -> str:
+    if isinstance(value, dict):
+        return "\n".join(_report_text(item) for item in value.values())
+    if isinstance(value, list):
+        return "\n".join(_report_text(item) for item in value)
+    return str(value)

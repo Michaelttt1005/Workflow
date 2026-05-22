@@ -12,6 +12,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from tech_briefs.config import ensure_dirs, load_config
 from tech_briefs.fetchers import fetch_all
+from tech_briefs.models import is_major_alert_candidate
 from tech_briefs.pdf import build_pdf
 from tech_briefs.reporting import (
     build_alert_report,
@@ -20,6 +21,7 @@ from tech_briefs.reporting import (
     mmdd,
     mmdd_hhmm,
     telegram_summary,
+    validate_report,
 )
 from tech_briefs.scoring import score_candidates
 from tech_briefs.state import SeenState
@@ -52,6 +54,27 @@ def write_json(path: Path, report: dict, candidates: list) -> None:
     path.with_suffix(".json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def usable_candidates(candidates: list) -> list:
+    return [
+        item
+        for item in candidates
+        if item.title.strip()
+        and item.url.strip().startswith(("http://", "https://"))
+        and item.source.strip()
+    ]
+
+
+def notify_validation_failure(mode: str, errors: list[str], send: bool) -> None:
+    message = f"{mode} 科技快报生成失败：内容校验未通过。\n" + "\n".join(f"- {error}" for error in errors[:8])
+    print(message)
+    if not send:
+        return
+    token = os.getenv("TELEGRAM_BOT_TOKEN")
+    chat_id = os.getenv("TELEGRAM_CHAT_ID")
+    if token and chat_id:
+        send_message(token, chat_id, message)
+
+
 def main() -> int:
     args = parse_args()
     ensure_dirs(ROOT)
@@ -59,33 +82,36 @@ def main() -> int:
     days = args.days or {"daily": 3, "weekly": 7, "alert": 2}[args.mode]
 
     candidates = fetch_all(config, days=days, github_token=os.getenv("GITHUB_TOKEN"))
-    candidates = score_candidates(candidates, config)
+    candidates = usable_candidates(score_candidates(candidates, config))
     state = SeenState(ROOT / "data" / "state" / "seen-alerts.json")
 
     if args.mode == "alert":
-        new_alerts = [item for item in candidates if item.score >= args.min_alert_score and not state.has_seen(item)]
+        new_alerts = [
+            item
+            for item in candidates
+            if is_major_alert_candidate(item, args.min_alert_score) and not state.has_seen(item)
+        ]
         if not new_alerts:
-            for item in candidates[:20]:
-                state.remember(item, alert_sent=False)
-            state.save()
             print("No new major tech updates. Telegram push skipped.")
             return 0
         selected = new_alerts[:3]
         report = build_alert_report(selected)
-        for item in selected:
-            state.remember(item, alert_sent=True)
     elif args.mode == "weekly":
         selected = candidates[:20]
         report = build_weekly_report(selected)
-        for item in selected:
-            state.remember(item, alert_sent=False)
     else:
         selected = candidates[:8]
         report = build_daily_report(selected)
-        for item in selected:
-            state.remember(item, alert_sent=False)
 
-    state.save()
+    validation_errors = validate_report(report, args.mode)
+    if validation_errors:
+        notify_validation_failure(args.mode, validation_errors, args.send)
+        raise RuntimeError("Content validation failed; PDF was not generated or sent.")
+
+    if args.mode == "alert" and args.send:
+        for item in selected:
+            state.remember(item, alert_sent=True)
+        state.save()
     pdf_path = output_path(args.mode)
     build_pdf(report, pdf_path)
     write_json(pdf_path, report, selected)

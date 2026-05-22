@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import re
+from html import unescape
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from typing import Iterable
@@ -30,7 +32,9 @@ def _parse_date(value: str | None) -> datetime:
 
 
 def _clean(value: str | None, limit: int = 900) -> str:
-    text = " ".join((value or "").replace("\n", " ").split())
+    text = unescape(value or "")
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = " ".join(text.replace("\n", " ").split())
     return text[:limit]
 
 
@@ -144,4 +148,3 @@ def dedupe(items: Iterable[Candidate]) -> list[Candidate]:
         seen.add(item.key)
         result.append(item)
     return result
-
