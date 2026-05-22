@@ -1,58 +1,69 @@
 {
-  "generated_at": "2026-05-22T20:49:39.934576Z",
+  "generated_at": "2026-05-22T21:14:45.868525Z",
   "report": {
     "title": "每周科技深度周报",
     "subtitle": "05-22 | 过去 7 天 | 主题式横向对比",
-    "overview": "本周报聚合过去 7 天高分候选，按主题归并，而不是简单罗列新闻。",
+    "overview": "本周报聚合过去 7 天高分候选，按主题归并，保留英文产品名、项目名和论文名，并用中文说明作用、功能与对比风险。",
     "checked_sources": [
-      "Google 开发者博客",
-      "代码仓库发布",
-      "论文预印本"
+      "Google Developers Blog",
+      "arXiv 论文预印本"
     ],
     "entries": [
       {
         "title": "重要论文与研究进展",
-        "what": "本周该主题下最值得看的更新包括：多模态与视频理解新论文；机器学习研究新论文；模型训练与推理能力新论文",
+        "what": "本周该主题下最值得看的更新包括：Cambrian-P: Pose-Grounded Video Understanding；Integrable Elasticity via Neural Demand Potentials；Reducing Political Manipulation with Consistency Training",
         "purpose": "用于判断这一方向是否正在形成新的产品能力、开源生态变化或工程实践变化。",
-        "features": "横向关注能力、性能、成本、生态成熟度和采用门槛。",
-        "comparison": "本周报只引用原始来源中的公开指标；缺少统一数据时标注暂无可信公开对比数据。",
+        "features": "横向关注能力、性能、成本、生态成熟度、迁移成本和采用门槛。",
+        "comparison": "周报只引用原始来源里的公开指标；没有统一数据时，标注暂无可信公开对比数据。",
         "who": "适合需要做技术选型、学习路线调整或产品/研究方向判断的人。",
         "link": "https://arxiv.org/abs/2605.22819v1\nhttps://arxiv.org/abs/2605.22820v1\nhttps://arxiv.org/abs/2605.22771v1",
         "score": "9",
-        "source": "论文预印本"
+        "source": "arXiv 论文预印本",
+        "type": "主题汇总",
+        "topic": "重要论文与研究进展",
+        "published": "过去 7 天，4 条候选"
       },
       {
         "title": "推理性能与基础设施",
-        "what": "本周该主题下最值得看的更新包括：智能体基础设施新论文；检索增强与向量模型新论文；Google 开发者生态更新",
+        "what": "本周该主题下最值得看的更新包括：DeltaBox: Scaling Stateful AI Agents with Millisecond-Level Sandbox Checkpoint/Rollback；WorldKV: Efficient World Memory with World Retrieval and Compression；Blazing fast on-device GenAI with LiteRT-LM",
         "purpose": "用于判断这一方向是否正在形成新的产品能力、开源生态变化或工程实践变化。",
-        "features": "横向关注能力、性能、成本、生态成熟度和采用门槛。",
-        "comparison": "本周报只引用原始来源中的公开指标；缺少统一数据时标注暂无可信公开对比数据。",
+        "features": "横向关注能力、性能、成本、生态成熟度、迁移成本和采用门槛。",
+        "comparison": "周报只引用原始来源里的公开指标；没有统一数据时，标注暂无可信公开对比数据。",
         "who": "适合需要做技术选型、学习路线调整或产品/研究方向判断的人。",
-        "link": "https://arxiv.org/abs/2605.22781v1\nhttps://arxiv.org/abs/2605.22718v1\nhttps://developers.googleblog.com/a2ui-v0-9-generative-ui/",
+        "link": "https://arxiv.org/abs/2605.22781v1\nhttps://arxiv.org/abs/2605.22718v1\nhttps://developers.googleblog.com/blazing-fast-on-device-genai-with-litert-lm/",
         "score": "9",
-        "source": "Google 开发者博客、论文预印本"
+        "source": "Google Developers Blog、arXiv 论文预印本",
+        "type": "主题汇总",
+        "topic": "推理性能与基础设施",
+        "published": "过去 7 天，8 条候选"
       },
       {
         "title": "智能体与开发者平台",
-        "what": "本周该主题下最值得看的更新包括：智能体基础设施新论文；机器学习实验管理工具发布新版本；机器学习研究新论文",
+        "what": "本周该主题下最值得看的更新包括：Agentic CLEAR: Automating Multi-Level Evaluation of LLM Agents；Advancing Mathematics Research with AI-Driven Formal Proof Search；ChronoMedKG: A Temporally-Grounded Biomedical Knowledge Graph and Benchmark for Clinical Reasoning",
         "purpose": "用于判断这一方向是否正在形成新的产品能力、开源生态变化或工程实践变化。",
-        "features": "横向关注能力、性能、成本、生态成熟度和采用门槛。",
-        "comparison": "本周报只引用原始来源中的公开指标；缺少统一数据时标注暂无可信公开对比数据。",
+        "features": "横向关注能力、性能、成本、生态成熟度、迁移成本和采用门槛。",
+        "comparison": "周报只引用原始来源里的公开指标；没有统一数据时，标注暂无可信公开对比数据。",
         "who": "适合需要做技术选型、学习路线调整或产品/研究方向判断的人。",
-        "link": "https://arxiv.org/abs/2605.22608v1\nhttps://github.com/mlflow/mlflow/releases/tag/v3.13.0rc0\nhttps://arxiv.org/abs/2605.22763v1",
+        "link": "https://arxiv.org/abs/2605.22608v1\nhttps://arxiv.org/abs/2605.22763v1\nhttps://arxiv.org/abs/2605.22734v1",
         "score": "9",
-        "source": "代码仓库发布、论文预印本"
+        "source": "arXiv 论文预印本",
+        "type": "主题汇总",
+        "topic": "智能体与开发者平台",
+        "published": "过去 7 天，6 条候选"
       },
       {
         "title": "检索增强与向量模型",
-        "what": "本周该主题下最值得看的更新包括：机器学习研究新论文；机器学习研究新论文",
+        "what": "本周该主题下最值得看的更新包括：Guiding Multi-Objective Genetic Programming with Description Length Improves Symbolic Regression Solutions；Self-Policy Distillation via Capability-Selective Subspace Projection",
         "purpose": "用于判断这一方向是否正在形成新的产品能力、开源生态变化或工程实践变化。",
-        "features": "横向关注能力、性能、成本、生态成熟度和采用门槛。",
-        "comparison": "本周报只引用原始来源中的公开指标；缺少统一数据时标注暂无可信公开对比数据。",
+        "features": "横向关注能力、性能、成本、生态成熟度、迁移成本和采用门槛。",
+        "comparison": "周报只引用原始来源里的公开指标；没有统一数据时，标注暂无可信公开对比数据。",
         "who": "适合需要做技术选型、学习路线调整或产品/研究方向判断的人。",
         "link": "https://arxiv.org/abs/2605.22374v1\nhttps://arxiv.org/abs/2605.22675v1",
         "score": "9",
-        "source": "论文预印本"
+        "source": "arXiv 论文预印本",
+        "type": "主题汇总",
+        "topic": "检索增强与向量模型",
+        "published": "过去 7 天，2 条候选"
       }
     ],
     "footer": "备注：周报优先复用同一套低成本抓取和评分逻辑。"

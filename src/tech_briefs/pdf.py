@@ -11,7 +11,7 @@ from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
+from reportlab.platypus import KeepTogether, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 
 
 FONT_CANDIDATES = [
@@ -25,6 +25,13 @@ FONT_CANDIDATES = [
     Path("/usr/share/fonts/truetype/wqy/wqy-microhei.ttc"),
     Path("/System/Library/Fonts/PingFang.ttc"),
 ]
+
+INK = colors.HexColor("#172033")
+MUTED = colors.HexColor("#64748b")
+BLUE = colors.HexColor("#2563eb")
+LIGHT_BLUE = colors.HexColor("#eff6ff")
+PAPER = colors.HexColor("#f8fafc")
+BORDER = colors.HexColor("#dbe3ef")
 
 
 def find_font() -> Path | None:
@@ -51,76 +58,28 @@ def _escape(value: object) -> str:
 
 def _build_reportlab_pdf(report: dict, output_path: Path, font_path: Path) -> None:
     pdfmetrics.registerFont(TTFont("BriefCJK", str(font_path)))
-    styles = getSampleStyleSheet()
-    base = ParagraphStyle(
-        "BriefBase",
-        parent=styles["Normal"],
-        fontName="BriefCJK",
-        fontSize=9.5,
-        leading=14,
-        wordWrap="CJK",
-        spaceAfter=4,
-    )
-    title = ParagraphStyle("BriefTitle", parent=base, fontSize=18, leading=24, spaceAfter=8)
-    subtitle = ParagraphStyle(
-        "BriefSubtitle",
-        parent=base,
-        fontSize=9,
-        leading=13,
-        textColor=colors.HexColor("#4b5563"),
-        spaceAfter=12,
-    )
-    section = ParagraphStyle("BriefSection", parent=base, fontSize=12, leading=16, spaceBefore=8)
-    item_title = ParagraphStyle("BriefItemTitle", parent=base, fontSize=11, leading=15, spaceBefore=9)
-    small = ParagraphStyle(
-        "BriefSmall",
-        parent=base,
-        fontSize=8.5,
-        leading=12,
-        textColor=colors.HexColor("#475569"),
-    )
+    styles = _styles()
+    page_width = A4[0] - 32 * mm
 
-    story = [
-        Paragraph(_escape(report.get("title", "科技快报")), title),
-        Paragraph(_escape(report.get("subtitle", "")), subtitle),
-        Paragraph("本期导读", section),
-        Paragraph(_escape(report.get("overview", "")), base),
+    story: list = [
+        _header_block(report, page_width, styles),
+        Spacer(1, 5 * mm),
+        _info_block("本期导读", report.get("overview", ""), styles, page_width),
     ]
 
     sources = report.get("checked_sources") or []
     if sources:
-        story.append(Paragraph("已检查来源类别", section))
-        story.append(Paragraph(_escape("、".join(sources)), small))
-
-    for index, entry in enumerate(report.get("entries", []), 1):
-        story.append(Paragraph(f"{index}. {_escape(entry.get('title', '未命名更新'))}", item_title))
-        for label, key in [
-            ("是什么", "what"),
-            ("主要作用", "purpose"),
-            ("核心功能", "features"),
-            ("对比", "comparison"),
-            ("适合谁", "who"),
-        ]:
-            value = entry.get(key)
-            if value:
-                story.append(Paragraph(f"<b>{label}:</b> {_escape(value)}", base))
-        link = entry.get("link")
-        if link:
-            story.append(Paragraph("<b>直达链接:</b>", base))
-            urls = _split_links(link)
-            for number, url in enumerate(urls, 1):
-                label = "打开原文" if len(urls) == 1 else f"打开原文 {number}"
-                story.append(
-                    Paragraph(
-                        f'<link href="{_escape(url)}" color="blue"><u>{_escape(label)}</u></link>',
-                        base,
-                    )
-                )
         story.append(Spacer(1, 3 * mm))
+        story.append(_source_block(sources, styles, page_width))
+
+    story.append(Spacer(1, 4 * mm))
+    for index, entry in enumerate(report.get("entries", []), 1):
+        story.append(KeepTogether([_entry_card(index, entry, styles, page_width)]))
+        story.append(Spacer(1, 4 * mm))
 
     if report.get("footer"):
-        story.append(Spacer(1, 4 * mm))
-        story.append(Paragraph(_escape(report["footer"]), small))
+        story.append(Spacer(1, 3 * mm))
+        story.append(Paragraph(_escape(report["footer"]), styles["small"]))
 
     doc = SimpleDocTemplate(
         str(output_path),
@@ -133,10 +92,167 @@ def _build_reportlab_pdf(report: dict, output_path: Path, font_path: Path) -> No
     doc.build(story, onFirstPage=_page_number, onLaterPages=_page_number)
 
 
+def _styles() -> dict[str, ParagraphStyle]:
+    sample = getSampleStyleSheet()
+    base = ParagraphStyle(
+        "BriefBase",
+        parent=sample["Normal"],
+        fontName="BriefCJK",
+        fontSize=9.4,
+        leading=13.6,
+        textColor=INK,
+        wordWrap="CJK",
+        splitLongWords=1,
+        spaceAfter=3,
+    )
+    return {
+        "base": base,
+        "title": ParagraphStyle("BriefTitle", parent=base, fontSize=21, leading=27, textColor=colors.white),
+        "subtitle": ParagraphStyle("BriefSubtitle", parent=base, fontSize=9, leading=13, textColor=colors.HexColor("#dbeafe")),
+        "section": ParagraphStyle("BriefSection", parent=base, fontSize=11.5, leading=15, textColor=INK),
+        "item_title": ParagraphStyle("BriefItemTitle", parent=base, fontSize=12.6, leading=16.5, textColor=INK),
+        "meta": ParagraphStyle("BriefMeta", parent=base, fontSize=7.8, leading=10.5, textColor=MUTED),
+        "label": ParagraphStyle("BriefLabel", parent=base, fontSize=8.4, leading=11.5, textColor=BLUE),
+        "small": ParagraphStyle("BriefSmall", parent=base, fontSize=8.2, leading=11.5, textColor=MUTED),
+        "link": ParagraphStyle("BriefLink", parent=base, fontSize=7.8, leading=10.8, textColor=BLUE, splitLongWords=1),
+    }
+
+
+def _header_block(report: dict, width: float, styles: dict[str, ParagraphStyle]) -> Table:
+    content = [
+        Paragraph(_escape(report.get("title", "科技快报")), styles["title"]),
+        Paragraph(_escape(report.get("subtitle", "")), styles["subtitle"]),
+    ]
+    table = Table([[content]], colWidths=[width])
+    table.setStyle(
+        TableStyle(
+            [
+                ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#1d4ed8")),
+                ("BOX", (0, 0), (-1, -1), 0.25, colors.HexColor("#1e40af")),
+                ("LEFTPADDING", (0, 0), (-1, -1), 12),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 12),
+                ("TOPPADDING", (0, 0), (-1, -1), 11),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 11),
+            ]
+        )
+    )
+    return table
+
+
+def _info_block(title: str, body: str, styles: dict[str, ParagraphStyle], width: float) -> Table:
+    table = Table(
+        [
+            [Paragraph(f"<b>{_escape(title)}</b>", styles["section"])],
+            [Paragraph(_escape(body), styles["base"])],
+        ],
+        colWidths=[width],
+    )
+    table.setStyle(_soft_table_style())
+    return table
+
+
+def _source_block(sources: list[str], styles: dict[str, ParagraphStyle], width: float) -> Table:
+    text = "、".join(sources)
+    return _info_block("已检查来源", text, styles, width)
+
+
+def _entry_card(index: int, entry: dict, styles: dict[str, ParagraphStyle], width: float) -> Table:
+    rows: list[list] = []
+    title = f"{index}. {entry.get('title', '未命名更新')}"
+    meta = " | ".join(
+        part
+        for part in [
+            f"来源: {entry.get('source', '未知')}",
+            f"类型: {entry.get('type', '更新')}",
+            f"主题: {entry.get('topic', '科技')}",
+            f"时间: {entry.get('published', '')}",
+            f"分数: {entry.get('score', '')}",
+        ]
+        if not part.endswith(": ")
+    )
+    rows.append([Paragraph(f"<b>{_escape(title)}</b>", styles["item_title"])])
+    rows.append([Paragraph(_escape(meta), styles["meta"])])
+
+    for label, key in [
+        ("是什么", "what"),
+        ("主要作用", "purpose"),
+        ("核心功能", "features"),
+        ("对比判断", "comparison"),
+        ("适合谁", "who"),
+    ]:
+        value = entry.get(key)
+        if value:
+            rows.append([_label_value(label, value, styles)])
+
+    urls = _split_links(entry.get("link", ""))
+    if urls:
+        link_lines = []
+        for number, url in enumerate(urls, 1):
+            prefix = "直达链接" if len(urls) == 1 else f"直达链接 {number}"
+            visible = _visible_url(url)
+            link_lines.append(
+                Paragraph(
+                    f'<b>{_escape(prefix)}:</b> <link href="{_escape(url)}" color="blue"><u>{_escape(visible)}</u></link>',
+                    styles["link"],
+                )
+            )
+        rows.append([link_lines])
+
+    table = Table(rows, colWidths=[width], splitByRow=1)
+    table.setStyle(
+        TableStyle(
+            [
+                ("BACKGROUND", (0, 0), (-1, -1), PAPER),
+                ("BOX", (0, 0), (-1, -1), 0.35, BORDER),
+                ("LINEBEFORE", (0, 0), (0, -1), 3.0, BLUE),
+                ("LEFTPADDING", (0, 0), (-1, -1), 9),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 9),
+                ("TOPPADDING", (0, 0), (-1, -1), 5.5),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 5.5),
+                ("VALIGN", (0, 0), (-1, -1), "TOP"),
+            ]
+        )
+    )
+    return table
+
+
+def _label_value(label: str, value: str, styles: dict[str, ParagraphStyle]) -> Table:
+    table = Table(
+        [[Paragraph(f"<b>{_escape(label)}</b>", styles["label"]), Paragraph(_escape(value), styles["base"])]],
+        colWidths=[22 * mm, None],
+    )
+    table.setStyle(
+        TableStyle(
+            [
+                ("VALIGN", (0, 0), (-1, -1), "TOP"),
+                ("LEFTPADDING", (0, 0), (-1, -1), 0),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 3),
+                ("TOPPADDING", (0, 0), (-1, -1), 0),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
+            ]
+        )
+    )
+    return table
+
+
+def _soft_table_style() -> TableStyle:
+    return TableStyle(
+        [
+            ("BACKGROUND", (0, 0), (-1, -1), LIGHT_BLUE),
+            ("BOX", (0, 0), (-1, -1), 0.3, colors.HexColor("#bfdbfe")),
+            ("LEFTPADDING", (0, 0), (-1, -1), 9),
+            ("RIGHTPADDING", (0, 0), (-1, -1), 9),
+            ("TOPPADDING", (0, 0), (-1, -1), 6),
+            ("BOTTOMPADDING", (0, 0), (-1, -1), 6),
+            ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ]
+    )
+
+
 def _page_number(canvas, doc) -> None:
     canvas.saveState()
     canvas.setFont("BriefCJK", 8)
-    canvas.setFillColor(colors.HexColor("#64748b"))
+    canvas.setFillColor(MUTED)
     canvas.drawRightString(A4[0] - 16 * mm, 10 * mm, f"第 {doc.page} 页")
     canvas.restoreState()
 
@@ -169,21 +285,25 @@ def has_embedded_font(path: Path) -> bool:
     return False
 
 
-def _split_links(value: str) -> list[str]:
-    return [part.strip() for part in str(value).replace("\r", "\n").split("\n") if part.strip()]
+def _split_links(value: object) -> list[str]:
+    return [part.strip() for part in str(value or "").replace("\r", "\n").split("\n") if part.strip()]
+
+
+def _visible_url(url: str) -> str:
+    return url
 
 
 def _flatten_report(report: dict) -> list[str]:
     lines = [report.get("title", "科技快报"), report.get("subtitle", ""), "", "本期导读", report.get("overview", "")]
     if report.get("checked_sources"):
-        lines += ["", "已检查来源类别", "、".join(report["checked_sources"])]
+        lines += ["", "已检查来源", "、".join(report["checked_sources"])]
     for index, entry in enumerate(report.get("entries", []), 1):
         lines += ["", f"{index}. {entry.get('title', '未命名更新')}"]
         for label, key in [
             ("是什么", "what"),
             ("主要作用", "purpose"),
             ("核心功能", "features"),
-            ("对比", "comparison"),
+            ("对比判断", "comparison"),
             ("适合谁", "who"),
             ("直达链接", "link"),
         ]:
