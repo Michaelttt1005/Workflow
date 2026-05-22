@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T22:18:49.340435Z",
+  "generated_at": "2026-05-22T22:23:41.026662Z",
   "report": {
     "title": "每日科技快报",
     "subtitle": "05-22 | 轻量版 | 官方发布、GitHub Release、论文与开发者生态优先",
@@ -83,32 +83,32 @@
         "published": "05-21 07:07"
       },
       {
-        "title": "Google Tensor SDK Beta with LiteRT",
-        "what": "Google Developers Blog 在 2026-05-22 发布《Google Tensor SDK Beta with LiteRT》。原文摘要：The Google Tensor ML SDK is graduating to its Beta phase, allowing developers to build and deploy high-performance machine learning models directly onto the TPU of Google Pixel 10 devices. By integrating with LiteRT, Google's edge deployment framework, the SDK provides a unified workflow for developers to convert, compile, and run PyTorch or TFLite models with robust fallback options. Additionally, a new model garde…",
+        "title": "A2UI v0.9: The New Standard for Portable, Framework-Agnostic Generative UI",
+        "what": "Google Developers Blog 在 2026-05-22 发布《A2UI v0.9: The New Standard for Portable, Framework-Agnostic Generative UI》。原文摘要：A2UI v0.9 introduces a framework-agnostic standard designed to help AI agents generate real-time, tailored UI widgets using a company’s existing design system. This update simplifies the developer experience with a new Agent SDK for Python, a shared web-core library, and official support for renderers like React, Flutter, and Angular. By decoupling UI intent from specific platforms, the release enables seamless, low…",
         "purpose": "判断这条来自 Google Developers Blog 的发布是否带来新的产品能力、接口变化或工程实践。",
-        "features": "原始摘要/发布说明中的具体线索：The Google Tensor ML SDK is graduating to its Beta phase, allowing developers to build and deploy high-performance machine learning models directly onto the TPU of Google Pixel 10 devices. / By integrating with LiteRT, Google's edge deployment framework, the SDK provides a unified workflow for developers to convert, compile, and run PyTorch or TFLite models with robust fallback options.",
-        "comparison": "原文出现 latency 相关线索：Additionally, a new model garden offers over 100 classic and generative AI models, including Gemma 3, enabling low-latency, private features like speech recognition, computer vision, and text generation.",
+        "features": "原始摘要/发布说明中的具体线索：A2UI v0.9 introduces a framework-agnostic standard designed to help AI agents generate real-time, tailored UI widgets using a company’s existing design system. / This update simplifies the developer experience with a new Agent SDK for Python, a shared web-core library, and official support for renderers like React, Flutter, and Angular.",
+        "comparison": "原文出现 latency 相关线索：By decoupling UI intent from specific platforms, the release enables seamless, low-latency streaming of generative interfaces across web and mobile applications.",
         "who": "适合构建智能体、工具调用、开发者平台和自动化工作流的团队。",
-        "link": "https://developers.googleblog.com/google-tensor-sdk-beta-with-litert/",
+        "link": "https://developers.googleblog.com/a2ui-v0-9-generative-ui/",
         "score": "8",
         "source": "Google Developers Blog",
         "type": "产品/技术更新",
         "topic": "智能体与开发者平台",
-        "published": "05-22 17:18"
+        "published": "05-22 17:23"
       },
       {
-        "title": "Blazing fast on-device GenAI with LiteRT-LM",
-        "what": "Google Developers Blog 在 2026-05-22 发布《Blazing fast on-device GenAI with LiteRT-LM》。原文摘要：Google AI Edge’s LiteRT-LM provides a production-proven, highly optimized infrastructure for running Gemma 4 across cross-platform mobile and edge environments. It actively unlocks the model's native multimodal and agentic features on-device by utilizing memory-efficient dynamic loading, Multi-Token Prediction for up to a 2.2x speedup, and advanced orchestration tools like Thinking Mode and Constrained Decoding. Fur…",
+        "title": "Building real-world on-device AI with LiteRT and NPU",
+        "what": "Google Developers Blog 在 2026-05-22 发布《Building real-world on-device AI with LiteRT and NPU》。原文摘要：LiteRT is a production-ready framework designed to help mobile developers unlock the power of Neural Processing Units (NPUs), overcoming the performance and battery limitations of traditional CPU or GPU processing. By providing a unified API that abstracts away hardware complexities, it allows industry leaders like Google Meet and Epic Games to deploy sophisticated AI models for real-time video, animation, and speec…",
         "purpose": "判断这条来自 Google Developers Blog 的发布是否带来新的产品能力、接口变化或工程实践。",
-        "features": "原始摘要/发布说明中的具体线索：Google AI Edge’s LiteRT-LM provides a production-proven, highly optimized infrastructure for running Gemma 4 across cross-platform mobile and edge environments. / It actively unlocks the model's native multimodal and agentic features on-device by utilizing memory-efficient dynamic loading, Multi-Token Prediction for up to a 2.2x speedup, and advanced orchestration tools like Thinking Mode and Constrained Decoding.",
-        "comparison": "原文出现 speed 相关线索：It actively unlocks the model's native multimodal and agentic features on-device by utilizing memory-efficient dynamic loading, Multi-Token Prediction for up to a 2.2x speedup, and advanced orchestration tools like Thinking Mode and Constrained Decoding.",
+        "features": "原始摘要/发布说明中的具体线索：LiteRT is a production-ready framework designed to help mobile developers unlock the power of Neural Processing Units (NPUs), overcoming the performance and battery limitations of traditional CPU or GPU processing. / By providing a unified API that abstracts away hardware complexities, it allows industry leaders like Google Meet and Epic Games to deploy sophisticated AI models for real-time video, animation, and speech recognition with significantly higher efficiency.",
+        "comparison": "原文出现 benchmark 相关线索：The platform further supports developers through benchmarking tools and cross-platform compatibility, enabling seamless AI deployment across mobile devices, AI PCs, and industrial IoT hardware.",
         "who": "适合构建智能体、工具调用、开发者平台和自动化工作流的团队。",
-        "link": "https://developers.googleblog.com/blazing-fast-on-device-genai-with-litert-lm/",
+        "link": "https://developers.googleblog.com/building-real-world-on-device-ai-with-litert-and-npu/",
         "score": "8",
         "source": "Google Developers Blog",
         "type": "产品/技术更新",
         "topic": "智能体与开发者平台",
-        "published": "05-22 17:18"
+        "published": "05-22 17:23"
       },
       {
         "title": "Speeding Up AI: Bringing Google Colossus to PyTorch via GCSFS and Rapid Bucket",
@@ -122,7 +122,7 @@
         "source": "Google Developers Blog",
         "type": "产品/技术更新",
         "topic": "智能体与开发者平台",
-        "published": "05-22 17:18"
+        "published": "05-22 17:23"
       }
     ],
     "footer": "备注：本文件由云端自动化生成，并通过机器人消息推送。"
