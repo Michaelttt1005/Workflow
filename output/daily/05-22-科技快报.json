@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T22:23:41.026662Z",
+  "generated_at": "2026-05-22T22:30:48.170590Z",
   "report": {
     "title": "每日科技快报",
     "subtitle": "05-22 | 轻量版 | 官方发布、GitHub Release、论文与开发者生态优先",
@@ -94,7 +94,7 @@
         "source": "Google Developers Blog",
         "type": "产品/技术更新",
         "topic": "智能体与开发者平台",
-        "published": "05-22 17:23"
+        "published": "05-22 17:30"
       },
       {
         "title": "Building real-world on-device AI with LiteRT and NPU",
@@ -108,7 +108,7 @@
         "source": "Google Developers Blog",
         "type": "产品/技术更新",
         "topic": "智能体与开发者平台",
-        "published": "05-22 17:23"
+        "published": "05-22 17:30"
       },
       {
         "title": "Speeding Up AI: Bringing Google Colossus to PyTorch via GCSFS and Rapid Bucket",
@@ -122,7 +122,7 @@
         "source": "Google Developers Blog",
         "type": "产品/技术更新",
         "topic": "智能体与开发者平台",
-        "published": "05-22 17:23"
+        "published": "05-22 17:30"
       }
     ],
     "footer": "备注：本文件由云端自动化生成，并通过机器人消息推送。"
