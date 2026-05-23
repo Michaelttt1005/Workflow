@@ -2,7 +2,7 @@ name: Daily Tech Brief
 
 on:
   schedule:
-    - cron: "0,15,30,45 14,15 * * *"
+    - cron: "7,22,37,52 14,15 * * *"
   workflow_dispatch:
 
 permissions:
