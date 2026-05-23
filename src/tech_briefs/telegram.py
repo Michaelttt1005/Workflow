@@ -5,6 +5,16 @@ from pathlib import Path
 import requests
 
 
+def get_bot_identity(token: str) -> dict:
+    url = f"https://api.telegram.org/bot{token}/getMe"
+    response = requests.get(url, timeout=30)
+    response.raise_for_status()
+    payload = response.json()
+    if not payload.get("ok"):
+        raise RuntimeError(f"Telegram getMe failed: {payload}")
+    return payload
+
+
 def send_message(token: str, chat_id: str, text: str) -> dict:
     url = f"https://api.telegram.org/bot{token}/sendMessage"
     response = requests.post(url, data={"chat_id": chat_id, "text": text}, timeout=30)

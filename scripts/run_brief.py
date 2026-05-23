@@ -24,7 +24,7 @@ from tech_briefs.reporting import (
 )
 from tech_briefs.scoring import score_candidates
 from tech_briefs.state import SeenState
-from tech_briefs.telegram import send_document, send_message
+from tech_briefs.telegram import get_bot_identity, send_document, send_message
 
 
 def parse_args() -> argparse.Namespace:
@@ -118,6 +118,15 @@ def telegram_delivery_line(label: str, payload: dict) -> str:
     return f"Telegram {label} accepted: chat_type={chat_type} chat_id_tail={chat_tail} message_id={message_id}"
 
 
+def telegram_bot_line(payload: dict) -> str:
+    result = payload.get("result") or {}
+    username = result.get("username") or "unknown"
+    bot_id = str(result.get("id", ""))
+    bot_tail = bot_id[-4:] if bot_id else "unknown"
+    first_name = result.get("first_name") or "unknown"
+    return f"Telegram bot identity: @{username} first_name={first_name} bot_id_tail={bot_tail}"
+
+
 def usable_candidates(candidates: list) -> list:
     return [
         item
@@ -201,6 +210,7 @@ def main() -> int:
         chat_id = os.getenv("TELEGRAM_CHAT_ID")
         if not token or not chat_id:
             raise RuntimeError("TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID are required when --send is used.")
+        print(telegram_bot_line(get_bot_identity(token)))
         message_result = send_message(token, chat_id, telegram_summary(report))
         print(telegram_delivery_line("message", message_result))
         caption = {
