@@ -103,8 +103,8 @@ python scripts\run_brief.py --mode daily
 
 当前 schedule 已恢复：
 
-- Daily：每天 14:00 UTC
-- Weekly：每周六 14:00 UTC
+- Daily：每天 America/Chicago 09:00
+- Weekly：每周六 America/Chicago 09:00
 - Major alert：每 2 小时
 
 这些都在 GitHub 云端运行；电脑息屏、关机都不影响。
