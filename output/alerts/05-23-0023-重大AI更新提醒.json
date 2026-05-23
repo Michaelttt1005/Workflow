@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-05-23T05:23:13.458593Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "05-23 | Google 发布 A2UI v0.9、LiteRT 系列更新，llama.cpp 优化 MoE 预填充",
+    "overview": "本期聚焦 Google 在生成式 UI、端侧推理和训练加速方面的多项发布，以及 llama.cpp 在 MoE 模型推理性能上的重要改进。这些更新将直接影响 AI 应用开发、移动端部署和模型训练效率。",
+    "checked_sources": [
+      "Google Developers Blog",
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "A2UI v0.9: The New Standard for Portable, Framework-Agnostic Generative UI",
+        "what": "A2UI v0.9 是 Google 推出的框架无关生成式 UI 标准，旨在让 AI 代理能够利用现有设计系统实时生成定制 UI 组件。它提供了新的 Python Agent SDK、共享 web-core 库，并官方支持 React、Flutter 和 Angular 等渲染器。",
+        "purpose": "解决生成式 UI 从实验性演示到生产级应用的关键问题：通过解耦 UI 意图与具体平台，实现跨 Web 和移动应用的低延迟流式生成界面，同时保持与现有设计系统的一致性。",
+        "features": "1. 框架无关：UI 意图与 React/Flutter/Angular 等渲染器解耦，一次编写多端运行。\n2. 实时流式生成：支持低延迟的流式 UI 渲染，适合动态交互场景。\n3. 集成 AG2 和 Vercel 等生态，便于快速集成到现有工作流。\n4. 提供 Python Agent SDK 和共享 web-core 库，降低开发门槛。",
+        "comparison": "暂无可信公开对比数据。",
+        "who": "适合构建 AI 代理驱动的动态 UI 的开发者、前端工程师、全栈工程师，以及希望将生成式 UI 集成到生产环境的团队。",
+        "link": "https://developers.googleblog.com/a2ui-v0-9-generative-ui/",
+        "score": "8",
+        "source": "Google Developers Blog",
+        "type": "官方发布",
+        "topic": "智能体与开发者平台",
+        "published": "05-23 00:22"
+      },
+      {
+        "candidate_id": "2",
+        "title": "Building real-world on-device AI with LiteRT and NPU",
+        "what": "LiteRT 是 Google 推出的生产级框架，旨在帮助移动开发者利用神经处理单元（NPU）实现高性能端侧 AI，克服传统 CPU/GPU 在性能和功耗上的限制。它提供统一 API 抽象硬件复杂性，已被 Google Meet 和 Epic Games 等用于实时视频、动画和语音识别。",
+        "purpose": "解决端侧 AI 部署中性能不足和电池消耗大的问题，通过 NPU 加速实现更高效的实时 AI 应用，同时提供基准测试工具和跨平台兼容性，支持移动设备、AI PC 和工业 IoT 硬件。",
+        "features": "1. 统一 NPU API：抽象不同 NPU 硬件细节，简化开发。\n2. 生产级性能：已被 Google Meet 和 Epic Games 用于实时视频和动画处理。\n3. 跨平台支持：覆盖移动设备、AI PC 和工业 IoT。\n4. 内置基准测试工具，帮助开发者优化模型。",
+        "comparison": "暂无可信公开对比数据。",
+        "who": "适合移动端 AI 开发者、嵌入式系统工程师、以及需要在资源受限设备上部署实时 AI 模型的团队。",
+        "link": "https://developers.googleblog.com/building-real-world-on-device-ai-with-litert-and-npu/",
+        "score": "8",
+        "source": "Google Developers Blog",
+        "type": "官方发布",
+        "topic": "智能体与开发者平台",
+        "published": "05-23 00:22"
+      },
+      {
+        "candidate_id": "6",
+        "title": "llama.cpp b9291: SYCL 改进 MoE 预填充吞吐量",
+        "what": "llama.cpp 发布 b9291 版本，重点改进了 SYCL 后端下 MoE（混合专家）模型的预填充吞吐量。通过使用预计算连续映射和基于计数排序的算法，将复杂度从 O(n_as * n_routed_rows) 降低到 O(n_as + n_routed_rows)。",
+        "purpose": "提升 MoE 模型在推理时的预填充阶段性能，减少延迟，提高吞吐量，尤其适用于大规模专家模型。",
+        "features": "1. 预计算连续映射：每个专家“拥有”的行被组织在一个切片中，减少内存访问开销。\n2. 计数排序优化：用 O(n_as + n_routed_rows) 的计数排序替代 O(n_as * n_routed_rows) 的旧方法。\n3. 支持 macOS Apple Silicon（含 KleidiAI 加速）、macOS Intel、Linux x64 及 iOS XCFramework。",
+        "comparison": "暂无可信公开对比数据。",
+        "who": "适合使用 llama.cpp 在本地或服务器上运行 MoE 模型的开发者、研究人员，以及关注推理性能优化的 AI 工程师。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9291",
+        "score": "8",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "05-22 17:17"
+      }
+    ],
+    "footer": "以上信息基于候选源整理，请以官方发布为准。"
+  },
+  "candidate_count": 7
+}

@@ -319,6 +319,76 @@
       "first_seen_at": "2026-05-22T21:57:36.281363+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/a2ui-v0-9-generative-ui/|a2ui v0.9: the new standard for portable, framework-agnostic generative ui",
+      "title": "A2UI v0.9: The New Standard for Portable, Framework-Agnostic Generative UI",
+      "url": "https://developers.googleblog.com/a2ui-v0-9-generative-ui/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-05-23T05:22:46.075475+00:00",
+      "first_seen_at": "2026-05-23T05:23:15.865414+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/building-real-world-on-device-ai-with-litert-and-npu/|building real-world on-device ai with litert and npu",
+      "title": "Building real-world on-device AI with LiteRT and NPU",
+      "url": "https://developers.googleblog.com/building-real-world-on-device-ai-with-litert-and-npu/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-05-23T05:22:46.075423+00:00",
+      "first_seen_at": "2026-05-23T05:23:15.865431+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/speeding-up-ai-bringing-google-colossus-to-pytorch-via-gcsfs-and-rapid-bucket/|speeding up ai: bringing google colossus to pytorch via gcsfs and rapid bucket",
+      "title": "Speeding Up AI: Bringing Google Colossus to PyTorch via GCSFS and Rapid Bucket",
+      "url": "https://developers.googleblog.com/speeding-up-ai-bringing-google-colossus-to-pytorch-via-gcsfs-and-rapid-bucket/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-05-23T05:22:46.075404+00:00",
+      "first_seen_at": "2026-05-23T05:23:15.865443+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/blazing-fast-on-device-genai-with-litert-lm/|blazing fast on-device genai with litert-lm",
+      "title": "Blazing fast on-device GenAI with LiteRT-LM",
+      "url": "https://developers.googleblog.com/blazing-fast-on-device-genai-with-litert-lm/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-05-23T05:22:46.075255+00:00",
+      "first_seen_at": "2026-05-23T05:23:15.865453+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/google-tensor-sdk-beta-with-litert/|google tensor sdk beta with litert",
+      "title": "Google Tensor SDK Beta with LiteRT",
+      "url": "https://developers.googleblog.com/google-tensor-sdk-beta-with-litert/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-05-23T05:22:46.075198+00:00",
+      "first_seen_at": "2026-05-23T05:23:15.865462+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9291|ggml-org/llama.cpp release b9291: sycl: improve moe prefill throughput (23142)",
+      "title": "ggml-org/llama.cpp release b9291: SYCL: improve MoE prefill throughput (23142)",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9291",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-05-22T22:17:36+00:00",
+      "first_seen_at": "2026-05-23T05:23:15.865472+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/mlflow/mlflow/releases/tag/v3.13.0rc0|mlflow/mlflow release v3.13.0rc0: we're excited to announce mlflow 3.13.0rc0, which deepens agent observability, tighten",
+      "title": "mlflow/mlflow release v3.13.0rc0: We're excited to announce MLflow 3.13.0rc0, which deepens agent observability, tightens permissions, and broadens deployment options: Major",
+      "url": "https://github.com/mlflow/mlflow/releases/tag/v3.13.0rc0",
+      "source": "GitHub Release: mlflow/mlflow",
+      "published_at": "2026-05-22T07:41:13+00:00",
+      "first_seen_at": "2026-05-23T05:23:15.865484+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }
