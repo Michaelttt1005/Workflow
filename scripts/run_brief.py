@@ -16,6 +16,7 @@ from tech_briefs.llm import build_ai_report
 from tech_briefs.models import is_major_alert_candidate
 from tech_briefs.pdf import build_pdf
 from tech_briefs.reporting import (
+    CENTRAL,
     mmdd,
     mmdd_hhmm,
     telegram_summary,
@@ -30,6 +31,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Generate and optionally send a tech brief.")
     parser.add_argument("--mode", choices=["daily", "weekly", "alert"], required=True)
     parser.add_argument("--send", action="store_true", help="Send to Telegram.")
+    parser.add_argument("--skip-if-sent", action="store_true", help="Skip daily/weekly Telegram sends already recorded for this period.")
     parser.add_argument("--days", type=int, default=None, help="Override fetch lookback window.")
     parser.add_argument("--min-alert-score", type=int, default=7)
     return parser.parse_args()
@@ -50,6 +52,70 @@ def write_json(path: Path, report: dict, candidates: list) -> None:
         "candidate_count": len(candidates),
     }
     path.with_suffix(".json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def brief_period(mode: str) -> str:
+    now = datetime.now(CENTRAL)
+    if mode == "daily":
+        return now.strftime("%Y-%m-%d")
+    if mode == "weekly":
+        return now.strftime("%G-W%V")
+    raise ValueError(f"Unsupported sent-brief mode: {mode}")
+
+
+def sent_briefs_path() -> Path:
+    return ROOT / "data" / "state" / "sent-briefs.json"
+
+
+def load_sent_briefs() -> dict:
+    path = sent_briefs_path()
+    if path.exists():
+        return json.loads(path.read_text(encoding="utf-8"))
+    return {"sent": []}
+
+
+def sent_brief_key(mode: str) -> str:
+    return f"{mode}:{brief_period(mode)}"
+
+
+def already_sent_brief(mode: str) -> bool:
+    if mode not in {"daily", "weekly"}:
+        return False
+    key = sent_brief_key(mode)
+    return any(item.get("key") == key for item in load_sent_briefs().get("sent", []))
+
+
+def remember_sent_brief(mode: str, pdf_path: Path, report: dict) -> None:
+    if mode not in {"daily", "weekly"}:
+        return
+    data = load_sent_briefs()
+    key = sent_brief_key(mode)
+    records = [item for item in data.get("sent", []) if item.get("key") != key]
+    records.append(
+        {
+            "key": key,
+            "mode": mode,
+            "period": brief_period(mode),
+            "title": report.get("title", ""),
+            "pdf": str(pdf_path.relative_to(ROOT)),
+            "sent_at": datetime.utcnow().isoformat() + "Z",
+        }
+    )
+    data["sent"] = records[-120:]
+    sent_briefs_path().write_text(
+        json.dumps(data, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
+
+def telegram_delivery_line(label: str, payload: dict) -> str:
+    result = payload.get("result") or {}
+    chat = result.get("chat") or {}
+    chat_id = str(chat.get("id", ""))
+    chat_tail = chat_id[-4:] if chat_id else "unknown"
+    message_id = result.get("message_id", "unknown")
+    chat_type = chat.get("type", "unknown")
+    return f"Telegram {label} accepted: chat_type={chat_type} chat_id_tail={chat_tail} message_id={message_id}"
 
 
 def usable_candidates(candidates: list) -> list:
@@ -97,6 +163,10 @@ def build_valid_report(mode: str, selected: list, send: bool) -> dict:
 def main() -> int:
     args = parse_args()
     ensure_dirs(ROOT)
+    if args.skip_if_sent and args.send and already_sent_brief(args.mode):
+        print(f"{args.mode} brief already sent for {brief_period(args.mode)}. Skipping duplicate Telegram push.")
+        return 0
+
     config = load_config(ROOT / "config" / "sources.yaml")
     days = args.days or {"daily": 3, "weekly": 7, "alert": 2}[args.mode]
 
@@ -131,14 +201,17 @@ def main() -> int:
         chat_id = os.getenv("TELEGRAM_CHAT_ID")
         if not token or not chat_id:
             raise RuntimeError("TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID are required when --send is used.")
-        send_message(token, chat_id, telegram_summary(report))
+        message_result = send_message(token, chat_id, telegram_summary(report))
+        print(telegram_delivery_line("message", message_result))
         caption = {
             "daily": f"每日 AI 简报 - {mmdd()}",
             "weekly": f"每周 AI 深度周报 - {mmdd()}",
             "alert": f"重大 AI 更新提醒 - {datetime.now().strftime('%m-%d %H:%M')}",
         }[args.mode]
-        send_document(token, chat_id, pdf_path, caption)
+        document_result = send_document(token, chat_id, pdf_path, caption)
+        print(telegram_delivery_line("document", document_result))
         print("Telegram push sent.")
+        remember_sent_brief(args.mode, pdf_path, report)
         if args.mode == "alert":
             for item in selected:
                 state.remember(item, alert_sent=True)

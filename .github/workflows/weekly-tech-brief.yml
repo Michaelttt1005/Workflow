@@ -2,7 +2,7 @@ name: Weekly Tech Brief
 
 on:
   schedule:
-    - cron: "0 14,15 * * 6"
+    - cron: "0,15,30,45 14,15 * * 6"
   workflow_dispatch:
 
 permissions:
@@ -66,7 +66,7 @@ jobs:
 
       - name: Generate weekly brief
         if: steps.schedule_gate.outputs.should_run == 'true'
-        run: python scripts/run_brief.py --mode weekly --send
+        run: python scripts/run_brief.py --mode weekly --send --skip-if-sent
 
       - name: Commit generated state and output
         if: steps.schedule_gate.outputs.should_run == 'true'
