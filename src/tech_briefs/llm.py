@@ -112,6 +112,7 @@ def _build_prompt(
         "- 每条必须引用候选里的真实 id/title/source/published/link/summary/reasons，并在输出里保留 candidate_id。\n"
         "- title 必须是可读标题，不要只有版本号、commit hash、短代码或“某某新论文”。GitHub release 要写出项目名和核心变更。\n"
         "- what 要说明它到底是什么，不要写“这是一篇新论文”这种废话。\n"
+        "- plain_explanation 要用通俗语言和具体例子解释这项技术，适合没有背景的人读懂；不要删减其他字段内容。\n"
         "- purpose 要说明它解决什么问题或为什么值得看。\n"
         "- features 要提炼 2-4 个具体能力/技术点。\n"
         "- comparison 只写候选摘要中明确出现的 benchmark、速度、成本、能力对比；没有就写“暂无可信公开对比数据”。\n"
@@ -130,6 +131,7 @@ def _build_prompt(
         '      "candidate_id": "候选 id",\n'
         '      "title": "真实标题",\n'
         '      "what": "是什么",\n'
+        '      "plain_explanation": "通俗解释：用具体例子或类比讲清楚",\n'
         '      "purpose": "主要作用",\n'
         '      "features": "核心功能",\n'
         '      "comparison": "性能/能力/成本对比或暂无可信公开对比数据",\n'
@@ -233,6 +235,7 @@ def _normalize_report(report: dict, mode: str, candidates: list[Candidate]) -> N
             "candidate_id",
             "title",
             "what",
+            "plain_explanation",
             "purpose",
             "features",
             "comparison",

@@ -228,6 +228,7 @@ def _entry_card(index: int, entry: dict, styles: dict[str, ParagraphStyle], widt
 
     for label, key in [
         ("是什么", "what"),
+        ("通俗解释", "plain_explanation"),
         ("主要作用", "purpose"),
         ("核心功能", "features"),
         ("对比判断", "comparison"),
@@ -377,6 +378,7 @@ def _flatten_report(report: dict) -> list[str]:
         lines += ["", f"{index}. {entry.get('title', '未命名更新')}"]
         for label, key in [
             ("是什么", "what"),
+            ("通俗解释", "plain_explanation"),
             ("主要作用", "purpose"),
             ("核心功能", "features"),
             ("对比判断", "comparison"),

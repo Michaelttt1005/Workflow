@@ -77,10 +77,24 @@ def validate_report(report: dict, mode: str) -> list[str]:
         errors.append("alert report text is too short to be substantive.")
 
     for index, entry in enumerate(entries, start=1):
-        for field in ("title", "what", "purpose", "features", "comparison", "who", "link", "source", "published"):
+        for field in (
+            "title",
+            "what",
+            "plain_explanation",
+            "purpose",
+            "features",
+            "comparison",
+            "who",
+            "link",
+            "source",
+            "published",
+        ):
             value = str(entry.get(field, "")).strip()
             if not value:
                 errors.append(f"entry {index} missing {field}.")
+        plain = str(entry.get("plain_explanation", "")).strip()
+        if len(plain) < 80:
+            errors.append(f"entry {index} plain_explanation is too thin to explain the technology simply.")
         link = str(entry.get("link", "")).strip()
         urls = re.findall(r"https?://\S+", link)
         if not urls or not all(url.startswith(("http://", "https://")) for url in urls):
@@ -88,7 +102,10 @@ def validate_report(report: dict, mode: str) -> list[str]:
         title = str(entry.get("title", "")).strip()
         if len(title) < 8 or title.endswith("新论文"):
             errors.append(f"entry {index} has generic title: {title}")
-        body = "\n".join(str(entry.get(field, "")) for field in ("what", "purpose", "features", "comparison", "who"))
+        body = "\n".join(
+            str(entry.get(field, ""))
+            for field in ("what", "plain_explanation", "purpose", "features", "comparison", "who")
+        )
         if len(body) < 220:
             errors.append(f"entry {index} body is too thin to be an AI-written brief.")
 
