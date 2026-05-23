@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: weekly-tech-brief
+  group: tech-brief-cloud
   cancel-in-progress: false
 
 jobs:
@@ -53,12 +53,20 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase --autostash origin main
           git add data output
           if git diff --cached --quiet; then
             echo "No generated changes to commit."
           else
             git commit -m "Update weekly tech brief"
-            git push
+            for attempt in 1 2 3; do
+              if git push; then
+                exit 0
+              fi
+              git pull --rebase --autostash origin main
+              sleep 5
+            done
+            exit 1
           fi
 
       - name: Upload generated brief artifact

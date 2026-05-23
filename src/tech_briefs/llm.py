@@ -97,7 +97,7 @@ def _build_prompt(
     validation_errors: list[str] | None,
     previous_report: dict | None,
 ) -> str:
-    count = {"daily": "6-8", "weekly": "3-5 个主题", "alert": "1-3"}[mode]
+    count = {"daily": "6-8", "weekly": "6-8", "alert": "1-3"}[mode]
     title = {
         "daily": "每日 AI 简报",
         "weekly": "每周 AI 深度简报",
@@ -116,7 +116,7 @@ def _build_prompt(
         "- features 要提炼 2-4 个具体能力/技术点。\n"
         "- comparison 只写候选摘要中明确出现的 benchmark、速度、成本、能力对比；没有就写“暂无可信公开对比数据”。\n"
         "- who 要说明适合哪些开发者、研究者或团队。\n"
-        "- 每条的 what/purpose/features/comparison/who 合计至少 260 个中文字符，不能只写短句。\n"
+        f"- 每条的 what/purpose/features/comparison/who 合计至少 {_minimum_entry_chars(mode)} 个中文字符，不能只写短句。\n"
         "- link 必须是候选中的真实 URL。\n"
         "- 不要输出模板句、占位符、TODO、N/A、泛化废话。\n\n"
         "输出 JSON schema：\n"
@@ -160,7 +160,20 @@ def _build_prompt(
                 f"{json.dumps(previous_report, ensure_ascii=False, indent=2)[:12000]}"
             )
 
+    if mode == "weekly":
+        prompt += (
+            "\n\n周报额外要求：\n"
+            "- entries 必须至少 6 条，优先覆盖模型/论文、智能体、端侧推理、开发者平台、基础设施、开源 release。\n"
+            "- overview 至少 250 个中文字符，必须做本周横向总结，不要只列清单。\n"
+            "- 每条要写成深度周报风格：是什么、为什么这周值得看、核心变化、对比判断、适合采用的人群都要展开。\n"
+            "- 整份报告正文必须超过 3500 个中文字符，否则会被本地校验拒绝并不会发送 Telegram。\n"
+        )
+
     return prompt
+
+
+def _minimum_entry_chars(mode: str) -> int:
+    return {"daily": 260, "weekly": 520, "alert": 320}[mode]
 
 
 def _candidate_payload(index: int, candidate: Candidate) -> dict:
