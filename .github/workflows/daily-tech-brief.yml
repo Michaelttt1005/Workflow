@@ -2,7 +2,8 @@ name: Daily Tech Brief
 
 on:
   schedule:
-    - cron: "7,22,37,52 14,15 * * *"
+    - cron: "7,22,37,52 14 * * *"
+    - cron: "7,22,37,52 15 * * *"
   workflow_dispatch:
 
 permissions:
@@ -27,10 +28,26 @@ jobs:
         id: schedule_gate
         run: |
           if [ "${{ github.event_name }}" = "schedule" ]; then
-            local_hour="$(TZ=America/Chicago date +%H)"
-            if [ "$local_hour" != "09" ]; then
+            schedule="${{ github.event.schedule }}"
+            chicago_offset="$(TZ=America/Chicago date +%z)"
+            echo "Schedule expression: $schedule"
+            echo "America/Chicago UTC offset now: $chicago_offset"
+
+            if [ "$schedule" = "7,22,37,52 14 * * *" ] && [ "$chicago_offset" != "-0500" ]; then
               echo "should_run=false" >> "$GITHUB_OUTPUT"
-              echo "Skipping: America/Chicago hour is $local_hour, expected 09."
+              echo "Skipping CDT schedule because Chicago is not on UTC-05:00."
+              exit 0
+            fi
+
+            if [ "$schedule" = "7,22,37,52 15 * * *" ] && [ "$chicago_offset" != "-0600" ]; then
+              echo "should_run=false" >> "$GITHUB_OUTPUT"
+              echo "Skipping CST schedule because Chicago is not on UTC-06:00."
+              exit 0
+            fi
+
+            if [ "$schedule" != "7,22,37,52 14 * * *" ] && [ "$schedule" != "7,22,37,52 15 * * *" ]; then
+              echo "should_run=false" >> "$GITHUB_OUTPUT"
+              echo "Skipping unknown schedule expression: $schedule"
               exit 0
             fi
           fi
