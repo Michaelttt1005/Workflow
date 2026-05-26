@@ -389,6 +389,26 @@
       "first_seen_at": "2026-05-23T05:23:15.865484+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9334|ggml-org/llama.cpp release b9334: cuda: missing pdl sync for fwht, better fallback (23690) macos/ios",
+      "title": "ggml-org/llama.cpp release b9334: CUDA: missing PDL sync for FWHT, better fallback (23690) macOS/iOS",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9334",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-05-26T09:00:23+00:00",
+      "first_seen_at": "2026-05-26T19:35:31.291368+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9329|ggml-org/llama.cpp release b9329: cuda: add fast walsh-hadamard transform (23615) cuda: add fast walsh-hadamard transfor",
+      "title": "ggml-org/llama.cpp release b9329: CUDA: add fast walsh-hadamard transform (23615) CUDA: add fast walsh-hadamard transform review: add unrolls + change sizet",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9329",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-05-26T02:00:19+00:00",
+      "first_seen_at": "2026-05-26T19:35:31.291389+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

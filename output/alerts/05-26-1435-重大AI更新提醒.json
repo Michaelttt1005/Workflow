@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-05-26T19:35:29.173485Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "05-26 | llama.cpp 连续发布 CUDA 性能优化版本",
+    "overview": "llama.cpp 在两天内连续发布两个版本，重点优化 CUDA 上的 Walsh-Hadamard 变换性能，并修复同步问题。这些更新将显著提升在 NVIDIA GPU 上运行大语言模型时的推理速度，尤其对需要快速矩阵运算的场景有利。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "2",
+        "title": "ggml-org/llama.cpp release b9329: CUDA: add fast walsh-hadamard transform",
+        "what": "这是 llama.cpp 项目的一个版本发布，主要新增了 CUDA 上的快速 Walsh-Hadamard 变换（FWHT）实现。Walsh-Hadamard 变换是一种数学运算，常用于信号处理和某些机器学习算法中，可以高效地处理向量和矩阵。",
+        "plain_explanation": "想象一下，你有一堆数字需要快速重新排列和组合，就像洗牌一样。Walsh-Hadamard 变换就是一种特殊的“洗牌”方式，它能把数字重新排列成一种更容易处理的形式。在 AI 模型中，这种变换可以帮助加速某些计算步骤。llama.cpp 这次更新就是在 NVIDIA 的 GPU 上实现了这种变换的快速版本，让模型跑得更快。",
+        "purpose": "提升 llama.cpp 在 CUDA 设备上的推理性能，特别是涉及 Walsh-Hadamard 变换的运算，从而加速大语言模型的运行。",
+        "features": "新增 CUDA 上的快速 Walsh-Hadamard 变换实现；代码优化：添加循环展开（unrolls）并调整数据类型大小以提升性能；支持 warp size 64，适配不同 GPU 架构",
+        "comparison": "暂无可信公开对比数据",
+        "who": "使用 NVIDIA GPU 运行 llama.cpp 的开发者，尤其是需要优化推理速度的 AI 应用开发者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9329",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "05-25 21:00"
+      },
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b9334: CUDA: missing PDL sync for FWHT, better fallback",
+        "what": "这是 llama.cpp 的另一个版本发布，修复了 CUDA 上快速 Walsh-Hadamard 变换（FWHT）中缺失的 PDL 同步问题，并改进了回退机制。PDL 是并行数据加载的缩写，同步问题可能导致数据不一致或错误。",
+        "plain_explanation": "在之前的版本中，快速 Walsh-Hadamard 变换在 GPU 上运行时，可能因为数据同步不及时而导致计算错误。就像多个工人同时搬运货物，如果没有协调好，可能会拿错或撞到一起。这次更新修复了这个问题，并提供了一个更好的备用方案，确保即使在某些情况下也能正确运行。",
+        "purpose": "修复 CUDA 上 FWHT 的同步问题，提高稳定性和正确性，同时提供更可靠的回退机制，确保在各种 GPU 上都能正常工作。",
+        "features": "修复 CUDA 上 FWHT 的 PDL 同步缺失问题；改进回退机制，当 FWHT 不可用时自动切换到更稳定的实现；提供 macOS、iOS、Linux 等多平台二进制包",
+        "comparison": "暂无可信公开对比数据",
+        "who": "使用 llama.cpp 在 NVIDIA GPU 上运行大语言模型的用户，特别是遇到推理错误或不稳定的开发者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9334",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "05-26 04:00"
+      }
+    ],
+    "footer": "以上更新均来自 llama.cpp 官方 GitHub 仓库，建议用户及时升级以获得最佳性能和稳定性。"
+  },
+  "candidate_count": 2
+}
