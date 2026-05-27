@@ -31,6 +31,14 @@
       "title": "每日 AI 简报",
       "pdf": "output/daily/05-26-AI简报.pdf",
       "sent_at": "2026-05-26T21:01:41.007362Z"
+    },
+    {
+      "key": "daily:2026-05-27",
+      "mode": "daily",
+      "period": "2026-05-27",
+      "title": "每日 AI 简报",
+      "pdf": "output/daily/05-27-AI简报.pdf",
+      "sent_at": "2026-05-27T21:20:22.168114Z"
     }
   ]
 }
