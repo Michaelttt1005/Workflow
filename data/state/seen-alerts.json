@@ -409,6 +409,46 @@
       "first_seen_at": "2026-05-26T19:35:31.291389+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9370|ggml-org/llama.cpp release b9370: hexagon: add support for q41 in mulmat and mulmatid (23647) hex-mm: add support for q4",
+      "title": "ggml-org/llama.cpp release b9370: hexagon: add support for Q41 in MULMAT and MULMATID (23647) hex-mm: add support for Q41 matmul/matvec, hvx-only for now hmx-mm: add suppor",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9370",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-05-27T18:23:57+00:00",
+      "first_seen_at": "2026-05-27T21:17:04.513234+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://huggingface.co/blog/ibm-research/itbench-aa|itbench-aa: frontier models score below 50% on the first benchmark for agentic enterprise it tasks — by artificial analy",
+      "title": "ITBench-AA: Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks — by Artificial Analysis and IBM",
+      "url": "https://huggingface.co/blog/ibm-research/itbench-aa",
+      "source": "Hugging Face Blog",
+      "published_at": "2026-05-27T17:20:29+00:00",
+      "first_seen_at": "2026-05-27T21:17:04.513264+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://pytorch.org/blog/up-to-580tps-new-speed-record-of-qwen3-5-397b-a17b-on-gpu-for-agentic-workloads-with-tokenspeed/|up to 580tps! new speed record of qwen3.5-397b-a17b on gpu for agentic workloads with tokenspeed",
+      "title": "Up to 580tps! New Speed Record of Qwen3.5-397B-A17B on GPU for Agentic Workloads with TokenSpeed",
+      "url": "https://pytorch.org/blog/up-to-580tps-new-speed-record-of-qwen3-5-397b-a17b-on-gpu-for-agentic-workloads-with-tokenspeed/",
+      "source": "PyTorch Blog",
+      "published_at": "2026-05-27T15:39:42+00:00",
+      "first_seen_at": "2026-05-27T21:17:04.513278+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://openai.com/index/warp|warp’s big bet on building open source with gpt-5.5",
+      "title": "Warp’s big bet on building open source with GPT-5.5",
+      "url": "https://openai.com/index/warp",
+      "source": "OpenAI News",
+      "published_at": "2026-05-27T00:00:00+00:00",
+      "first_seen_at": "2026-05-27T21:17:04.513291+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
