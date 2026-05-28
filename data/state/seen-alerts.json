@@ -449,6 +449,16 @@
       "first_seen_at": "2026-05-27T21:17:04.513291+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9378|ggml-org/llama.cpp release b9378: cuda : fix kq mask offset integer overflow in fattn mma kernel (23610) co-authored-by:",
+      "title": "ggml-org/llama.cpp release b9378: cuda : fix KQ mask offset integer overflow in fattn MMA kernel (23610) Co-authored-by: Stanisław Szymczyk macOS/iOS",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9378",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-05-28T17:03:46+00:00",
+      "first_seen_at": "2026-05-28T19:59:32.843191+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

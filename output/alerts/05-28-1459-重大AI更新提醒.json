@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-05-28T19:59:30.511694Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "05-28 | llama.cpp 修复 CUDA 内核整数溢出问题",
+    "overview": "本期聚焦 llama.cpp 最新版本 b9378，该版本修复了 CUDA 注意力机制内核中的整数溢出 bug，提升了推理稳定性与正确性。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b9378: 修复 CUDA KQ mask 偏移整数溢出",
+        "what": "llama.cpp 是一个高性能的 LLM 推理引擎，支持在 CPU 和 GPU 上运行多种大语言模型。本次发布 b9378 版本，主要修复了 CUDA 内核中关于 KQ mask 偏移量的整数溢出问题，该问题会影响注意力机制计算的正确性。",
+        "plain_explanation": "想象你在用计算器做加法，但数字太大导致计算器显示错误结果。llama.cpp 的这次修复就类似解决了这样一个 bug：在 GPU 上计算注意力时，由于偏移量数值过大导致整数溢出，使得模型输出可能出错。修复后，模型在长文本或大 batch 场景下能给出更准确的结果。",
+        "purpose": "修复关键性 bug，确保 llama.cpp 在 CUDA 环境下的推理正确性，避免因数值溢出导致的模型输出异常，提升稳定性。",
+        "features": "修复 CUDA 注意力内核中 KQ mask 偏移量的整数溢出问题；提供 macOS (Apple Silicon/Intel)、iOS、Linux (x64/arm64/s390x) 等多平台二进制包；持续优化跨平台部署体验",
+        "comparison": "暂无可信公开对比数据",
+        "who": "使用 llama.cpp 在 NVIDIA GPU 上进行 LLM 推理的开发者、部署工程师，以及依赖 llama.cpp 构建应用的团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9378",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "05-28 12:03"
+      }
+    ],
+    "footer": "本提醒基于候选源自动生成，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}
