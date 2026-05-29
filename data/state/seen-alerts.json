@@ -479,6 +479,16 @@
       "first_seen_at": "2026-05-29T12:28:47.690433+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9413|ggml-org/llama.cpp release b9413: cuda: check ptx version on host side to guard pdl dispatch (23530) cuda: check ptx ver",
+      "title": "ggml-org/llama.cpp release b9413: CUDA: Check PTX version on host side to guard PDL dispatch (23530) CUDA: Check PTX version on host side to guard PDL dispatch Checking on C",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9413",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-05-29T18:42:08+00:00",
+      "first_seen_at": "2026-05-29T21:19:48.665623+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

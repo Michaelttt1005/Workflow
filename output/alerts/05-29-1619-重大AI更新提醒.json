@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-05-29T21:19:46.760302Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "05-29 | llama.cpp 修复 CUDA PTX 版本检查，提升 JIT 编译稳定性",
+    "overview": "本期聚焦 llama.cpp 最新 release b9413，该版本修复了 CUDA 后端中 PTX 版本检查不充分导致的 PDL 调度错误，确保在混合 CUDA 架构编译时 JIT 编译的正确性。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b9413: 修复 CUDA PTX 版本检查以正确调度 PDL",
+        "what": "这是 llama.cpp 项目的一个 GitHub Release（b9413），主要修复了 CUDA 后端中 PTX 版本检查逻辑，防止在混合 CUDA 架构编译时出现错误的 PDL（Persistent Data Layout）调度。",
+        "plain_explanation": "想象你有一台支持多种 CUDA 架构的 GPU（比如 sm_89 和 sm_90a），编译 llama.cpp 时如果同时指定了这些架构，旧代码可能错误地将为 sm_90a 优化的代码调度到 sm_89 上运行，导致性能下降甚至错误。这个修复通过在运行时检查每个 CUDA 内核的 PTX 版本，确保只有真正兼容的内核才会使用 PDL 优化，就像给每个快递包裹贴上正确的地址标签，避免送错地方。",
+        "purpose": "解决在编译时指定多个 CUDA 架构（如 sm_89 和 sm_90a）时，JIT 编译可能错误调度 PDL 的问题，提升 llama.cpp 在混合 GPU 环境下的稳定性和性能。",
+        "features": "运行时检查 cudaFuncAttributes::ptxVersion 来验证内核 PTX 版本；防止在 sm_90/sm_120 等架构上错误使用 PDL 调度；引入 MurmurHash3 混合器改善哈希分布",
+        "comparison": "暂无可信公开对比数据",
+        "who": "使用 llama.cpp 在 NVIDIA GPU 上运行大模型的开发者，特别是那些编译时指定了多个 CUDA 架构（如 sm_89;90a）的用户，以及关注推理性能优化的研究人员。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9413",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "05-29 13:42"
+      }
+    ],
+    "footer": "本简报基于候选源自动生成，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}
