@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-05-29T12:28:45.153555Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "05-29 | llama.cpp 修复编译器 bug，vLLM 全面强化 DeepSeek V4",
+    "overview": "本期聚焦两个推理框架的重要更新：llama.cpp 因编译器 bug 禁用 CUDA 注意力 PDL 注册，vLLM v0.22.0 则对 DeepSeek V4 做了大量成熟度加固，包括专用包、NVFP4 MoE 支持、MTP 推测解码等。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b9404：因编译器 bug 禁用 CUDA launch_fattn PDL 注册，更新 macOS/iOS 二进制",
+        "what": "这是 llama.cpp 项目的一个补丁版本，主要修复了 CUDA 编译器的一个 bug，导致 launch_fattn 的 PDL（持久化数据布局）注册被禁用。同时提供了 macOS Apple Silicon、Intel、iOS 以及 Linux 等平台的二进制包。",
+        "plain_explanation": "想象一下，你有一个非常高效的快递分拣系统（注意力机制），它本来可以自动规划包裹的摆放位置（PDL 注册）来加速分拣。但最近发现快递公司的电脑（编译器）有个 bug，导致这个自动规划功能会出错。于是管理员决定暂时关闭这个自动规划功能，改用更保守的手动方式，确保分拣不会出错。虽然速度可能慢一点点，但至少不会送错包裹。这个版本就是做了这样的安全调整，并重新打包了各个平台的安装文件。",
+        "purpose": "解决因编译器 bug 导致的潜在计算错误，保证 llama.cpp 在 CUDA 环境下的稳定性。对于 macOS 和 iOS 用户，提供了最新的二进制文件，方便直接使用。",
+        "features": "禁用 CUDA launch_fattn 的 PDL 注册，避免编译器 bug 引发错误；提供 macOS Apple Silicon (arm64) 二进制，含 KleidiAI 加速版本（但本次禁用）；提供 macOS Intel (x64)、iOS XCFramework、Linux (x64/arm64/s390x) 二进制",
+        "comparison": "暂无可信公开对比数据",
+        "who": "使用 llama.cpp 在 CUDA GPU 上运行大模型的开发者；需要最新 macOS/iOS 二进制文件的移动端或桌面端应用开发者；关注推理框架稳定性的研究人员。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9404",
+        "score": "8",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "05-29 06:19"
+      },
+      {
+        "candidate_id": "2",
+        "title": "vLLM v0.22.0：459 次提交、230 位贡献者，DeepSeek V4 成熟度大幅提升，Model Runner V2 向默认推进",
+        "what": "这是 vLLM 推理框架的一个重要版本更新，包含 459 次提交和 230 位贡献者。核心亮点是对 DeepSeek V4 模型进行了大量加固，包括将其重构为独立包、支持 NVFP4 融合 MoE、CUDA 图、MTP 推测解码等。同时 Model Runner V2 新增了自动选择、权重重载、共享 KV-cache 等功能，逐步向默认运行方式过渡。",
+        "plain_explanation": "想象你有一辆赛车（vLLM），现在要让它更好地驾驭一款新型发动机（DeepSeek V4）。工程师们做了很多工作：把发动机的各个零件整理到专用工具箱（独立包），升级了燃油喷射系统（NVFP4 MoE），优化了点火时序（CUDA 图），还加了一个预测换挡的辅助系统（MTP 推测解码）。同时，赛车的驾驶模式（Model Runner V2）也变得更智能，能自动选择最佳模式，甚至可以在行驶中更换轮胎（权重重载）。这些改进让赛车跑得更快、更稳。",
+        "purpose": "大幅提升 vLLM 对 DeepSeek V4 模型的支持成熟度，包括性能、精度和稳定性。同时推进 Model Runner V2 成为默认运行方式，为未来版本奠定基础。",
+        "features": "DeepSeek V4 重构为独立包 vllm/models/deepseek_v4/，支持 NVFP4 融合 MoE、CUDA 图、MTP 推测解码；Model Runner V2 新增 oracle 自动选择、sleep-mode 权重重载、共享 KV-cache 层；大量 fused kernel（MegaMoE、mhc、Q-norm 等）和 ROCm 修复，精度修复",
+        "comparison": "暂无可信公开对比数据",
+        "who": "使用 vLLM 部署 DeepSeek V4 或其他大型语言模型的工程团队；需要高性能推理的 AI 应用开发者；关注推理框架前沿进展的研究人员。",
+        "link": "https://github.com/vllm-project/vllm/releases/tag/v0.22.0",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "05-29 05:28"
+      }
+    ],
+    "footer": "以上更新均来自官方 GitHub Release，建议根据自身环境评估升级。"
+  },
+  "candidate_count": 2
+}

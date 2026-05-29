@@ -459,6 +459,26 @@
       "first_seen_at": "2026-05-28T19:59:32.843191+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9404|ggml-org/llama.cpp release b9404: cuda : disables launchfattn pdl enrollment due to compiler bug (23825) macos/ios",
+      "title": "ggml-org/llama.cpp release b9404: cuda : disables launchfattn PDL enrollment due to compiler bug (23825) macOS/iOS",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9404",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-05-29T11:19:18+00:00",
+      "first_seen_at": "2026-05-29T12:28:47.690411+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/vllm-project/vllm/releases/tag/v0.22.0|vllm-project/vllm release v0.22.0: highlights this release features 459 commits from 230 contributors (63 new)! deepseek",
+      "title": "vllm-project/vllm release v0.22.0: Highlights This release features 459 commits from 230 contributors (63 new)! DeepSeek V4 maturity: DeepSeek V4 received a major hardening p",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.22.0",
+      "source": "GitHub Release: vllm-project/vllm",
+      "published_at": "2026-05-29T10:28:13+00:00",
+      "first_seen_at": "2026-05-29T12:28:47.690433+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
