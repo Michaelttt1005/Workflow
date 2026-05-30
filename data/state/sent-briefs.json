@@ -57,12 +57,21 @@
       "sent_at": "2026-05-29T21:21:08.643550Z"
     },
     {
+<<<<<<< Updated upstream
       "key": "daily:2026-05-30",
       "mode": "daily",
       "period": "2026-05-30",
       "title": "每日 AI 简报",
       "pdf": "output/daily/05-30-AI简报.pdf",
       "sent_at": "2026-05-30T17:48:13.458454Z"
+=======
+      "key": "weekly:2026-W22",
+      "mode": "weekly",
+      "period": "2026-W22",
+      "title": "每周 AI 深度简报",
+      "pdf": "output/weekly/05-30-AI深度周报.pdf",
+      "sent_at": "2026-05-30T17:49:40.711797Z"
+>>>>>>> Stashed changes
     }
   ]
 }
