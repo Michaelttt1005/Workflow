@@ -489,6 +489,16 @@
       "first_seen_at": "2026-05-29T21:19:48.665623+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/adk-kotlin-android-building-ai-agents/|announcing adk for kotlin and adk for android 0.1.0: building ai agents on android and beyond",
+      "title": "Announcing ADK for Kotlin and ADK for Android 0.1.0: Building AI Agents on Android and Beyond",
+      "url": "https://developers.googleblog.com/adk-kotlin-android-building-ai-agents/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-06-02T11:53:50.720028+00:00",
+      "first_seen_at": "2026-06-02T11:54:05.010570+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
