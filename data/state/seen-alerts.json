@@ -499,6 +499,26 @@
       "first_seen_at": "2026-06-02T11:54:05.010570+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/mlflow/mlflow/releases/tag/v3.13.0|mlflow/mlflow release v3.13.0: mlflow 3.13.0 includes several major features and improvements major new features",
+      "title": "mlflow/mlflow release v3.13.0: MLflow 3.13.0 includes several major features and improvements Major New Features",
+      "url": "https://github.com/mlflow/mlflow/releases/tag/v3.13.0",
+      "source": "GitHub Release: mlflow/mlflow",
+      "published_at": "2026-06-01T23:24:24+00:00",
+      "first_seen_at": "2026-06-02T22:07:14.893669+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/numpy/numpy/releases/tag/v2.5.0rc1|numpy/numpy: v2.5.0rc1 (june 2, 2026)",
+      "title": "numpy/numpy: v2.5.0rc1 (June 2, 2026)",
+      "url": "https://github.com/numpy/numpy/releases/tag/v2.5.0rc1",
+      "source": "GitHub Release: numpy/numpy",
+      "published_at": "2026-06-02T13:52:28+00:00",
+      "first_seen_at": "2026-06-02T22:07:14.893687+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

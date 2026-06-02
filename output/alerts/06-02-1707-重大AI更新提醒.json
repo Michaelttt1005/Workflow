@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-06-02T22:07:12.695282Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "06-02 | MLflow 3.13.0 发布，NumPy 2.5.0 RC1 推出",
+    "overview": "本期聚焦两个重要更新：MLflow 3.13.0 带来基于角色的访问控制、追踪数据自动归档以及编码代理一键可观测性；NumPy 2.5.0 RC1 移除 distutils、支持降序排序并改进自由线程。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "MLflow 3.13.0 发布：RBAC、追踪自动归档与编码代理治理",
+        "what": "MLflow 3.13.0 是机器学习生命周期管理平台 MLflow 的最新版本，引入了基于角色的访问控制（RBAC）系统、追踪数据自动归档功能，以及针对编码代理（如 Claude Code、OpenAI Codex）的一键可观测性与治理能力。",
+        "plain_explanation": "想象一下，你有一个团队共同使用 MLflow 管理机器学习实验。以前，任何人都能查看或修改所有实验，现在 MLflow 3.13.0 允许你像公司门禁卡一样，给不同成员分配不同权限（比如只读、可编辑、管理员）。同时，追踪数据（比如模型推理的日志）会像旧文件一样自动从昂贵的数据库移到便宜的云存储（如 S3），但你在界面上仍然能随时查看。另外，如果你使用 AI 编码助手（如 Claude Code），现在可以一键接入 MLflow 的网关，自动记录每次调用、用量和成本，方便审计和优化。",
+        "purpose": "解决团队协作中的权限管理、存储成本优化以及 AI 代理使用监控问题，提升 MLflow 在企业级部署中的安全性和可管理性。",
+        "features": "基于角色的访问控制（RBAC）与管理员 UI：支持可复用的角色和工作空间级权限，通过 Web 界面管理用户、角色和权限。；追踪数据自动归档：将过期的追踪跨度数据自动从 SQL 后端迁移到对象存储（如 S3），同时保持 UI 和 API 中的可读性。；编码代理一键可观测性：支持 Claude Code、OpenAI Codex、Gemini CLI 等代理一键接入 AI Gateway，实现追踪、用量记录和治理。",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合使用 MLflow 管理机器学习实验的团队，特别是需要细粒度权限控制的企业用户、关注存储成本优化的运维人员，以及使用 AI 编码代理并希望监控其使用的开发者。",
+        "link": "https://github.com/mlflow/mlflow/releases/tag/v3.13.0",
+        "score": "8",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "06-01 18:24"
+      },
+      {
+        "candidate_id": "2",
+        "title": "NumPy 2.5.0 RC1 发布：移除 distutils、支持降序排序、改进自由线程",
+        "what": "NumPy 2.5.0 的第一个候选版本，这是一个过渡性版本，移除了 Python 3.11 支持并彻底移除 distutils，同时过期了大量 2.0.x 中的弃用项，新增了降序排序功能以符合数组 API 标准，并改进了自由线程支持。",
+        "plain_explanation": "NumPy 是 Python 科学计算的基础库。这次更新就像一次大扫除：首先，它不再支持 Python 3.11，并彻底移除了老旧的 distutils 构建工具（就像淘汰了旧式螺丝刀）。其次，它清理了许多之前标记为“即将废弃”的功能，让代码更干净。新功能方面，现在你可以直接对数组进行降序排序，而不需要先升序再反转，这符合新的数组 API 标准。另外，自由线程（free threading）支持得到改进，意味着在多线程环境下 NumPy 能更好地利用多核 CPU。",
+        "purpose": "为未来的 NumPy 版本铺平道路，移除过时组件，提高代码质量和性能，同时增强与标准 API 的兼容性。",
+        "features": "移除 distutils：彻底告别 Python 3.11 及更早的构建系统。；支持降序排序：新增 `descending` 参数，符合数组 API 标准。；改进自由线程支持：在多线程环境中提升性能。；大量静态类型改进：增强类型提示，便于代码检查和 IDE 支持。",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合所有使用 NumPy 的 Python 开发者，特别是需要升级到最新 Python 版本、关注多线程性能或希望遵循数组 API 标准的科学计算和机器学习工程师。",
+        "link": "https://github.com/numpy/numpy/releases/tag/v2.5.0rc1",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "06-02 08:52"
+      }
+    ],
+    "footer": "以上信息基于候选源，请以官方发布为准。"
+  },
+  "candidate_count": 2
+}
