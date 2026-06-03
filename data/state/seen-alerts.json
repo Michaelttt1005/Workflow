@@ -519,6 +519,46 @@
       "first_seen_at": "2026-06-02T22:07:14.893687+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/huggingface/transformers/releases/tag/v5.10.1|huggingface/transformers release v5.10.1: release v5.10.1 v5.10.0 was yanked as we publish on a corrupted branch",
+      "title": "huggingface/transformers release v5.10.1: Release v5.10.1 v5.10.0 was yanked as we publish on a corrupted branch",
+      "url": "https://github.com/huggingface/transformers/releases/tag/v5.10.1",
+      "source": "GitHub Release: huggingface/transformers",
+      "published_at": "2026-06-03T15:37:41+00:00",
+      "first_seen_at": "2026-06-03T18:09:59.171525+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/bringing-gemma-4-12b-to-your-laptop-unlocking-local-agentic-workflows-with-google-ai-edge/|bringing gemma 4 12b to your laptop: unlocking local, agentic workflows with google ai edge",
+      "title": "Bringing Gemma 4 12B to your Laptop: Unlocking Local, Agentic Workflows with Google AI Edge",
+      "url": "https://developers.googleblog.com/bringing-gemma-4-12b-to-your-laptop-unlocking-local-agentic-workflows-with-google-ai-edge/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-06-03T18:09:14.673362+00:00",
+      "first_seen_at": "2026-06-03T18:09:59.171552+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/gemma-4-12b-the-developer-guide/|gemma 4 12b: the developer guide",
+      "title": "Gemma 4 12B: The Developer Guide",
+      "url": "https://developers.googleblog.com/gemma-4-12b-the-developer-guide/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-06-03T18:09:14.673326+00:00",
+      "first_seen_at": "2026-06-03T18:09:59.171565+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9489|ggml-org/llama.cpp release b9489: cuda: reserve space for quantize kv-cache at startup (23907) cuda: reserve space for q",
+      "title": "ggml-org/llama.cpp release b9489: cuda: reserve space for quantize kv-cache at startup (23907) cuda: reserve space for quantize kv-cache at startup address review comments",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9489",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-06-03T11:22:25+00:00",
+      "first_seen_at": "2026-06-03T18:09:59.171580+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
