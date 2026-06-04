@@ -559,6 +559,16 @@
       "first_seen_at": "2026-06-03T18:09:59.171580+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/langchain-ai/langchain/releases/tag/langchain-deepseek%3d%3d1.1.0|langchain-deepseek==1.1.0",
+      "title": "langchain-deepseek==1.1.0",
+      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-deepseek%3D%3D1.1.0",
+      "source": "GitHub Release: langchain-ai/langchain",
+      "published_at": "2026-06-03T19:07:27+00:00",
+      "first_seen_at": "2026-06-04T10:29:28.713116+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }

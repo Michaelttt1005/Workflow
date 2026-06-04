@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-06-04T10:29:26.833087Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "06-04 | LangChain DeepSeek 集成库发布 1.1.0 版本",
+    "overview": "本期关注 LangChain 官方发布的 langchain-deepseek 1.1.0 版本，该版本主要包含依赖更新、模型配置刷新以及内容块流式传输等新特性，对使用 DeepSeek 模型的开发者有重要影响。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "langchain-deepseek 1.1.0 发布：依赖升级与内容块流式传输支持",
+        "what": "langchain-deepseek 是 LangChain 官方维护的 DeepSeek 模型集成包，本次 1.1.0 版本更新了多项依赖（如 idna、urllib3、langchain-core、langsmith），并引入了内容块流式传输（content-block-centric streaming v2）功能，同时刷新了模型配置文件。",
+        "plain_explanation": "想象你正在用 LangChain 框架调用 DeepSeek 模型来写文章。以前，模型回复是一段一段地返回，但新版本支持按“内容块”流式传输，就像看视频时不是等整部电影下载完，而是一边下载一边播放。这样你可以在模型生成第一个句子时就立刻看到，体验更流畅。此外，更新还修复了一些底层依赖的安全问题，并让模型配置保持最新。",
+        "purpose": "该版本主要解决 LangChain 与 DeepSeek 模型集成时的兼容性和性能问题，确保开发者能使用最新的模型配置和更高效的流式输出，同时提升库的稳定性和安全性。",
+        "features": "内容块流式传输 v2：支持更细粒度的流式输出，提升实时交互体验；依赖升级：更新 idna、urllib3、langchain-core、langsmith 等关键库，修复安全漏洞并增强稳定性；模型配置刷新：自动同步最新的 DeepSeek 模型配置，确保调用参数准确；CI 优化：引入 pytest-xdist 加速测试，移除 nobenchmark 标志，提高开发效率",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合使用 LangChain 框架并集成 DeepSeek 模型的 Python 开发者，尤其是需要流式输出或关注依赖安全性的团队。",
+        "link": "https://github.com/langchain-ai/langchain/releases/tag/langchain-deepseek%3D%3D1.1.0",
+        "score": "8",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "开发者生态与数据工具",
+        "published": "06-03 14:07"
+      }
+    ],
+    "footer": "本简报基于候选源生成，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}
