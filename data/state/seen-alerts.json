@@ -569,6 +569,16 @@
       "first_seen_at": "2026-06-04T10:29:28.713116+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9510|ggml-org/llama.cpp release b9510: ggml: vectorize ggmlvecdotq41q81 with wasm simd128 (22209) ggml: vectorize ggmlvecdotq",
+      "title": "ggml-org/llama.cpp release b9510: ggml: vectorize ggmlvecdotq41q81 with WASM SIMD128 (22209) ggml: vectorize ggmlvecdotq41q81 with WASM SIMD128 Optimize the inner loop of gg",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9510",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-06-04T14:44:10+00:00",
+      "first_seen_at": "2026-06-04T19:49:37.346844+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }

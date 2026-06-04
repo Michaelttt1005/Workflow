@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-06-04T19:49:35.370757Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "06-04 | llama.cpp 发布 WASM SIMD 优化版本",
+    "overview": "本期重点：llama.cpp 发布 b9510 版本，通过 WASM SIMD128 指令集向量化量化点积运算，在 WebAssembly 环境下实现 3.42 倍加速，显著提升浏览器端推理性能。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b9510: ggml: vectorize ggml_vec_dot_q4_1_q8_1 with WASM SIMD128",
+        "what": "这是 llama.cpp 项目的一个新版本（b9510），主要针对 WebAssembly 平台优化了量化神经网络中的核心计算——4-bit 量化权重与 8-bit 量化激活值的点积运算。通过使用 WASM SIMD128 指令集，将原本标量循环改为向量化并行计算，从而大幅提升速度。",
+        "plain_explanation": "想象一下，你要计算很多对数字的乘积之和，比如 32 对。原来是一个一个算（标量），现在用 SIMD 可以一次处理 16 对甚至更多，就像用 4 条流水线同时工作。这个优化专门针对在浏览器里运行 AI 模型（比如聊天机器人）的场景，因为浏览器只能跑 WebAssembly 代码。具体来说，它把 4-bit 的权重（每个权重只占半个字节）打包成 128 位的向量，然后用 SIMD 指令一次性解包、扩展、相乘并累加，最后得到结果。测试显示，在 Node.js 环境下，优化后的代码比原来快 3.42 倍，而且结果完全一致。",
+        "purpose": "主要解决在浏览器等 WebAssembly 环境中运行大语言模型时推理速度慢的问题。通过向量化核心计算，让用户能在网页端获得更流畅的 AI 对话体验，无需安装任何软件。",
+        "features": "使用 WASM SIMD128 指令集向量化 ggml_vec_dot_q4_1_q8_1 函数；通过条件编译（#ifdef __wasm_simd128__）确保非 WASM 平台不受影响；正确性验证：在 10 个随机种子下与标量版本输出完全一致",
+        "comparison": "在 Node.js v25、emcc -O3 -msimd128 编译、64 blocks x QK8_1=32、20 万次迭代的基准测试中，标量实现耗时 880.7 ns/call，SIMD 实现耗时 257.8 ns/call，加速比 3.42 倍。",
+        "who": "适合在浏览器中部署大语言模型的 Web 开发者、使用 llama.cpp 进行跨平台推理的开发者、以及关注 WebAssembly 性能优化的研究人员。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9510",
+        "score": "8",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "开发者生态与数据工具",
+        "published": "06-04 09:44"
+      }
+    ],
+    "footer": "本简报由 AI 自动生成，仅供参考。"
+  },
+  "candidate_count": 1
+}
