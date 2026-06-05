@@ -579,6 +579,26 @@
       "first_seen_at": "2026-06-04T19:49:37.346844+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/vllm-project/vllm/releases/tag/v0.22.1|vllm-project/vllm release v0.22.1: highlights this release features 8 commits from 6 contributors (1 new)! v0.22.1 is a ",
+      "title": "vllm-project/vllm release v0.22.1: Highlights This release features 8 commits from 6 contributors (1 new)! v0.22.1 is a patch release on top of v0.22.0 with targeted bug fixes",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.22.1",
+      "source": "GitHub Release: vllm-project/vllm",
+      "published_at": "2026-06-05T10:10:00+00:00",
+      "first_seen_at": "2026-06-05T11:52:12.181740+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9519|ggml-org/llama.cpp release b9519: sycl : port multi-column mmvq from cuda backend (21845) mmvq: port the ncolsdst optimi",
+      "title": "ggml-org/llama.cpp release b9519: sycl : port multi-column MMVQ from CUDA backend (21845) mmvq: Port the ncolsdst optimization from ggml-cuda/mmvq.cu to SYCL",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9519",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-06-05T05:45:01+00:00",
+      "first_seen_at": "2026-06-05T11:52:12.181772+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
