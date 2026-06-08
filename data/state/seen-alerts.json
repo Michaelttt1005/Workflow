@@ -599,6 +599,16 @@
       "first_seen_at": "2026-06-05T11:52:12.181772+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developer.nvidia.com/blog/train-models-faster-with-jax-and-maxtext-using-nvfp4-on-nvidia-blackwell/|train models faster with jax and maxtext using nvfp4 on nvidia blackwell",
+      "title": "Train Models Faster with JAX and MaxText Using NVFP4 on NVIDIA Blackwell",
+      "url": "https://developer.nvidia.com/blog/train-models-faster-with-jax-and-maxtext-using-nvfp4-on-nvidia-blackwell/",
+      "source": "NVIDIA Developer Blog",
+      "published_at": "2026-06-08T18:18:06+00:00",
+      "first_seen_at": "2026-06-08T21:19:57.941999+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }
