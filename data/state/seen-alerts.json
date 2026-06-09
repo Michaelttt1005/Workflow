@@ -609,6 +609,16 @@
       "first_seen_at": "2026-06-08T21:19:57.941999+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9585|ggml-org/llama.cpp release b9585: graph: fix granite speech model inference by applying embedding scale when deepstack i",
+      "title": "ggml-org/llama.cpp release b9585: graph: Fix granite speech model inference by applying embedding scale when deepstack is not used (24357) llama-graph : apply embedding scal",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9585",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-06-09T18:15:21+00:00",
+      "first_seen_at": "2026-06-09T19:35:46.501641+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

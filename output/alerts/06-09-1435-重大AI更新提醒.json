@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-06-09T19:35:44.805476Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "06-09 | llama.cpp 修复 Granite 语音模型推理",
+    "overview": "本期聚焦 llama.cpp 最新版本 b9585，修复了 Granite 语音模型在非 deepstack 模式下的推理问题，提升了嵌入缩放处理的准确性。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b9585: 修复 Granite 语音模型推理中嵌入缩放问题",
+        "what": "这是 llama.cpp 项目的一个新版本（b9585），主要修复了 Granite 语音模型在推理时的一个 bug。当不使用 deepstack 时，嵌入缩放（embedding scale）没有被正确应用，导致模型输出异常。",
+        "plain_explanation": "想象一下，你有一个语音助手，它需要把声音转换成文字。在这个过程中，模型会把声音信号变成一串数字（嵌入向量），然后对这些数字进行缩放调整，让它们落在合适的范围内。之前的版本在某种模式下忘了做这个缩放，就像做蛋糕时忘了加糖，味道就不对了。这次更新就是补上了这个步骤，确保语音模型在任何模式下都能正常工作。",
+        "purpose": "解决 Granite 语音模型在非 deepstack 模式下的推理错误，保证模型输出的稳定性和准确性，让开发者可以放心使用该模型进行语音相关任务。",
+        "features": "修复了 llama-graph 中 deepstack 未启用时的嵌入缩放问题；移除了不存在的 hunyuan-vl 测试项；采纳了社区贡献者的代码建议",
+        "comparison": "暂无可信公开对比数据",
+        "who": "使用 llama.cpp 进行语音模型推理的开发者，特别是部署 Granite 语音模型的团队；对 llama.cpp 推理引擎有依赖的 AI 应用开发者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9585",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "检索增强与向量模型",
+        "published": "06-09 13:15"
+      }
+    ],
+    "footer": "本简报由 AI 自动生成，仅供参考。"
+  },
+  "candidate_count": 1
+}
