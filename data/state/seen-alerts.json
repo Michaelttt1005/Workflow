@@ -639,6 +639,36 @@
       "first_seen_at": "2026-06-10T09:07:10.493095+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/huggingface/transformers/releases/tag/v5.11.0|huggingface/transformers release v5.11.0: release v5.11.0 new model additions diffusiongemma diffusiongemma is engineere",
+      "title": "huggingface/transformers release v5.11.0: Release v5.11.0 New Model additions DiffusionGemma DiffusionGemma is engineered to reduce the sequential bottlenecks of standard causal la",
+      "url": "https://github.com/huggingface/transformers/releases/tag/v5.11.0",
+      "source": "GitHub Release: huggingface/transformers",
+      "published_at": "2026-06-10T16:32:44+00:00",
+      "first_seen_at": "2026-06-10T19:45:01.333379+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9589|ggml-org/llama.cpp release b9589: cuda: fix ssmscanf32 data-races (24360) add missing syncthreads before resuing cubtemp",
+      "title": "ggml-org/llama.cpp release b9589: CUDA: Fix ssmscanf32 data-races (24360) Add missing syncthreads before resuing cubtempstorage syncthreads() is required before being allowe",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9589",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-06-10T14:13:02+00:00",
+      "first_seen_at": "2026-06-10T19:45:01.333413+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://pytorch.org/blog/portable-vllm-model-inference-kernels-in-helion/|portable vllm model inference kernels in helion",
+      "title": "Portable vLLM Model Inference Kernels in Helion",
+      "url": "https://pytorch.org/blog/portable-vllm-model-inference-kernels-in-helion/",
+      "source": "PyTorch Blog",
+      "published_at": "2026-06-10T17:00:13+00:00",
+      "first_seen_at": "2026-06-10T19:45:01.333430+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
