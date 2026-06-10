@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-06-10T09:07:07.811301Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "06-10 | LangChain 合作伙伴包更新：Groq 与 OpenAI 集成改进",
+    "overview": "本期聚焦 LangChain 生态中两个重要合作伙伴包的版本更新：langchain-groq 1.1.3 和 langchain-openai 1.3.0。前者包含多项依赖升级和测试优化，后者新增对 OpenAI 内置工具 apply_patch 的支持，并刷新了模型配置文件。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "langchain-groq 1.1.3 发布：依赖升级与测试优化",
+        "what": "langchain-groq 是 LangChain 框架中用于集成 Groq 推理引擎的合作伙伴包。版本 1.1.3 是一次维护性更新，主要包含依赖项升级（如 langchain-core、langsmith、urllib3、idna 等）、测试框架优化（禁用 pytest-benchmark 在 xdist 下的警告）以及模型配置文件刷新。",
+        "plain_explanation": "想象一下，你正在用一套乐高积木搭建 AI 应用，LangChain 就是积木盒，而 langchain-groq 是专门连接 Groq 这块特殊积木的接口。这次更新相当于给接口换上了更结实的螺丝（升级依赖），并清理了工具箱（优化测试），让搭建过程更稳定。例如，之前跑测试时可能会弹出烦人的警告，现在被静音了；同时底层依赖如 langchain-core 从 1.3.2 升级到 1.3.3，确保兼容性。",
+        "purpose": "提升 langchain-groq 包的稳定性和兼容性，确保开发者在使用 Groq 推理时获得更流畅的体验，减少因依赖版本过旧导致的潜在问题。",
+        "features": "依赖升级：langchain-core 从 1.3.2 升至 1.3.3，langsmith 从 0.7.31 升至 0.8.0，urllib3 从 2.6.3 升至 2.7.0，idna 从 3.10 升至 3.15。；测试优化：在并行测试（pytest-xdist）下禁用 pytest-benchmark 以避免 PytestBenchmarkWarning 警告。；模型配置文件刷新：更新了模型配置文件数据，确保与最新 Groq 模型兼容。；基础设施加固：强化了 Dependabot 版本边界保护，减少自动更新带来的风险。",
+        "comparison": "暂无可信公开对比数据。",
+        "who": "使用 LangChain 框架并集成 Groq 推理引擎的开发者，尤其是关注包稳定性和依赖管理的团队。",
+        "link": "https://github.com/langchain-ai/langchain/releases/tag/langchain-groq%3D%3D1.1.3",
+        "score": "8",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "开发者生态与数据工具",
+        "published": "06-09 23:16"
+      },
+      {
+        "candidate_id": "2",
+        "title": "langchain-openai 1.3.0 发布：支持 apply_patch 内置工具",
+        "what": "langchain-openai 是 LangChain 框架中用于集成 OpenAI API 的合作伙伴包。版本 1.3.0 是一次功能更新，新增了对 OpenAI 内置工具 apply_patch 的支持，允许开发者通过该工具直接对代码或配置进行补丁操作。此外还包含了依赖修复和模型配置文件刷新。",
+        "plain_explanation": "假设你正在用 LangChain 构建一个能自动修改代码的 AI 助手。以前，你需要自己编写复杂的逻辑来让 AI 生成补丁并应用。现在，langchain-openai 1.3.0 直接内置了 apply_patch 工具，就像给 AI 助手配备了一把“自动螺丝刀”，它可以直接调用 OpenAI 的补丁功能，快速修改文件。例如，你可以让 AI 修复一段 Python 代码中的 bug，它会自动生成 diff 并应用。",
+        "purpose": "简化开发者通过 LangChain 使用 OpenAI 内置工具的过程，特别是代码补丁和自动化修改场景，提升开发效率。",
+        "features": "新增 apply_patch 内置工具：支持通过 OpenAI 的补丁功能直接修改代码或配置文件。；依赖修复：修复了最小核心依赖版本问题，确保与 langchain-core 兼容。；模型配置文件刷新：更新了模型配置文件数据，支持最新的 OpenAI 模型。；测试优化：禁用 pytest-benchmark 在 xdist 下的警告，提升测试体验。",
+        "comparison": "暂无可信公开对比数据。",
+        "who": "使用 LangChain 框架并集成 OpenAI API 的开发者，特别是需要构建代码修改、自动化补丁等智能体应用的团队。",
+        "link": "https://github.com/langchain-ai/langchain/releases/tag/langchain-openai%3D%3D1.3.0",
+        "score": "8",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "06-09 15:40"
+      }
+    ],
+    "footer": "以上更新均来自 LangChain 官方 GitHub 仓库，建议开发者根据自身需求升级相关包。"
+  },
+  "candidate_count": 2
+}
