@@ -699,6 +699,16 @@
       "first_seen_at": "2026-06-12T11:55:19.316873+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/huggingface/transformers/releases/tag/v5.12.0|huggingface/transformers release v5.12.0: release v5.12.0 new model additions minimax-m3-vl minimax-m3-vl is the vision-",
+      "title": "huggingface/transformers release v5.12.0: Release v5.12.0 New Model additions MiniMax-M3-VL MiniMax-M3-VL is the vision-language member of the MiniMax-M3 family that pairs a CLIP-s",
+      "url": "https://github.com/huggingface/transformers/releases/tag/v5.12.0",
+      "source": "GitHub Release: huggingface/transformers",
+      "published_at": "2026-06-12T14:39:40+00:00",
+      "first_seen_at": "2026-06-12T18:31:54.358649+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }
