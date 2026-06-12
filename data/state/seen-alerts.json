@@ -669,6 +669,36 @@
       "first_seen_at": "2026-06-10T19:45:01.333430+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9606|ggml-org/llama.cpp release b9606: spec: add eagle3 speculative decoding support (18039) llama : enable layer input extra",
+      "title": "ggml-org/llama.cpp release b9606: spec: add EAGLE3 speculative decoding support (18039) llama : enable layer input extraction spec: support eagle3 eagle3: fix params bug",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9606",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-06-12T08:45:47+00:00",
+      "first_seen_at": "2026-06-12T11:55:19.316829+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9605|ggml-org/llama.cpp release b9605: ggml: support concat for scalar types at cuda backend (24011) cuda: support concat for",
+      "title": "ggml-org/llama.cpp release b9605: ggml: support concat for scalar types at cuda backend (24011) cuda: support concat for scalar types Update concat.cu fix metal ci issue m",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9605",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-06-12T08:12:01+00:00",
+      "first_seen_at": "2026-06-12T11:55:19.316859+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3d%3d1.3.8|langchain==1.3.8",
+      "title": "langchain==1.3.8",
+      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.3.8",
+      "source": "GitHub Release: langchain-ai/langchain",
+      "published_at": "2026-06-12T04:20:47+00:00",
+      "first_seen_at": "2026-06-12T11:55:19.316873+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
