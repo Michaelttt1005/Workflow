@@ -709,6 +709,16 @@
       "first_seen_at": "2026-06-12T18:31:54.358649+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://developer.nvidia.com/blog/nvidia-achieves-leading-agentic-coding-performance-on-first-agentic-ai-benchmark/|nvidia achieves leading agentic coding performance on first agentic ai benchmark",
+      "title": "NVIDIA Achieves Leading Agentic Coding Performance on First Agentic AI Benchmark",
+      "url": "https://developer.nvidia.com/blog/nvidia-achieves-leading-agentic-coding-performance-on-first-agentic-ai-benchmark/",
+      "source": "NVIDIA Developer Blog",
+      "published_at": "2026-06-12T21:12:40+00:00",
+      "first_seen_at": "2026-06-13T08:33:47.971069+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
