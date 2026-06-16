@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-06-16T03:31:07.391310Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "06-15 | llama.cpp 修复工具调用解析问题",
+    "overview": "本期聚焦 llama.cpp 最新版本 b9660，修复了 LFM2 工具调用解析中的双重转义问题，提升了工具调用的稳定性。该版本同时提供了多平台二进制包，方便开发者快速部署。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b9660: 修复 LFM2 工具调用解析双重转义问题",
+        "what": "llama.cpp 是一个高性能的 C/C++ 推理引擎，支持在本地运行多种大语言模型。本次 b9660 版本主要修复了 LFM2（一种工具调用格式）在解析时出现的双重转义 bug，并增加了转义测试用例。该版本还提供了 macOS（Apple Silicon 和 Intel）、Linux（x64、arm64、s390x）以及 iOS XCFramework 的预编译二进制包。",
+        "plain_explanation": "想象你让 AI 助手调用一个天气 API，它需要把参数“今天天气”传给函数。如果参数里本身有引号，系统可能会错误地多加一层转义，导致 API 收到乱码。这个修复就是确保参数传递时不会多此一举，让工具调用更可靠。例如，当 AI 需要调用一个函数并传递包含特殊字符的字符串时，之前的版本可能会错误地将字符串中的反斜杠再次转义，导致函数接收到的参数格式错误。现在，修复后参数会保持原样传递，工具调用更加稳定。",
+        "purpose": "解决 LFM2 工具调用时因双重转义导致的解析错误，提升 llama.cpp 在智能体场景下的稳定性，让开发者可以更放心地使用本地模型进行函数调用。这对于构建需要与外部工具交互的 AI 应用（如自动执行任务、查询数据库等）至关重要。",
+        "features": "修复 LFM2 工具调用解析中的双重转义问题；新增转义测试用例，防止回归；提供 macOS、Linux、iOS 等多平台二进制包，方便快速部署；持续优化本地推理性能。",
+        "comparison": "暂无可信公开对比数据",
+        "who": "使用 llama.cpp 进行本地推理的开发者，尤其是构建智能体或工具调用应用的团队；关注本地模型部署稳定性的研究人员；需要在 macOS、Linux 或 iOS 上运行大语言模型的个人开发者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9660",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "06-15 17:05"
+      }
+    ],
+    "footer": "本简报基于候选源生成，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}
