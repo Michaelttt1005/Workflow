@@ -729,6 +729,76 @@
       "first_seen_at": "2026-06-16T03:31:09.620916+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/unlocking-the-power-of-the-tpu-stack-introducing-our-new-developer-hub/|unlocking the power of the tpu stack: introducing our new developer hub",
+      "title": "Unlocking the Power of the TPU Stack: Introducing our new Developer Hub",
+      "url": "https://developers.googleblog.com/unlocking-the-power-of-the-tpu-stack-introducing-our-new-developer-hub/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-06-19T19:40:45.216608+00:00",
+      "first_seen_at": "2026-06-19T19:41:13.258576+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9728|ggml-org/llama.cpp release b9728: arg: add comment line support to --api-key-file (23168) macos/ios",
+      "title": "ggml-org/llama.cpp release b9728: arg: Add comment line support to --api-key-file (23168) macOS/iOS",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9728",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-06-19T16:19:15+00:00",
+      "first_seen_at": "2026-06-19T19:41:13.258610+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9726|ggml-org/llama.cpp release b9726: server: add --agent arg, remove redundant webui naming compat (24801) server: add --ag",
+      "title": "ggml-org/llama.cpp release b9726: server: add --agent arg, remove redundant webui naming compat (24801) server: add --agent arg, remove redundant webui naming compat corren",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9726",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-06-19T15:15:50+00:00",
+      "first_seen_at": "2026-06-19T19:41:13.258634+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9723|ggml-org/llama.cpp release b9723: spec: support eagle3 for qwen3.5 & 3.6 (24593) spec: support qwen3.5 & 3.6 eagle3 draf",
+      "title": "ggml-org/llama.cpp release b9723: spec: support eagle3 for qwen3.5 & 3.6 (24593) spec: support qwen3.5 & 3.6 eagle3 draft eagle3: Add deferred boundary checkpoints restore",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9723",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-06-19T11:00:44+00:00",
+      "first_seen_at": "2026-06-19T19:41:13.258657+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3d%3d1.4.8|langchain-core==1.4.8",
+      "title": "langchain-core==1.4.8",
+      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.4.8",
+      "source": "GitHub Release: langchain-ai/langchain",
+      "published_at": "2026-06-18T19:39:42+00:00",
+      "first_seen_at": "2026-06-19T19:41:13.258678+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/pytorch/pytorch/releases/tag/v2.12.1|pytorch 2.12.1 release, bug fix release",
+      "title": "PyTorch 2.12.1 Release, bug fix release",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/v2.12.1",
+      "source": "GitHub Release: pytorch/pytorch",
+      "published_at": "2026-06-18T00:41:17+00:00",
+      "first_seen_at": "2026-06-19T19:41:13.258699+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://huggingface.co/blog/is-it-agentic-enough|is it agentic enough? benchmarking open models on your own tooling",
+      "title": "Is it agentic enough? Benchmarking open models on your own tooling",
+      "url": "https://huggingface.co/blog/is-it-agentic-enough",
+      "source": "Hugging Face Blog",
+      "published_at": "2026-06-18T00:00:00+00:00",
+      "first_seen_at": "2026-06-19T19:41:13.258719+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
