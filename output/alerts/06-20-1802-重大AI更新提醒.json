@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-06-20T23:02:00.744174Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "06-20 | llama.cpp 修复 Hexagon 后端 SSM 卷积权重步长问题",
+    "overview": "本期聚焦 llama.cpp 最新修复版本 b9742，该版本针对 Hexagon DSP 后端修复了 SSM 卷积权重的填充步长问题，提升了模型在移动端和嵌入式设备上的推理稳定性。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b9742: fix(hexagon): use padded stride for ssm-conv weights (24470) macOS/iOS",
+        "what": "这是 llama.cpp 项目的一个修复版本（b9742），主要针对 Hexagon DSP 后端修复了 SSM（状态空间模型）卷积层权重加载时的填充步长（padded stride）问题。llama.cpp 是一个用于在本地设备上高效运行大型语言模型（如 LLaMA）的 C++ 推理引擎，支持多种硬件后端。",
+        "plain_explanation": "想象一下，你有一个拼图，每个拼图块代表模型中的权重数据。在 Hexagon DSP（一种常用于手机和嵌入式设备的处理器）上，这些拼图块需要按照特定的间距（步长）排列才能正确工作。之前的版本中，间距计算有误，导致拼图块错位，模型推理结果出错。这次更新就像重新测量了间距，确保每个拼图块都放在正确的位置，从而让模型在 Hexagon 设备上稳定运行。例如，如果你在手机上用 llama.cpp 运行一个聊天机器人，这次修复能避免因权重错位导致的回答错误或崩溃。",
+        "purpose": "解决 Hexagon DSP 后端上 SSM 卷积权重步长填充错误导致的推理异常问题，提升 llama.cpp 在移动端（如 iOS）和嵌入式设备上的兼容性和稳定性。对于依赖本地推理的开发者来说，这是一个关键的 bug 修复。",
+        "features": "修复了 Hexagon 后端中 SSM 卷积权重的填充步长计算逻辑；提供了针对 macOS（Apple Silicon 和 Intel）、iOS、Linux（x64、arm64、s390x）的预编译二进制包；支持 KleidiAI 加速（但该版本中该功能被禁用）；作为 llama.cpp 的常规修复版本，保持了与之前版本的 API 兼容性",
+        "comparison": "暂无可信公开对比数据。该版本主要是 bug 修复，未引入性能或能力对比。",
+        "who": "适合在移动设备（如 iPhone、iPad）或嵌入式 Linux 设备上使用 llama.cpp 进行本地 LLM 推理的开发者；使用 Hexagon DSP 后端的 AI 工程师；以及关注 llama.cpp 项目进展的社区成员。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9742",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "开发者生态与数据工具",
+        "published": "06-20 17:31"
+      }
+    ],
+    "footer": "以上信息基于候选源整理，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}

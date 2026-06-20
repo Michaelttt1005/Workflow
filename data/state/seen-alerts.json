@@ -799,6 +799,16 @@
       "first_seen_at": "2026-06-19T19:41:13.258719+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9742|ggml-org/llama.cpp release b9742: fix(hexagon): use padded stride for ssm-conv weights (24470) macos/ios",
+      "title": "ggml-org/llama.cpp release b9742: fix(hexagon): use padded stride for ssm-conv weights (24470) macOS/iOS",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9742",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-06-20T22:31:33+00:00",
+      "first_seen_at": "2026-06-20T23:02:03.105885+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
