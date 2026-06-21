@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-06-21T12:08:51.857062Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "06-21 | llama.cpp 发布 b9745，支持多 token 推测解码加速",
+    "overview": "本期聚焦 llama.cpp 最新 release b9745，该版本引入了对 Step3.5/3.7 flash MTP3 的支持，通过多 token 推测解码（Multi-Token Prediction）显著提升推理速度，并新增了相关 API 接口。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b9745: 支持 Step3.5/3.7 flash MTP3 多 token 推测解码",
+        "what": "这是 llama.cpp 项目的一个 GitHub Release 版本 b9745，主要更新是实现了对多 token 推测解码（Multi-Token Prediction, MTP）的支持，具体包括 Step3.5 和 Step3.7 的 flash MTP3 功能。该版本新增了 mtp_layer_offset 参数，并在图复用中包含 nextn 标志，同时添加了 llama_set_mtp_layer_offset 和 llama_model_n_nextn_layer 两个 API。",
+        "plain_explanation": "推测解码是一种加速大模型推理的技术，就像猜谜时一次猜多个答案而不是一个一个猜。传统模型每次只生成一个 token（比如一个字），而 MTP 允许模型一次预测多个 token，然后并行验证，从而减少推理步骤。例如，在生成一段文字时，模型可以同时预测接下来的 3 个词，然后一次性检查它们是否正确，这样速度就能提升好几倍。这个版本让 llama.cpp 支持了更高效的 MTP 实现，特别是针对某些模型架构的优化。",
+        "purpose": "主要目的是提升 llama.cpp 在本地运行大模型时的推理速度，尤其是对于需要快速生成大量文本的场景，如聊天机器人、代码补全等。通过多 token 推测解码，用户可以在相同硬件上获得更快的响应速度。",
+        "features": "支持 Step3.5/3.7 flash MTP3 多 token 推测解码；新增 mtp_layer_offset 参数，允许灵活配置 MTP 层偏移；新增 llama_set_mtp_layer_offset 和 llama_model_n_nextn_layer API，方便开发者集成；优化图复用逻辑，包含 nextn 标志，提升计算效率",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合使用 llama.cpp 在本地部署大模型的开发者、AI 应用开发者以及需要低延迟推理的研究人员。特别是那些希望在不升级硬件的情况下提升模型生成速度的用户。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9745",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "06-21 06:38"
+      }
+    ],
+    "footer": "以上信息基于候选源，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}
