@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-06-22T23:21:18.642473Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "06-22 | LangChain OpenAI 集成更新",
+    "overview": "本期关注 LangChain 对 OpenAI 集成库的修复更新，涉及响应 ID 处理、工具 strict 模式、Responses API 等关键改进，提升 API 兼容性与稳定性。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "langchain-openai==1.3.3：修复 OpenAI 集成中的多项 API 兼容性问题",
+        "what": "这是 LangChain 官方发布的 langchain-openai 库的 1.3.3 版本，主要修复了与 OpenAI API 交互时的多个问题，包括响应 ID 处理、工具 strict 模式、Responses API 的 stop 参数等。",
+        "plain_explanation": "想象你正在用 LangChain 构建一个 AI 聊天机器人，它背后调用 OpenAI 的模型。这个更新就像给机器人的“翻译器”打补丁，确保它能正确理解 OpenAI 的最新指令。例如，之前当你不希望 OpenAI 存储对话记录时（store=false），机器人可能还是会错误地保留一些响应 ID，现在它学会了正确丢弃这些 ID。再比如，对于某些兼容 OpenAI 的第三方模型，工具调用时的 strict 模式（要求严格遵循函数定义）现在只会在真正需要时启用，避免不必要的错误。",
+        "purpose": "解决 LangChain 与 OpenAI API 集成中的兼容性问题，提升开发者在使用 OpenAI 模型（包括兼容模型）时的稳定性和可靠性，减少因 API 变更导致的错误。",
+        "features": "修复当 store 参数为 false 时，错误保留响应 item ID 的问题；仅在 OpenAI 兼容模型上设置工具 strict=True，避免对非 OpenAI 模型造成干扰；从 Responses API 的 payload 中移除 stop 参数，确保与最新 API 规范一致；更新依赖库（langsmith、vcrpy）并刷新模型配置文件",
+        "comparison": "暂无可信公开对比数据",
+        "who": "使用 LangChain 框架并调用 OpenAI 模型（包括兼容模型）的开发者，尤其是构建聊天机器人、智能体或需要精细控制 API 参数的团队。",
+        "link": "https://github.com/langchain-ai/langchain/releases/tag/langchain-openai%3D%3D1.3.3",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "06-22 17:54"
+      }
+    ],
+    "footer": "以上信息基于候选源，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}
