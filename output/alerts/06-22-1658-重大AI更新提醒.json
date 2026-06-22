@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-06-22T21:58:23.845081Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "06-22 | llama.cpp 新增工具调用响应 ID，强化智能体开发",
+    "overview": "本期聚焦 llama.cpp 最新版本 b9763，该版本为工具调用 API 添加了响应 ID 支持，提升了多轮工具交互的可靠性。对于在本地或移动端构建 AI 智能体的开发者而言，这是一个重要的基础设施更新。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b9763: server : Add id to tool call responses api",
+        "what": "这是 llama.cpp 项目的一个新版本发布（b9763），主要更新是在其 HTTP 服务器的工具调用（tool call）响应 API 中增加了唯一标识符（id）字段。llama.cpp 是一个高性能的 C/C++ 推理引擎，支持在 CPU、GPU 和移动设备上运行大型语言模型。",
+        "plain_explanation": "想象一下你让一个 AI 助手同时做两件事：查天气和订餐厅。以前，AI 返回的两个工具调用结果可能没有明确的标签，你很难区分哪个结果对应哪个请求。现在，每个工具调用响应都带有一个唯一的 ID，就像快递单号一样，你可以精确地把每个结果和对应的请求匹配起来。这对于构建能连续调用多个工具的智能体（比如自动规划行程的助手）非常重要。",
+        "purpose": "解决多工具调用场景下的响应匹配问题，使开发者能够更可靠地处理并发或顺序的工具调用，提升智能体系统的稳定性和可调试性。",
+        "features": "为每个工具调用响应添加唯一 id 字段，便于追踪和关联；兼容 OpenAI 风格的 tool call API，降低迁移成本；支持 macOS（Apple Silicon 和 Intel）、iOS、Linux 等多种平台；提供预编译二进制和 XCFramework，方便集成",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合在本地或边缘设备上部署 LLM 的开发者、研究智能体系统的团队、以及需要构建自定义工具调用流程的 AI 应用开发者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9763",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "06-22 16:32"
+      }
+    ],
+    "footer": "以上信息基于候选源，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}

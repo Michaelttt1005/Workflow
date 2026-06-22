@@ -819,6 +819,16 @@
       "first_seen_at": "2026-06-21T12:08:53.918414+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9763|ggml-org/llama.cpp release b9763: server : add id to tool call responses api (24882) macos/ios",
+      "title": "ggml-org/llama.cpp release b9763: server : Add id to tool call responses api (24882) macOS/iOS",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9763",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-06-22T21:32:31+00:00",
+      "first_seen_at": "2026-06-22T21:58:25.679682+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
