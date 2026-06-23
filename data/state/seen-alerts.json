@@ -849,6 +849,26 @@
       "first_seen_at": "2026-06-23T14:35:57.389030+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developer.nvidia.com/blog/boost-inference-performance-up-to-15x-on-nvidia-blackwell-using-dflash-speculative-decoding/|boost inference performance up to 15x on nvidia blackwell using dflash speculative decoding",
+      "title": "Boost Inference Performance up to 15x on NVIDIA Blackwell Using DFlash Speculative Decoding",
+      "url": "https://developer.nvidia.com/blog/boost-inference-performance-up-to-15x-on-nvidia-blackwell-using-dflash-speculative-decoding/",
+      "source": "NVIDIA Developer Blog",
+      "published_at": "2026-06-23T15:00:00+00:00",
+      "first_seen_at": "2026-06-23T17:48:23.176357+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9774|ggml-org/llama.cpp release b9774: vulkan: support all backend tests for sqr/sqrt/sin/cos/clamp/leakyrelu/norm (24582) vu",
+      "title": "ggml-org/llama.cpp release b9774: vulkan: support all backend tests for SQR/SQRT/SIN/COS/CLAMP/LEAKYRELU/NORM (24582) vulkan: make SQR/SQRT/SIN/COS/CLAMP/LEAKYRELU use unary",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9774",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-06-23T16:17:10+00:00",
+      "first_seen_at": "2026-06-23T17:48:23.176384+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
