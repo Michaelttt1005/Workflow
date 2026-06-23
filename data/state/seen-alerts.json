@@ -839,6 +839,16 @@
       "first_seen_at": "2026-06-22T23:21:20.503885+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9767|ggml-org/llama.cpp release b9767: ggml-webgpu: improve mtp inference by using mat-vec path for small batches (24811) ggm",
+      "title": "ggml-org/llama.cpp release b9767: ggml-webgpu: improve MTP inference by using mat-vec path for small batches (24811) ggml-webgpu: improve small batches decoding Add barrier",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9767",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-06-23T08:58:23+00:00",
+      "first_seen_at": "2026-06-23T14:35:57.389030+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

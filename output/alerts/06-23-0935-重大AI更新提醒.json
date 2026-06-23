@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-06-23T14:35:55.566066Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "06-23 | llama.cpp 发布 b9767，WebGPU 小批量推理性能提升",
+    "overview": "本期聚焦 llama.cpp 最新版本 b9767，该版本针对 WebGPU 后端优化了小批量解码时的矩阵-向量乘法路径，显著提升了 MTP（Multi-Token Prediction）推理速度。对于在浏览器或移动端运行大模型的开发者来说，这是一个重要的性能改进。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b9767: 优化 WebGPU 小批量 MTP 推理",
+        "what": "这是 llama.cpp 项目的一个新版本（b9767），主要改进了 WebGPU 后端在处理小批量数据时的推理性能。具体来说，它通过使用矩阵-向量乘法路径来加速小批量的解码过程，并添加了必要的同步屏障（barrier）来保证正确性。",
+        "plain_explanation": "想象一下，你有一个非常聪明的 AI 助手，但它每次回答问题都需要思考很久。如果一次只问一个问题（小批量），它反而会花更多时间在准备上，而不是真正回答问题。这个更新就像是给 AI 助手换了一个更高效的思考方式：当问题很少时，它不再用复杂的矩阵乘法（像做一大桌菜），而是用更简单的向量乘法（像做一道小菜），从而更快地给出答案。对于在浏览器或手机上运行 AI 模型的用户来说，这意味着更快的响应速度。",
+        "purpose": "解决 WebGPU 后端在小批量推理场景下的性能瓶颈，使得在浏览器或支持 WebGPU 的设备上运行大语言模型时，多 token 预测（MTP）能够更快地生成结果，提升用户体验。",
+        "features": "针对小批量解码使用矩阵-向量乘法路径，减少计算冗余；添加 barrier 同步机制，确保多线程并行计算的正确性；仅影响 WebGPU 后端，不影响 CPU 或 CUDA 等其他后端",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合在浏览器或移动端部署大语言模型的开发者，尤其是使用 WebGPU 进行推理的团队；也适合对 llama.cpp 推理性能优化感兴趣的研究人员。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9767",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "06-23 03:58"
+      }
+    ],
+    "footer": "本简报基于候选源生成，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}
