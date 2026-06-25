@@ -869,6 +869,16 @@
       "first_seen_at": "2026-06-23T17:48:23.176384+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9788|ggml-org/llama.cpp release b9788: sycl : support --split-mode tensor (24152) sycl tp stage1 (1) sycl: tensor parallelism",
+      "title": "ggml-org/llama.cpp release b9788: sycl : support --split-mode tensor (24152) Sycl tp stage1 (1) SYCL: tensor parallelism (--split-mode tensor) for dual-GPU Adds the commini",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9788",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-06-25T08:45:39+00:00",
+      "first_seen_at": "2026-06-25T10:38:13.198713+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
