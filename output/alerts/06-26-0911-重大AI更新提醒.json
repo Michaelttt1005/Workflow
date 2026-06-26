@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-06-26T14:11:35.760960Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "06-26 | llama.cpp 发布 b9810，CUDA 批处理映射增强",
+    "overview": "本期聚焦 llama.cpp 最新版本 b9810，该版本为 CUDA 后端添加了 cublasSgemmBatched 映射，支持 HIP/MUSA 厂商头文件，并同步更新了 macOS/iOS 及 Linux 多平台二进制包。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b9810: CUDA 批处理矩阵乘法映射与多平台二进制更新",
+        "what": "llama.cpp 是一个高性能的 LLM 推理引擎，专注于在消费级硬件上运行大语言模型。本次 b9810 版本主要更新了 CUDA 后端，新增了 cublasSgemmBatched 函数映射，以支持 HIP（AMD GPU）和 MUSA（摩尔线程 GPU）等厂商的 GPU 加速库。同时，该版本为 macOS Apple Silicon、macOS Intel、iOS、Linux（x64/arm64/s390x）提供了预编译二进制包，并修复了部分平台上的 KleidiAI 启用问题。",
+        "plain_explanation": "想象一下，你有一个超级大的乐高城堡（大语言模型），你想快速把它拆开再拼起来（推理计算）。llama.cpp 就像一套高效的乐高拆装工具。这次更新给这套工具增加了一个新零件：cublasSgemmBatched。这个零件专门用来同时处理多个小矩阵的乘法运算，就像一次把好几块乐高板同时拼好，而不是一块一块拼。而且，这个零件现在不仅能在 NVIDIA 的 GPU 上工作，还能在 AMD 和国产摩尔线程的 GPU 上使用，让更多玩家能用上这套工具。",
+        "purpose": "提升 llama.cpp 在多种 GPU 硬件上的推理性能，特别是通过批处理矩阵乘法加速模型计算，同时扩大对非 NVIDIA GPU 的支持范围，让更多开发者能在不同硬件上高效运行 LLM。",
+        "features": "CUDA 后端新增 cublasSgemmBatched 映射，支持批量矩阵乘法，提升推理吞吐量；扩展对 HIP（AMD GPU）和 MUSA（摩尔线程 GPU）厂商头文件的兼容性；提供 macOS Apple Silicon、macOS Intel、iOS、Linux x64/arm64/s390x 等多平台预编译二进制包；修复 macOS Apple Silicon 上 KleidiAI 加速的启用问题（PR #23780）",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合需要在本地或边缘设备上运行 LLM 的开发者、AI 推理工程师、以及使用 AMD 或国产 GPU 的研究团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9810",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "06-26 06:44"
+      }
+    ],
+    "footer": "数据截止 2026-06-26，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}

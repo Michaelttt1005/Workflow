@@ -879,6 +879,16 @@
       "first_seen_at": "2026-06-25T10:38:13.198713+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9810|ggml-org/llama.cpp release b9810: cuda: add cublassgemmbatched mapping for hip/musa vendor headers (25033) macos/ios",
+      "title": "ggml-org/llama.cpp release b9810: CUDA: add cublasSgemmBatched mapping for HIP/MUSA vendor headers (25033) macOS/iOS",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9810",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-06-26T11:44:47+00:00",
+      "first_seen_at": "2026-06-26T14:11:37.758791+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
