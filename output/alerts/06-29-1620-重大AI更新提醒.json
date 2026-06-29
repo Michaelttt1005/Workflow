@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-06-29T21:20:29.747378Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "06-29 | Ray 2.56.0 发布：数据稳定性与 LLM 服务性能大幅提升",
+    "overview": "Ray 2.56.0 正式发布，重点改进了 Ray Data 的稳定性，并重构了 Ray Serve LLM 的请求处理架构，显著提升了 LLM 推理性能。新版本还引入了会话粘性路由等新策略，适合大规模分布式训练和模型服务场景。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "Ray 2.56.0 发布：数据稳定性增强与 LLM 服务性能优化",
+        "what": "Ray 2.56.0 是分布式计算框架 Ray 的最新版本，主要包含 Ray Data 模块的稳定性改进和 Ray Serve LLM 的架构重构。Ray Data 新增了多数据集集群运行、CPU map-batches 自动批量大小选择、默认逻辑内存配置以防止 OOM，并减少了对象存储溢出。Ray Serve LLM 通过解耦请求处理与 token 流式响应路径，显著提升了 LLM 服务性能，同时引入了 ConsistentHashRouter 和 CapacityQueueRouter 等新路由策略。",
+        "plain_explanation": "Ray 是一个帮助开发者轻松运行分布式计算（比如训练大型 AI 模型或提供模型服务）的框架。这次更新主要做了两件事：第一，让数据处理更稳定——比如你同时处理多个数据集时不会崩溃，系统会自动选择合适的数据批量大小，避免内存溢出；第二，让 AI 模型服务更快——以前处理用户请求和生成回答是混在一起的，现在分开了，就像餐厅里点菜和做菜分开，效率更高。另外还增加了新功能，比如可以根据用户会话保持路由到同一台机器，适合聊天机器人等场景。",
+        "purpose": "解决大规模分布式训练和模型服务中的稳定性与性能瓶颈，特别是 LLM 推理场景下的高吞吐和低延迟需求。",
+        "features": "Ray Data 稳定性增强：支持多数据集集群运行，自动批量大小选择，默认逻辑内存配置防止 OOM，减少对象存储溢出。；Ray Serve LLM 架构重构：解耦请求处理与 token 流式响应路径，提升 LLM 服务性能。；新路由策略：ConsistentHashRouter 实现会话粘性路由，CapacityQueueRouter 优化队列管理。",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合使用 Ray 进行分布式训练、数据处理和模型服务的 AI 工程师、数据科学家和 MLOps 团队，特别是需要部署 LLM 服务的开发者。",
+        "link": "https://github.com/ray-project/ray/releases/tag/ray-2.56.0",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "检索增强与向量模型",
+        "published": "06-29 15:32"
+      }
+    ],
+    "footer": "本简报基于候选源生成，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}

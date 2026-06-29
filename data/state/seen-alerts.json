@@ -899,6 +899,16 @@
       "first_seen_at": "2026-06-29T19:49:21.431380+00:00",
       "score": 9,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ray-project/ray/releases/tag/ray-2.56.0|ray-2.56.0",
+      "title": "Ray-2.56.0",
+      "url": "https://github.com/ray-project/ray/releases/tag/ray-2.56.0",
+      "source": "GitHub Release: ray-project/ray",
+      "published_at": "2026-06-29T20:32:55+00:00",
+      "first_seen_at": "2026-06-29T21:20:31.545588+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
