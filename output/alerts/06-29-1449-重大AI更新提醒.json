@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-06-29T19:49:19.158888Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "06-29 | vLLM v0.24.0 发布，支持 MiniMax-M3 并优化 DeepSeek-V4 推理性能",
+    "overview": "本期聚焦 vLLM v0.24.0 版本发布，新增 MiniMax-M3 模型支持，并对 DeepSeek-V4 进行多项推理优化，包括稀疏索引缓存、预填分块规划等，显著提升吞吐量和降低延迟。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "vLLM v0.24.0 发布：支持 MiniMax-M3 模型，DeepSeek-V4 推理性能大幅优化",
+        "what": "vLLM 是一个高性能的大语言模型推理引擎，v0.24.0 版本是其最新发布，包含 571 次提交和 256 位贡献者的工作。主要新增了对 MiniMax-M3 模型的支持，并对 DeepSeek-V4 模型进行了多项推理优化。",
+        "plain_explanation": "想象一下，你有一个超级聪明的 AI 助手，但让它回答问题需要很多计算资源。vLLM 就像一个高效的调度员，能让 AI 模型运行得更快、更省资源。这次更新中，vLLM 新增了对 MiniMax-M3 模型的支持，这意味着你可以用 vLLM 来运行这个新模型。同时，对于 DeepSeek-V4 模型，vLLM 做了很多优化，比如改进缓存机制和计算规划，让模型回答问题的速度更快，同时能处理更多用户请求。具体来说，通过稀疏索引缓存，模型的首 token 生成时间（TTFT）降低了 2-4%；通过预填分块规划，端到端吞吐量提升了 4%。",
+        "purpose": "该版本旨在扩展 vLLM 支持的模型范围，并提升现有模型的推理效率，降低延迟和提高吞吐量，使开发者能够更经济、更快速地部署大型语言模型。",
+        "features": "新增 MiniMax-M3 模型支持，包括 BF16/FP8 索引器、MXFP4 支持、FP8 稀疏 GQA 等，并针对 AMD/ROCm 平台进行了大量调优。；DeepSeek-V4 推理优化：FlashInfer 稀疏索引缓存降低 TTFT 2-4%，预填分块规划提升端到端吞吐量 4%，集群协同 topK 内核降低延迟，连续每块 KV 分配等。；修复了 MiniMax-M2 的性能回归问题。；包含 77 位新贡献者，社区活跃度持续增长。",
+        "comparison": "暂无可信公开对比数据，但内部测试显示 DeepSeek-V4 的 TTFT 降低 2-4%，端到端吞吐量提升 4%。",
+        "who": "适合使用 vLLM 部署大语言模型的开发者、AI 推理工程师、以及需要高效运行 MiniMax-M3 或 DeepSeek-V4 模型的研究团队。",
+        "link": "https://github.com/vllm-project/vllm/releases/tag/v0.24.0",
+        "score": "9",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "06-29 14:41"
+      }
+    ],
+    "footer": "以上信息基于 vLLM 官方 GitHub Release 生成，具体性能数据请以实际测试为准。"
+  },
+  "candidate_count": 1
+}

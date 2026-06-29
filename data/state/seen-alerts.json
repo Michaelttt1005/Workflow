@@ -889,6 +889,16 @@
       "first_seen_at": "2026-06-26T14:11:37.758791+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/vllm-project/vllm/releases/tag/v0.24.0|vllm-project/vllm release v0.24.0: vllm v0.24.0 release notes highlights this release features 571 commits from 256 cont",
+      "title": "vllm-project/vllm release v0.24.0: vLLM v0.24.0 Release Notes Highlights This release features 571 commits from 256 contributors (77 new)! MiniMax-M3: Added support for the",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.24.0",
+      "source": "GitHub Release: vllm-project/vllm",
+      "published_at": "2026-06-29T19:41:59+00:00",
+      "first_seen_at": "2026-06-29T19:49:21.431380+00:00",
+      "score": 9,
+      "alert_sent": true
     }
   ]
 }
