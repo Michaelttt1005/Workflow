@@ -909,6 +909,66 @@
       "first_seen_at": "2026-06-29T21:20:31.545588+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/announcing-adk-go-20/|build reliable multi-agent applications with adk go 2.0. discover our new graph-based workflow engine, built-in human-in",
+      "title": "Build reliable multi-agent applications with ADK Go 2.0. Discover our new graph-based workflow engine, built-in human-in-the-loop, and dynamic orchestration",
+      "url": "https://developers.googleblog.com/announcing-adk-go-20/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-06-30T19:46:35.853972+00:00",
+      "first_seen_at": "2026-06-30T19:47:53.265548+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9851|ggml-org/llama.cpp release b9851: cuda : prevent integer truncation and overflow errors when using kq mask strides in fl",
+      "title": "ggml-org/llama.cpp release b9851: cuda : prevent integer truncation and overflow errors when using KQ mask strides in flashattnmasktoKVmax kernel (24945) Co-authored-by: Stan",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9851",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-06-30T19:35:08+00:00",
+      "first_seen_at": "2026-06-30T19:47:53.265569+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://huggingface.co/blog/ibm-research/scarfbench|scarfbench: benchmarking ai agents for enterprise java framework migration",
+      "title": "ScarfBench: Benchmarking AI Agents for Enterprise Java Framework Migration",
+      "url": "https://huggingface.co/blog/ibm-research/scarfbench",
+      "source": "Hugging Face Blog",
+      "published_at": "2026-06-30T18:32:50+00:00",
+      "first_seen_at": "2026-06-30T19:47:53.265584+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://pytorch.org/blog/miles-a-pytorch-native-stack-for-large-scale-llm-rl-post-training/|miles: a pytorch-native stack for large-scale llm rl post-training",
+      "title": "Miles: A PyTorch-Native Stack for Large-Scale LLM RL Post-Training",
+      "url": "https://pytorch.org/blog/miles-a-pytorch-native-stack-for-large-scale-llm-rl-post-training/",
+      "source": "PyTorch Blog",
+      "published_at": "2026-06-30T17:48:27+00:00",
+      "first_seen_at": "2026-06-30T19:47:53.265597+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9848|ggml-org/llama.cpp release b9848: cuda: fix getrowsback for tables with more than 65535 rows (grid-y clamp + stride) (25",
+      "title": "ggml-org/llama.cpp release b9848: CUDA: fix getrowsback for tables with more than 65535 rows (grid-y clamp + stride) (25103) macOS/iOS",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9848",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-06-30T14:06:34+00:00",
+      "first_seen_at": "2026-06-30T19:47:53.265611+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9847|ggml-org/llama.cpp release b9847: cuda: fix gemma e4b mtp flashattention (25148) cuda: fix gemma e4b mtp flashattention ",
+      "title": "ggml-org/llama.cpp release b9847: CUDA: fix Gemma E4B MTP FlashAttention (25148) CUDA: fix Gemma E4B MTP FlashAttention remove unused template declaration macOS/iOS",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9847",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-06-30T13:16:34+00:00",
+      "first_seen_at": "2026-06-30T19:47:53.265624+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
