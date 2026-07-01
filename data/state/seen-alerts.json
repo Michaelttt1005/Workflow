@@ -969,6 +969,16 @@
       "first_seen_at": "2026-06-30T19:47:53.265624+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9856|ggml-org/llama.cpp release b9856: cuda: consistent use of restrict + pdl for fa (25185) macos/ios",
+      "title": "ggml-org/llama.cpp release b9856: CUDA: consistent use of restrict + PDL for FA (25185) macOS/iOS",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9856",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-01T11:09:42+00:00",
+      "first_seen_at": "2026-07-01T12:30:11.670527+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
