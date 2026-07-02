@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-02T19:15:43.175645Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-02 | llama.cpp 新增模型量化类型名称查询 API",
+    "overview": "本期聚焦 llama.cpp 最新 release，新增公共 C API 用于获取模型量化类型名称，提升开发者对模型文件类型的可观测性。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b9860: 新增 llama_model_ftype_name() API 暴露量化类型名称",
+        "what": "这是 llama.cpp 项目的一个 GitHub Release（b9860），主要变更是在 llama.cpp 的公共 C API 中新增了 llama_model_ftype_name() 函数（后更名为 llama_ftype_name()），用于获取模型文件类型（量化方式）的名称，例如 \"Q8_0\" 或 \"Q4_K - Medium\"。该函数返回的指针在模型生命周期内有效，模型无效或文件类型未知时返回 nullptr。同时引入了 LLAMA_FTYPE_PREFIX 宏，并将 \"(guessed)\" 标签前置，避免使用非线程安全的静态字符串，使函数成为无分配操作。",
+        "plain_explanation": "想象你有一个模型文件，但不知道它用了哪种压缩方式（量化）。以前你可能需要手动查看文件名或猜测，现在 llama.cpp 提供了一个官方 API，可以直接问模型“你是什么量化类型？”，它会回答比如“Q8_0”或“Q4_K - Medium”。这就像给模型加了一个身份证，开发者可以随时查看它的量化类型，而不用自己解析文件名或依赖外部工具。",
+        "purpose": "解决开发者无法在运行时方便地获取模型量化类型信息的问题，提升模型加载和管理的透明度，便于在代码中根据量化类型做不同处理（如调整推理参数）。",
+        "features": "新增公共 C API llama_ftype_name()，返回模型量化类型名称字符串；返回指针在模型生命周期内有效，无需手动释放内存；支持已知和未知量化类型，未知时返回带 \"(guessed)\" 前缀的名称；函数为无分配操作，线程安全，不依赖静态变量",
+        "comparison": "暂无可信公开对比数据",
+        "who": "使用 llama.cpp 进行本地推理的开发者、需要动态识别模型量化类型的工具链开发者、对模型文件管理有精细化需求的 AI 应用团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9860",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "07-02 11:23"
+      }
+    ],
+    "footer": "以上信息基于候选源，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}
