@@ -989,6 +989,16 @@
       "first_seen_at": "2026-07-02T19:15:45.085578+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/huggingface/diffusers/releases/tag/v0.39.0|diffusers 0.39.0: new image and video pipelines, core library improvements, and more",
+      "title": "Diffusers 0.39.0: New image and video pipelines, core library improvements, and more",
+      "url": "https://github.com/huggingface/diffusers/releases/tag/v0.39.0",
+      "source": "GitHub Release: huggingface/diffusers",
+      "published_at": "2026-07-03T08:55:32+00:00",
+      "first_seen_at": "2026-07-03T10:30:04.870915+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }
