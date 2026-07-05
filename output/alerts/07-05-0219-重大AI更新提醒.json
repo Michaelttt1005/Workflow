@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-07-05T07:19:45.713144Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-05 | Hugging Face Transformers 新增 Kimi K2.5 系列；llama.cpp 优化 MoE 推理",
+    "overview": "本期带来两项重要更新：Hugging Face Transformers v5.13.0 正式支持开源多模态智能体模型 Kimi K2.5 系列；llama.cpp 通过 CUDA 内核优化，使 288 专家 MoE 模型推理速度显著提升。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "huggingface/transformers v5.13.0 发布：新增 Kimi K2.5、K2.6、K2.7 模型架构",
+        "what": "Hugging Face Transformers 库发布 v5.13.0 版本，主要新增了 Kimi K2.5、K2.6 和 K2.7 系列模型的架构支持。Kimi K2.5 是一个开源的原生多模态智能体模型，具备长周期编码、编码驱动设计、主动自主执行和群体任务编排等能力。",
+        "plain_explanation": "想象你有一个 AI 助手，它不仅能看懂文字和图片，还能主动帮你写代码、设计网页，甚至协调多个 AI 一起完成复杂任务。Kimi K2.5 就是这样一个模型，它开源且免费可用。现在通过 Hugging Face Transformers 库，开发者可以轻松调用它，就像使用其他流行模型一样简单。例如，你给它一张手绘草图，它就能生成一个可运行的网页界面。",
+        "purpose": "为开发者提供最新开源多模态智能体模型的官方支持，降低集成门槛，推动智能体应用开发。",
+        "features": "原生多模态：同时处理文本和视觉输入，实现图文理解与生成。；智能体能力：支持长周期编码任务、自主执行和群体协作（swarm orchestration）。；跨语言泛化：在 Rust、Go、Python 等多种编程语言上表现稳健。；生产级输出：能将简单提示和视觉输入转化为可直接部署的界面。",
+        "comparison": "暂无可信公开对比数据。",
+        "who": "适合 AI 应用开发者、智能体研究者、需要多模态能力的团队，以及希望基于开源模型构建自动化工作流的开发者。",
+        "link": "https://github.com/huggingface/transformers/releases/tag/v5.13.0",
+        "score": "8",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "07-03 11:06"
+      },
+      {
+        "candidate_id": "2",
+        "title": "llama.cpp b9866：CUDA 启用 288 专家 TopK-MoE 融合，推理速度提升",
+        "what": "llama.cpp 发布 b9866 版本，针对 CUDA 后端优化了 TopK-MoE（混合专家）融合内核，使其支持 288 个专家的模型（如 Step-3.7-Flash）。此前仅支持 2 的幂次专家数或特殊值 576，288 专家模型会回退到未融合的逐层路由链，增加额外计算开销。",
+        "plain_explanation": "混合专家模型（MoE）就像把多个小型专家模型组合成一个超级模型，每次只激活部分专家。但专家数量不是 2 的幂次时，计算效率会下降。这次更新让 llama.cpp 在 CUDA 显卡上能高效处理 288 个专家的模型，避免了额外的计算步骤。实测在 AMD gfx1151 显卡上，生成速度（tg128）从 20.71 tokens/秒提升到 24.21 tokens/秒，提升约 17%。",
+        "purpose": "提升非标准专家数 MoE 模型在消费级显卡上的推理效率，让更多模型能流畅运行。",
+        "features": "支持 288 专家数：填补了非 2 的幂次专家数的性能缺口。；CUDA 内核融合：将多个路由操作合并，减少图节点数量（每 token 减少约 330 个节点）。；兼容现有硬件：在 AMD gfx1151 上验证有效，预计 NVIDIA GPU 同样受益。",
+        "comparison": "在 AMD gfx1151 上，Step-3.7-Flash IQ4_XS 模型生成速度从 20.71 ± 0.13 tokens/秒提升至 24.21 ± 0.10 tokens/秒，提升约 17%；预填充速度基本不变。",
+        "who": "适合在本地或边缘设备上运行 MoE 模型的开发者、推理优化工程师，以及使用非标准专家数模型的用户。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9866",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "07-03 09:20"
+      }
+    ],
+    "footer": "以上信息基于候选源，请以官方发布为准。"
+  },
+  "candidate_count": 2
+}

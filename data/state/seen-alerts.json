@@ -999,6 +999,26 @@
       "first_seen_at": "2026-07-03T10:30:04.870915+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/huggingface/transformers/releases/tag/v5.13.0|huggingface/transformers release v5.13.0: release v5.13.0 new model additions kimik 2.5, 2.6, and 2.7 this release inclu",
+      "title": "huggingface/transformers release v5.13.0: Release v5.13.0 New Model additions KimiK 2.5, 2.6, and 2.7 This release includes the architecture for Kimi 2.5 which is used by 2.5-2.7:",
+      "url": "https://github.com/huggingface/transformers/releases/tag/v5.13.0",
+      "source": "GitHub Release: huggingface/transformers",
+      "published_at": "2026-07-03T16:06:27+00:00",
+      "first_seen_at": "2026-07-05T07:19:47.704401+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9866|ggml-org/llama.cpp release b9866: cuda: enable topk-moe fusion for 288 experts (25267) cuda: enable topk-moe fusion for ",
+      "title": "ggml-org/llama.cpp release b9866: cuda: enable topk-moe fusion for 288 experts (25267) cuda: enable topk-moe fusion for 288 experts The topk-moe fusion only accepted power-o",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9866",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-03T14:20:50+00:00",
+      "first_seen_at": "2026-07-05T07:19:47.704430+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
