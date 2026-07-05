@@ -1019,6 +1019,16 @@
       "first_seen_at": "2026-07-05T07:19:47.704430+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9874|ggml-org/llama.cpp release b9874: cuda : concat implementation for quantized types (25303) cuda : concat implementation ",
+      "title": "ggml-org/llama.cpp release b9874: cuda : concat implementation for quantized types (25303) cuda : concat implementation for quantized types chore : apply am17an clever sugg",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9874",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-05T15:53:37+00:00",
+      "first_seen_at": "2026-07-05T17:02:01.805453+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
