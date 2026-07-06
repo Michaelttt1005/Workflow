@@ -1039,6 +1039,16 @@
       "first_seen_at": "2026-07-06T16:49:47.214560+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9890|ggml-org/llama.cpp release b9890: cuda: remove -sm row, refactor cublas (24216) cuda: remove -sm row, refactor cublas fi",
+      "title": "ggml-org/llama.cpp release b9890: CUDA: remove -sm row, refactor cuBLAS (24216) CUDA: remove -sm row, refactor cuBLAS fix CDNA + BF16 logic fix bad return fix src0 stride",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9890",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-06T20:45:35+00:00",
+      "first_seen_at": "2026-07-06T21:24:38.795794+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

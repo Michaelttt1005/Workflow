@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-06T21:24:36.336152Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-06 | llama.cpp 发布 b9890，重构 CUDA 后端提升推理性能",
+    "overview": "本期聚焦 llama.cpp 最新版本 b9890，该版本对 CUDA 后端进行了重大重构，移除 -sm row 并重构 cuBLAS 集成，修复了 CDNA + BF16 逻辑等问题，旨在提升 NVIDIA GPU 上的推理效率与兼容性。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b9890: CUDA: remove -sm row, refactor cuBLAS",
+        "what": "llama.cpp 是一个用于在本地设备上高效运行大型语言模型（如 LLaMA）的开源推理引擎，支持 CPU、GPU 等多种后端。本次发布的 b9890 版本主要针对 CUDA（NVIDIA GPU 计算平台）后端进行了重构，移除了 -sm row 参数并重构了 cuBLAS（NVIDIA 的线性代数库）集成，同时修复了 CDNA（AMD GPU 架构）与 BF16 数据类型的逻辑错误。",
+        "plain_explanation": "想象一下，你有一个超级聪明的 AI 助手（大语言模型），但运行它需要强大的计算能力。llama.cpp 就像一个高效的“翻译官”，让这个 AI 能在你的个人电脑或手机上运行。这次更新相当于给“翻译官”换了一个更聪明的“大脑”来处理 NVIDIA 显卡上的计算任务。具体来说，它移除了一个旧的优化参数（-sm row），重新设计了与 cuBLAS 的协作方式，并修复了在 AMD 显卡上使用 BF16（一种节省内存的数据格式）时可能出现的 bug。这样，无论你用的是 NVIDIA 还是 AMD 的显卡，AI 都能更稳定、更快速地运行。",
+        "purpose": "提升 llama.cpp 在 NVIDIA GPU 上的推理性能和稳定性，同时修复 AMD GPU 上的兼容性问题，使更多用户能在本地高效运行大语言模型。",
+        "features": "移除 -sm row 参数，简化 CUDA 后端配置；重构 cuBLAS 集成，优化矩阵运算效率；修复 CDNA（AMD GPU）与 BF16 数据类型的逻辑错误；修复 src0 步长和连续性问题，确保数据正确性",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合需要在本地部署大语言模型的开发者、AI 研究人员以及希望利用 GPU 加速推理的团队。尤其适合使用 NVIDIA 或 AMD 显卡的用户。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9890",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "07-06 15:45"
+      }
+    ],
+    "footer": "本简报基于候选源自动生成，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}
