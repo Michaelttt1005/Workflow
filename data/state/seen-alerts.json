@@ -1049,6 +1049,16 @@
       "first_seen_at": "2026-07-06T21:24:38.795794+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developer.nvidia.com/blog/nvidia-vera-cpu-boosts-ai-factory-throughput-to-accelerate-agentic-workloads/|nvidia vera cpu boosts ai factory throughput to accelerate agentic workloads",
+      "title": "NVIDIA Vera CPU Boosts AI Factory Throughput to Accelerate Agentic Workloads",
+      "url": "https://developer.nvidia.com/blog/nvidia-vera-cpu-boosts-ai-factory-throughput-to-accelerate-agentic-workloads/",
+      "source": "NVIDIA Developer Blog",
+      "published_at": "2026-07-07T15:10:10+00:00",
+      "first_seen_at": "2026-07-07T17:54:49.911803+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }

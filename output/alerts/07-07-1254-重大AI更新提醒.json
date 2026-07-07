@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-07T17:54:47.467270Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-07 | NVIDIA Vera CPU 提升 AI 工厂吞吐量，加速智能体工作负载",
+    "overview": "本期聚焦 NVIDIA 最新 Vera CPU 如何通过架构创新提升 AI 工厂吞吐量，特别针对智能体工作负载进行优化，为开发者提供更强的推理与编排能力。",
+    "checked_sources": [
+      "NVIDIA Developer Blog"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "NVIDIA Vera CPU Boosts AI Factory Throughput to Accelerate Agentic Workloads",
+        "what": "NVIDIA 官方发布的 Vera CPU 技术介绍，该 CPU 专为 AI 工厂设计，通过提升吞吐量来加速智能体工作负载。智能体系统将模型推理转化为行动，涉及多步骤工作流，包括推理、工具使用、代码执行、检索、编排等。",
+        "plain_explanation": "想象一个 AI 助手需要帮你完成复杂任务，比如预订旅行：它需要理解你的需求、搜索航班、比较价格、调用支付接口、确认订单。每一步都可能调用不同的模型或工具。NVIDIA Vera CPU 就像给这个助手装上了更快的引擎，让它在处理这些多步骤任务时速度更快、效率更高。具体来说，Vera CPU 优化了推理、工具调用、代码执行等环节的协同，使得整个工作流能更顺畅地运行。",
+        "purpose": "解决智能体系统在多步骤推理和工具调用场景下的性能瓶颈，提升 AI 工厂的整体吞吐量，使开发者能够构建更复杂、更高效的智能体应用。",
+        "features": "针对多步骤工作流优化：支持推理、工具使用、代码执行、检索、编排等环节的流水线加速。；高吞吐量架构：通过 CPU 与 GPU 的协同设计，减少数据搬运延迟，提升整体处理能力。；智能体专用加速：内置对 agentic 工作负载的硬件级支持，如快速上下文切换和任务调度。",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合 AI 工厂运维人员、智能体应用开发者、大模型推理优化工程师，以及需要构建复杂多步骤 AI 工作流的团队。",
+        "link": "https://developer.nvidia.com/blog/nvidia-vera-cpu-boosts-ai-factory-throughput-to-accelerate-agentic-workloads/",
+        "score": "8",
+        "source": "NVIDIA Developer Blog",
+        "type": "官方发布",
+        "topic": "智能体与开发者平台",
+        "published": "07-07 10:10"
+      }
+    ],
+    "footer": "本简报基于 NVIDIA 官方博客信息，仅供参考。"
+  },
+  "candidate_count": 1
+}
