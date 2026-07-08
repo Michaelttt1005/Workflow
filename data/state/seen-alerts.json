@@ -1079,6 +1079,46 @@
       "first_seen_at": "2026-07-08T10:11:37.612280+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/pytorch/pytorch/releases/tag/v2.13.0|pytorch 2.13.0 release",
+      "title": "PyTorch 2.13.0 Release",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/v2.13.0",
+      "source": "GitHub Release: pytorch/pytorch",
+      "published_at": "2026-07-08T17:39:58+00:00",
+      "first_seen_at": "2026-07-08T17:41:17.592149+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9925|ggml-org/llama.cpp release b9925: cuda : add support for f16-f16 ggmlopsetrows (25367) macos/ios",
+      "title": "ggml-org/llama.cpp release b9925: cuda : add support for f16-f16 GGMLOPSETROWS (25367) macOS/iOS",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9925",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-08T16:52:32+00:00",
+      "first_seen_at": "2026-07-08T17:41:17.592177+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://developer.nvidia.com/blog/running-low-latency-analytical-workloads-with-gpu-accelerated-presto-on-nvidia-gb200-nvl72/|running low-latency analytical workloads with gpu-accelerated presto on nvidia gb200 nvl72",
+      "title": "Running Low-Latency Analytical Workloads with GPU-Accelerated Presto on NVIDIA GB200 NVL72",
+      "url": "https://developer.nvidia.com/blog/running-low-latency-analytical-workloads-with-gpu-accelerated-presto-on-nvidia-gb200-nvl72/",
+      "source": "NVIDIA Developer Blog",
+      "published_at": "2026-07-08T16:05:25+00:00",
+      "first_seen_at": "2026-07-08T17:41:17.592197+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://developer.nvidia.com/blog/create-a-langchain-deep-agents-harness-profile-for-nvidia-nemotron-3-ultra-to-improve-performance/|create a langchain deep agents harness profile for nvidia nemotron 3 ultra to improve performance",
+      "title": "Create a LangChain Deep Agents Harness Profile for NVIDIA Nemotron 3 Ultra to Improve Performance",
+      "url": "https://developer.nvidia.com/blog/create-a-langchain-deep-agents-harness-profile-for-nvidia-nemotron-3-ultra-to-improve-performance/",
+      "source": "NVIDIA Developer Blog",
+      "published_at": "2026-07-08T15:00:00+00:00",
+      "first_seen_at": "2026-07-08T17:41:17.592217+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
