@@ -1069,6 +1069,16 @@
       "first_seen_at": "2026-07-08T06:23:44.144802+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9911|ggml-org/llama.cpp release b9911: cuda: fuse mmvq post-scale for nvfp4 (24481) cuda: fuse mmvq for nvfp4 and bs 1 todo: ",
+      "title": "ggml-org/llama.cpp release b9911: CUDA: Fuse MMVQ post-scale for NVFP4 (24481) CUDA: Fuse MMVQ for NVFP4 and BS 1 TODO: 1",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9911",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-08T06:58:47+00:00",
+      "first_seen_at": "2026-07-08T10:11:37.612280+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
