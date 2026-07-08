@@ -1119,6 +1119,16 @@
       "first_seen_at": "2026-07-08T17:41:17.592217+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://openai.com/index/separating-signal-from-noise-coding-evaluations|separating signal from noise in coding evaluations",
+      "title": "Separating signal from noise in coding evaluations",
+      "url": "https://openai.com/index/separating-signal-from-noise-coding-evaluations",
+      "source": "OpenAI News",
+      "published_at": "2026-07-08T13:00:00+00:00",
+      "first_seen_at": "2026-07-08T21:00:45.462559+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

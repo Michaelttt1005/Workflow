@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-08T21:00:43.661096Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-08 | OpenAI 揭示 SWE-Bench Pro 评测缺陷",
+    "overview": "OpenAI 发布新分析，指出流行编程基准 SWE-Bench Pro 存在信号噪声问题，可能影响 AI 模型评估的可靠性。本期重点解读该发现及其对开发者生态的影响。",
+    "checked_sources": [
+      "OpenAI 官方新闻"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "Separating signal from noise in coding evaluations",
+        "what": "OpenAI 发布的一篇分析文章，深入剖析了 SWE-Bench Pro 编程基准测试中存在的信号与噪声问题。该基准被广泛用于评估 AI 模型的编码能力，但 OpenAI 发现其评测结果可能不可靠，因为测试用例存在歧义、评分标准不统一等问题，导致模型排名失真。",
+        "plain_explanation": "想象一下，你用一个考试来测试学生的编程能力，但考试题目本身有歧义，或者评分标准不统一，导致高分学生不一定真的编程好。SWE-Bench Pro 就是这样一个用于评估 AI 模型（比如 ChatGPT）编程能力的“考试”。OpenAI 发现这个考试里有很多“噪声”——比如有些题目太简单、有些答案不唯一、有些评分方式不合理——导致我们很难判断模型到底有多强。这就像用一把不准的尺子量身高，量出来的数字不可信。具体来说，他们发现某些测试用例的答案可以通过简单模式匹配得到，而不是真正理解代码；还有些测试用例的难度分布不均，使得模型在特定子集上表现好就能获得高分，掩盖了真实能力。",
+        "purpose": "提醒开发者和研究者，当前流行的编程基准 SWE-Bench Pro 可能存在评测偏差，依赖它来比较模型能力可能导致错误结论。OpenAI 希望通过揭示这些问题，推动社区改进评测方法，确保基准测试能真实反映模型编码水平。",
+        "features": "识别 SWE-Bench Pro 中信号与噪声的具体来源，包括测试用例设计缺陷和评分机制问题；提出改进评测可靠性的建议，如增加测试用例多样性、引入人工审核；分析噪声对模型排名的影响，展示不同噪声过滤方法如何改变排名结果。",
+        "comparison": "暂无可信公开对比数据",
+        "who": "AI 模型开发者、评估基准设计者、使用 SWE-Bench Pro 进行模型选型的团队，以及关注 AI 编码能力评测的研究人员。",
+        "link": "https://openai.com/index/separating-signal-from-noise-coding-evaluations",
+        "score": "7",
+        "source": "OpenAI 官方新闻",
+        "type": "官方发布",
+        "topic": "开发者生态与数据工具",
+        "published": "07-08 08:00"
+      }
+    ],
+    "footer": "本简报基于 OpenAI 官方发布，建议关注后续评测标准更新。"
+  },
+  "candidate_count": 1
+}
