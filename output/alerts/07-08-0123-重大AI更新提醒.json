@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-08T06:23:42.389350Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-08 | llama.cpp 新增 API 流式进度与计时",
+    "overview": "本期聚焦 llama.cpp 最新版本 b9909，该版本在 /responses API 流中增加了 timings 和 progress 字段，使开发者能实时获取推理进度与耗时，显著提升本地 LLM 部署的可观测性。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b9909: server : add timings and progress to /responses API stream",
+        "what": "这是 llama.cpp 项目的一个新版本（b9909），主要更新是向 /responses API 的流式响应中添加了 timings（计时）和 progress（进度）信息。llama.cpp 是一个流行的开源 C/C++ 推理引擎，支持在本地运行多种大语言模型，尤其擅长在 CPU 和 Apple Silicon 上高效运行。",
+        "plain_explanation": "想象你在用手机看视频，进度条告诉你看到哪了，剩余时间告诉你还要多久。以前用 llama.cpp 的 API 调用模型时，你只能等它完全输出结果，不知道它“思考”到哪一步、花了多少时间。现在这个更新就像给 API 加上了进度条和计时器：每次流式返回的数据包里会包含当前已生成的 token 数、总 token 数、已用时间、预计剩余时间等信息。比如你让模型写一篇 500 字的文章，以前只能干等，现在你可以实时看到它已经写了 200 字，预计还有 3 秒完成。",
+        "purpose": "主要解决本地部署 LLM 时缺乏可观测性的问题。开发者需要监控推理进度、诊断性能瓶颈、优化用户体验，而之前的 API 只返回文本，没有元数据。这个更新让开发者能构建更智能的 UI（如显示进度条）、做更精细的负载均衡，或者记录每次请求的耗时用于调优。",
+        "features": "流式响应中新增 timings 字段，包含 prompt 处理时间、token 生成时间、总耗时等；流式响应中新增 progress 字段，包含已生成 token 数、总 token 数、完成百分比；兼容现有 API，无需修改客户端代码即可获取额外信息；支持 macOS（Apple Silicon 和 Intel）、iOS、Linux（x64/arm64/s390x）等多平台",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合使用 llama.cpp 部署本地 LLM 的开发者、需要构建实时推理监控面板的团队、以及希望优化模型响应体验的应用开发者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9909",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "07-07 22:31"
+      }
+    ],
+    "footer": "本简报基于候选源自动生成，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}

@@ -1059,6 +1059,16 @@
       "first_seen_at": "2026-07-07T17:54:49.911803+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9909|ggml-org/llama.cpp release b9909: server : add timings and progress to /responses api stream (25348) macos/ios",
+      "title": "ggml-org/llama.cpp release b9909: server : add timings and progress to /responses API stream (25348) macOS/iOS",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9909",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-08T03:31:58+00:00",
+      "first_seen_at": "2026-07-08T06:23:44.144802+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
