@@ -1129,6 +1129,26 @@
       "first_seen_at": "2026-07-08T21:00:45.462559+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9938|ggml-org/llama.cpp release b9938: ggml-hip: enable -funsafe-math-optimizations (24668) cuda is compiled with fast math a",
+      "title": "ggml-org/llama.cpp release b9938: ggml-hip: enable -funsafe-math-optimizations (24668) CUDA is compiled with fast math and AMD/HIP is not — this flag lets AMD use fast math t",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9938",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-09T10:08:19+00:00",
+      "first_seen_at": "2026-07-09T10:54:11.622329+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9937|ggml-org/llama.cpp release b9937: cuda: align snake fusion matcher with the other backends (25460) cuda: fix snake fusio",
+      "title": "ggml-org/llama.cpp release b9937: cuda: align snake fusion matcher with the other backends (25460) cuda: fix snake fusion type predicate, a and invb are F32 The matcher requ",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9937",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-09T08:30:17+00:00",
+      "first_seen_at": "2026-07-09T10:54:11.622359+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
