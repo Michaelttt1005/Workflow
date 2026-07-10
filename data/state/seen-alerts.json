@@ -1149,6 +1149,16 @@
       "first_seen_at": "2026-07-09T10:54:11.622359+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developer.nvidia.com/blog/ai-model-co-design-hardware-friendly-llm-design/|ai model co-design: hardware-friendly llm design",
+      "title": "AI Model Co-Design: Hardware-Friendly LLM Design",
+      "url": "https://developer.nvidia.com/blog/ai-model-co-design-hardware-friendly-llm-design/",
+      "source": "NVIDIA Developer Blog",
+      "published_at": "2026-07-10T16:36:02+00:00",
+      "first_seen_at": "2026-07-10T17:43:36.819456+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
