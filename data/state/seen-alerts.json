@@ -1169,6 +1169,16 @@
       "first_seen_at": "2026-07-11T09:21:51.973098+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/vllm-project/vllm/releases/tag/v0.25.0|vllm-project/vllm release v0.25.0: vllm v0.25.0 release notes highlights this release features 558 commits from 232 cont",
+      "title": "vllm-project/vllm release v0.25.0: vLLM v0.25.0 Release Notes Highlights This release features 558 commits from 232 contributors (64 new)! Model Runner V2 is now the default",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.25.0",
+      "source": "GitHub Release: vllm-project/vllm",
+      "published_at": "2026-07-11T20:06:44+00:00",
+      "first_seen_at": "2026-07-11T20:41:25.598510+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }

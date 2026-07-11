@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-11T20:41:23.918162Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-11 | vLLM v0.25.0 发布，Model Runner V2 成为默认执行路径",
+    "overview": "本期聚焦 vLLM 框架的重大版本更新，Model Runner V2 全面接管密集模型推理，并带来多项性能与功能改进。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "vllm-project/vllm release v0.25.0: Model Runner V2 默认启用，PagedAttention 被移除",
+        "what": "vLLM v0.25.0 是开源大模型推理引擎 vLLM 的一个重大版本发布，包含 558 次提交和 232 位贡献者的工作。核心变化是 Model Runner V2 (MRv2) 现在成为所有密集模型的默认执行路径，同时移除了旧的 PagedAttention 实现。",
+        "plain_explanation": "vLLM 是一个帮助开发者高效运行大型语言模型（如 GPT、LLaMA）的框架。这次更新相当于给引擎换了一个更高效的核心：Model Runner V2 现在默认用于所有密集模型（即参数不稀疏的模型），它能让模型跑得更快、更省显存。比如，以前需要手动配置的一些优化现在自动生效，而且支持了更多新功能，如实时嵌入（把文本变成向量）、动态推测解码（加速生成）等。同时，旧版的注意力机制 PagedAttention 被彻底移除，因为新后端已经全面替代了它。",
+        "purpose": "提升 vLLM 推理性能与易用性，统一执行路径，减少维护成本，并为开发者提供更丰富的功能支持。",
+        "features": "Model Runner V2 默认用于所有密集模型，支持量化模型、EVS、实时嵌入、Mamba 混合模型的前缀缓存、多模态前缀双向注意力、动态推测解码与完整 CUDA 图兼容。；Transformers 建模后端速度与原生 vLLM 相当，新增 FP8 MoE 支持、CUDA 图与嵌入缩放修复，并迁移了 GPTBigCode/Starcoder2 和 RoBERTa 模型。；移除了 PagedAttention 遗留实现，简化代码库。",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合使用 vLLM 部署大模型的工程师、研究者和团队，尤其是需要高性能推理、多模态支持或自定义模型集成的开发者。",
+        "link": "https://github.com/vllm-project/vllm/releases/tag/v0.25.0",
+        "score": "8",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "多模态理解",
+        "published": "07-11 15:06"
+      }
+    ],
+    "footer": "本简报基于候选源生成，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}
