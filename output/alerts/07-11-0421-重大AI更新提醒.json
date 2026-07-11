@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-11T09:21:50.331737Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-11 | llama.cpp 新增 DeepSeek-OCR v1 多图块支持",
+    "overview": "本期重点：llama.cpp 发布 b9963 版本，新增对 DeepSeek-OCR v1 的多图块动态分辨率支持，并统一了 v1 和 v2 的图像预处理器。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b9963: 新增 DeepSeek-OCR v1 多图块动态分辨率支持",
+        "what": "这是 llama.cpp 的 b9963 版本发布，主要新增了对 DeepSeek-OCR v1 模型的多图块（multi-tile）动态分辨率支持，并统一了 v1 和 v2 版本的图像预处理器。",
+        "plain_explanation": "想象一下，你有一张很大的图片，比如一张海报，里面有很多文字。DeepSeek-OCR 就像是一个能读懂图片里文字的智能助手。以前，它只能处理固定大小的图片，如果图片太大，就需要把它切成很多小块，但处理起来可能不太准确。现在，这个新版本让助手可以更聪明地处理不同大小的图片，它会根据图片内容自动调整切块的大小和方式，就像你根据书的内容调整阅读速度一样。同时，它还统一了不同版本助手的“眼睛”（图像预处理器），让它们用同样的方式看图片，这样处理结果更一致。",
+        "purpose": "提升 llama.cpp 对 DeepSeek-OCR 模型的支持，特别是处理大尺寸、多文字图片时的准确性和灵活性，让开发者可以在本地高效运行 OCR 任务。",
+        "features": "支持 DeepSeek-OCR v1 多图块动态分辨率，可根据图片内容自动调整图块大小；统一了 v1 和 v2 版本的图像预处理器，简化代码维护；修复了多行多列图片的图块丢弃问题，提升识别稳定性；简化了 DeepSeek-OCR 的计算图，清理了 CLS 广播逻辑",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合需要在本地部署 OCR 能力的开发者、使用 llama.cpp 进行多模态推理的研究者，以及需要处理大尺寸文档图片的团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9963",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "07-11 03:38"
+      }
+    ],
+    "footer": "以上信息基于候选源，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}

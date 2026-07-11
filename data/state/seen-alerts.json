@@ -1159,6 +1159,16 @@
       "first_seen_at": "2026-07-10T17:43:36.819456+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9963|ggml-org/llama.cpp release b9963: mtmd: deepseek-ocr v1 multi-tile (24717) mtmd: deepseek-ocr v1 multi-tile dynamic reso",
+      "title": "ggml-org/llama.cpp release b9963: mtmd: deepseek-ocr v1 multi-tile (24717) mtmd: deepseek-ocr v1 multi-tile dynamic resolution + unified image-preprocessors for both version",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9963",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-11T08:38:28+00:00",
+      "first_seen_at": "2026-07-11T09:21:51.973098+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
