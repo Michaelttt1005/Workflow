@@ -1179,6 +1179,16 @@
       "first_seen_at": "2026-07-11T20:41:25.598510+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9971|ggml-org/llama.cpp release b9971: server: refactor serverstream (25541) server: refactoring, remove spipe from serverhtt",
+      "title": "ggml-org/llama.cpp release b9971: server: refactor serverstream (25541) server: refactoring, remove spipe from serverhttpres wip remove non-thread-safe rd.stop() call mov",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9971",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-12T12:36:08+00:00",
+      "first_seen_at": "2026-07-12T13:05:22.100320+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

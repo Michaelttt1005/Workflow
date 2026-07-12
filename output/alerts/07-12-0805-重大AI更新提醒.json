@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-12T13:05:20.414223Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-12 | llama.cpp 服务端重大重构，提升流式 API 稳定性",
+    "overview": "本期聚焦 llama.cpp 最新版本 b9971，该版本对服务端流式 API 进行了深度重构，移除了非线程安全的调用，显著提升了高并发场景下的稳定性与性能。适合自托管 LLM 推理服务的开发者关注。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b9971: 服务端流式 API 重构，移除 spipe 并优化线程安全",
+        "what": "这是 llama.cpp 项目的一个 GitHub Release（b9971），主要对服务端（server）的流式 API 进行了重构，移除了 server_http_res 中的 spipe 组件，并修复了非线程安全的 rd.stop() 调用。",
+        "plain_explanation": "llama.cpp 是一个让大语言模型（如 LLaMA）在普通电脑上运行的 C++ 库。这次更新就像给它的“网络服务”部分做了一次大扫除：以前处理流式输出（比如 AI 一个字一个字地回复）时，内部有个叫 spipe 的管道容易出问题，而且停止请求的代码在多线程下不安全。现在把这些都改掉了，就像把老旧的单车道改成多车道立交桥，多个用户同时请求时更稳定、更快。",
+        "purpose": "解决服务端在高并发流式请求下的线程安全问题，提升 API 的稳定性和响应速度，为开发者提供更可靠的本地推理服务。",
+        "features": "重构 server_stream 函数，移除 spipe 组件，简化数据流；修复非线程安全的 rd.stop() 调用，避免竞态条件；更新开发者文档，提供改进后的 API 使用指南；提供 macOS（Apple Silicon/Intel）、iOS、Linux 等多平台二进制包",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合使用 llama.cpp 自托管 LLM 推理服务的开发者、需要稳定流式 API 的 AI 应用后端工程师、以及研究本地模型部署的团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9971",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "07-12 07:36"
+      }
+    ],
+    "footer": "本简报基于候选源自动生成，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}
