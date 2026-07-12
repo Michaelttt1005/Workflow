@@ -1189,6 +1189,16 @@
       "first_seen_at": "2026-07-12T13:05:22.100320+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9974|ggml-org/llama.cpp release b9974: cuda: don't crash when querying memory on device with no free memory",
+      "title": "ggml-org/llama.cpp release b9974: cuda: Don't crash when querying memory on device with no free memory",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9974",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-12T14:16:29+00:00",
+      "first_seen_at": "2026-07-12T14:50:35.092795+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

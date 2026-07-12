@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-12T14:50:32.908039Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-12 | llama.cpp 修复 CUDA 内存查询崩溃",
+    "overview": "本期聚焦 llama.cpp 最新版本 b9974，修复了 CUDA 设备在无空闲内存时查询内存导致崩溃的关键问题，提升了推理稳定性。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b9974: 修复 CUDA 设备无空闲内存时查询内存导致崩溃的问题",
+        "what": "这是 llama.cpp 项目的一个新版本（b9974），主要修复了在 CUDA 设备没有空闲内存时，调用 cudaMemGetInfo() 查询内存信息会导致程序崩溃的 bug。",
+        "plain_explanation": "想象一下，你的电脑显卡（GPU）内存已经满了，这时你试图查看它还剩多少空间，结果系统直接死机了。这个 bug 就是类似的情况：当 CUDA 设备内存不足时，查询内存的操作本身会触发“内存不足”错误，导致程序崩溃。llama.cpp 的这次更新让这个错误不再致命，而是把该设备的内存设为 0，这样系统就不会尝试把模型层放到这个设备上，从而避免崩溃。",
+        "purpose": "解决在 CUDA 设备内存不足时，llama.cpp 启动或运行过程中因查询内存而意外崩溃的问题，提升推理服务的稳定性和用户体验。",
+        "features": "将 cudaMemGetInfo() 调用中的致命错误改为非致命错误；当设备无空闲内存时，自动将其总内存和空闲内存均设为 0；下游的分配算法不会尝试将模型层放到该设备上，避免进一步错误；同时修复了在 CUDA 版本中用户显式指定 '-dev none' 时的崩溃问题",
+        "comparison": "暂无可信公开对比数据",
+        "who": "使用 llama.cpp 在 CUDA 环境下进行推理的开发者、运维人员，以及依赖 llama.cpp 的 AI 应用团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9974",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "检索增强与向量模型",
+        "published": "07-12 09:16"
+      }
+    ],
+    "footer": "本简报由 AI 自动生成，仅供参考。"
+  },
+  "candidate_count": 1
+}
