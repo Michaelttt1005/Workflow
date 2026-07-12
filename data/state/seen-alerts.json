@@ -1199,6 +1199,16 @@
       "first_seen_at": "2026-07-12T14:50:35.092795+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9977|ggml-org/llama.cpp release b9977: server : fix image blocks in toolresult being dropped during anthropic openai conversi",
+      "title": "ggml-org/llama.cpp release b9977: server : fix image blocks in toolresult being dropped during Anthropic OpenAI conversion (22536) server : fix image blocks in toolresult be",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9977",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-12T16:18:10+00:00",
+      "first_seen_at": "2026-07-12T16:52:42.309881+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

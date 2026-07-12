@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-12T16:52:40.658348Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-12 | llama.cpp 修复多模态工具调用图像丢失问题",
+    "overview": "本期聚焦 llama.cpp 最新版本 b9977，修复了 Anthropic 转 OpenAI 格式时工具结果中图像块被丢弃的关键 bug，确保多模态工具输出正确传递。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b9977: 修复 Anthropic→OpenAI 转换中工具结果图像块丢失问题",
+        "what": "这是 llama.cpp 的 b9977 版本发布，主要修复了在将 Anthropic 格式的聊天请求转换为 OpenAI 格式时，工具调用结果（tool_result）中的图像块（image blocks）被静默丢弃的 bug。该问题导致多模态工具（例如返回图像的天气查询工具）的输出无法被模型接收，从而影响后续推理。",
+        "plain_explanation": "想象你让一个 AI 助手调用一个“拍照工具”来获取当前天气的图片，工具返回了一张云图。但在旧版本中，当助手把 Anthropic 格式的请求转成 OpenAI 格式时，这张图片被悄悄扔掉了，模型根本看不到。现在这个版本修复了这个问题，确保图片能像文字一样被正确传递。具体来说，当工具结果包含图像时，转换器会将其拆分成文本和图像 URL 数组，而不是简单当作字符串处理。",
+        "purpose": "解决多模态 AI 应用中工具调用结果丢失图像的问题，保证模型能正确接收并理解工具返回的视觉信息，提升多模态交互的可靠性。",
+        "features": "修复 Anthropic→OpenAI 转换中 tool_result 图像块被丢弃的 bug；支持将包含图像的工具结果转换为 OpenAI 多模态内容格式（text + image_url 数组）；保持纯文本结果向后兼容，仅对含图像的结果进行特殊处理；新增测试用例验证图像块转换的正确性",
+        "comparison": "暂无可信公开对比数据",
+        "who": "使用 llama.cpp 部署多模态模型（如 LLaVA、GPT-4V 类）的开发者，特别是那些通过 Anthropic 兼容 API 调用工具并需要处理图像返回的团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9977",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "07-12 11:18"
+      }
+    ],
+    "footer": "本简报基于候选源生成，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}
