@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-13T02:08:18.443332Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-12 | llama.cpp 修复多模态模型声明逻辑",
+    "overview": "本期重点关注 llama.cpp 最新版本 b9980 的发布，该版本修复了多模态模型声明逻辑，确保当 mmproj 被显式禁用时，模型不会错误地声明支持图像/音频输入。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b9980: 修复多模态模型声明逻辑",
+        "what": "这是 llama.cpp 项目的一个新版本（b9980），主要修复了服务器端多模态模型声明的逻辑。当用户通过模型预设或命令行参数显式禁用 mmproj（多模态投影）时，模型将不再被错误地标记为支持图像或音频输入，从而避免 API 端点返回不准确的能力声明。",
+        "plain_explanation": "想象你有一个能看图片的 AI 助手，但如果你故意关掉了它的“眼睛”（mmproj），它就不应该再声称自己能看图片。之前 llama.cpp 的服务器 API 会错误地继续宣称该模型支持多模态输入，导致用户以为它能处理图片或音频，但实际上不行。这次更新就是修复了这个 bug，让 API 返回的信息更准确。例如，如果你用命令行参数 --no-mmproj-auto 禁用了多模态投影，那么 /v1/models 端点就不会再显示该模型支持图像或音频输入。",
+        "purpose": "解决服务器端多模态模型能力声明不准确的问题，避免开发者或用户因错误信息而误用模型，提升 API 的可靠性和用户体验。",
+        "features": "修复了当 mmproj 被显式禁用时，模型仍被标记为多模态的 bug；改进了 /v1/models 端点的能力声明逻辑，使其更准确；提供了针对 macOS（Apple Silicon 和 Intel）、iOS 以及 Linux 的预编译二进制包",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合使用 llama.cpp 部署大语言模型的开发者、运维人员，特别是那些需要精确控制模型多模态能力的团队，以及依赖 /v1/models 端点进行模型发现的应用开发者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9980",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "多模态理解",
+        "published": "07-12 19:07"
+      }
+    ],
+    "footer": "以上信息基于候选源，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}

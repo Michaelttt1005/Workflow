@@ -1209,6 +1209,16 @@
       "first_seen_at": "2026-07-12T16:52:42.309881+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9980|ggml-org/llama.cpp release b9980: server: don't consider models with --no-mmproj-auto as multimodal (25590) if mmproj is",
+      "title": "ggml-org/llama.cpp release b9980: server: Don't consider models with --no-mmproj-auto as multimodal (25590) If mmproj is explicitly disabled via the model preset or command-l",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9980",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-13T00:07:05+00:00",
+      "first_seen_at": "2026-07-13T02:08:20.663125+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
