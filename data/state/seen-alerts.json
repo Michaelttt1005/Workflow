@@ -1219,6 +1219,16 @@
       "first_seen_at": "2026-07-13T02:08:20.663125+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9992|ggml-org/llama.cpp release b9992: cuda: refactor mmq kernel configuration (24127) cuda: refactor mmq kernel configuratio",
+      "title": "ggml-org/llama.cpp release b9992: CUDA: refactor MMQ kernel configuration (24127) CUDA: refactor MMQ kernel configuration fix Blackwell config remove legacy code macOS/iOS",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9992",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-13T21:04:47+00:00",
+      "first_seen_at": "2026-07-13T22:50:41.716397+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
