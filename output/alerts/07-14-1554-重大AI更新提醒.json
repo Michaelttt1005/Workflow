@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-14T20:54:34.130317Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-14 | Google 发布 Qwen 3.5-397B MoE 在 Ironwood TPU 上的系统优化方案",
+    "overview": "本期聚焦 Google 在 Ironwood TPU 上优化 Qwen 3.5-397B MoE 模型推理的工程实践，实现了最高 4.7 倍加速，为大规模 MoE 模型部署提供了重要参考。",
+    "checked_sources": [
+      "Google Developers Blog"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "Systems Engineering Playbook: Optimizing Qwen 3.5-397B MoE on Ironwood (TPU7x)",
+        "what": "Google 发布的一篇工程博客，详细介绍了如何在 Ironwood TPU（TPU7x）上优化 3970 亿参数的 Qwen 3.5 MoE（混合专家）模型的推理性能。",
+        "plain_explanation": "想象一下，你有一个巨大的图书馆（397B 参数的模型），每次有人问问题，都需要从所有书里找答案，非常慢。MoE 模型就像把图书馆分成很多小房间（专家），每次只让少数几个房间的人回答，但协调这些房间需要复杂的通信。Google 的工程师们设计了一套“交通系统”：他们用混合数据并行和专家并行（DP+EP）来分配任务，就像给每个房间分配不同的快递员；还发明了“层级归约-分散”通信方法，让快递员之间高效传递信息；最后，他们为 TPU 编写了专门的“加速指令”（如 Batched Ragged Page Attention 和 Gated DeltaNet 块），让硬件跑得更快。结果，对于需要大量预填充（prefill）的任务（比如处理长文档），速度提升了 4.7 倍。",
+        "purpose": "解决在 Ironwood TPU 上部署超大 MoE 模型时遇到的硬件分片限制和通信瓶颈，提供一套可复用的优化方法，帮助开发者在实际生产环境中高效运行千亿级模型。",
+        "features": "混合数据并行与专家并行（DP+EP）拓扑，突破硬件分片限制；自定义层级归约-散射通信融合，优化跨设备 token 路由；硬件感知的自定义内核：Batched Ragged Page Attention 和全融合 Gated DeltaNet (GDN) 块；实现 HBM 带宽和 TensorCore MXU 饱和，接近理论峰值吞吐",
+        "comparison": "在预填充密集型工作负载下，相比未优化版本实现最高 4.7 倍推理加速。其他基准数据暂无可信公开对比。",
+        "who": "适合部署大规模 MoE 模型的 AI 工程师、TPU 用户、系统优化研究者，以及关注千亿参数模型推理效率的团队。",
+        "link": "https://developers.googleblog.com/systems-engineering-playbook-optimizing-qwen-35-397b-moe-on-ironwood-tpu7x/",
+        "score": "8",
+        "source": "Google Developers Blog",
+        "type": "官方发布",
+        "topic": "检索增强与向量模型",
+        "published": "07-14 15:53"
+      }
+    ],
+    "footer": "本简报由 AI 自动生成，信息基于候选源，请以原文为准。"
+  },
+  "candidate_count": 1
+}

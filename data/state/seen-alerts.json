@@ -1249,6 +1249,16 @@
       "first_seen_at": "2026-07-14T09:51:54.107275+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/systems-engineering-playbook-optimizing-qwen-35-397b-moe-on-ironwood-tpu7x/|systems engineering playbook: optimizing qwen 3.5-397b moe on ironwood (tpu7x)",
+      "title": "Systems Engineering Playbook: Optimizing Qwen 3.5-397B MoE on Ironwood (TPU7x)",
+      "url": "https://developers.googleblog.com/systems-engineering-playbook-optimizing-qwen-35-397b-moe-on-ironwood-tpu7x/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-07-14T20:53:45.988244+00:00",
+      "first_seen_at": "2026-07-14T20:54:36.002642+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }
