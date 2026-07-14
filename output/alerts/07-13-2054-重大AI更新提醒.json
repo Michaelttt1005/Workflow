@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-14T01:54:05.025659Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-13 | llama.cpp 新增腾讯混元3模型支持",
+    "overview": "本期聚焦 llama.cpp 最新版本对 Tencent Hunyuan 3 模型架构的集成，带来 MoE 解码器、推测解码等关键能力，适合本地部署与推理优化。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b9993: 新增 Hy3 (hyv3) 架构支持，集成 MTP 推测解码",
+        "what": "这是 llama.cpp 的 b9993 版本发布，主要增加了对 Tencent Hunyuan 3 (Hy3) 模型架构的支持，包括 MTP (Multi-Token Prediction) 推测解码功能。Hy3 是一种混合专家模型 (MoE)，具有每头 Q/K RMSNorm、sigmoid 路由器、始终激活的共享专家和前置密集块等特性。",
+        "plain_explanation": "想象一下，你有一个超级聪明的 AI 助手，但它运行起来很慢，因为每次回答问题都要从头计算。llama.cpp 就像是一个优化引擎，让这个助手能在普通电脑上快速运行。这次更新加入了支持腾讯最新发布的 Hunyuan 3 模型，这个模型采用了“专家混合”技术——就像一群各有所长的专家，每次只调用最相关的几位来回答问题，既快又准。同时，新版本还支持“多 token 预测”解码，可以一次预测多个字，进一步加速推理。",
+        "purpose": "让开发者能够在本地高效运行腾讯 Hunyuan 3 模型，利用其 MoE 架构和推测解码技术，在保持生成质量的同时大幅提升推理速度，降低部署成本。",
+        "features": "支持 Hy3 (hy_v3) 架构：MoE 解码器堆栈，每头 Q/K RMSNorm，sigmoid 路由器带专家选择偏置；始终激活的 ungated 共享专家，以及前置密集块 (first_k_dense_replace)；MTP 推测解码：多 token 预测，加速生成；兼容现有 hy_v3 GGUF 格式，无需额外转换",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合需要在本地或边缘设备上部署腾讯 Hunyuan 3 模型的 AI 工程师、推理优化研究者，以及使用 llama.cpp 进行模型推理的开发者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b9993",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "07-13 18:09"
+      }
+    ],
+    "footer": "以上信息基于候选源，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}

@@ -1229,6 +1229,16 @@
       "first_seen_at": "2026-07-13T22:50:41.716397+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b9993|ggml-org/llama.cpp release b9993: model: add hy3 (hyv3) support with mtp speculative decoding (25395) model: add hy3 (hy",
+      "title": "ggml-org/llama.cpp release b9993: model: add Hy3 (hyv3) support with MTP speculative decoding (25395) model: add Hy3 (hyv3) architecture support Adds Tencent Hunyuan 3 (HF a",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9993",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-13T23:09:16+00:00",
+      "first_seen_at": "2026-07-14T01:54:08.605865+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
