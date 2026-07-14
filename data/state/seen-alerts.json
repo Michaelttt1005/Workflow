@@ -1239,6 +1239,16 @@
       "first_seen_at": "2026-07-14T01:54:08.605865+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/vllm-project/vllm/releases/tag/v0.25.1|vllm-project/vllm release v0.25.1: vllm v0.25.1 highlights this release features 2 commits from 2 contributors (1 new)! ",
+      "title": "vllm-project/vllm release v0.25.1: vLLM v0.25.1 Highlights This release features 2 commits from 2 contributors (1 new)! v0.25.1 is a patch release containing two targeted bug",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.25.1",
+      "source": "GitHub Release: vllm-project/vllm",
+      "published_at": "2026-07-14T08:51:20+00:00",
+      "first_seen_at": "2026-07-14T09:51:54.107275+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
