@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-15T17:10:36.763318Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-15 | llama.cpp 发布 b10025，优化 CUDA 量化张量拼接",
+    "overview": "本期聚焦 llama.cpp 最新版本 b10025，该版本在 CUDA 后端放宽了量化张量拼接的连续性要求，提升了推理灵活性与兼容性。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b10025: CUDA 放宽量化张量拼接的连续性要求",
+        "what": "llama.cpp 是一个高性能的 LLM 推理引擎，支持多种后端（CPU、CUDA、Metal 等）。本次 b10025 版本主要针对 CUDA 后端，放宽了量化张量在拼接（concat）操作时的内存连续性要求，并增加了相应的测试用例。",
+        "plain_explanation": "想象你在拼乐高，之前要求所有积木必须按顺序紧密排列（连续内存）才能拼接，现在允许积木之间有间隙或顺序打乱（非连续内存）也能拼起来。这意味着模型在推理时，不同部分的张量（数据块）不需要严格连续存放，系统可以更灵活地管理内存，从而支持更复杂的模型结构或减少内存碎片。例如，当运行一个大型语言模型时，不同层的输出可能分散在显存的不同位置，以前需要先复制到连续区域再拼接，现在可以直接操作，节省时间和显存。",
+        "purpose": "提升 llama.cpp 在 CUDA 后端处理量化模型时的兼容性和性能，减少因内存连续性限制导致的额外拷贝开销，使更多模型结构（如需要频繁拼接的 MoE 模型）能高效运行。",
+        "features": "放宽 CUDA 后端量化张量拼接的连续性要求；新增非连续量化张量拼接的测试用例；同时更新了 ggml 核心库的连续性要求",
+        "comparison": "暂无可信公开对比数据",
+        "who": "使用 llama.cpp 在 NVIDIA GPU 上部署量化 LLM 的开发者、研究者和运维人员，尤其是需要处理复杂模型结构（如混合专家模型）或面临显存碎片问题的用户。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10025",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "07-15 11:10"
+      }
+    ],
+    "footer": "以上信息基于候选源，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}

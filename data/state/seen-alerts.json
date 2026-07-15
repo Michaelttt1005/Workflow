@@ -1279,6 +1279,16 @@
       "first_seen_at": "2026-07-15T13:23:24.819727+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10025|ggml-org/llama.cpp release b10025: cuda : relax tensor contiguity requirements for quantized concat (25678) cuda : relax",
+      "title": "ggml-org/llama.cpp release b10025: cuda : relax tensor contiguity requirements for quantized concat (25678) cuda : relax tensor contiguity requirements for quantized concat",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10025",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-15T16:10:34+00:00",
+      "first_seen_at": "2026-07-15T17:10:39.097524+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
