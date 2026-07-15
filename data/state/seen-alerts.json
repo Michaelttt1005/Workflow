@@ -1269,6 +1269,16 @@
       "first_seen_at": "2026-07-15T09:57:42.416645+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10017|ggml-org/llama.cpp release b10017: sycl: increase minimum buffer size for usm system allocations (25525) raise the thres",
+      "title": "ggml-org/llama.cpp release b10017: sycl: Increase minimum buffer size for USM system allocations (25525) Raise the threshold for minimum buffer size from 1 GiB to 4 GiB, based",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10017",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-15T11:37:27+00:00",
+      "first_seen_at": "2026-07-15T13:23:24.819727+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
