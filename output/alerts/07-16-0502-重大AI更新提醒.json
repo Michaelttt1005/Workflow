@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-16T10:02:10.972559Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-16 | llama.cpp 修复 AMD APU 集成 GPU 推理问题",
+    "overview": "本期关注 llama.cpp 最新版本 b10040，该版本修复了在 AMD APU/UMA 平台上使用集成 GPU 进行推理时出现的 host buffer 错误，确保 ROCm 用户能正常利用集成 GPU 加速。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b10040: 修复 AMD APU 集成 GPU 的 CUDA/HIP 兼容性问题",
+        "what": "llama.cpp 是一个流行的 C/C++ 实现的 LLaMA 模型推理引擎，支持多种硬件后端。本次 b10040 版本主要修复了在 AMD APU（如 Ryzen 系列）或 UMA（统一内存架构）设备上，使用 HIP/ROCm 后端时集成 GPU 无法正确使用 host buffer 的问题。",
+        "plain_explanation": "想象一下，你的电脑里有一个集成显卡（比如 AMD APU），它和 CPU 共享内存。之前 llama.cpp 为了修复 NVIDIA Jetson Orin 上的一个 bug，强制把所有 GPU 都标记为“非集成”设备，这导致 AMD 的集成 GPU 无法正常使用 CPU 内存中的缓冲区（host buffer），推理时就会出错。这次更新相当于给 AMD 的集成 GPU 开了个“特例”，让它们能正确识别自己的集成身份，从而正常使用共享内存，而 NVIDIA 的修复仍然保留。",
+        "purpose": "解决在 AMD APU/UMA 平台上使用 llama.cpp 进行模型推理时，因集成 GPU 被错误标记而导致的 host buffer 错误，确保 ROCm 用户能充分利用集成 GPU 加速推理。",
+        "features": "修复了 HIP 构建中 prop.integrated 标志被错误强制设为 false 的问题；仅对非 HIP（即 CUDA）构建保留 Jetson Orin 的 workaround，不影响 AMD 平台；恢复了 AMD APU/UMA 设备上集成 GPU 的 host buffer 支持；保持了与 NVIDIA Jetson Orin 的兼容性修复",
+        "comparison": "暂无可信公开对比数据",
+        "who": "使用 AMD APU（如 Ryzen 系列）或 UMA 架构设备进行本地推理的开发者；依赖 ROCm 后端的 llama.cpp 用户；需要在集成 GPU 上运行大语言模型的边缘计算场景。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10040",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "07-16 04:55"
+      }
+    ],
+    "footer": "本简报由 AI 自动生成，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}

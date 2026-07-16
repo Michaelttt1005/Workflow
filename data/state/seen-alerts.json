@@ -1339,6 +1339,16 @@
       "first_seen_at": "2026-07-16T06:12:31.852712+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10040|ggml-org/llama.cpp release b10040: ggml-cuda : restore prop.integrated on hip builds (24233) pr 16308 set info.devices[i",
+      "title": "ggml-org/llama.cpp release b10040: ggml-cuda : restore prop.integrated on HIP builds (24233) PR 16308 set info.devices[id].integrated = false unconditionally for all CUDA/HIP",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10040",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-16T09:55:55+00:00",
+      "first_seen_at": "2026-07-16T10:02:12.774078+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
