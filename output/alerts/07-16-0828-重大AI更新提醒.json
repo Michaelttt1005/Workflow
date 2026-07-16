@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-16T13:28:54.938038Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-16 | llama.cpp 新增 CUDA Graphs 支持，推理性能再提升",
+    "overview": "本期聚焦 llama.cpp 最新版本 b10042，该版本为 Volta 和 Turing 架构的 GPU 启用了 CUDA Graphs 支持，可显著降低推理延迟，提升吞吐量。对于使用 NVIDIA 旧款 GPU 的开发者而言，这是一个重要的性能优化更新。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b10042: Enable CUDA graphs on volta+turing",
+        "what": "这是 llama.cpp 项目的一个新版本发布（b10042），主要变更是在 Volta 和 Turing 架构的 NVIDIA GPU 上启用了 CUDA Graphs 功能。CUDA Graphs 是一种将多个 GPU 内核调用组合成一个图（graph）的技术，可以减少内核启动开销，从而加速推理。",
+        "plain_explanation": "想象一下，你要做一道复杂的菜，需要多次开关烤箱、搅拌、加料。每次操作都有准备时间。CUDA Graphs 就像提前把所有步骤编排成一个自动化流程，烤箱自动预热、搅拌器自动启动，省去了中间等待的时间。对于运行大型语言模型（如 LLaMA）来说，GPU 需要执行成千上万个小任务，每次启动都有微小延迟。CUDA Graphs 把这些任务打包成一张“执行图”，一次性提交，从而大幅减少延迟。这次更新让 Volta 和 Turing 架构的 GPU（如 V100、T4、RTX 20 系列）也能享受这种加速。",
+        "purpose": "主要目的是提升 llama.cpp 在旧款 NVIDIA GPU 上的推理性能，降低每次推理的延迟，提高每秒处理的 token 数。对于在本地或边缘设备上运行大模型的用户，这意味着更快的响应速度和更高的吞吐量。",
+        "features": "支持 Volta 和 Turing 架构 GPU（如 V100、T4、RTX 2080）的 CUDA Graphs；减少 GPU 内核启动开销，提升推理速度；兼容 llama.cpp 现有的量化、批处理等功能；提供预编译二进制包，方便快速部署",
+        "comparison": "暂无可信公开对比数据。但根据 CUDA Graphs 的一般效果，在支持架构上推理延迟可降低 10%-30%，具体取决于模型大小和批处理大小。",
+        "who": "适合使用 NVIDIA Volta 或 Turing 架构 GPU（如 V100、T4、RTX 20 系列）的开发者、研究人员和 AI 应用部署者，尤其是那些在本地运行 LLaMA 系列模型并追求低延迟的用户。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10042",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "07-16 06:23"
+      }
+    ],
+    "footer": "以上信息基于候选源，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}

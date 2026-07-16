@@ -1349,6 +1349,16 @@
       "first_seen_at": "2026-07-16T10:02:12.774078+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10042|ggml-org/llama.cpp release b10042: enable cuda graphs on volta+turing (25749) website",
+      "title": "ggml-org/llama.cpp release b10042: Enable CUDA graphs on volta+turing (25749) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10042",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-16T11:23:24+00:00",
+      "first_seen_at": "2026-07-16T13:28:56.775399+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
