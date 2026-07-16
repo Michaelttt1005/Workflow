@@ -1359,6 +1359,16 @@
       "first_seen_at": "2026-07-16T13:28:56.775399+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10043|ggml-org/llama.cpp release b10043: cuda: support cuda virtual devices (25228) support cuda virtual devices disable nccl ",
+      "title": "ggml-org/llama.cpp release b10043: CUDA: Support CUDA Virtual Devices (25228) support cuda virtual devices disable NCCL path when virtual devices are used label virtual dev",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10043",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-16T14:02:33+00:00",
+      "first_seen_at": "2026-07-16T15:29:56.326514+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
