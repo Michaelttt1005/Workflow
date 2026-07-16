@@ -1319,6 +1319,26 @@
       "first_seen_at": "2026-07-15T20:53:18.330778+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10036|ggml-org/llama.cpp release b10036: opencl: disable fa and moe weights repack to work around compiler issues for adreno 8",
+      "title": "ggml-org/llama.cpp release b10036: opencl: disable FA and MoE weights repack to work around compiler issues for Adreno 850 GPU (25745) opencl: workaround for A850 compiler co",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10036",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-16T05:31:04+00:00",
+      "first_seen_at": "2026-07-16T06:12:31.852682+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10035|ggml-org/llama.cpp release b10035: cuda: extract q10 elements via byteperm (25628) macos/ios",
+      "title": "ggml-org/llama.cpp release b10035: cuda: extract Q10 elements via byteperm (25628) macOS/iOS",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10035",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-16T04:59:14+00:00",
+      "first_seen_at": "2026-07-16T06:12:31.852712+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

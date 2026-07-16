@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-07-16T06:12:29.897435Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-16 | llama.cpp 连续发布两个版本，修复 Adreno 850 GPU 兼容性并优化 CUDA 量化提取",
+    "overview": "llama.cpp 在 7 月 15-16 日连续发布 b10035 和 b10036 两个版本。b10036 主要针对 Adreno 850 GPU 的编译器问题，禁用了 Flash Attention 和 MoE 权重重打包；b10035 则通过 CUDA 的 __byte_perm 指令优化了 Q1_0 量化元素的提取效率。两个版本均提供了 macOS、iOS、Linux 等多平台二进制包。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b10036：修复 Adreno 850 GPU 编译器兼容性，禁用 FA 和 MoE 权重重打包",
+        "what": "这是 llama.cpp 的第 b10036 次发布，主要针对 Adreno 850 GPU 的 OpenCL 后端进行了编译器兼容性修复。由于编译器问题，该版本禁用了 Flash Attention（FA）和 MoE 权重的重打包功能，以确保在 Adreno 850 上稳定运行。同时修复了 DX 编译器版本解析和清理工作。",
+        "plain_explanation": "想象一下，你有一个非常强大的 GPU（Adreno 850），但它的编译器（把代码翻译成 GPU 能理解的指令的工具）有一些 bug，导致某些高级功能（比如 Flash Attention 和 MoE 权重重打包）无法正常工作。llama.cpp 的这次更新就像给这个 GPU 打了一个补丁，暂时关闭了这些有问题的功能，让模型能稳定运行。Flash Attention 是一种加速注意力计算的技术，MoE 权重重打包是为了优化混合专家模型的权重布局，现在为了兼容性暂时禁用，可能会略微影响性能，但保证了正确性。",
+        "purpose": "解决 Adreno 850 GPU 用户在运行 llama.cpp 时遇到的编译器兼容性问题，确保模型推理的稳定性和正确性。对于使用该 GPU 的开发者来说，这是必要的更新。",
+        "features": "针对 Adreno 850 GPU 的 OpenCL 编译器兼容性修复；禁用 Flash Attention 以避免编译器错误；禁用 MoE 权重重打包以避免编译器错误；修复 DX 编译器版本解析和代码清理",
+        "comparison": "暂无可信公开对比数据",
+        "who": "使用 Adreno 850 GPU（常见于高通骁龙移动平台）运行 llama.cpp 的开发者；需要 OpenCL 后端的用户；关注移动端或嵌入式设备上大模型推理的工程师。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10036",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "07-16 00:31"
+      },
+      {
+        "candidate_id": "2",
+        "title": "llama.cpp b10035：CUDA 后端通过 __byte_perm 指令优化 Q1_0 量化元素提取",
+        "what": "这是 llama.cpp 的第 b10035 次发布，主要针对 CUDA 后端进行了性能优化。具体来说，它使用 CUDA 的 __byte_perm 指令来提取 Q1_0 量化格式中的元素。Q1_0 是一种极低比特的量化格式，每个权重只占 1 比特，但提取过程需要特殊处理。__byte_perm 是 NVIDIA GPU 上的一个字节置换指令，可以高效地重组字节，从而加速量化权重的解包。",
+        "plain_explanation": "想象一下，你有一堆压缩得很小的数据包（Q1_0 量化），每个包只有 1 比特信息，但你需要把它们一个个拆开才能使用。以前拆包的方法比较慢，现在发现了一个更快的工具（__byte_perm 指令），就像用一把特制的钥匙一下子就能打开多个包。这个优化让 CUDA 上的模型推理速度更快，尤其是在使用 1 比特量化时。",
+        "purpose": "提升 llama.cpp 在 CUDA 后端上处理 Q1_0 量化模型的推理速度，减少量化权重的解包开销，从而降低延迟或提高吞吐量。",
+        "features": "使用 CUDA __byte_perm 指令优化 Q1_0 量化元素提取；针对 NVIDIA GPU 的底层指令级优化；保持与现有 CUDA 后端的兼容性",
+        "comparison": "暂无可信公开对比数据",
+        "who": "使用 NVIDIA GPU 运行 llama.cpp 的开发者；对极低比特量化（如 Q1_0）感兴趣的研究者；需要最大化推理性能的部署工程师。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10035",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "07-15 23:59"
+      }
+    ],
+    "footer": "两个版本均为增量更新，建议根据自身 GPU 类型选择升级。b10036 主要面向 Adreno 850 用户，b10035 面向 CUDA 用户。"
+  },
+  "candidate_count": 2
+}
