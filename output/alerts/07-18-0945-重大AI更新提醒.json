@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-18T14:45:15.350436Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-18 | llama.cpp 修复 DeepSeek-V4 量化问题",
+    "overview": "本期聚焦 llama.cpp 最新版本 b10067，该版本修复了 DeepSeek-V4 模型量化时因路由表被错误量化而失败的关键问题，确保模型在本地高效运行。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b10067: 修复 DeepSeek-V4 量化时 i32 路由表被错误量化的问题",
+        "what": "llama.cpp 是一个用于在本地运行大语言模型的开源 C++ 推理框架，支持多种量化方式以降低模型内存占用。本次发布 b10067 版本，修复了量化 DeepSeek-V4 模型时的一个 bug：模型中的 ffn_gate_tid2eid 张量是一个整数索引表（i32 类型），用于将 token ID 映射到专家 ID，但之前未被加入量化排除列表，导致量化工具尝试将其转换为浮点类型而失败。",
+        "plain_explanation": "想象你有一本字典，里面每个词条对应一个数字编号（整数）。现在你想把字典压缩成更小的版本，但压缩工具误以为所有内容都是可以压缩的数值，结果把编号也当成普通数字去处理，导致压缩失败。llama.cpp 这次更新就是告诉压缩工具：“这个编号表是整数，别动它！” 这样 DeepSeek-V4 模型就能顺利量化，在普通电脑上也能运行。",
+        "purpose": "解决 DeepSeek-V4 模型在 llama.cpp 中无法量化的关键问题，让用户能在本地设备上高效运行该模型，避免因量化失败而无法使用。",
+        "features": "修复了 ffn_gate_tid2eid 张量被错误量化的问题，该张量是 i32 类型的 token ID 到 expert ID 的索引表；将 ffn_gate_tid2eid 加入量化排除列表，与已有的 ffn_gate_inp.weight 一起被跳过量化；确保 DeepSeek-V4 模型在 llama-quant 工具中能正常完成量化流程；提供 macOS Apple Silicon (arm64)、macOS Intel (x64) 和 iOS XCFramework 的预编译二进制文件",
+        "comparison": "暂无可信公开对比数据",
+        "who": "使用 llama.cpp 在本地运行 DeepSeek-V4 模型的开发者、AI 研究人员，以及需要量化大型 MoE 模型以在有限硬件上部署的工程师。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10067",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "开发者生态与数据工具",
+        "published": "07-18 07:12"
+      }
+    ],
+    "footer": "本简报基于候选源自动生成，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}
