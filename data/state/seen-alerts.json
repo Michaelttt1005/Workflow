@@ -1379,6 +1379,16 @@
       "first_seen_at": "2026-07-18T14:45:18.238204+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/scaling-agentic-rl-high-throughput-agentic-training-with-tunix/|scaling agentic rl: high-throughput agentic training with tunix",
+      "title": "Scaling Agentic RL: High-Throughput Agentic Training with Tunix",
+      "url": "https://developers.googleblog.com/scaling-agentic-rl-high-throughput-agentic-training-with-tunix/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-07-21T15:38:25.382681+00:00",
+      "first_seen_at": "2026-07-21T15:38:43.215914+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }
