@@ -1399,6 +1399,16 @@
       "first_seen_at": "2026-07-22T10:20:09.946870+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10089|ggml-org/llama.cpp release b10089: cuda: getrows quants (25962) cuda: add k-quant support to getrows device-side embeddi",
+      "title": "ggml-org/llama.cpp release b10089: cuda: GETROWS quants (25962) cuda: add k-quant support to GETROWS Device-side embedding lookups require GETROWS to handle the k-quants used",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10089",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-22T19:45:27+00:00",
+      "first_seen_at": "2026-07-22T21:04:07.175470+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
