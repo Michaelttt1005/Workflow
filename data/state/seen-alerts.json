@@ -1389,6 +1389,16 @@
       "first_seen_at": "2026-07-21T15:38:43.215914+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10083|ggml-org/llama.cpp release b10083: cuda: add sqrtsoftplus in topk-moe for dsv4 (25896) website",
+      "title": "ggml-org/llama.cpp release b10083: cuda: add sqrtsoftplus in topk-moe for dsv4 (25896) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10083",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-22T08:33:34+00:00",
+      "first_seen_at": "2026-07-22T10:20:09.946870+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

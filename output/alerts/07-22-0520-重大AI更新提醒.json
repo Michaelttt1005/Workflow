@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-22T10:20:07.627104Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-22 | llama.cpp 发布新版本，优化 DeepSeek-V4 推理",
+    "overview": "本期聚焦 llama.cpp 最新 release b10083，该版本为 DeepSeek-V4 模型在 CUDA 环境下引入了 sqrt_softplus 激活函数，优化了 topk-moe 路由机制，有望提升 MoE 模型的推理效率与稳定性。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b10083: 为 DeepSeek-V4 添加 CUDA 上的 sqrt_softplus 支持",
+        "what": "这是 llama.cpp 项目的一个新版本发布（b10083），主要针对 DeepSeek-V4（dsv4）模型，在 CUDA 后端实现了 sqrt_softplus 激活函数，用于 topk-moe（混合专家模型的路由选择）中。",
+        "plain_explanation": "想象一下，一个大型语言模型内部有很多“专家”模块，每次处理输入时，模型需要决定让哪些专家来干活。这个决定过程叫做“路由”。DeepSeek-V4 是一种混合专家模型（MoE），它的路由机制需要计算一个叫做“softplus”的数学函数。这次更新在 GPU（CUDA）上实现了一个更稳定的变体“sqrt_softplus”，可以理解为给路由计算加了一个“平方根”操作，使得专家选择更加平滑和稳定。例如，在生成文本时，模型能更准确地分配任务给最合适的专家，从而提升回答质量。",
+        "purpose": "主要作用是优化 DeepSeek-V4 模型在 GPU 上的推理性能，通过改进路由激活函数来提升 MoE 模型的稳定性和效率，减少计算误差。",
+        "features": "在 CUDA 后端新增 sqrt_softplus 激活函数，专为 DeepSeek-V4 的 topk-moe 设计；支持多种平台：macOS（Apple Silicon 和 Intel）、Linux（x64、arm64、s390x）以及 iOS；提供预编译二进制包，方便用户直接下载使用",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合使用 llama.cpp 在本地或服务器上部署 DeepSeek-V4 模型的开发者，尤其是需要 CUDA 加速的用户；也适合对 MoE 模型推理优化感兴趣的研究者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10083",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "07-22 03:33"
+      }
+    ],
+    "footer": "本简报由 AI 自动生成，仅供参考。"
+  },
+  "candidate_count": 1
+}
