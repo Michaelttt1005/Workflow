@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-23T19:05:26.634710Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-23 | llama.cpp 自动推测 draft 模型类型，简化推理配置",
+    "overview": "本期聚焦 llama.cpp 最新 release，其新增自动从 draft 仓库 sidecar 文件推断推测解码类型的功能，大幅简化多模型推理的配置流程。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b10094: 自动从 draft 仓库 sidecar 推断推测解码类型",
+        "what": "这是 llama.cpp 的 b10094 版本发布，主要更新是让推理引擎能自动识别 draft 模型仓库中的 sidecar 文件（如 mtp、dflash、eagle3 等），从而自动设置正确的推测解码类型，无需用户手动指定 --spec-type 参数。",
+        "plain_explanation": "推测解码是一种加速大模型推理的技术，它用一个轻量级的 draft 模型快速生成候选 token，再由主模型验证。以前用户需要手动告诉系统 draft 模型是什么类型（比如 mtp、dflash 或 eagle3），否则可能用错。现在 llama.cpp 会自动检查 draft 仓库里的 sidecar 文件（类似模型的“说明书”），自动匹配正确的类型。例如，你只需指定主模型和 draft 模型的仓库地址，系统就能自动配置好，像这样：llama-server -hf repo:Q3_K_M -hfd repo:Q8_0，无需额外参数。",
+        "purpose": "解决多模型推理时配置复杂、容易出错的问题，降低使用门槛，让开发者更专注于模型本身而非工具配置。",
+        "features": "自动检测 draft 仓库中的 sidecar 文件（mtp、dflash、eagle3 等）；按 mtp > dflash > eagle3 优先级自动选择推测解码类型；支持通过 --spec-type 手动覆盖自动推断结果；向后兼容：无 sidecar 的 draft 仓库仍按完整模型处理",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合使用 llama.cpp 进行推理部署的开发者、AI 应用工程师，以及需要优化大模型推理速度的研究团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10094",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "07-23 13:28"
+      }
+    ],
+    "footer": "本简报由 AI 自动生成，仅供参考。"
+  },
+  "candidate_count": 1
+}

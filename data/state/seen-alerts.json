@@ -1409,6 +1409,16 @@
       "first_seen_at": "2026-07-22T21:04:07.175470+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10094|ggml-org/llama.cpp release b10094: common: infer the speculative type from the draft repo sidecars (25989) with -hfd poi",
+      "title": "ggml-org/llama.cpp release b10094: common: infer the speculative type from the draft repo sidecars (25989) With -hfd pointing to a repo that ships mtp-/dflash-/eagle3- sidecar",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10094",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-23T18:28:00+00:00",
+      "first_seen_at": "2026-07-23T19:05:28.961226+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
