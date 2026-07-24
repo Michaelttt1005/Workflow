@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-24T13:25:52.715070Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-24 | llama.cpp 修复 CUDA 外部编译问题",
+    "overview": "本期聚焦 llama.cpp 最新版本 b10106，该版本修复了 CUDA 环境下 q1_0 MMQ 的外部编译问题，提升了推理框架的兼容性和稳定性。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b10106: CUDA: fix external compilation of q10 MMQ",
+        "what": "llama.cpp 是一个高性能的 C/C++ 推理引擎，支持在 CPU 和 GPU 上运行大语言模型。本次发布的 b10106 版本主要修复了 CUDA 环境下 q1_0 量化矩阵乘法（MMQ）的外部编译问题。",
+        "plain_explanation": "想象一下，你有一台高性能游戏电脑，想用它来运行一个超大的 AI 模型。llama.cpp 就像是一个专门为这台电脑优化的引擎，让模型跑得更快。但有时候，引擎的某个零件（比如 CUDA 编译部分）会出问题，导致无法正常使用。这次更新就是修复了这样一个零件问题，确保引擎在 NVIDIA 显卡上能正常工作。具体来说，它解决了当用户尝试从外部编译 q1_0 量化操作时，出现的编译错误。",
+        "purpose": "解决 CUDA 环境下 q1_0 MMQ 外部编译失败的问题，提升 llama.cpp 在 NVIDIA GPU 上的兼容性和稳定性，确保用户能够顺利编译并使用量化模型。",
+        "features": "修复 CUDA 外部编译 q1_0 MMQ 的问题；提供多平台二进制包（macOS、Linux、iOS）；支持 Apple Silicon 和 Intel 架构；持续优化推理性能",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合使用 llama.cpp 进行本地推理的开发者、AI 研究人员，以及需要在 NVIDIA GPU 上运行量化模型的用户。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10106",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "07-24 06:34"
+      }
+    ],
+    "footer": "本简报基于候选源生成，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}

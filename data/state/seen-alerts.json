@@ -1419,6 +1419,16 @@
       "first_seen_at": "2026-07-23T19:05:28.961226+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10106|ggml-org/llama.cpp release b10106: cuda: fix external compilation of q10 mmq (25778) website",
+      "title": "ggml-org/llama.cpp release b10106: CUDA: fix external compilation of q10 MMQ (25778) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10106",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-24T11:34:41+00:00",
+      "first_seen_at": "2026-07-24T13:25:54.362407+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
