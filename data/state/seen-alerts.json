@@ -1429,6 +1429,16 @@
       "first_seen_at": "2026-07-24T13:25:54.362407+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/vllm-project/vllm/releases/tag/v0.26.0|vllm-project/vllm release v0.26.0: vllm v0.26.0 release notes highlights this release features 411 commits from 212 cont",
+      "title": "vllm-project/vllm release v0.26.0: vLLM v0.26.0 Release Notes Highlights This release features 411 commits from 212 contributors (61 new)! New Inkling model family with a fu",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.26.0",
+      "source": "GitHub Release: vllm-project/vllm",
+      "published_at": "2026-07-25T10:38:53+00:00",
+      "first_seen_at": "2026-07-26T11:15:32.755912+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-26T11:15:30.962740Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-26 | vLLM v0.26.0 发布，支持 Inkling 模型家族与 DeepSeek-V4 性能优化",
+    "overview": "本期聚焦 vLLM v0.26.0 版本，该版本新增 Inkling 模型家族完整支持栈，并对 DeepSeek-V4 进行了跨厂商性能优化，显著提升推理效率。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "vLLM v0.26.0 发布：支持 Inkling 模型家族与 DeepSeek-V4 性能优化",
+        "what": "vLLM v0.26.0 是一个开源大模型推理引擎的重大版本更新，由 vllm-project 社区贡献，包含 411 次提交和 212 位贡献者。该版本主要新增了对 Inkling 模型家族的完整支持，并对 DeepSeek-V4 进行了跨厂商（NVIDIA、AMD、Intel）的性能优化。",
+        "plain_explanation": "vLLM 是一个帮助开发者高效运行大语言模型的工具，类似于一个高性能的“引擎”。这次更新就像给引擎换上了新的零件：首先，它支持了全新的 Inkling 模型家族，这意味着你可以用 vLLM 运行这类模型，并且从底层计算到高级功能（如 LoRA 微调、量化）都得到了优化。其次，针对 DeepSeek-V4 模型，vLLM 团队在 NVIDIA、AMD 和 Intel 的硬件上都做了专门的加速，比如通过改进内核让模型推理速度提升 1.5-2 倍。简单来说，如果你在用这些模型，升级后能更快地得到结果，同时节省计算资源。",
+        "purpose": "该版本旨在为开发者提供更高效、更易用的推理引擎，支持最新模型架构，并显著提升特定模型（如 DeepSeek-V4）的推理性能，降低部署成本。",
+        "features": "完整支持 Inkling 模型家族：包括基础建模、分段 CUDA 图、Hopper FA4 相对注意力、MTP=1 推测解码、LoRA 以及 ModelOpt NVFP4 量化。；DeepSeek-V4 性能优化：跨 NVIDIA、AMD、Intel 平台，包括专用路由内核（端到端 TPOT 提升 2.94%）、fused_topk_bias 内核（1.5-2 倍加速）、冗余重复/复制移除（端到端 TPOT 提升 1.8%）。；fp32 lm_head 支持：通过 head_dtype 参数为生成模型提供更高精度，并扩展至 LoRA 路径。；ROCm 平台优化：包括两阶段压缩器用于 HCA 预填充、稀疏解码/预填充优化，以及 DSpark 推测解码支持。",
+        "comparison": "暂无可信公开对比数据。",
+        "who": "适合使用 vLLM 部署大模型的开发者、研究者和运维团队，特别是需要运行 Inkling 模型或 DeepSeek-V4 的用户，以及关注推理性能优化的 AI 基础设施团队。",
+        "link": "https://github.com/vllm-project/vllm/releases/tag/v0.26.0",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "07-25 05:38"
+      }
+    ],
+    "footer": "数据来源：GitHub Release，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}
