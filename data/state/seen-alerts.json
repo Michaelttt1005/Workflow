@@ -1439,6 +1439,16 @@
       "first_seen_at": "2026-07-26T11:15:32.755912+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10142|ggml-org/llama.cpp release b10142: mtmd: add vision support for minimax-m3 (25113) add preliminary minimax-m3 support te",
+      "title": "ggml-org/llama.cpp release b10142: mtmd: Add Vision Support for Minimax-M3 (25113) Add preliminary MiniMax-M3 support Text-only port that re-uses existing components: MiniMax",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10142",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-27T00:20:27+00:00",
+      "first_seen_at": "2026-07-27T02:22:30.358200+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
