@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-28T16:01:34.227429Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-28 | llama.cpp 新增 Mamba-2 预填充加速",
+    "overview": "本期聚焦 llama.cpp 最新 release，为 Mamba-2 架构引入基于 CUDA 的分块 SSD 矩阵乘法，显著加速预填充阶段，适合本地部署和推理优化。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b10164: 为 Mamba-2 预填充添加分块 SSD 矩阵乘法加速",
+        "what": "这是 llama.cpp 项目的一个新 release（b10164），主要针对 Mamba-2 架构的预填充阶段，在 CUDA 后端实现了分块 SSD（State Space Dual）矩阵乘法，以加速推理。",
+        "plain_explanation": "Mamba-2 是一种新型的序列模型，类似 GPT 但更高效。预填充阶段是模型处理输入文本的第一步，通常很耗时。这次更新就像给汽车换了一个更高效的引擎——通过把大矩阵拆成小块并行计算（分块 SSD），让 GPU 能更快地完成预填充，从而减少用户等待时间。例如，当你输入一段长文本让模型生成回复时，预填充加速能让模型更快开始输出。",
+        "purpose": "解决 Mamba-2 模型在 GPU 上预填充速度慢的问题，提升推理效率，尤其适合需要低延迟的本地部署场景。",
+        "features": "分块 SSD 矩阵乘法：将大矩阵拆分为小块，利用 GPU 并行计算加速 Mamba-2 的预填充阶段。；融合 M 矩阵物化：将 M 矩阵的生成合并到 pre_matmul 内核中，减少内存访问开销。；修复了 CUDA/HIP/MUSA/MSVC 的兼容性问题，并改进了内存合并与效率。",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合使用 Mamba-2 模型进行本地推理的开发者、AI 应用部署工程师，以及关注 llama.cpp 性能优化的研究人员。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10164",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "检索增强与向量模型",
+        "published": "07-28 09:28"
+      }
+    ],
+    "footer": "本简报基于候选源自动生成，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}
