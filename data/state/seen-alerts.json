@@ -1459,6 +1459,26 @@
       "first_seen_at": "2026-07-28T16:01:36.909480+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10182|ggml-org/llama.cpp release b10182: llama: move suppresstokens handling to common/sampling (26276) llama: move suppressto",
+      "title": "ggml-org/llama.cpp release b10182: llama: move suppresstokens handling to common/sampling (26276) llama: move suppresstokens handling to common/sampling address security iss",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10182",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-29T17:01:01+00:00",
+      "first_seen_at": "2026-07-29T17:39:14.301472+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10181|ggml-org/llama.cpp release b10181: ggml-cuda : disable mmq on devices with less than 48 kib shared memory (26141) ggmlcu",
+      "title": "ggml-org/llama.cpp release b10181: ggml-cuda : disable MMQ on devices with less than 48 KiB shared memory (26141) ggmlcudashouldusemmq() selects MMQ purely from the quantizati",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10181",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-29T15:09:10+00:00",
+      "first_seen_at": "2026-07-29T17:39:14.301505+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

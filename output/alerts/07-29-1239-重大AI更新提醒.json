@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-07-29T17:39:11.749443Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-29 | llama.cpp 安全与 CUDA 兼容性修复",
+    "overview": "本期聚焦 llama.cpp 的两项关键更新：安全修复与 CUDA 兼容性改进。b10182 将 suppress_tokens 处理移至公共采样模块并修复安全问题；b10181 为共享内存不足 48 KiB 的 GPU 禁用 MMQ 以避免崩溃，回退至 BLAS 路径。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b10182: 移动 suppress_tokens 处理至 common/sampling 并修复安全问题",
+        "what": "这是 llama.cpp 项目的一个 GitHub Release，版本 b10182。主要变更包括将 suppress_tokens 处理逻辑从核心 llama 模块迁移到 common/sampling 模块，并修复了相关的安全问题。同时移除了 has_logit_bias 相关代码。",
+        "plain_explanation": "想象你有一个智能聊天机器人，它有时会生成不合适的词语。suppress_tokens 就像是一个“禁止词列表”，让机器人避免说出这些词。之前这个列表的处理分散在代码各处，容易出错。这次更新把处理逻辑统一放到一个专门的“采样”模块里，就像把所有禁止词规则集中到一个文件夹里，既安全又容易管理。同时修复了可能被黑客利用的安全漏洞。",
+        "purpose": "提升 llama.cpp 的安全性和代码可维护性，确保 suppress_tokens 功能正确且安全地执行，避免因处理分散导致的安全漏洞或逻辑错误。",
+        "features": "将 suppress_tokens 处理移至 common/sampling 模块，实现集中管理；修复了相关的安全问题，增强系统安全性；移除了 has_logit_bias 相关代码，简化代码库",
+        "comparison": "暂无可信公开对比数据",
+        "who": "使用 llama.cpp 进行本地推理的开发者、需要自定义 token 过滤的 AI 应用开发者、关注开源 LLM 安全性的研究人员。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10182",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "安全与可信评测",
+        "published": "07-29 12:01"
+      },
+      {
+        "candidate_id": "2",
+        "title": "llama.cpp b10181: 为共享内存不足 48 KiB 的 GPU 禁用 MMQ 以避免崩溃",
+        "what": "这是 llama.cpp 项目的另一个 GitHub Release，版本 b10181。它修复了在共享内存小于 48 KiB 的 GPU 设备上运行时的崩溃问题。具体做法是当检测到设备共享内存不足时，自动禁用 MMQ（多矩阵乘法量化）路径，回退到 BLAS 路径。",
+        "plain_explanation": "想象你有一台老式电脑，内存很小。运行大型程序时可能会因为内存不足而崩溃。在 AI 推理中，GPU 的共享内存就像电脑的内存，MMQ 是一种高效的计算方式，但它需要至少 48 KiB 的共享内存。如果 GPU 共享内存不够，MMQ 就会导致程序崩溃。这次更新就像给程序加了一个“智能检测器”：如果发现 GPU 内存不足，就自动切换到另一种更慢但稳定的计算方式（BLAS），避免崩溃。例如，在受影响的设备上，之前运行会直接报错，现在可以正常生成 token，速度从崩溃变为 55.3 t/s。",
+        "purpose": "解决旧款或低端 GPU 上运行 llama.cpp 时的崩溃问题，提高兼容性和稳定性，让更多设备能够运行 LLM 推理。",
+        "features": "自动检测 GPU 共享内存大小，若小于 48 KiB 则禁用 MMQ；回退到 BLAS 路径，确保推理不崩溃；不影响共享内存充足的设备，保持原有性能",
+        "comparison": "在受影响的设备上，修复前 MMQ 路径导致崩溃；修复后回退到 BLAS 路径，Q8_0 量化下 pp128 速度 1470.7 t/s，tg8 速度 55.3 t/s，与强制使用 BLAS 的构建（pp128 1464.2 t/s）性能相近。",
+        "who": "使用旧款 NVIDIA GPU（如 Maxwell 架构）或其他共享内存不足 48 KiB 的 GPU 的开发者、在低端硬件上部署 LLM 的团队、需要跨设备兼容性的 AI 应用开发者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10181",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "检索增强与向量模型",
+        "published": "07-29 10:09"
+      }
+    ],
+    "footer": "以上更新均来自 llama.cpp 官方 GitHub Release，建议相关用户及时升级以确保安全与兼容性。"
+  },
+  "candidate_count": 2
+}
