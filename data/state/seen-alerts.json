@@ -1489,6 +1489,26 @@
       "first_seen_at": "2026-07-30T01:51:05.880039+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10194|ggml-org/llama.cpp release b10194: ggml-cuda: allow transpose-free gemmv computation (26171) when matrix's weights are s",
+      "title": "ggml-org/llama.cpp release b10194: ggml-cuda: Allow transpose-free gemmv computation (26171) When matrix's weights are shaped 1xK is leverage a transpose-free computation to u",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10194",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-30T15:00:45+00:00",
+      "first_seen_at": "2026-07-30T15:47:34.057996+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://pytorch.org/blog/fbtriton-infra-upstream-ingestion-hierarchical-validation-ideals-vs-realities/|fbtriton infra: upstream ingestion, hierarchical validation, ideals vs realities",
+      "title": "FBTriton Infra: Upstream Ingestion, Hierarchical Validation, Ideals vs Realities",
+      "url": "https://pytorch.org/blog/fbtriton-infra-upstream-ingestion-hierarchical-validation-ideals-vs-realities/",
+      "source": "PyTorch Blog",
+      "published_at": "2026-07-30T15:26:48+00:00",
+      "first_seen_at": "2026-07-30T15:47:34.058022+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
