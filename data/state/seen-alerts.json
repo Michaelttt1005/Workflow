@@ -1509,6 +1509,26 @@
       "first_seen_at": "2026-07-30T15:47:34.058022+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/how-to-use-google-microbenchmarks-for-evaluating-tpu-performance/|how to use google microbenchmarks for evaluating tpu performance",
+      "title": "How to use Google microbenchmarks for evaluating TPU performance",
+      "url": "https://developers.googleblog.com/how-to-use-google-microbenchmarks-for-evaluating-tpu-performance/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-07-30T17:19:34.703736+00:00",
+      "first_seen_at": "2026-07-30T17:20:02.044204+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6|advancing the price-performance frontier with gpt-5.6",
+      "title": "Advancing the price-performance frontier with GPT-5.6",
+      "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
+      "source": "OpenAI News",
+      "published_at": "2026-07-30T10:00:00+00:00",
+      "first_seen_at": "2026-07-30T17:20:02.044240+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

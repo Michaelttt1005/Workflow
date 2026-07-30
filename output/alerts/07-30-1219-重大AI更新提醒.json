@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-07-30T17:19:59.467464Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-30 | GPT-5.6 降价与 TPU 微基准测试工具发布",
+    "overview": "本期聚焦两项重要更新：OpenAI 宣布 GPT-5.6 降价，降低企业大规模部署成本；Google 开源 TPU 微基准测试套件，帮助开发者精准优化模型性能。",
+    "checked_sources": [
+      "Google Developers Blog",
+      "OpenAI 官方新闻"
+    ],
+    "entries": [
+      {
+        "candidate_id": "2",
+        "title": "Advancing the price-performance frontier with GPT-5.6",
+        "what": "OpenAI 宣布 GPT-5.6 模型降价，主要针对 Luna 和 Terra 两个版本，旨在提升性价比，帮助企业更经济地大规模部署 AI 工作流。",
+        "plain_explanation": "想象一下，你开了一家快递公司，每送一个包裹都要付钱。现在快递公司说，我们降低了每单的运费，这样你就能用同样的预算送更多包裹了。GPT-5.6 的降价就像这样——企业可以用更少的钱调用 AI 模型，完成更多任务，比如自动回复客服邮件、分析大量文档等。Luna 和 Terra 是不同规格的版本，Luna 可能更轻量快速，Terra 则更强力但成本更高，现在两者都降价了。",
+        "purpose": "降低企业使用 GPT-5.6 的门槛，使大规模 AI 部署更具成本效益，推动更多业务场景落地。",
+        "features": "Luna 和 Terra 版本降价，具体幅度未公开但显著；更高效的模型架构，减少推理成本；支持企业级工作流集成，如批量处理、实时推理",
+        "comparison": "暂无可信公开对比数据，但官方声称在保持性能的同时降低了价格。",
+        "who": "适合正在或计划将 AI 集成到产品中的企业开发者、CTO、AI 架构师，以及关注大模型成本优化的团队。",
+        "link": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
+        "score": "7",
+        "source": "OpenAI 官方新闻",
+        "type": "官方发布",
+        "topic": "开发者生态与数据工具",
+        "published": "07-30 05:00"
+      },
+      {
+        "candidate_id": "1",
+        "title": "How to use Google microbenchmarks for evaluating TPU performance",
+        "what": "Google 开源了一套 TPU 微基准测试套件，提供网络、计算、HBM、主机传输和注意力机制等组件的细粒度性能指标，帮助开发者验证 TPU 实际能力并建立 Roofline 模型。",
+        "plain_explanation": "假设你有一辆跑车，想知道它到底能跑多快、加速多猛，就需要在赛道上做各种测试。TPU 微基准测试就像给 TPU 做“赛道测试”——它测量 TPU 不同部分的速度，比如计算单元（引擎）、内存带宽（油箱大小）、数据传输（加油速度）等。然后，你可以用这些数据画一张“性能天花板图”（Roofline 模型），一眼看出你的 AI 模型是卡在计算上还是内存上，从而针对性优化，比如调整代码让计算和内存配合更高效。",
+        "purpose": "帮助开发者诊断机器学习工作负载的性能瓶颈（计算、内存或网络受限），指导内核调优、网格分片和重物化等优化，最大化 TPU 利用率。",
+        "features": "覆盖网络、计算、HBM、主机传输、注意力五个关键组件；生成 Roofline 模型，直观显示性能瓶颈；开源且可复现，支持自定义测试场景",
+        "comparison": "暂无可信公开对比数据，但该套件提供了标准化的 TPU 性能基线，可与理论峰值对比。",
+        "who": "适合使用 TPU 训练或推理大规模模型的 AI 工程师、系统优化专家、以及研究硬件性能的研究人员。",
+        "link": "https://developers.googleblog.com/how-to-use-google-microbenchmarks-for-evaluating-tpu-performance/",
+        "score": "7",
+        "source": "Google Developers Blog",
+        "type": "官方发布",
+        "topic": "检索增强与向量模型",
+        "published": "07-30 12:19"
+      }
+    ],
+    "footer": "以上信息基于候选源，请以官方发布为准。"
+  },
+  "candidate_count": 2
+}
