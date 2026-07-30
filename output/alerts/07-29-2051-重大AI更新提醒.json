@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-30T01:51:03.992608Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-29 | OpenAI 发布 GPT-5.6 新设置，ARC-AGI-3 得分翻三倍",
+    "overview": "本期聚焦 OpenAI 最新发现：通过启用两个 API 设置，GPT-5.6 在 ARC-AGI-3 基准测试上的得分提升了三倍，同时保持了推理能力和效率。这一突破为开发者提供了优化模型性能的新思路。",
+    "checked_sources": [
+      "OpenAI 官方新闻"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "How enabling two settings tripled our scores on the ARC-AGI-3 benchmark",
+        "what": "OpenAI 官方发布的一篇技术报告，详细说明了如何通过调整 GPT-5.6 API 中的两个设置——保留推理链（retaining reasoning）和启用压缩（compaction）——在 ARC-AGI-3 基准测试上将得分提升至原来的三倍。ARC-AGI-3 是一个衡量人工智能系统在抽象推理和泛化能力上的高难度基准。",
+        "plain_explanation": "想象一下，你让一个 AI 解一道复杂的逻辑谜题，比如“根据前几个图形的规律，画出下一个图形”。通常 AI 会先思考步骤（推理链），然后给出答案。但有时它的思考过程太长或太乱，导致答案不准确。OpenAI 发现，如果让 AI 保留完整的思考过程（不截断），并在最后把思考内容压缩成更简洁的形式（类似做笔记），它的解题正确率就能大幅提高。具体来说，在 ARC-AGI-3 测试中，得分从原来的水平直接翻了三倍。这个测试专门考察 AI 能否像人类一样从少量例子中学会新规律，而不是死记硬背。",
+        "purpose": "这项发现帮助开发者和研究人员理解如何通过简单的 API 参数调整，显著提升大语言模型在复杂推理任务上的表现，而无需重新训练模型或增加计算成本。它提供了一种低成本、高效率的模型优化方法。",
+        "features": "保留推理链：让模型在生成最终答案前，完整输出其内部推理步骤，避免信息丢失。；启用压缩：将冗长的推理内容压缩为更紧凑的表示，提高后续处理的效率和准确性。；两者结合：同时启用这两个设置，在 ARC-AGI-3 上实现了三倍的得分提升。",
+        "comparison": "暂无可信公开对比数据。报告仅提及在 ARC-AGI-3 上得分提升三倍，未与其他模型或设置进行横向比较。",
+        "who": "适合使用 OpenAI API 的开发者、AI 应用工程师、研究推理增强技术的学者，以及关注大模型基准测试表现的研究人员。",
+        "link": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores",
+        "score": "7",
+        "source": "OpenAI 官方新闻",
+        "type": "官方发布",
+        "topic": "智能体与开发者平台",
+        "published": "07-29 10:00"
+      }
+    ],
+    "footer": "本简报由 AI 自动生成，信息基于候选源，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}

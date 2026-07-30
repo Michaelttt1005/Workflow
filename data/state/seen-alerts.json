@@ -1479,6 +1479,16 @@
       "first_seen_at": "2026-07-29T17:39:14.301505+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores|how enabling two settings tripled our scores on the arc-agi-3 benchmark",
+      "title": "How enabling two settings tripled our scores on the ARC-AGI-3 benchmark",
+      "url": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores",
+      "source": "OpenAI News",
+      "published_at": "2026-07-29T15:00:00+00:00",
+      "first_seen_at": "2026-07-30T01:51:05.880039+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
