@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-31T13:49:32.528178Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-31 | llama.cpp 发布新版本，优化 MoE 模型推理性能",
+    "overview": "本期聚焦 llama.cpp 的最新版本 b10205，该版本针对 MoE（混合专家）模型引入了新的 group matmul API，并调整了 fallback 阈值，有望提升推理效率。适合本地模型部署和推理优化的开发者关注。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b10205 发布：新增 ggml-zendnn group matmul API，优化 MoE 推理",
+        "what": "这是 llama.cpp 项目的一个新版本（b10205），主要更新了 ggml-zendnn 后端，为 mul_mat_id 操作添加了 group matmul 的直接 API，并调整了 fallback 阈值。",
+        "plain_explanation": "llama.cpp 是一个在本地运行大语言模型的工具，它通过优化底层计算来让模型跑得更快。这次更新针对的是混合专家（MoE）模型，这类模型像是一个团队，每个专家负责不同任务，但需要协调工作。新 API 让团队协作更高效，减少了不必要的沟通，从而加快推理速度。",
+        "purpose": "该版本旨在提升 MoE 模型在 llama.cpp 上的推理性能，通过更高效的矩阵乘法实现，减少计算开销，同时为开发者提供更直接的 API 控制。",
+        "features": "新增 ggml-zendnn group matmul 直接 API，用于 mul_mat_id 操作；调整 MUL_MAT_ID fallback 阈值，根据专家数量进行缩放；提供多平台预编译二进制，包括 macOS、iOS、Linux",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合使用 llama.cpp 部署本地大模型的开发者、研究 MoE 模型推理优化的工程师，以及需要跨平台推理解决方案的团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10205",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "07-31 08:26"
+      }
+    ],
+    "footer": "以上信息基于候选源，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}

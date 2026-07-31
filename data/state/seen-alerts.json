@@ -1539,6 +1539,16 @@
       "first_seen_at": "2026-07-31T10:32:01.916463+00:00",
       "score": 9,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10205|ggml-org/llama.cpp release b10205: ggml-zendnn : group matmul direct api for mulmatid (25918) ggml-zendnn : group matmul",
+      "title": "ggml-org/llama.cpp release b10205: ggml-zendnn : group matmul direct API for mulmatid (25918) ggml-zendnn : group matmul API for mulmatid ggml-zendnn : scale MULMATID fallba",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10205",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-31T13:26:25+00:00",
+      "first_seen_at": "2026-07-31T13:49:34.539304+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
