@@ -1529,6 +1529,16 @@
       "first_seen_at": "2026-07-30T17:20:02.044240+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/mlflow/mlflow/releases/tag/v3.15.0|mlflow/mlflow release v3.15.0: mlflow 3.15.0 includes several major features and improvements major new features",
+      "title": "mlflow/mlflow release v3.15.0: MLflow 3.15.0 includes several major features and improvements Major New Features",
+      "url": "https://github.com/mlflow/mlflow/releases/tag/v3.15.0",
+      "source": "GitHub Release: mlflow/mlflow",
+      "published_at": "2026-07-31T08:59:13+00:00",
+      "first_seen_at": "2026-07-31T10:32:01.916463+00:00",
+      "score": 9,
+      "alert_sent": true
     }
   ]
 }

@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-31T10:32:00.197909Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "07-31 | MLflow 3.15.0 发布，引入 MCP Registry 与多提供商 AI 助手",
+    "overview": "本期聚焦 MLflow 3.15.0 的发布，该版本带来 MCP Registry 集中管理 Model Context Protocol 服务器，并增强 MLflow Assistant 支持多 LLM 提供商，同时提供可共享的表视图，为开发者平台带来重要更新。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "mlflow/mlflow release v3.15.0: MLflow 3.15.0 includes several major features and improvements Major New Features",
+        "what": "MLflow 3.15.0 是 MLflow 开源机器学习生命周期平台的一个重大版本更新，主要引入了 MCP Registry（Model Context Protocol 注册中心）、增强的 MLflow Assistant（AI 助手）以及可共享的表视图等功能。",
+        "plain_explanation": "想象一下，你有很多 AI 工具（比如聊天机器人、代码助手），它们需要互相通信。MCP 就像一种通用语言，而 MCP Registry 就像电话簿，把所有这些工具的名字、版本和连接方式都记下来，方便你查找和使用。MLflow 3.15.0 新增了这个电话簿，让你能轻松注册、版本管理和分享这些工具。同时，MLflow 自带的 AI 助手现在可以连接多种大模型（比如 Claude、Codex），就像你的手机可以切换不同的运营商，而且还能实时显示用了多少流量（token）和花了多少钱。",
+        "purpose": "解决 MLflow 用户管理 AI 工具（MCP 服务器）的痛点，提供集中化注册和版本管理，同时简化 AI 助手的配置，支持多提供商，并提升团队协作效率（通过可共享的表视图）。",
+        "features": "MCP Registry：集中注册、版本化 MCP 服务器，支持语义化版本、可提升别名、标签、自动发现工具，并提供连接说明（如 Claude Code 和 .mcp.json）。；MLflow Assistant 增强：支持多个 LLM 提供商（Claude Code、Codex、OpenAI 兼容/Gateway 端点），可在设置页选择，实时显示 token 用量和预估成本，并通过 `mlflow agent setup` 一键启用。；可共享的表视图：允许用户创建并分享数据表视图，便于团队协作。",
+        "comparison": "暂无可信公开对比数据。",
+        "who": "适合使用 MLflow 管理机器学习生命周期的数据科学家、ML 工程师和 MLOps 团队，尤其是需要集成多种 AI 工具（MCP 服务器）或希望灵活切换 LLM 提供商的开发者。",
+        "link": "https://github.com/mlflow/mlflow/releases/tag/v3.15.0",
+        "score": "9",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "07-31 03:59"
+      }
+    ],
+    "footer": "以上信息基于候选源，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}
