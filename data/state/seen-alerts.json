@@ -1549,6 +1549,16 @@
       "first_seen_at": "2026-07-31T13:49:34.539304+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10209|ggml-org/llama.cpp release b10209: cuda: extract q20 elements via byteperm (25603) website",
+      "title": "ggml-org/llama.cpp release b10209: cuda: extract Q20 elements via byteperm (25603) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10209",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-07-31T17:29:12+00:00",
+      "first_seen_at": "2026-07-31T17:40:54.441355+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
