@@ -1559,6 +1559,26 @@
       "first_seen_at": "2026-07-31T17:40:54.441355+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10242|ggml-org/llama.cpp release b10242: cuda: add backend sampler for penalties sampler (25262) sampling: enhance penalty han",
+      "title": "ggml-org/llama.cpp release b10242: CUDA: Add backend sampler for penalties sampler (25262) sampling: enhance penalty handling in commonsamplerinit",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10242",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-03T17:22:43+00:00",
+      "first_seen_at": "2026-08-03T17:46:21.879639+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10241|ggml-org/llama.cpp release b10241: cuda: fix data-races when reusing smem in blockreduce (26385) cuda: fix data-races wh",
+      "title": "ggml-org/llama.cpp release b10241: CUDA: Fix data-races when reusing SMEM in blockreduce (26385) CUDA: Fix data-races when reusing blockreduce blockreduce currently doesn't r",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10241",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-03T14:58:22+00:00",
+      "first_seen_at": "2026-08-03T17:46:21.879675+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
