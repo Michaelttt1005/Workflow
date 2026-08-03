@@ -1579,6 +1579,16 @@
       "first_seen_at": "2026-08-03T17:46:21.879675+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developer.nvidia.com/blog/nvidia-vera-storage-benchmarks-faster-encryption-compression-integrity-checking-and-recovery-for-ai-native-storage/|nvidia vera storage benchmarks: faster encryption, compression, integrity checking, and recovery for ai-native storage",
+      "title": "NVIDIA Vera Storage Benchmarks: Faster Encryption, Compression, Integrity Checking, and Recovery for AI-Native Storage",
+      "url": "https://developer.nvidia.com/blog/nvidia-vera-storage-benchmarks-faster-encryption-compression-integrity-checking-and-recovery-for-ai-native-storage/",
+      "source": "NVIDIA Developer Blog",
+      "published_at": "2026-08-03T16:00:00+00:00",
+      "first_seen_at": "2026-08-03T22:55:15.043194+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
