@@ -1599,6 +1599,26 @@
       "first_seen_at": "2026-08-04T01:57:31.485768+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10271|ggml-org/llama.cpp release b10271: ui: cwd for agent (26518) server : extend fileglobsearch for ui pickers ui : add per-",
+      "title": "ggml-org/llama.cpp release b10271: ui: CWD for agent (26518) server : extend fileglobsearch for UI pickers ui : add per-conversation working directory with picker ui : add",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10271",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-04T18:56:20+00:00",
+      "first_seen_at": "2026-08-04T19:22:23.774606+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10270|ggml-org/llama.cpp release b10270: mtmd: support qwen3-tts (note: breaking change to llama-tts binary) (26254) convert t",
+      "title": "ggml-org/llama.cpp release b10270: mtmd: support Qwen3-TTS (note: breaking change to llama-tts binary) (26254) convert text model main model load ok convert encoder ok spe",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10270",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-04T18:03:46+00:00",
+      "first_seen_at": "2026-08-04T19:22:23.774646+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

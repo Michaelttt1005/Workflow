@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-08-04T19:22:21.232094Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "08-04 | llama.cpp 双更新：Agent 工作目录与 Qwen3-TTS 支持",
+    "overview": "本期聚焦 llama.cpp 的两个重要版本更新：b10271 为 UI 代理引入工作目录选择器，增强路径导航；b10270 新增 Qwen3-TTS 支持，并重构了 llama-tts 二进制。这些更新提升了本地 AI 开发体验，尤其适合智能体开发与语音合成场景。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b10271：为 UI 代理添加工作目录选择器与路径导航",
+        "what": "这是 llama.cpp 的 GitHub Release b10271，主要更新了 UI 组件，为代理（agent）添加了每会话工作目录（CWD）选择器，并扩展了文件搜索功能。",
+        "plain_explanation": "想象你在使用一个 AI 助手，它需要读取或生成文件。以前，它可能只能在整个电脑里乱找，现在你可以为每次对话指定一个专属文件夹，就像给助手一个“工作台”。这个更新还让路径输入更智能：如果你输入“/home/user/project”，它会自动进入该目录并显示里面的文件，而不是把整个路径当作搜索词。这样助手就能更快找到你需要的文件，也不会搞混。",
+        "purpose": "解决代理在文件操作时缺乏上下文的问题，提升文件搜索的准确性和效率，让用户能更精细地控制 AI 的工作范围。",
+        "features": "每会话工作目录选择器，可持久化到工具结果消息；路径导航：以 / 或 ~ 开头的查询视为目录导航，而非全局匹配；显示有效搜索范围，并在打开时自动搜索当前目录；在 shell 执行行显示每次调用的工作目录，并简化路径显示（用 ~ 缩写）",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合使用 llama.cpp 构建本地 AI 代理或开发 UI 的开发者，尤其是需要文件操作功能的智能体应用。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10271",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "08-04 13:56"
+      },
+      {
+        "candidate_id": "2",
+        "title": "llama.cpp b10270：支持 Qwen3-TTS，重构 llama-tts 二进制",
+        "what": "这是 llama.cpp 的 GitHub Release b10270，主要增加了对 Qwen3-TTS 模型的支持，并引入了新的 mtmd 生成 API，同时重构了 llama-tts 命令行工具。",
+        "plain_explanation": "Qwen3-TTS 是一个文本转语音模型，现在你可以在本地运行它，把文字变成语音。这个更新就像给一个工具箱添加了新的语音合成工具，并且改进了工具的使用方式。以前你可能需要复杂的步骤，现在通过新的 API 和命令行工具，可以更简单地生成语音，甚至支持声音克隆。",
+        "purpose": "扩展 llama.cpp 的多模态能力，让开发者能在本地高效运行 TTS 模型，并简化语音生成流程。",
+        "features": "支持 Qwen3-TTS 模型，包括文本模型、编码器、说话人编码器等；新增 mtmd_helper_gen_audio API，用于音频生成；重构 llama-tts 二进制，提供更清晰的命令行接口；支持语音克隆（voice clone）演示",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合需要本地 TTS 功能的开发者、语音应用研究者，以及希望集成语音合成到智能体或聊天机器人中的团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10270",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "08-04 13:03"
+      }
+    ],
+    "footer": "以上信息基于 GitHub 官方 release 整理，请以原始发布说明为准。"
+  },
+  "candidate_count": 2
+}
