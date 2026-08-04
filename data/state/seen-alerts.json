@@ -1589,6 +1589,16 @@
       "first_seen_at": "2026-08-03T22:55:15.043194+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10246|ggml-org/llama.cpp release b10246: opencl: route large q6k lmhead to the flat gemv (26427) add a direct size condition f",
+      "title": "ggml-org/llama.cpp release b10246: opencl: route large q6K lmhead to the flat GEMV (26427) add a direct size condition for large weights",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10246",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-03T23:39:15+00:00",
+      "first_seen_at": "2026-08-04T01:57:31.485768+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
