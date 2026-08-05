@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-08-05T01:55:11.010799Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "08-04 | llama.cpp 发布安全更新，推荐使用 npm ci",
+    "overview": "本期聚焦 llama.cpp 最新版本 b10276，该版本针对 npm 依赖安装方式进行了安全加固，建议开发者关注并升级。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b10276 发布：改用 npm ci 提升依赖安装安全性",
+        "what": "这是 llama.cpp 项目的一个新版本发布，主要变更是在其网站相关的 JavaScript 依赖安装中，将 npm install 替换为 npm ci，以增强安全性。",
+        "plain_explanation": "想象一下，你有一个项目需要用到很多现成的代码包（依赖），通常用 npm install 来安装。但 npm install 可能会因为版本范围而安装到不完全一致的包，而 npm ci 则会严格按照锁文件安装，确保每次安装的版本完全一致，避免因依赖版本漂移带来的安全风险。这次更新就是让 llama.cpp 的网站部分采用更严格的安装方式，就像你每次做菜都严格按照食谱的精确用量，而不是凭感觉放调料，从而保证菜品质量稳定且安全。",
+        "purpose": "该更新主要解决依赖安装过程中的安全性和可重复性问题，防止因依赖版本不一致导致的安全漏洞，同时提升构建的可靠性。对于使用 llama.cpp 网站或相关工具的开发者，升级到该版本可以获得更安全的依赖管理。",
+        "features": "将 npm install 替换为 npm ci，确保依赖版本完全锁定；提供多平台二进制包，包括 macOS Apple Silicon、Intel、iOS XCFramework、Ubuntu x64/arm64/s390x；针对 macOS Apple Silicon 的 KleidiAI 优化包被禁用（见 PR #23780）",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合使用 llama.cpp 的开发者、依赖其网站或工具链的团队，以及关注依赖安全性的运维人员。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10276",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "安全与可信评测",
+        "published": "08-04 19:21"
+      }
+    ],
+    "footer": "本简报基于 GitHub Release 信息生成，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}
