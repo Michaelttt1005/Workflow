@@ -1659,6 +1659,16 @@
       "first_seen_at": "2026-08-07T12:47:21.531707+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10307|ggml-org/llama.cpp release b10307: sycl: fix ue4m3 parsing (25608) the nvfp4 quantization format stores a scaling factor",
+      "title": "ggml-org/llama.cpp release b10307: sycl: fix UE4M3 parsing (25608) The NVFP4 quantization format stores a scaling factor for every group of 16 weights, packed into a single UE",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10307",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-07T13:19:38+00:00",
+      "first_seen_at": "2026-08-07T14:48:10.217377+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
