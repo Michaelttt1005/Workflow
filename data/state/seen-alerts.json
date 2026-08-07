@@ -1639,6 +1639,16 @@
       "first_seen_at": "2026-08-06T11:59:29.089550+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10301|ggml-org/llama.cpp release b10301: cuda: fix warnings for unused variable/function (26688) website",
+      "title": "ggml-org/llama.cpp release b10301: cuda: fix warnings for unused variable/function (26688) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10301",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-07T09:59:37+00:00",
+      "first_seen_at": "2026-08-07T10:45:49.334123+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
