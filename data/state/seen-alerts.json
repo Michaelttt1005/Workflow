@@ -1649,6 +1649,16 @@
       "first_seen_at": "2026-08-07T10:45:49.334123+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10306|ggml-org/llama.cpp release b10306: sycl: glu flat path (26354) tests: add swiglu perf cases perf mode had no glu coverag",
+      "title": "ggml-org/llama.cpp release b10306: sycl: glu flat path (26354) tests: add SWIGLU perf cases perf mode had no GLU coverage",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10306",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-07T12:33:55+00:00",
+      "first_seen_at": "2026-08-07T12:47:21.531707+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

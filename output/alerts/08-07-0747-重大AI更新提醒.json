@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-08-07T12:47:19.739738Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "08-07 | llama.cpp 发布 b10306，SYCL 后端 GLU 性能优化",
+    "overview": "本期聚焦 llama.cpp 最新版本 b10306，该版本针对 SYCL 后端进行了 GLU 操作的性能优化，并新增了 SWIGLU 性能测试用例，为使用 Intel GPU 的开发者带来显著推理加速。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b10306: SYCL 后端 GLU 扁平路径优化与 SWIGLU 性能测试",
+        "what": "这是 llama.cpp 的一个新版本发布，主要针对 SYCL 后端（用于 Intel GPU）的 GLU（门控线性单元）操作进行了性能优化，并添加了 SWIGLU 的性能测试用例。",
+        "plain_explanation": "GLU 是一种神经网络中常用的激活函数，它把输入分成两半，一半经过激活函数（如 SiLU），另一半与激活后的结果相乘。在 llama.cpp 中，GLU 操作在推理时很耗时。这次更新通过合并内核、优化内存访问路径，让 GLU 在 Intel GPU 上运行得更快。比如，当输入数据的形状满足特定条件时，可以直接用更简单的计算方式，避免复杂的索引计算，就像走一条直路而不是绕弯。测试显示，在 Arc Pro B70 上，某些情况下速度提升了 14%。",
+        "purpose": "该版本旨在提升 llama.cpp 在 Intel GPU 上的推理性能，特别是针对包含 GLU 操作的模型（如 LLaMA 等），让使用 Intel 显卡的开发者能获得更快的模型运行速度。",
+        "features": "SYCL 后端 GLU 扁平路径优化：当操作数连续时，使用更快的扁平内核。；合并 fused-GLU 内核：统一不同操作的内核逻辑，减少代码重复。；新增 SWIGLU 性能测试用例：覆盖不同列数、token 数和数据类型，便于性能监控。；移除无用的宏定义：清理代码，简化维护。",
+        "comparison": "在 Arc Pro B70 上，split 模式 f16 性能提升 14%，f32 提升 4%，fused 模式无变化。",
+        "who": "适用于使用 Intel GPU（如 Arc 系列）进行 LLM 推理的开发者，以及关注 llama.cpp 性能优化的研究人员。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10306",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "检索增强与向量模型",
+        "published": "08-07 07:33"
+      }
+    ],
+    "footer": "本简报基于 GitHub Release 信息整理，仅供参考。"
+  },
+  "candidate_count": 1
+}
