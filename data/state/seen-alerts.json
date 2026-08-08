@@ -1679,6 +1679,16 @@
       "first_seen_at": "2026-08-08T06:40:02.108399+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10330|ggml-org/llama.cpp release b10330: cuda: fuse rmsnorm + mul + rope (+ view + setrows) (26767) cuda: fuse rmsnorm + mul +",
+      "title": "ggml-org/llama.cpp release b10330: CUDA: fuse rmsnorm + mul + rope (+ view + setrows) (26767) CUDA: fuse rmsnorm + mul + rope (+ view + setrows) tests: add broadcast weight",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10330",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-08T17:20:30+00:00",
+      "first_seen_at": "2026-08-08T18:27:41.307886+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
