@@ -1669,6 +1669,16 @@
       "first_seen_at": "2026-08-07T14:48:10.217377+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10327|ggml-org/llama.cpp release b10327: cuda: fix thread/block count in quantized cpy kernel launches (26731) cuda: fix threa",
+      "title": "ggml-org/llama.cpp release b10327: CUDA: fix thread/block count in quantized cpy kernel launches (26731) CUDA: fix thread/block count in quantized cpy kernel launches tests:",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10327",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-08T06:04:14+00:00",
+      "first_seen_at": "2026-08-08T06:40:02.108399+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }
