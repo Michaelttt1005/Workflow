@@ -1689,6 +1689,16 @@
       "first_seen_at": "2026-08-08T18:27:41.307886+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/numpy/numpy/releases/tag/v2.5.2|numpy/numpy: v2.5.2 (aug 9, 2026)",
+      "title": "numpy/numpy: v2.5.2 (Aug 9, 2026)",
+      "url": "https://github.com/numpy/numpy/releases/tag/v2.5.2",
+      "source": "GitHub Release: numpy/numpy",
+      "published_at": "2026-08-09T17:42:29+00:00",
+      "first_seen_at": "2026-08-09T18:30:43.987191+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
