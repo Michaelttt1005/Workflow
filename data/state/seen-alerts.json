@@ -1719,6 +1719,16 @@
       "first_seen_at": "2026-08-10T14:52:39.994065+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/vllm-project/vllm/releases/tag/v0.27.0|vllm-project/vllm release v0.27.0: vllm v0.27.0 release notes highlights this release features 561 commits from 242 cont",
+      "title": "vllm-project/vllm release v0.27.0: vLLM v0.27.0 Release Notes Highlights This release features 561 commits from 242 contributors (64 new)! Kimi K3 support with a full stack",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.27.0",
+      "source": "GitHub Release: vllm-project/vllm",
+      "published_at": "2026-08-10T21:18:11+00:00",
+      "first_seen_at": "2026-08-10T22:30:33.291030+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }
