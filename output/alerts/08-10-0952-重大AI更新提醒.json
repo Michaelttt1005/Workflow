@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-08-10T14:52:38.054749Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "08-10 | Meta 开源 Muse Glimmer，本地智能体工作流迎来新选择",
+    "overview": "本期聚焦 Meta 最新开源模型 Muse Glimmer，该模型专为本地 AI 智能体工作流设计，具备 30B 参数和超长上下文窗口，并在 NVIDIA 平台上得到优化。这一发布标志着 Meta 重返开源生态，为开发者提供了在本地运行复杂智能体任务的新可能。",
+    "checked_sources": [
+      "NVIDIA Developer Blog"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "Run Local Agentic AI Workflows with Meta’s Muse Glimmer on NVIDIA",
+        "what": "Meta 发布了一款名为 Muse Glimmer 的开源权重模型，参数规模为 30B，上下文窗口超过 120K，专为本地 AI 智能体工作流设计。该模型在 NVIDIA 平台上进行了优化，支持开发者本地部署和运行智能体应用。",
+        "plain_explanation": "想象一下，你有一个 AI 助手，它不仅能回答问题，还能自主完成一系列任务，比如帮你安排日程、搜索资料、写邮件等。但通常这样的 AI 需要联网调用云端服务，而 Muse Glimmer 是一个可以完全运行在你自己的电脑或服务器上的模型，不需要联网。它就像一个本地版的智能管家，能处理很长的对话和文档（超过 120K 的上下文，相当于可以一次性记住几十万字的内容），并且是开源的，你可以自由修改和使用。",
+        "purpose": "解决开发者在本地运行智能体 AI 工作流的需求，提供开源、可定制、低延迟的解决方案，同时减少对云端服务的依赖，增强数据隐私和安全性。",
+        "features": "30B 参数规模，平衡性能与资源消耗；120K+ 上下文窗口，支持长文档和复杂对话；针对 NVIDIA 平台优化，提升推理效率；开源权重，允许自定义和商用",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合需要本地部署 AI 智能体的开发者、研究机构和企业，尤其是对数据隐私敏感或需要低延迟响应的场景。",
+        "link": "https://developer.nvidia.com/blog/run-local-agentic-ai-workflows-with-metas-muse-glimmer-on-nvidia/",
+        "score": "7",
+        "source": "NVIDIA Developer Blog",
+        "type": "官方发布",
+        "topic": "智能体与开发者平台",
+        "published": "08-10 08:27"
+      }
+    ],
+    "footer": "本简报基于 NVIDIA 官方博客信息，仅供参考。"
+  },
+  "candidate_count": 1
+}
