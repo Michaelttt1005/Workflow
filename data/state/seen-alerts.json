@@ -1739,6 +1739,16 @@
       "first_seen_at": "2026-08-11T20:37:16.851694+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10369|ggml-org/llama.cpp release b10369: mtmd: support pocket-tts (26871) adapt the api text model ok working impl, need verif",
+      "title": "ggml-org/llama.cpp release b10369: mtmd: support pocket-tts (26871) adapt the api text model ok working impl, need verify and clean up mtmd: build the pocket-tts transpose",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10369",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-12T04:52:57+00:00",
+      "first_seen_at": "2026-08-12T05:42:44.777707+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }

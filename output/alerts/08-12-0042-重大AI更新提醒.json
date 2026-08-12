@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-08-12T05:42:42.483196Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "08-12 | llama.cpp 新增 Pocket-TTS 支持，推理性能大幅提升",
+    "overview": "本期聚焦 llama.cpp 最新版本 b10369，该版本引入了对 Pocket-TTS 的支持，并优化了转置卷积实现，显著提升了生成速度。对于在本地部署 TTS 模型的开发者，这是一个重要更新。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b10369: 支持 Pocket-TTS，生成速度提升 80%",
+        "what": "这是 llama.cpp 的一个新版本（b10369），主要增加了对 Pocket-TTS 模型的支持，并重构了转置卷积的实现方式，以提升解码速度。",
+        "plain_explanation": "Pocket-TTS 是一个文本转语音模型，llama.cpp 是一个让 AI 模型在普通电脑上运行的软件。这次更新让 llama.cpp 能运行 Pocket-TTS，并且通过优化底层数学运算，让语音生成速度大幅提升。比如，以前生成一帧语音需要 1 秒，现在可能只需要 0.2 秒，就像把慢速的火车换成了高铁。",
+        "purpose": "解决在本地高效运行 TTS 模型的问题，让开发者无需高端 GPU 也能快速生成语音，适合边缘计算或实时应用。",
+        "features": "支持 Pocket-TTS 模型，扩展了 llama.cpp 的多模态能力；优化转置卷积：将深度卷积转换为 GEMM + col2im，减少计算节点；生成时间每帧降低 80%（CUDA）和 50%（CPU）；保持输出与之前一致，不影响模型精度",
+        "comparison": "根据发布说明，生成时间每帧在 CUDA 上降低 80%，在 CPU 上降低 50%。",
+        "who": "适合需要在本地或边缘设备部署 TTS 的开发者，尤其是使用 llama.cpp 进行多模态推理的团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10369",
+        "score": "8",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "08-11 23:52"
+      }
+    ],
+    "footer": "本简报基于公开信息整理，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}
