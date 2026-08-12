@@ -1749,6 +1749,16 @@
       "first_seen_at": "2026-08-12T05:42:44.777707+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://developer.nvidia.com/blog/serve-qwen3-8-2-4t-a95b-a-2-4t-parameter-model-with-configurable-reasoning-on-nvidia-gb300-nvl72/|serve qwen3.8-2.4t-a95b, a 2.4t-parameter model, with configurable reasoning on nvidia gb300 nvl72",
+      "title": "Serve Qwen3.8-2.4T-A95B, a 2.4T-Parameter Model, with Configurable Reasoning on NVIDIA GB300 NVL72",
+      "url": "https://developer.nvidia.com/blog/serve-qwen3-8-2-4t-a95b-a-2-4t-parameter-model-with-configurable-reasoning-on-nvidia-gb300-nvl72/",
+      "source": "NVIDIA Developer Blog",
+      "published_at": "2026-08-12T18:23:13+00:00",
+      "first_seen_at": "2026-08-12T18:53:46.663957+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

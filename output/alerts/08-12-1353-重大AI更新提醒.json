@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-08-12T18:53:44.126281Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "08-12 | 英伟达发布 Qwen3.8-Max 部署指南，2.4T 参数开源模型可配置推理",
+    "overview": "本期聚焦英伟达官方博客发布的 Qwen3.8-2.4T-A95B 部署指南，该模型是阿里开源的最大权重模型，具备接近前沿的能力。指南详细介绍了在 NVIDIA GB300 NVL72 平台上如何配置推理，为开发者提供了高性能部署方案。",
+    "checked_sources": [
+      "NVIDIA Developer Blog"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "Serve Qwen3.8-2.4T-A95B, a 2.4T-Parameter Model, with Configurable Reasoning on NVIDIA GB300 NVL72",
+        "what": "这是英伟达官方博客发布的一篇技术指南，详细说明了如何在 NVIDIA GB300 NVL72 硬件上部署和运行 Qwen3.8-2.4T-A95B（即 Qwen3.8-Max）模型。该模型是阿里巴巴最新开源的最大规模权重模型，拥有 2.4 万亿参数，采用 MoE 架构，激活参数为 950 亿。指南涵盖了配置推理、优化性能等关键步骤。",
+        "plain_explanation": "想象一下，你有一个超级大的乐高套装，有 2.4 万亿块积木，但每次搭建时只需要用到其中 950 亿块。这个模型就是这样的，它很大但很聪明，因为只激活部分参数就能工作。英伟达的这篇指南就像一本说明书，告诉你怎么在最新的服务器（GB300 NVL72）上把这个大模型跑起来，并且还能调整它的思考模式（比如让它更深入思考或更快回答）。",
+        "purpose": "这篇指南的主要作用是帮助开发者和企业在高性能硬件上高效部署 Qwen3.8-Max，从而利用其接近前沿的能力进行推理。它解决了大规模模型部署中的技术难题，提供了官方推荐的配置方法，使开源模型能够达到更好的性能和可控性。",
+        "features": "1. 支持在 NVIDIA GB300 NVL72 上部署 2.4T 参数模型；2. 提供可配置的推理模式，允许用户调整模型的推理深度；3. 基于 MoE 架构，仅激活 950 亿参数，降低计算成本；4. 官方指南，包含性能优化建议。",
+        "comparison": "暂无可信公开对比数据。",
+        "who": "适合需要部署大规模开源模型的 AI 工程师、云服务提供商、研究机构以及希望利用 Qwen3.8-Max 进行应用开发的团队。",
+        "link": "https://developer.nvidia.com/blog/serve-qwen3-8-2-4t-a95b-a-2-4t-parameter-model-with-configurable-reasoning-on-nvidia-gb300-nvl72/",
+        "score": "7",
+        "source": "NVIDIA Developer Blog",
+        "type": "官方发布",
+        "topic": "开发者生态与数据工具",
+        "published": "08-12 13:23"
+      }
+    ],
+    "footer": "本简报基于 NVIDIA 官方博客信息，仅供参考。"
+  },
+  "candidate_count": 1
+}
