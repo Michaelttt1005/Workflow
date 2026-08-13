@@ -1759,6 +1759,16 @@
       "first_seen_at": "2026-08-12T18:53:46.663957+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/introducing-credentio-open-source-c-library-for-c2pa-content-credentials-from-google/|introducing credentio: open source c++ library for c2pa content credentials from google",
+      "title": "Introducing Credentio: Open Source C++ Library for C2PA Content Credentials from Google",
+      "url": "https://developers.googleblog.com/introducing-credentio-open-source-c-library-for-c2pa-content-credentials-from-google/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-08-13T16:49:39.912051+00:00",
+      "first_seen_at": "2026-08-13T16:49:59.408666+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }

@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-08-13T16:49:57.505286Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "08-13 | Google 开源 C++ 库 Credentio，本地化验证 C2PA 内容凭证",
+    "overview": "本期聚焦 Google 最新发布的开源 C++ 库 Credentio，它实现了 C2PA 内容凭证的高性能本地验证，为媒体真实性验证提供了新方案。该库强调低延迟、低成本和高隐私保护，适合需要处理大规模媒体文件的开发者。",
+    "checked_sources": [
+      "Google Developers Blog"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "Introducing Credentio: Open Source C++ Library for C2PA Content Credentials from Google",
+        "what": "Credentio 是 Google 新发布的开源 C++ 库，用于在客户端和服务器应用中集成 C2PA 内容凭证的本地验证。它支持深度清单解析和可配置的信任列表集成，目前可在 Google Source 上获取。",
+        "plain_explanation": "想象你收到一张数码照片，你想确认它是否被篡改过。C2PA 内容凭证就像照片的防伪标签，记录了拍摄设备、编辑历史等信息。Credentio 就是一个工具，它能在你的设备上直接检查这个标签，而不需要把照片上传到云端。比如，新闻机构可以用它快速验证读者上传的视频是否真实，而无需担心数据泄露或等待网络传输。",
+        "purpose": "Credentio 解决了媒体验证中的三大痛点：云延迟、带宽成本和数据隐私风险。通过本地处理，它能在几毫秒内验证数 GB 的媒体文件，同时避免将敏感内容发送到外部服务器。这对于需要实时验证的新闻机构、社交媒体平台或法律取证场景尤为重要。",
+        "features": "高性能本地验证：针对多 GB 媒体文件提供即时验证结果，内存占用优化。；深度清单解析：能够解析 C2PA 清单中的详细信息，如编辑历史、设备信息等。；可配置信任列表：允许开发者自定义信任的证书颁发机构或验证规则。；开源可用：代码托管在 Google Source，便于社区审查和贡献。",
+        "comparison": "暂无可信公开对比数据。摘要中未提供与其他库或服务的具体性能对比，但强调了本地处理相比云服务的优势。",
+        "who": "适合需要集成内容真实性验证的 C++ 开发者，尤其是处理大规模媒体文件的团队，如新闻机构、内容平台、数字取证公司，以及关注数据隐私的开发者。",
+        "link": "https://developers.googleblog.com/introducing-credentio-open-source-c-library-for-c2pa-content-credentials-from-google/",
+        "score": "8",
+        "source": "Google Developers Blog",
+        "type": "官方发布",
+        "topic": "检索增强与向量模型",
+        "published": "08-13 11:49"
+      }
+    ],
+    "footer": "本简报基于 Google Developers Blog 的官方发布，确保信息准确可靠。"
+  },
+  "candidate_count": 1
+}
