@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-08-13T18:53:58.476325Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "08-13 | 模型推理与智能体开发关键更新",
+    "overview": "本期聚焦两则重要更新：llama.cpp 新增 draft 模型规格自动检测，提升投机解码易用性；OpenAI 发布 GPT-5.6 构建者指南，强调更快的智能体开发与成本优化。",
+    "checked_sources": [
+      "GitHub Release",
+      "OpenAI 官方新闻"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b10413：自动检测 draft 模型规格，投机解码更易用",
+        "what": "这是 llama.cpp 的一个新版本（b10413），主要修复了使用 -md 加载本地 draft 模型时，投机解码（speculative decoding）无法自动激活的问题。现在它会从 draft 模型的 GGUF 元数据中读取架构信息，自动识别模型类型（如 dflash 或 draft-dspark），从而启用投机解码。",
+        "plain_explanation": "想象你有一个快速的小模型（draft）和一个慢但准确的大模型（target）。投机解码让小模型先草拟答案，大模型再验证，这样能加速生成。以前，如果你在本地加载小模型，llama.cpp 可能不知道它是什么类型，导致加速功能不生效。这次更新让程序自动读取小模型的“身份证”（GGUF 元数据），识别出它是哪种模型，然后自动开启加速，就像插上电源就能用，不用手动设置。",
+        "purpose": "解决本地 draft 模型无法自动启用投机解码的问题，减少手动配置，提升推理性能，尤其适合使用自定义或本地模型的开发者。",
+        "features": "自动从 draft GGUF 头读取 general.architecture 并映射到 spec 类型；根据是否存在 markov_w1.weight 张量区分 draft-dspark 和 draft-dflash；添加日志信息，让用户知道自动检测已触发；处理 split-GGUF 边缘情况，但假设为单文件",
+        "comparison": "暂无可信公开对比数据",
+        "who": "使用 llama.cpp 进行本地推理的开发者、研究者和需要优化推理速度的团队，特别是那些使用自定义 draft 模型进行投机解码的用户。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10413",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "08-13 12:58"
+      },
+      {
+        "candidate_id": "2",
+        "title": "The builder’s guide to GPT‑5.6",
+        "what": "这是 OpenAI 发布的一篇官方指南，介绍初创公司如何利用 GPT-5.6 构建更快、更具成本效益的 AI 智能体，重点涵盖更智能的模型选择和新的 Responses API 能力。",
+        "plain_explanation": "想象你开了一家创业公司，想用 AI 做客服机器人。GPT-5.6 就像一个新工具包，指南告诉你如何选对工具（模型）和如何更高效地使用（API），从而让机器人反应更快、花钱更少。比如，你可以根据任务复杂度选择不同大小的模型，而不是一律用最大的，这样既快又省钱。",
+        "purpose": "帮助开发者了解 GPT-5.6 的新特性，学习如何优化智能体构建流程，降低成本并提升性能。",
+        "features": "更智能的模型选择策略，根据任务需求匹配模型；新的 Responses API 能力，可能简化智能体交互；提供成本效益优化建议；面向初创公司的实际案例",
+        "comparison": "暂无可信公开对比数据",
+        "who": "使用 OpenAI 模型构建 AI 智能体的开发者、初创公司技术团队、产品经理，以及关注模型选型和成本优化的研究者。",
+        "link": "https://openai.com/index/builders-guide-to-gpt-5-6",
+        "score": "7",
+        "source": "OpenAI 官方新闻",
+        "type": "官方发布",
+        "topic": "智能体与开发者平台",
+        "published": "08-13 06:00"
+      }
+    ],
+    "footer": "以上信息基于候选源，请以官方发布为准。"
+  },
+  "candidate_count": 2
+}
