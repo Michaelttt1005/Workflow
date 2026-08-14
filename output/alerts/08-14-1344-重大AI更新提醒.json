@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-08-14T18:44:15.679527Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "08-14 | llama.cpp 引入循环状态回滚，优化 Nemotron 推理",
+    "overview": "本期聚焦 llama.cpp 最新发布，该版本为 SSM 扫描添加了循环状态回滚支持，旨在提升 Nemotron 等循环模型的推理稳定性与性能，并已覆盖 CPU 与 CUDA 后端。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b10431：为 Nemotron 等模型引入循环状态回滚，优化 CPU/CUDA 推理",
+        "what": "这是 llama.cpp 的一个新版本（b10431），主要针对 ggml_ssm_scan 操作增加了循环状态回滚（recurrent state rollback）功能，用于改进如 Nemotron 这类循环架构模型的推理过程。",
+        "plain_explanation": "想象你在玩一个超长的拼图游戏，如果拼到一半发现某块拼错了，你需要把之前拼好的部分拆掉重来。循环状态回滚就像是在拼图过程中自动记录每一步，一旦发现错误，可以快速回到最近正确的状态，而不必全部重来。在 AI 推理中，处理长序列时，如果中间计算出错，回滚机制能避免重新计算整个序列，从而节省时间和算力。",
+        "purpose": "解决循环模型（如 Nemotron）在长序列推理中因状态累积错误导致性能下降或结果不稳定的问题，提升推理的可靠性和效率。",
+        "features": "为 ggml_ssm_scan 添加循环状态回滚支持，覆盖 CPU 和 CUDA 后端；包含测试用例，并支持在 CPU 上回滚，未支持的后端自动回退到 CPU；通过运行时 API 检测操作支持情况，避免静态探测；针对 CUDA 使用 fused_op API 优化，并处理了内存操作",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合使用 llama.cpp 进行本地推理的开发者，尤其是需要运行 Nemotron 等循环模型的用户，以及关注推理性能优化的研究人员。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10431",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "08-14 12:42"
+      }
+    ],
+    "footer": "本简报基于 GitHub 官方发布信息，请以原始发布为准。"
+  },
+  "candidate_count": 1
+}
