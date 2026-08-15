@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-08-15T18:19:19.205208Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "08-15 | LangChain OpenRouter 集成更新，成本与元数据增强",
+    "overview": "本期聚焦 LangChain 生态的 OpenRouter 集成更新，带来模型配置刷新、成本元数据保留及 provider 信息透传等改进，对依赖多模型路由的开发者具有实用价值。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "langchain-openrouter 0.2.8 发布：模型配置刷新与成本元数据保留",
+        "what": "这是 LangChain 官方发布的 langchain-openrouter 集成包的新版本 0.2.8，属于 Python 库的版本更新。它主要更新了 OpenRouter 模型配置数据，并修复了使用过程中成本元数据丢失的问题，同时新增了在响应中保留 provider 信息的功能。",
+        "plain_explanation": "想象你有一个万能遥控器（LangChain），可以控制各种品牌的电视（不同 AI 模型）。OpenRouter 是一个中间商，让你用一个接口访问很多模型。这个更新就像遥控器升级了：首先，它更新了内置的电视型号列表（模型配置），确保新出的电视也能被识别；其次，以前切换频道时，遥控器可能会忘记你上次选的音量（成本信息），现在不会了；最后，它还能告诉你当前正在看的是哪个品牌的电视（provider 信息），方便你了解信号来源。",
+        "purpose": "解决开发者在集成 OpenRouter 时遇到的模型配置过时、成本追踪不准确以及无法获取具体服务提供商的问题，提升多模型应用的可靠性和可观测性。",
+        "features": "刷新模型配置文件，确保支持最新的模型列表；保留 usage chunks 中的成本元数据，避免计费信息丢失；在响应元数据中新增 provider 字段，便于识别实际服务商；持续更新模型配置，保持与 OpenRouter 同步",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合使用 LangChain 和 OpenRouter 的 Python 开发者，尤其是需要管理多个模型、关注成本控制或需要详细调用元数据的团队。",
+        "link": "https://github.com/langchain-ai/langchain/releases/tag/langchain-openrouter%3D%3D0.2.8",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "开发者生态与数据工具",
+        "published": "08-14 14:03"
+      }
+    ],
+    "footer": "以上信息基于候选源，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}

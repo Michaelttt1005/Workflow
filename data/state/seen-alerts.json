@@ -1799,6 +1799,16 @@
       "first_seen_at": "2026-08-14T18:44:17.647368+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/langchain-ai/langchain/releases/tag/langchain-openrouter%3d%3d0.2.8|langchain-openrouter==0.2.8",
+      "title": "langchain-openrouter==0.2.8",
+      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-openrouter%3D%3D0.2.8",
+      "source": "GitHub Release: langchain-ai/langchain",
+      "published_at": "2026-08-14T19:03:45+00:00",
+      "first_seen_at": "2026-08-15T18:19:21.090126+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
