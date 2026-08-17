@@ -1809,6 +1809,16 @@
       "first_seen_at": "2026-08-15T18:19:21.090126+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10456|ggml-org/llama.cpp release b10456: sycl: fix thread/block count in quantized cpy kernel launches (27160) adjusts the thr",
+      "title": "ggml-org/llama.cpp release b10456: sycl: fix thread/block count in quantized cpy kernel launches (27160) Adjusts the thread/block count to be proportional to the size of the q",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10456",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-17T06:29:29+00:00",
+      "first_seen_at": "2026-08-17T06:39:57.184586+00:00",
+      "score": 9,
+      "alert_sent": true
     }
   ]
 }
