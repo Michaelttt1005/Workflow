@@ -1829,6 +1829,16 @@
       "first_seen_at": "2026-08-17T18:28:49.432311+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/langchain-ai/langchain/releases/tag/langchain-openai%3d%3d1.5.2a1|langchain-openai==1.5.2a1",
+      "title": "langchain-openai==1.5.2a1",
+      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-openai%3D%3D1.5.2a1",
+      "source": "GitHub Release: langchain-ai/langchain",
+      "published_at": "2026-08-18T01:51:38+00:00",
+      "first_seen_at": "2026-08-18T06:52:30.427626+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

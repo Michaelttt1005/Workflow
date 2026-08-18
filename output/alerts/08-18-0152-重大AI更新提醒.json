@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-08-18T06:52:28.465789Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "08-18 | LangChain OpenAI 集成重大更新",
+    "overview": "本期聚焦 LangChain 官方发布的 langchain-openai 1.5.2a1 版本，该版本带来多项关键改进，包括对 OpenAI 3.0 SDK 的支持、o-series 模型 token 计算修复、流式加密推理保留等，对使用 OpenAI 模型的开发者至关重要。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "langchain-openai 1.5.2a1 发布：支持 OpenAI 3.0 SDK 并修复 o-series 模型 token 计算",
+        "what": "这是 LangChain 官方发布的 langchain-openai 集成包的预发布版本（1.5.2a1），主要更新包括：从响应头提取网关元数据、支持 o-series 模型在 get_num_tokens_from_messages 中的 token 计算、保留流式加密推理内容、过滤无效工具调用、处理 ContextWindowExceededError 等。",
+        "plain_explanation": "想象一下，你正在用乐高积木搭建一个复杂的机器人，而 langchain-openai 就是连接机器人和 OpenAI 大脑的接口。这个新版本就像是给接口升级了：首先，它让机器人能更好地理解 OpenAI 最新的大脑（支持 OpenAI 3.0 SDK）；其次，它修复了一个 bug，之前当机器人试图计算对话中用了多少 token（可以理解为字数）时，对于某些新型号（o-series）会算错，现在算得准了；另外，它还确保在传输加密的推理内容时不会丢失，就像快递包裹即使有加密锁也能完整送达。",
+        "purpose": "该版本解决了开发者在集成 OpenAI 最新模型时遇到的多个痛点，特别是 token 计算错误和 SDK 兼容性问题，确保使用 LangChain 构建的应用能平稳过渡到 OpenAI 3.0 SDK，并正确处理 o-series 模型。",
+        "features": "支持 OpenAI 3.0 SDK：允许开发者使用最新的 OpenAI Python SDK，保持与未来 API 的兼容性。；修复 o-series 模型 token 计算：get_num_tokens_from_messages 现在能准确计算 o-series 模型的 token 数，避免因计算错误导致的成本估算偏差。；保留流式加密推理：在流式传输过程中，加密的推理内容（如思维链）不会被截断或丢失，确保数据完整性。；过滤无效工具调用：自动清理工具调用中的无效内容，减少下游处理错误。",
+        "comparison": "暂无可信公开对比数据。",
+        "who": "适合使用 LangChain 框架并集成 OpenAI 模型的开发者，尤其是那些正在升级到 OpenAI 3.0 SDK 或使用 o-series 模型的团队，以及需要精确 token 计数和流式推理完整性的应用开发者。",
+        "link": "https://github.com/langchain-ai/langchain/releases/tag/langchain-openai%3D%3D1.5.2a1",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "08-17 20:51"
+      }
+    ],
+    "footer": "以上信息基于官方发布说明，建议开发者关注后续稳定版本。"
+  },
+  "candidate_count": 1
+}
