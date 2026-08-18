@@ -1839,6 +1839,16 @@
       "first_seen_at": "2026-08-18T06:52:30.427626+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.1.2|ggml-org/llama.cpp release v0.1.2: [!note] semantic versioning is still work in progress",
+      "title": "ggml-org/llama.cpp release v0.1.2: [!NOTE] Semantic versioning is still work in progress",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.1.2",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-18T10:23:10+00:00",
+      "first_seen_at": "2026-08-18T12:31:56.750478+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

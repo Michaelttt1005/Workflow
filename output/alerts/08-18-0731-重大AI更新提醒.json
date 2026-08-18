@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-08-18T12:31:53.353043Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "08-18 | llama.cpp 发布 v0.1.2，CUDA 优化与构建修复",
+    "overview": "本期聚焦 llama.cpp 的最新版本发布，包含 CUDA 性能优化、构建系统修复及文档更新，适合本地推理开发者关注。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp v0.1.2 发布：CUDA 优化与构建修复",
+        "what": "llama.cpp 是一个用于在本地设备上高效运行大语言模型的开源 C++ 推理框架。本次 v0.1.2 版本是继 v0.1.1 之后的一次重要更新，主要包含 CUDA 内核优化、构建系统修复、UI 改进和文档更新。",
+        "plain_explanation": "想象一下，你有一台普通的电脑，想要运行一个像 GPT 这样的大模型，通常需要强大的服务器。llama.cpp 就像是一个“瘦身教练”，让模型能在普通电脑上跑起来。这次更新就像给教练换了一套更高效的训练方法：比如在 NVIDIA 显卡上，针对某些模型优化了计算方式，让速度更快；同时修复了一些编译问题，让开发者更容易把代码打包成应用。",
+        "purpose": "解决本地推理性能瓶颈和构建兼容性问题，提升开发者和终端用户的体验，使 llama.cpp 在更多硬件上稳定运行。",
+        "features": "CUDA 优化：针对 dense 模型在 DGX Spark 上启用 MMVQ nwarps=8，提升单 batch 推理速度；构建修复：修复 xcframework 和 CMake 清理问题，简化跨平台编译；UI 改进：强制枚举成员排序，重构内置工具命名（Server/Browser）；文档更新：记录 MCP stdio 服务器和 CORS 默认值",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合使用 llama.cpp 进行本地推理的开发者、研究者和企业用户，尤其是依赖 NVIDIA CUDA 加速的团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.1.2",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "08-18 05:23"
+      }
+    ],
+    "footer": "以上信息基于候选源，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}
