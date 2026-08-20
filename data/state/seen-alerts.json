@@ -1849,6 +1849,16 @@
       "first_seen_at": "2026-08-18T12:31:56.750478+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10509|ggml-org/llama.cpp release b10509: ggml: add ggmlropesetoffset (+ metal support) (27120) add params cpu kernel metal ker",
+      "title": "ggml-org/llama.cpp release b10509: ggml: add ggmlropesetoffset (+ metal support) (27120) add params cpu kernel metal kernel add test backend ops gate other backends ggml",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10509",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-20T06:52:43+00:00",
+      "first_seen_at": "2026-08-20T08:30:30.883696+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
