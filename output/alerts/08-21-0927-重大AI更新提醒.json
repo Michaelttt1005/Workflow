@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-08-21T14:27:57.838674Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "08-21 | LangChain Perplexity 集成更新，修复 API 兼容性并增强追踪",
+    "overview": "本期聚焦 LangChain 生态的 Perplexity 集成库更新，修复了 Responses API 兼容性问题，并引入包版本追踪功能，提升可观测性。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "langchain-perplexity 1.4.1 发布：修复 Responses API 兼容性并增强追踪",
+        "what": "这是 LangChain 官方发布的 langchain-perplexity 集成库的 1.4.1 版本，用于在 LangChain 中调用 Perplexity 的模型 API。该版本主要修复了与 Responses API 相关的问题，并改进了追踪元数据。",
+        "plain_explanation": "想象一下，你有一个工具箱（LangChain），里面有很多工具（集成库），其中一个工具是专门用来连接 Perplexity 这个 AI 服务的。这次更新就像给这个工具打了个补丁，让它能更好地配合 Perplexity 最新的 API 接口，同时还能记录每次使用工具时的版本信息，方便你排查问题。比如，之前调用时可能因为 API 格式不对而报错，现在修复了；另外，现在每次调用都会自动记录是哪个版本的库，就像快递单上的追踪号，方便你追踪问题。",
+        "purpose": "解决 Perplexity 集成中 Responses API 模型兼容性问题，并保留调用者的额外参数，同时通过包版本追踪提升可观测性，帮助开发者调试和监控。",
+        "features": "修复 Responses API 输入项缺少 type=\"message\" 的问题；保留调用者传入的 extra_body 参数；新增包版本追踪到 tracing metadata；更新依赖（如 pillow、langsmith）并刷新 lockfiles",
+        "comparison": "暂无可信公开对比数据",
+        "who": "使用 LangChain 和 Perplexity 的开发者，特别是依赖 Responses API 的团队，以及需要监控和调试 LangChain 应用的开发者。",
+        "link": "https://github.com/langchain-ai/langchain/releases/tag/langchain-perplexity%3D%3D1.4.1",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "08-21 09:08"
+      }
+    ],
+    "footer": "本简报基于 GitHub Release 信息整理，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}

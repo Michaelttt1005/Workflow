@@ -1859,6 +1859,16 @@
       "first_seen_at": "2026-08-20T08:30:30.883696+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/langchain-ai/langchain/releases/tag/langchain-perplexity%3d%3d1.4.1|langchain-perplexity==1.4.1",
+      "title": "langchain-perplexity==1.4.1",
+      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-perplexity%3D%3D1.4.1",
+      "source": "GitHub Release: langchain-ai/langchain",
+      "published_at": "2026-08-21T14:08:45+00:00",
+      "first_seen_at": "2026-08-21T14:28:00.201304+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
