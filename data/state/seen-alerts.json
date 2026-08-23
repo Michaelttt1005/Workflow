@@ -1889,6 +1889,16 @@
       "first_seen_at": "2026-08-23T08:22:02.973476+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10594|ggml-org/llama.cpp release b10594: common : skip deviceinfo loop if it's not going to be printed (26692) the deviceinfo ",
+      "title": "ggml-org/llama.cpp release b10594: common : skip deviceinfo loop if it's not going to be printed (26692) The deviceinfo loop iterates over the discovered devices and gets the",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10594",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-23T13:21:44+00:00",
+      "first_seen_at": "2026-08-23T14:16:56.800766+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
