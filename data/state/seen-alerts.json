@@ -1879,6 +1879,16 @@
       "first_seen_at": "2026-08-23T06:29:30.583022+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10589|ggml-org/llama.cpp release b10589: cuda : add pool1d support (27573) cuda : add pool1d support fix: add missing trailing",
+      "title": "ggml-org/llama.cpp release b10589: cuda : add POOL1D support (27573) cuda : add POOL1D support fix: add missing trailing newline for editorconfig compliance Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10589",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-23T07:59:06+00:00",
+      "first_seen_at": "2026-08-23T08:22:02.973476+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
