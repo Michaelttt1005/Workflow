@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-08-23T06:29:28.847136Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "08-23 | Ray 2.58.0 发布，KV 缓存与 token 感知路由正式完成",
+    "overview": "本期聚焦 Ray 2.58.0 的发布，该版本完成了 KV 缓存与 token 感知请求路由，显著提升 LLM 推理效率。适合关注分布式计算和 LLM 推理优化的开发者。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "Ray 2.58.0 发布：Ray Serve LLM 完成 KV 缓存与 token 感知路由",
+        "what": "Ray 2.58.0 是 Ray 分布式计算框架的一个版本更新，重点改进了 Ray Serve LLM 组件，实现了 KV 缓存和 token 感知的请求路由，该功能在 2.57 中预览，现已正式完成。",
+        "plain_explanation": "想象一个繁忙的图书馆，每个读者（请求）都需要借书（模型推理）。以前，每次借书都要重新查找（重新计算），现在图书馆有了一个智能索引（KV 缓存），能记住读者上次借的位置，直接带他们去拿书，省时省力。Ray 2.58.0 就是给 AI 推理加了这个智能索引，让模型不用重复计算，还能根据请求的 token 数量智能分配任务，提高效率。",
+        "purpose": "解决 LLM 推理中重复计算和路由效率低下的问题，通过 KV 缓存和 token 感知路由，减少 token 重复处理，提升推理吞吐和响应速度，降低延迟。",
+        "features": "KV 缓存与 token 感知路由：在 LLMRouter 入口副本内进行 tokenization，路由决策基于 token 信息，token 带外传输，避免引擎重复 tokenize。；KV 生命周期事件广播：KV 缓存的生命周期事件广播到所有入口副本，确保缓存一致性。；CPU KV 缓存感知：路由时考虑 CPU KV 缓存，使 offloaded KV 缓存块计入缓存命中，提高缓存利用率。；任务事件卸载：支持将任务事件从聚合器导出到 dashboard head，通过内存存储供状态 API 和 ray.timeline 读取。",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合使用 Ray 进行分布式计算、特别是部署 LLM 服务的开发者和团队，以及关注推理性能优化的研究人员。",
+        "link": "https://github.com/ray-project/ray/releases/tag/ray-2.58.0",
+        "score": "8",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "08-23 00:42"
+      }
+    ],
+    "footer": "本简报基于候选源生成，确保信息真实可靠。"
+  },
+  "candidate_count": 1
+}
