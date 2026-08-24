@@ -1899,6 +1899,16 @@
       "first_seen_at": "2026-08-23T14:16:56.800766+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10610|ggml-org/llama.cpp release b10610: ggml : shorten virtual device naming in cuda and metal (27608) ggml : shorten virtual",
+      "title": "ggml-org/llama.cpp release b10610: ggml : shorten virtual device naming in CUDA and Metal (27608) ggml : shorten virtual device naming in CUDA and Metal Assisted-by: llama.cp",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10610",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-24T13:16:46+00:00",
+      "first_seen_at": "2026-08-24T14:35:02.808534+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
