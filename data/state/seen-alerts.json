@@ -1909,6 +1909,16 @@
       "first_seen_at": "2026-08-24T14:35:02.808534+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.3.0|ggml-org/llama.cpp release v0.3.0: overview llama.cpp 0.3.0 introduces the dots3-note multimodal model (with a new dsa-i",
+      "title": "ggml-org/llama.cpp release v0.3.0: Overview llama.cpp 0.3.0 introduces the dots3-note multimodal model (with a new DSA-ISWA KV cache), MTP support for GLM-4.5-Air, and tensor-",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.3.0",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-25T10:22:58+00:00",
+      "first_seen_at": "2026-08-25T10:25:09.187127+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }
