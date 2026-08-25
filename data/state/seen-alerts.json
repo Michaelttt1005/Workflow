@@ -1919,6 +1919,16 @@
       "first_seen_at": "2026-08-25T10:25:09.187127+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://openai.com/index/jalapeno-first-results|jalapeño’s first results show industry-leading speed and efficiency in ai inference",
+      "title": "Jalapeño’s first results show industry-leading speed and efficiency in AI inference",
+      "url": "https://openai.com/index/jalapeno-first-results",
+      "source": "OpenAI News",
+      "published_at": "2026-08-25T07:00:00+00:00",
+      "first_seen_at": "2026-08-25T16:28:59.363372+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
