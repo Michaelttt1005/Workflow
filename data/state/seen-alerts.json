@@ -1929,6 +1929,16 @@
       "first_seen_at": "2026-08-25T16:28:59.363372+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developer.nvidia.com/blog/restore-llm-inference-capacity-in-seconds-with-shadow-engine-recovery-in-nvidia-dynamo/|restore llm inference capacity in seconds with shadow engine recovery in nvidia dynamo",
+      "title": "Restore LLM Inference Capacity in Seconds with Shadow Engine Recovery in NVIDIA Dynamo",
+      "url": "https://developer.nvidia.com/blog/restore-llm-inference-capacity-in-seconds-with-shadow-engine-recovery-in-nvidia-dynamo/",
+      "source": "NVIDIA Developer Blog",
+      "published_at": "2026-08-25T20:57:54+00:00",
+      "first_seen_at": "2026-08-25T22:19:52.121512+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
