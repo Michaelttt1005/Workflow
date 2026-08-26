@@ -1959,6 +1959,26 @@
       "first_seen_at": "2026-08-26T12:38:50.349644+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/huggingface/transformers/releases/tag/v5.16.1|huggingface/transformers release v5.16.1: release v5.16.1 this is a special release as we include glm! (and a few small ",
+      "title": "huggingface/transformers release v5.16.1: Release v5.16.1 This is a special release as we include GLM! (and a few small fixes) GLM-5.3-Flash GLM-5.3-Flash, the first natively multim",
+      "url": "https://github.com/huggingface/transformers/releases/tag/v5.16.1",
+      "source": "GitHub Release: huggingface/transformers",
+      "published_at": "2026-08-26T14:50:01+00:00",
+      "first_seen_at": "2026-08-26T16:44:32.934311+00:00",
+      "score": 9,
+      "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/enterprise-grade-precision-for-long-context-multimodal-embedding-inference-on-cloud-tpu/|enterprise-grade precision for long-context multimodal embedding inference on cloud tpu",
+      "title": "Enterprise-Grade Precision for Long-Context Multimodal Embedding Inference on Cloud TPU",
+      "url": "https://developers.googleblog.com/enterprise-grade-precision-for-long-context-multimodal-embedding-inference-on-cloud-tpu/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-08-26T16:44:05.344670+00:00",
+      "first_seen_at": "2026-08-26T16:44:32.934348+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }
