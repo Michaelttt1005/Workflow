@@ -1939,6 +1939,26 @@
       "first_seen_at": "2026-08-25T22:19:52.121512+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/huggingface/transformers/releases/tag/v5.16.0|huggingface/transformers: release: v5.16.0",
+      "title": "huggingface/transformers: Release: v5.16.0",
+      "url": "https://github.com/huggingface/transformers/releases/tag/v5.16.0",
+      "source": "GitHub Release: huggingface/transformers",
+      "published_at": "2026-08-26T12:35:15+00:00",
+      "first_seen_at": "2026-08-26T12:38:50.349608+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10635|ggml-org/llama.cpp release b10635: cuda: unblock mmq for moe on sm60 (26264) cuda: unblock mmq for moe on sm60 cuda: dup",
+      "title": "ggml-org/llama.cpp release b10635: cuda: unblock mmq for MoE on sm60 (26264) cuda: unblock mmq for MoE on sm60 cuda: duplicate mmq-config-pascal for dp4a and older cuda: re",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10635",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-26T11:32:54+00:00",
+      "first_seen_at": "2026-08-26T12:38:50.349644+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
