@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-08-27T18:43:23.084379Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "08-27 | llama.cpp 新增 DFlash2 支持，加速本地推理",
+    "overview": "本期聚焦 llama.cpp 最新版本 b10658，该版本引入了对 DFlash2 的支持，通过局部卷积和候选选择器优化了推理过程，为本地大模型推理带来性能提升。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "ggml-org/llama.cpp release b10658: 新增 DFlash2 支持（局部卷积 + 候选选择器）",
+        "what": "这是 llama.cpp 的一个新版本发布，llama.cpp 是一个流行的 C/C++ 实现的 LLM 推理引擎，支持在本地运行多种大语言模型。本次更新主要增加了对 DFlash2 的支持，DFlash2 是一种推测解码（speculative decoding）技术，通过局部卷积和候选选择器来加速生成。",
+        "plain_explanation": "想象一下，你在写文章时，通常一个字一个字地敲，但如果你能预测下一个词，就可以一次敲好几个词。DFlash2 就是帮助模型预测多个词的技术，它使用一个小的辅助模型（候选选择器）来生成候选词，然后用主模型验证。局部卷积则帮助辅助模型更好地理解上下文。这样，主模型可以一次处理多个词，从而加快生成速度。对于普通用户来说，这意味着在本地运行大模型时，响应更快，体验更流畅。",
+        "purpose": "该更新旨在提升 llama.cpp 的推理性能，特别是通过推测解码减少生成延迟，让本地部署的大模型运行更高效，降低计算成本，同时保持生成质量。",
+        "features": "支持 DFlash2 推测解码，结合局部卷积和候选选择器；引入 p_min 参数，优化候选选择过程；重构代码结构，优化 DFlash2 成本；修复 mrope bug，确保兼容性",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合使用 llama.cpp 进行本地推理的开发者、研究人员，以及需要优化大模型推理性能的团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10658",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "检索增强与向量模型",
+        "published": "08-27 13:32"
+      }
+    ],
+    "footer": "本简报基于候选源生成，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}

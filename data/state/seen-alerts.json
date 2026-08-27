@@ -1999,6 +1999,16 @@
       "first_seen_at": "2026-08-27T06:39:16.067341+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10658|ggml-org/llama.cpp release b10658: spec : add dflash2 support (local convolution + candidate selector) (27342) (27816) s",
+      "title": "ggml-org/llama.cpp release b10658: spec : add DFlash2 support (local convolution + candidate selector) (27342) (27816) spec : add DFlash2 support (local convolution + candida",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10658",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-27T18:32:48+00:00",
+      "first_seen_at": "2026-08-27T18:43:24.843981+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
