@@ -2009,6 +2009,16 @@
       "first_seen_at": "2026-08-27T18:43:24.843981+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10669|ggml-org/llama.cpp release b10669: sycl: bind the f16 kv cache in place for the onednn sdpa path (27468) measured at a l",
+      "title": "ggml-org/llama.cpp release b10669: sycl: bind the f16 KV cache in place for the oneDNN SDPA path (27468) Measured at a live KV length of 34816 (32768 depth plus one 2048 ubatc",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10669",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-28T12:44:20+00:00",
+      "first_seen_at": "2026-08-28T15:56:47.710406+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
