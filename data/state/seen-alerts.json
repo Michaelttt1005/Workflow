@@ -2019,6 +2019,26 @@
       "first_seen_at": "2026-08-28T15:56:47.710406+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10677|ggml-org/llama.cpp release b10677: vulkan: fix missing view-alias dependencies in ggmlvkgraphoptimize (27812) vulkan: fi",
+      "title": "ggml-org/llama.cpp release b10677: vulkan: fix missing view-alias dependencies in ggmlvkgraphoptimize (27812) vulkan: fix missing view-alias dependencies in ggmlvkgraphoptimi",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10677",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-28T18:27:33+00:00",
+      "first_seen_at": "2026-08-29T00:22:55.313962+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3d%3d1.4.0a2|langchain==1.4.0a2",
+      "title": "langchain==1.4.0a2",
+      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.4.0a2",
+      "source": "GitHub Release: langchain-ai/langchain",
+      "published_at": "2026-08-28T16:19:22+00:00",
+      "first_seen_at": "2026-08-29T00:22:55.314000+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
