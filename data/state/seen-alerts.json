@@ -2039,6 +2039,16 @@
       "first_seen_at": "2026-08-29T00:22:55.314000+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10687|ggml-org/llama.cpp release b10687: opencl: use a better matmul path on two adreno gpu generations (27640) opencl: defaul",
+      "title": "ggml-org/llama.cpp release b10687: opencl: use a better matmul path on two Adreno GPU generations (27640) opencl: default the Adreno xmem F16xF32 GEMM on for X2E kernelmulmmf",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10687",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-29T18:23:05+00:00",
+      "first_seen_at": "2026-08-29T19:04:34.572181+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
