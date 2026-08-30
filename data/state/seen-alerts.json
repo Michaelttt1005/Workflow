@@ -2049,6 +2049,16 @@
       "first_seen_at": "2026-08-29T19:04:34.572181+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10702|ggml-org/llama.cpp release b10702: hip : optimize q20 dot-product path for gfx1201 (26753) hip/gfx1201: optimize q20 vec",
+      "title": "ggml-org/llama.cpp release b10702: hip : optimize Q20 dot-product path for gfx1201 (26753) hip/gfx1201: optimize q20 vecdotq20q81 with native amdgcn perm Broadened HIP's Q20",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10702",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-30T21:20:07+00:00",
+      "first_seen_at": "2026-08-30T22:18:07.485437+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
