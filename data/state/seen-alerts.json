@@ -2059,6 +2059,16 @@
       "first_seen_at": "2026-08-30T22:18:07.485437+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10714|ggml-org/llama.cpp release b10714: vulkan: tune mat-vec rows for batched inference on strix halo (27909) vulkan: rdna3 s",
+      "title": "ggml-org/llama.cpp release b10714: vulkan: tune mat-vec rows for batched inference on Strix Halo (27909) vulkan: RDNA3 static mat-vec rows above four columns On RDNA3 above f",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10714",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-31T09:40:03+00:00",
+      "first_seen_at": "2026-08-31T10:21:26.031182+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
