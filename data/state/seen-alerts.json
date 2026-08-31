@@ -2069,6 +2069,16 @@
       "first_seen_at": "2026-08-31T10:21:26.031182+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10724|ggml-org/llama.cpp release b10724: kv-cache : optimize restoring non-contiguous cells (27991) kv cache : batch state res",
+      "title": "ggml-org/llama.cpp release b10724: kv-cache : optimize restoring non-contiguous cells (27991) kv cache : batch state restore scatter reads per contiguous run When restoring s",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10724",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-08-31T17:26:21+00:00",
+      "first_seen_at": "2026-08-31T18:36:05.286810+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
