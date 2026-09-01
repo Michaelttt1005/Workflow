@@ -2089,6 +2089,16 @@
       "first_seen_at": "2026-09-01T09:05:10.356461+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10734|ggml-org/llama.cpp release b10734: metal: enable metal 4.0 tensor api on m5+/a19+ (27461) metal : request metal 4.0 lang",
+      "title": "ggml-org/llama.cpp release b10734: metal: enable Metal 4.0 tensor API on M5+/A19+ (27461) metal : request Metal 4.0 language version for the tensor API metal : load the tens",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10734",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-01T11:57:33+00:00",
+      "first_seen_at": "2026-09-01T14:26:54.062551+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
