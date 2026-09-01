@@ -2099,6 +2099,26 @@
       "first_seen_at": "2026-09-01T14:26:54.062551+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10751|ggml-org/llama.cpp release b10751: cuda: fuse moe weighted expert reduction (25952) cuda : fuse moe weighted reduction (",
+      "title": "ggml-org/llama.cpp release b10751: cuda: fuse MoE weighted expert reduction (25952) cuda : fuse MoE weighted reduction (mul + view + add) The MoE combine tail currently write",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10751",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-01T20:13:53+00:00",
+      "first_seen_at": "2026-09-01T22:18:01.486224+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://openai.com/index/path-to-astra|path to astra: critical capabilities and frontier safeguards",
+      "title": "Path to Astra: critical capabilities and frontier safeguards",
+      "url": "https://openai.com/index/path-to-astra",
+      "source": "OpenAI News",
+      "published_at": "2026-09-01T13:00:00+00:00",
+      "first_seen_at": "2026-09-01T22:18:01.486256+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
