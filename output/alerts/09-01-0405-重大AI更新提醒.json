@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-09-01T09:05:08.043375Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "09-01 | llama.cpp 新版本支持 Qwen4Exp 循环状态回滚，提升 MTP 推测解码性能",
+    "overview": "本期聚焦 llama.cpp 最新发布 b10731，该版本为 Qwen4Exp 模型引入了循环状态回滚支持，解决了 MTP 推测解码中的上下文管理问题，显著提升了解码速度。适合使用 Qwen 系列模型进行本地推理的开发者关注。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b10731: 支持 Qwen4Exp 循环状态回滚，提升 MTP 推测解码性能",
+        "what": "这是 llama.cpp 的一个新版本（b10731），主要针对 Qwen4Exp 模型增加了循环状态回滚（recurrent state rollback）的支持，以优化 MTP（Multi-Token Prediction）推测解码的效率。",
+        "plain_explanation": "想象你在写文章时，有时会先写几个字，然后发现不对，需要回退到之前的状态重新写。在 AI 推理中，推测解码（speculative decoding）就是让模型先快速猜几个词，然后验证，如果猜错了就要回退。对于 Qwen4Exp 这种带有循环结构的模型，回退时需要恢复之前的状态。以前这个回退操作很笨重，每次都要把整个状态复制一遍，导致速度变慢。这个更新让回退更精准，只恢复需要的部分，就像你只需要擦掉写错的几个字，而不是把整页纸都重写。",
+        "purpose": "解决 MTP 推测解码中因缺少循环状态回滚而导致的性能瓶颈，避免每次迭代都序列化整个循环状态到主机内存，从而减少开销，提升解码速度。",
+        "features": "支持循环状态回滚，为每个槽位写入一个快照，每个快照提前一个 token 结束，用于 delta net QKV 卷积和 PLE 卷积。；优化了上下文分类，避免使用 SEQ_RM_TYPE_FULL，减少主机内存传输。；在 Qwen3.8-Flash-Next UD-Q4_K_XL 模型上，使用独立 MTP 草稿，n-max 3 和单槽位时，解码速度达到代码 183 tok/s，散文 144 tok/s。",
+        "comparison": "根据发布说明，在相同配置下，该分支相比之前版本（未支持回滚）性能有提升，但未提供具体对比数据。",
+        "who": "适合使用 llama.cpp 进行本地推理的开发者，特别是使用 Qwen4Exp 或类似循环结构模型，并启用 MTP 推测解码的用户。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10731",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "检索增强与向量模型",
+        "published": "09-01 00:34"
+      }
+    ],
+    "footer": "本简报基于 GitHub Release 信息整理，请以官方发布说明为准。"
+  },
+  "candidate_count": 1
+}

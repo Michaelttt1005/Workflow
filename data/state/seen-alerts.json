@@ -2079,6 +2079,16 @@
       "first_seen_at": "2026-08-31T18:36:05.286810+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10731|ggml-org/llama.cpp release b10731: qwen4exp: support recurrent state rollback (28123) mtp speculative decoding needs the",
+      "title": "ggml-org/llama.cpp release b10731: qwen4exp: support recurrent state rollback (28123) MTP speculative decoding needs the target state to move back by the number of rejected dr",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10731",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-01T05:34:08+00:00",
+      "first_seen_at": "2026-09-01T09:05:10.356461+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
