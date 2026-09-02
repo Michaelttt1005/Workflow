@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-09-02T20:23:16.326641Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "09-02 | llama.cpp 发布 b10764，优化 CUDA 代码",
+    "overview": "本期聚焦 llama.cpp 的最新发布，该版本主要清理了 CUDA 后端中的未使用变量，有助于提升代码质量和可维护性，为后续优化奠定基础。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b10764 发布：清理 CUDA 后端未使用变量",
+        "what": "这是 llama.cpp 项目的一个新版本（b10764），主要针对 CUDA 后端进行代码清理，移除了未使用的变量。llama.cpp 是一个流行的开源 C++ 库，用于在本地设备上高效运行大语言模型（如 LLaMA）。",
+        "plain_explanation": "想象一下，你有一个大工具箱，里面有很多工具，但有些工具你从来不用，却占着地方。这次更新就像把那些不用的工具清理掉，让工具箱更整洁，找东西更快。对于程序员来说，清理代码中的无用变量可以让代码更清晰，减少混乱，也可能让程序运行得更顺畅。",
+        "purpose": "这个版本的主要目的是提高 llama.cpp 的代码质量和可维护性。通过移除未使用的变量，可以减少编译时的警告，让代码更容易理解和修改，为未来的功能开发和性能优化打下良好基础。对于使用 CUDA 的开发者来说，这有助于确保代码的稳定性。",
+        "features": "移除 CUDA 后端中的未使用变量，减少代码冗余；提供多种平台的预编译二进制文件，包括 macOS（Apple Silicon 和 Intel）、Linux（x64、arm64、s390x）以及 iOS XCFramework；支持 KleidiAI 的 macOS Apple Silicon 版本（当前禁用，见 PR #23780）；发布包含官方签名和证明（Attestations），增强安全性",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合使用 llama.cpp 在本地部署大语言模型的开发者，尤其是依赖 CUDA 进行 GPU 加速的用户，以及关注代码质量和项目维护的贡献者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10764",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "09-02 14:56"
+      }
+    ],
+    "footer": "以上信息基于候选源，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}

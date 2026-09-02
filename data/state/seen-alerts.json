@@ -2139,6 +2139,16 @@
       "first_seen_at": "2026-09-02T17:49:26.542412+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10764|ggml-org/llama.cpp release b10764: ggml-cuda : remove unused vars (28235) signed-off-by: adrien gallouët website",
+      "title": "ggml-org/llama.cpp release b10764: ggml-cuda : remove unused vars (28235) Signed-off-by: Adrien Gallouët Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10764",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-02T19:56:21+00:00",
+      "first_seen_at": "2026-09-02T20:23:18.048702+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
