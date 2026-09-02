@@ -2119,6 +2119,26 @@
       "first_seen_at": "2026-09-01T22:18:01.486256+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/4-engineering-patterns-behind-the-strongest-ai-agents-challenge-submissions/|4 engineering patterns behind the strongest ai agents challenge submissions",
+      "title": "4 engineering patterns behind the strongest AI Agents Challenge submissions",
+      "url": "https://developers.googleblog.com/4-engineering-patterns-behind-the-strongest-ai-agents-challenge-submissions/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-09-02T17:49:04.655127+00:00",
+      "first_seen_at": "2026-09-02T17:49:26.542372+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/pytorch/pytorch/releases/tag/v2.14.0|pytorch 2.14.0 release",
+      "title": "PyTorch 2.14.0 Release",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/v2.14.0",
+      "source": "GitHub Release: pytorch/pytorch",
+      "published_at": "2026-09-02T17:40:10+00:00",
+      "first_seen_at": "2026-09-02T17:49:26.542412+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
