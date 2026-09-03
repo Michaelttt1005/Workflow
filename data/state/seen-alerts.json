@@ -2149,6 +2149,26 @@
       "first_seen_at": "2026-09-02T20:23:18.048702+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3d%3d1.4.0|langchain==1.4.0",
+      "title": "langchain==1.4.0",
+      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.4.0",
+      "source": "GitHub Release: langchain-ai/langchain",
+      "published_at": "2026-09-03T16:59:53+00:00",
+      "first_seen_at": "2026-09-03T19:01:23.426481+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10782|ggml-org/llama.cpp release b10782: cuda: allow concurrent streams per split for multi-gpu (28198) cuda: allow cuda optim",
+      "title": "ggml-org/llama.cpp release b10782: CUDA: Allow concurrent streams per split for multi-GPU (28198) CUDA: Allow CUDA optimization per split for multi-GPU",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10782",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-03T10:26:22+00:00",
+      "first_seen_at": "2026-09-03T19:01:23.426523+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
