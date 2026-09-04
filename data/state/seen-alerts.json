@@ -2179,6 +2179,16 @@
       "first_seen_at": "2026-09-04T08:23:24.947175+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developer.nvidia.com/blog/frontier-reasoning-reaches-the-edge-how-to-deploy-and-optimize-models-on-nvidia-jetson/|frontier reasoning reaches the edge: how to deploy and optimize models on nvidia jetson",
+      "title": "Frontier Reasoning Reaches the Edge: How to Deploy and Optimize Models on NVIDIA Jetson",
+      "url": "https://developer.nvidia.com/blog/frontier-reasoning-reaches-the-edge-how-to-deploy-and-optimize-models-on-nvidia-jetson/",
+      "source": "NVIDIA Developer Blog",
+      "published_at": "2026-09-04T16:21:04+00:00",
+      "first_seen_at": "2026-09-04T17:19:54.976547+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

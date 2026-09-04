@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-09-04T17:19:53.013471Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "09-04 | 边缘推理与智能体部署新突破",
+    "overview": "本期聚焦 NVIDIA 在边缘设备上部署推理与智能体模型的最新实践，为开发者提供优化指南，推动前沿模型在 Jetson 平台上的落地。",
+    "checked_sources": [
+      "NVIDIA Developer Blog"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "Frontier Reasoning Reaches the Edge: How to Deploy and Optimize Models on NVIDIA Jetson",
+        "what": "这是 NVIDIA 官方发布的一篇技术博客，详细介绍了如何在 Jetson 边缘设备上部署和优化具备多步推理能力的 AI 模型，以及支持智能体（agentic）工作负载的解决方案。",
+        "plain_explanation": "想象一下，你有一个非常聪明的 AI 助手，它能像人一样一步步思考问题，比如规划旅行路线或分析复杂数据。以前，这种聪明的 AI 需要强大的云端服务器才能运行，就像把超级计算机放在数据中心。但现在，NVIDIA 的 Jetson 设备就像一个小巧的便携式超级计算机，可以放在你的机器人或无人机里。这篇博客就是教开发者如何把这种聪明的 AI 模型“压缩”并“调校”，让它们能在这样的小设备上流畅运行，即使没有网络连接也能实时做出决策。",
+        "purpose": "解决边缘设备上运行大型推理模型和智能体模型的难题，使开发者能够在资源受限的环境中部署前沿 AI，从而推动机器人、自动驾驶、工业自动化等领域的实时智能应用。",
+        "features": "模型优化：提供针对 Jetson 平台的模型压缩和量化技术，减少内存占用和计算需求。；推理加速：利用 Jetson 的 GPU 和 TensorRT 等工具，提升推理速度。；智能体支持：展示如何部署支持多步推理和工具调用的智能体模型，实现复杂任务处理。；部署指南：提供从模型转换到实际部署的完整流程和最佳实践。",
+        "comparison": "暂无可信公开对比数据。",
+        "who": "适合边缘计算开发者、机器人工程师、嵌入式 AI 研究人员，以及希望在 Jetson 设备上运行先进 AI 模型的团队。",
+        "link": "https://developer.nvidia.com/blog/frontier-reasoning-reaches-the-edge-how-to-deploy-and-optimize-models-on-nvidia-jetson/",
+        "score": "7",
+        "source": "NVIDIA Developer Blog",
+        "type": "官方发布",
+        "topic": "智能体与开发者平台",
+        "published": "09-04 11:21"
+      }
+    ],
+    "footer": "本简报基于 NVIDIA 官方博客，确保信息准确可靠。"
+  },
+  "candidate_count": 1
+}
