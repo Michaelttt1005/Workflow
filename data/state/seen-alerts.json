@@ -2169,6 +2169,16 @@
       "first_seen_at": "2026-09-03T19:01:23.426523+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10795|ggml-org/llama.cpp release b10795: sycl: fuse rmsnorm+mul+add and add+add residual chains (27610) fuse rmsnorm+mul+add a",
+      "title": "ggml-org/llama.cpp release b10795: sycl: fuse rmsnorm+mul+add and add+add residual chains (27610) Fuse RMSNORM+MUL+ADD and ADD+ADD under GGMLSYCLENABLEFUSION",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10795",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-04T04:30:55+00:00",
+      "first_seen_at": "2026-09-04T08:23:24.947175+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
