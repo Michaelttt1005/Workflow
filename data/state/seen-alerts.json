@@ -2209,6 +2209,16 @@
       "first_seen_at": "2026-09-06T21:53:52.655270+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10829|ggml-org/llama.cpp release b10829: models : fix gdn normalization from max to rsqrt (28068) models: use flash-linear-att",
+      "title": "ggml-org/llama.cpp release b10829: models : fix GDN normalization from max to rsqrt (28068) models: use flash-linear-attention's l2norm for gated delta net q/k The GDN q/k no",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10829",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-06T23:04:50+00:00",
+      "first_seen_at": "2026-09-06T23:24:06.533806+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

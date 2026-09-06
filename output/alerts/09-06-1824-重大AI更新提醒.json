@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-09-06T23:24:04.612217Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "09-06 | llama.cpp 修复 GDN 归一化，对齐参考实现",
+    "overview": "本期聚焦 llama.cpp 最新 release b10829，修复了 Gated Delta Net (GDN) 的归一化实现，使其与 flash-linear-attention 和 transformers 保持一致，对 Qwen3-Next 等模型的推理准确性有重要影响。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b10829: 修复 GDN 归一化从 max 到 rsqrt，对齐 FLA 实现",
+        "what": "这是 llama.cpp 的一个新版本（b10829），主要修复了 Gated Delta Net (GDN) 中 q/k 归一化的实现错误。具体来说，将归一化从使用 max 函数改为 rsqrt（平方根倒数），并采用了 flash-linear-attention 的 l2norm 定义。",
+        "plain_explanation": "想象你在调整音量，原来用的是“限制最大值”的方法，但正确做法是“按比例缩放”。llama.cpp 之前对 GDN 的 q/k 归一化用了类似“限制最大值”的方法，而参考实现（如 flash-linear-attention）用的是“按平方根缩放”。虽然通常差别不大，但在某些情况下会导致模型输出不准确。这次修复让 llama.cpp 与参考实现完全一致，就像校准了音量旋钮，确保声音不失真。",
+        "purpose": "修复 GDN 归一化实现与参考库不一致的问题，确保使用 Qwen3-Next 等模型的推理结果与官方实现对齐，提高模型输出的准确性和可靠性。",
+        "features": "将 GDN q/k 归一化从 max 改为 rsqrt，并采用 flash-linear-attention 的 l2norm 定义；修复了 epsilon 处理方式，现在 epsilon 在根号内，与参考实现一致；与 transformers 的修正（#40842）保持一致，确保跨框架兼容性",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合使用 llama.cpp 进行本地推理的开发者，尤其是依赖 Qwen3-Next 或类似 GDN 架构模型的用户，以及关注推理准确性的研究人员。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10829",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "09-06 18:04"
+      }
+    ],
+    "footer": "本简报基于候选源生成，请以官方发布为准。"
+  },
+  "candidate_count": 1
+}
