@@ -2199,6 +2199,16 @@
       "first_seen_at": "2026-09-06T19:52:05.405741+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10827|ggml-org/llama.cpp release b10827: opencl: properly choose weights pack for q4k, q5k mulmat (28402) website",
+      "title": "ggml-org/llama.cpp release b10827: opencl: properly choose weights pack for q4K, q5K mulmat (28402) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10827",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-06T20:50:00+00:00",
+      "first_seen_at": "2026-09-06T21:53:52.655270+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
