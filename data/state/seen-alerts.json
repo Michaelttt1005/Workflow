@@ -2229,6 +2229,16 @@
       "first_seen_at": "2026-09-07T08:49:32.258277+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10840|ggml-org/llama.cpp release b10840: cuda: branchless q4k/q5k unpack to speed up mmvq, l2 prefetch on dgx spark (26705) up",
+      "title": "ggml-org/llama.cpp release b10840: CUDA: branchless Q4K/Q5K unpack to speed up mmvq, L2 prefetch on DGX Spark (26705) Update Q4K and Q5K to use branchless computation, which",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10840",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-07T14:31:44+00:00",
+      "first_seen_at": "2026-09-07T15:26:56.729391+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
