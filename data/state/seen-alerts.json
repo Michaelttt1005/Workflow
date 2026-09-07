@@ -2219,6 +2219,16 @@
       "first_seen_at": "2026-09-06T23:24:06.533806+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10835|ggml-org/llama.cpp release b10835: ggml-cuda: fix divergent barrier in f16 flash attention (27870) ggml-cuda: fix diverg",
+      "title": "ggml-org/llama.cpp release b10835: ggml-cuda: fix divergent barrier in f16 flash attention (27870) ggml-cuda: fix divergent barrier in f16 flash attention ggml-cuda: avoid d",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10835",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-07T08:08:50+00:00",
+      "first_seen_at": "2026-09-07T08:49:32.258277+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
