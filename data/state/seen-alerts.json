@@ -2249,6 +2249,26 @@
       "first_seen_at": "2026-09-08T14:04:03.596949+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10865|ggml-org/llama.cpp release b10865: revert \"ggml-cuda : restore prop.integrated on hip builds (24233)\" (28604) this rever",
+      "title": "ggml-org/llama.cpp release b10865: Revert \"ggml-cuda : restore prop.integrated on HIP builds (24233)\" (28604) This reverts commit c7d8722922a2599dc4d77f8808d8e6c2fde5e7a2",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10865",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-08T15:11:37+00:00",
+      "first_seen_at": "2026-09-08T19:11:53.985195+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/langchain-ai/langchain/releases/tag/langchain-openai%3d%3d1.6.1|langchain-openai==1.6.1",
+      "title": "langchain-openai==1.6.1",
+      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-openai%3D%3D1.6.1",
+      "source": "GitHub Release: langchain-ai/langchain",
+      "published_at": "2026-09-08T14:20:40+00:00",
+      "first_seen_at": "2026-09-08T19:11:53.985256+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
