@@ -2279,6 +2279,36 @@
       "first_seen_at": "2026-09-09T08:32:27.885907+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/vllm-project/vllm/releases/tag/v0.29.0|vllm-project/vllm release v0.29.0: v0.29.0 highlights this release features 594 commits from 277 contributors (91 new)! ",
+      "title": "vllm-project/vllm release v0.29.0: v0.29.0 Highlights This release features 594 commits from 277 contributors (91 new)! Model Runner V2 is now the default for all models (53",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.29.0",
+      "source": "GitHub Release: vllm-project/vllm",
+      "published_at": "2026-09-09T08:54:49+00:00",
+      "first_seen_at": "2026-09-09T14:05:47.927973+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10877|ggml-org/llama.cpp release b10877: cuda: size routed moe mmq n-tiles from typical expert width on rdna3 (28552) recreate",
+      "title": "ggml-org/llama.cpp release b10877: CUDA: size routed MoE MMQ N-tiles from typical expert width on RDNA3 (28552) Recreated from 24546 --------- Co-authored-by: Carl Philipp Kle",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10877",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-09T12:53:34+00:00",
+      "first_seen_at": "2026-09-09T14:05:47.928014+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10876|ggml-org/llama.cpp release b10876: cuda: replace ggmlfaallquants with ggmlfaquants, more control over what is compiled (",
+      "title": "ggml-org/llama.cpp release b10876: CUDA: replace GGMLFAALLQUANTS with GGMLFAQUANTS, more control over what is compiled (28079) CUDA: add configurable FA quant combinations As",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10876",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-09T11:45:32+00:00",
+      "first_seen_at": "2026-09-09T14:05:47.928047+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
