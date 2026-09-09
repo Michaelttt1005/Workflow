@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-09-09T19:00:28.109965Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "09-09 | Google 发布 ADK for Kotlin 1.0、Transformers 新增 780B MoE 模型、IBM 推出时序基础模型",
+    "overview": "本期聚焦 AI 智能体开发与模型发布。Google 正式推出 ADK for Kotlin 1.0，实现多平台智能体开发；Hugging Face Transformers 新增 HYV4 Hy4-Preview 780B MoE 模型；IBM 发布 Granite Time Series PatchTST-FM-r2 时序模型。",
+    "checked_sources": [
+      "Google Developers Blog",
+      "GitHub Release",
+      "Hugging Face Blog"
+    ],
+    "entries": [
+      {
+        "candidate_id": "2",
+        "title": "Google 发布 ADK for Kotlin 1.0：在 Kotlin、Android 及更多平台构建生产级 AI 智能体",
+        "what": "Google 正式发布 Agent Development Kit (ADK) for Kotlin 1.0，这是一个基于 Kotlin Multiplatform (KMP) 的智能体开发框架，支持在 Kotlin、Android 等平台构建多智能体 AI 应用。",
+        "plain_explanation": "想象你要开发一个能帮你订机票、查天气、安排日程的 AI 助手。ADK for Kotlin 就像一套积木，让你用 Kotlin 语言（Android 开发常用语言）快速搭建这个助手。它支持多智能体协作，比如一个智能体负责订票，另一个负责查天气，它们可以互相配合。而且它内置了与 Python 和 Java 版本相同的功能，意味着你可以在不同平台间复用代码。它还特别为 Android 优化，能调用手机上的本地模型，甚至利用手机的存储来记住你的偏好。",
+        "purpose": "解决 Kotlin/Android 开发者难以用原生语言构建生产级 AI 智能体的问题，提供与 Python/Java 版 ADK 一致的功能，降低多平台开发成本，并推动 Android 端 AI 应用落地。",
+        "features": "基于 Kotlin Multiplatform (KMP)，支持多平台复用代码；利用 Kotlin Symbol Processing (KSP) 实现零反射、类型安全的函数调用；支持高级编排能力，如人工介入工作流和上下文压缩；提供 Android 优先扩展：集成 LiteRT-LM 本地模型、Firebase AI 云推理、Room 会话持久化、AppSearch 语义记忆",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合 Kotlin 和 Android 开发者、移动端 AI 应用团队，以及希望在多平台复用智能体逻辑的开发者。",
+        "link": "https://developers.googleblog.com/announcing-adk-for-kotlin-10-building-production-ready-ai-agents-in-kotlin-android-and-beyond/",
+        "score": "7",
+        "source": "Google Developers Blog",
+        "type": "官方发布",
+        "topic": "智能体与开发者平台",
+        "published": "09-09 13:59"
+      },
+      {
+        "candidate_id": "3",
+        "title": "Hugging Face Transformers v5.17.0 新增 HYV4 Hy4-Preview：780B 参数 MoE 模型，支持 1M 上下文",
+        "what": "Hugging Face Transformers 发布 v5.17.0，新增 HYV4 Hy4-Preview 模型，这是一个 780B 参数的混合专家（MoE）语言模型，每个 token 激活 49B 参数，上下文窗口达 1M tokens。",
+        "plain_explanation": "想象一个超级智能助手，它拥有 7800 亿个“脑细胞”（参数），但每次思考只动用其中 490 亿个，这样既聪明又高效。它采用 MoE 架构，每个 token 会从 256 个专家中选择 8 个来处理，就像你遇到问题时，会从 256 位专家中挑 8 位最合适的来咨询。它还支持 100 万 token 的上下文，相当于能一次性读完《三体》三部曲。此外，它使用了 Multi-head Latent Attention (MLA) 和 DeepSeek Sparse Attention (DSA) 技术，让注意力计算更高效，还能通过共享索引减少重复计算。",
+        "purpose": "为 Transformers 用户提供最新的高性能 MoE 模型，支持超长上下文，适用于复杂推理、长文档处理等场景，同时通过稀疏注意力降低计算成本。",
+        "features": "780B 参数 MoE，激活 49B，每层 256 个路由专家 + 1 个共享专家，每个 token 路由到 8 个专家；1M token 上下文窗口；Multi-head Latent Attention (MLA)：压缩键值到低秩潜在空间，再扩展回每个查询头；DeepSeek Sparse Attention (DSA)：通过轻量索引器选择 top-k 键，并支持层间共享索引",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合需要处理超长文本的 NLP 研究者、大型语言模型应用开发者，以及关注 MoE 架构的机器学习工程师。",
+        "link": "https://github.com/huggingface/transformers/releases/tag/v5.17.0",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "开发者生态与数据工具",
+        "published": "09-09 10:42"
+      },
+      {
+        "candidate_id": "4",
+        "title": "IBM 发布 SOTA Granite Time Series PatchTST-FM-r2 模型，采用商用友好许可",
+        "what": "IBM 发布 Granite Time Series PatchTST-FM-r2，这是一个时间序列基础模型，宣称达到 SOTA 水平，并采用商用友好许可。",
+        "plain_explanation": "时间序列数据就是按时间顺序记录的数据，比如每天的股票价格、每小时的温度、每月的销售额。IBM 的这个模型就像是一个“预测专家”，你给它过去一段时间的销售数据，它就能预测未来的趋势。它基于 PatchTST 架构，将时间序列分成小块（patch）来处理，能捕捉长期依赖。这个模型是“基础模型”，意味着它在大规模数据上预训练，你可以微调它来适应你的特定数据，比如预测电力负荷或交通流量。",
+        "purpose": "为时间序列预测任务提供高性能、可商用（商用友好许可）的基础模型，帮助企业和研究者快速构建预测应用，而无需从零训练。",
+        "features": "基于 PatchTST 架构，适合长序列预测；宣称达到 SOTA 性能；商用友好许可，便于企业采用；作为基础模型，支持微调以适应不同领域",
+        "comparison": "暂无可信公开对比数据",
+        "who": "适合需要时间序列预测的开发者、数据科学家，以及金融、能源、零售等领域的企业团队。",
+        "link": "https://huggingface.co/blog/ibm-research/ibm-releases-sota-granite-time-series",
+        "score": "7",
+        "source": "Hugging Face Blog",
+        "type": "官方发布",
+        "topic": "开发者生态与数据工具",
+        "published": "09-09 10:36"
+      }
+    ],
+    "footer": "以上信息基于候选源，请以官方发布为准。"
+  },
+  "candidate_count": 4
+}

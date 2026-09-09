@@ -2309,6 +2309,46 @@
       "first_seen_at": "2026-09-09T14:05:47.928047+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/the-anatomy-of-harness-engineering-how-to-evaluate-iterate-and-guard-ai-coding-agents/|the anatomy of harness engineering: how to evaluate, iterate, and guard ai coding agents",
+      "title": "The Anatomy of Harness Engineering: How to Evaluate, Iterate, and Guard AI Coding Agents",
+      "url": "https://developers.googleblog.com/the-anatomy-of-harness-engineering-how-to-evaluate-iterate-and-guard-ai-coding-agents/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-09-09T18:59:56.326874+00:00",
+      "first_seen_at": "2026-09-09T19:00:30.586296+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/announcing-adk-for-kotlin-10-building-production-ready-ai-agents-in-kotlin-android-and-beyond/|announcing adk for kotlin 1.0: building production-ready ai agents in kotlin, android, and beyond",
+      "title": "Announcing ADK for Kotlin 1.0: Building Production-Ready AI Agents in Kotlin, Android, and Beyond",
+      "url": "https://developers.googleblog.com/announcing-adk-for-kotlin-10-building-production-ready-ai-agents-in-kotlin-android-and-beyond/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-09-09T18:59:56.326914+00:00",
+      "first_seen_at": "2026-09-09T19:00:30.586335+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/huggingface/transformers/releases/tag/v5.17.0|huggingface/transformers release v5.17.0: release v5.17.0 new model additions hyv4 hy4-preview is a 780b-parameter mixtu",
+      "title": "huggingface/transformers release v5.17.0: Release v5.17.0 New Model additions HYV4 Hy4-Preview is a 780B-parameter mixture-of-experts language model that activates 49B parameters p",
+      "url": "https://github.com/huggingface/transformers/releases/tag/v5.17.0",
+      "source": "GitHub Release: huggingface/transformers",
+      "published_at": "2026-09-09T15:42:45+00:00",
+      "first_seen_at": "2026-09-09T19:00:30.586367+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://huggingface.co/blog/ibm-research/ibm-releases-sota-granite-time-series|ibm releases sota granite time series patchtst-fm-r2 model with commercial-friendly license",
+      "title": "IBM releases SOTA Granite Time Series PatchTST-FM-r2 model with commercial-friendly license",
+      "url": "https://huggingface.co/blog/ibm-research/ibm-releases-sota-granite-time-series",
+      "source": "Hugging Face Blog",
+      "published_at": "2026-09-09T15:36:24+00:00",
+      "first_seen_at": "2026-09-09T19:00:30.586395+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
