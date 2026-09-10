@@ -2349,6 +2349,16 @@
       "first_seen_at": "2026-09-09T19:00:30.586395+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10897|ggml-org/llama.cpp release b10897: ci : update woa cuda 13.4 release to use 13.4.1 ga redistributables (28687)",
+      "title": "ggml-org/llama.cpp release b10897: ci : Update WoA CUDA 13.4 release to use 13.4.1 GA redistributables (28687)",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10897",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-10T17:59:13+00:00",
+      "first_seen_at": "2026-09-10T20:19:01.091407+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
