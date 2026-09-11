@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-09-11T14:00:02.067635Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "09-11 | llama.cpp 针对 AMD RDNA4 的 Flash Attention 调优",
+    "overview": "本期聚焦 llama.cpp 最新 release b10905，该版本围绕 CUDA/HIP 后端对 Flash Attention 做了针对性调优，重点覆盖 AMD RDNA4（gfx1201）平台。核心变化包括在 RDNA4 上为 head size 256 启用 mma Flash Attention、在 AMD WMMA 上优先使用整块 tile 的 FA 网格而非 stream-k，并修订了 stream_k 逻辑与内核选择逻辑。对于在 AMD 新卡上跑本地大模型推理的开发者，这是一次值得关注的性能向更新。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b10905：为 AMD RDNA4 启用 head size 256 的 mma Flash Attention 并调优 HIP 内核选择",
+        "what": "这是 ggml-org/llama.cpp 的官方 release b10905，属于一次以推理性能为核心的更新。它修改了 CUDA/HIP 后端的 Flash Attention 实现：在 AMD RDNA4（gfx1201）架构上为 head size 256 启用了基于 mma 的 Flash Attention，并在 AMD WMMA 路径上优先采用整块 tile 的 FA 网格而不是 stream-k，同时修订了 stream_k 逻辑与内核选择逻辑。release 同时提供 macOS Apple Silicon、macOS Intel、iOS XCFramework 以及 Ubuntu x64 等平台的预编译产物。",
+        "plain_explanation": "可以把大模型推理想象成很多人同时查一本很厚的书。Flash Attention 是一种让“查书”过程更省内存、更快的方法，而 head size 可以理解为每次要同时翻看的页数。以前在 AMD 的新一代显卡（RDNA4）上，当每次要翻 256 页时，程序只能用较慢的方式处理；这次更新让这类显卡能用上更快的 mma 加速路径，并且把任务切分方式从 stream-k 改成整块 tile 网格，减少调度开销。结果就是在 AMD 新卡上跑本地模型时，注意力计算这一段更顺畅。",
+        "purpose": "它解决的是 AMD RDNA4 显卡在特定 head size（256）下 Flash Attention 无法走高效 mma 路径、以及 AMD WMMA 上网格调度策略不够优的问题。对于使用 llama.cpp 在 AMD 新卡上做本地推理的开发者，这次更新直接关系到注意力层的吞吐与延迟，因此值得关注并升级测试。",
+        "features": "1）在 RDNA4（gfx1201）上为 head size 256 启用 mma Flash Attention；2）在 AMD WMMA 上优先使用整块 tile 的 FA 网格而非 stream-k；3）修订 stream_k 逻辑；4）修订内核选择逻辑，并附带 macOS/iOS/Linux 多平台预编译产物。",
+        "comparison": "候选摘要未给出具体 benchmark、吞吐或延迟数字，暂无可信公开对比数据。",
+        "who": "适合在 AMD RDNA4 显卡上部署本地大模型推理的开发者、维护 llama.cpp 下游发行版的工程师，以及关注 HIP/CUDA 内核调优与 Flash Attention 实现的研究者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10905",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "09-11 04:38"
+      }
+    ],
+    "footer": "本期仅基于候选源中真实存在的 GitHub Release 信息整理，未补充任何未经证实的 benchmark 或价格数据。"
+  },
+  "candidate_count": 1
+}
