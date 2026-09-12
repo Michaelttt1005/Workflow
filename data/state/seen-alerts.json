@@ -2369,6 +2369,16 @@
       "first_seen_at": "2026-09-11T14:00:04.072502+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10929|ggml-org/llama.cpp release b10929: ggml-cuda: hip add specific config table for amd gcn (27841) website",
+      "title": "ggml-org/llama.cpp release b10929: ggml-cuda: hip add specific config table for AMD GCN (27841) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10929",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-12T12:28:32+00:00",
+      "first_seen_at": "2026-09-12T13:17:59.748036+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
