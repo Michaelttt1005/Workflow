@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-09-14T07:27:58.732278Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "09-14 | llama.cpp 修复旧 GPU 上 BF16 推理回退问题",
+    "overview": "本期聚焦 llama.cpp 的 CUDA 后端更新：在缺少 BF16 硬件加速的 GPU 上自动回退到 F32 计算，避免精度相关错误并提升兼容性。该改动覆盖 NVIDIA 与 AMD 多代显卡，对本地部署大模型的开发者影响直接。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b10950：CUDA 后端在无 BF16 硬件加速的设备上回退到 F32",
+        "what": "这是 llama.cpp 项目 b10950 版本的 GitHub Release，核心变更是 ggml-cuda 后端在检测到设备不支持 BF16 硬件加速时，自动将相关计算回退到 F32 精度。回退逻辑覆盖 NVIDIA 与 AMD 两类 GPU：NVIDIA 侧从 AMPERE 架构起支持 BF16，AMD 侧从 RDNA3 或 CDNA 架构起支持，低于这些代际的设备将走 F32 路径。",
+        "plain_explanation": "BF16 是一种占用更少显存、计算更快的浮点格式，但老显卡的硬件并不支持它。可以把它类比成：新手机能直接播放 4K 视频，老手机硬解不了，如果强行播放就会花屏或卡死。llama.cpp 这次的做法是，先检测你的显卡“会不会硬解 BF16”，不会就自动换成兼容性更好的 F32 格式来算，虽然慢一点、占显存多一点，但结果正确、不会崩。",
+        "purpose": "解决旧代 GPU 在 CUDA 后端上因缺少 BF16 硬件加速而出现的计算错误、崩溃或结果异常问题，让 llama.cpp 在更广泛的显卡上稳定运行，而不必让用户手动改编译选项或换设备。",
+        "features": "1）自动检测设备是否具备 BF16 硬件加速能力；2）对不支持的设备将计算回退到 F32，保证数值正确性；3）回退逻辑同时覆盖 NVIDIA（AMPERE 以下）与 AMD（RDNA3/CDNA 以下）设备；4）随 release 提供 macOS、iOS、Linux 等多平台预编译包，便于直接升级验证。",
+        "comparison": "候选摘要未给出与旧版本或其他推理框架的 benchmark、速度或成本对比数据，暂无可信公开对比数据。",
+        "who": "适合在本地或自有服务器上部署 llama.cpp 的开发者、需要在旧款 NVIDIA 或 AMD 显卡上跑量化模型的个人用户，以及维护多机型推理环境的工程团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10950",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "09-13 20:38"
+      }
+    ],
+    "footer": "本期仅收录 1 条高可信官方 release；如需更全面的对比数据，建议结合项目后续 benchmark 与 issue 讨论跟进。"
+  },
+  "candidate_count": 1
+}

@@ -2379,6 +2379,16 @@
       "first_seen_at": "2026-09-12T13:17:59.748036+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10950|ggml-org/llama.cpp release b10950: ggml-cuda: fallback to f32 on device without bf16 hardware acceleration (28846) ggml-",
+      "title": "ggml-org/llama.cpp release b10950: ggml-cuda: fallback to F32 on device without BF16 hardware acceleration (28846) ggml-cuda: fallback to F32 on device without BF16 hardware",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10950",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-14T01:38:11+00:00",
+      "first_seen_at": "2026-09-14T07:28:00.910949+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
