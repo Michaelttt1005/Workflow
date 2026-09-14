@@ -2389,6 +2389,16 @@
       "first_seen_at": "2026-09-14T07:28:00.910949+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10956|ggml-org/llama.cpp release b10956: sycl: rfc: use radix select for topk (28670) sycl: gpu-resident topk for large k, par",
+      "title": "ggml-org/llama.cpp release b10956: sycl: rfc: Use radix select for topk (28670) sycl: GPU-resident TOPK for large k, parallelised over the device The SYCL backend refused GGM",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10956",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-14T13:57:29+00:00",
+      "first_seen_at": "2026-09-14T14:40:45.434289+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

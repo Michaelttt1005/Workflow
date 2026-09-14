@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-09-14T14:40:42.931317Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "09-14 | llama.cpp SYCL 后端为超大 top-k 引入 GPU 常驻基数选择，解除 k>32 回退 CPU 的限制",
+    "overview": "本期聚焦 llama.cpp 的一次关键推理性能更新：SYCL 后端此前在 top-k 大于 32 时会把算子回退到 CPU，导致每次调用都要做一次后端往返。新版本为超大 k 引入基数选择（radix select），把直方图而非候选集放进 SLM，从而支持 k=2048 这类稀疏注意力索引器需求。对在 Intel GPU 上跑长上下文、稀疏注意力模型的开发者，这是一次值得关注的底层能力补齐。",
+    "checked_sources": [
+      "GitHub Release: ggml-org/llama.cpp b10956"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b10956：SYCL 后端用 radix select 实现大 k 的 GPU 常驻 TOP_K",
+        "what": "这是 ggml-org/llama.cpp 的 b10956 版本发布，核心变更是为 SYCL 后端新增基于基数选择（radix select）的大 k TOP_K 实现。此前 SYCL 后端在 k 大于 32 时拒绝执行 GGML_OP_TOP_K，直接回退到 CPU，导致每次调用都产生一次后端往返。新实现把 TOP_K 做成 GPU 常驻、在设备上并行执行，专门服务大 k 场景。",
+        "plain_explanation": "可以把它想成在一大堆数字里挑出最大的前几名。以前 SYCL 后端只愿意在 GPU 上挑前 32 名，超过这个数就把整堆数字搬回 CPU 去挑，搬来搬去很慢。新办法是：先按数字的高位做一次分桶统计，看最大的那批落在哪个桶里，再进那个桶继续细分，几轮之后就能定位到第 k 大的数。因为桶的统计表很小，可以放在 GPU 的共享内存里，不像旧办法要把一大堆候选值都塞进去，所以 k 开到 2048 也不会撑爆显存。",
+        "purpose": "解决 SYCL 后端在大 k 场景下被迫回退 CPU 的性能问题。qwen4exp 的稀疏注意力索引器在 12 层、每个 token 上都要请求 k=2048，旧限制会在任何上下文长度下触发，造成频繁的 CPU-GPU 往返。新实现让这类工作负载真正跑在 GPU 上，减少同步开销。",
+        "features": "1) 为大 k 引入基数选择，按最高有效位优先做四轮扫描定位第 k 大；2) 直方图而非候选集放入 SLM，显著降低共享内存占用；3) TOP_K 在设备上并行执行，GPU 常驻，避免逐次回退 CPU；4) 面向稀疏注意力索引器等需要 k=2048 的大 k 请求场景。",
+        "comparison": "候选摘要明确对比了旧实现的限制：SYCL 后端此前在 k>32 时回退 CPU，且旧 scan-merge 内核在 k=128 时一个 work-group 就需要 132 KB SLM 而无法启动；新方案把直方图放入 SLM，从而支持更大 k。除此之外暂无可信公开对比数据。",
+        "who": "适合在 Intel GPU 上通过 SYCL 后端运行 llama.cpp 的开发者、做长上下文与稀疏注意力推理优化的工程师，以及关注 GGML 算子后端实现的研究者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10956",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "09-14 08:57"
+      }
+    ],
+    "footer": "本期仅收录 1 条候选，信息均来自对应 GitHub Release 页面；未在候选中出现的 benchmark、价格或日期未做补充。"
+  },
+  "candidate_count": 1
+}
