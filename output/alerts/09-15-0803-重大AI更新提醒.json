@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-09-15T13:03:27.619232Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "09-15 | llama.cpp 双版本更新：OpenVINO 状态化解码与 GPU MoE 推理优化，CUDA Windows 构建升级至 13.4.1",
+    "overview": "本期聚焦 llama.cpp 在同一天发布的两个版本。b10981 针对 OpenVINO 后端做了状态化解码与 GPU MoE 推理的深度优化，并引入 4-bit 重量化目标与权重落盘等实用开关；b10977 则把 Windows x64 的 CUDA 构建基线提升到 13.4.1。两条更新都直接关系到本地与边缘侧大模型推理的稳定性、显存占用和跨平台可用性。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b10981：OpenVINO 后端优化状态化解码与 GPU MoE 推理",
+        "what": "这是 ggml-org/llama.cpp 的官方 release b10981，核心是 ggml-openvino 后端的多项修复与增强，包括优化 stateful decode（状态化解码）和 GPU 上的 MoE（混合专家）推理，修复 Gemma-4 逐层类型 head size 的状态化解码问题，修复 MSVC 的 permute 窄化错误，对交错 SWA（滑动窗口注意力）模型按结构分类滑动窗口层，新增 GGML_OPENVINO_REQUANT_KQUANT 用于选择 4-bit 重量化目标，新增 GGML_OPENVINO_SPILL_DIR 用于把权重缓冲落盘，并加入 pass::KVStateSeqAxis 改变 KV 布局以提升状态化性能，同时修复超出滑动窗口长度后的状态化解码，并拒绝无法从 KV 状态恢复的状态化解码。",
+        "plain_explanation": "可以把大模型推理想象成一边读长文档一边做笔记：普通解码每次都要把前面所有内容重新读一遍，而状态化解码相当于把笔记保存下来，下次接着写。这次更新让 OpenVINO 后端在保存和恢复这份“笔记”时更可靠，尤其是像 Gemma-4 这种不同层用不同注意力头尺寸的模型。MoE 模型则像一家公司里有很多专家，每次只叫几个专家来干活，GPU 上调度这些专家很费劲，这次优化让调度更顺。另外新增的 4-bit 重量化开关，相当于把模型权重从高精度压缩成更省空间的格式，而权重落盘开关则允许把暂时不用的权重放到硬盘上，缓解显存不足。",
+        "purpose": "解决 OpenVINO 后端在长上下文、滑动窗口注意力和 MoE 模型上状态化解码容易出错或性能不佳的问题，同时为显存受限的设备提供重量化和权重落盘手段，让 llama.cpp 在 Intel GPU/NPU 等 OpenVINO 目标上跑得更稳、更省资源。",
+        "features": "1）优化 stateful decode 与 GPU MoE 推理，并修复 Gemma-4 逐层 head size 的状态化解码；2）新增 GGML_OPENVINO_REQUANT_KQUANT 选择 4-bit 重量化目标；3）新增 GGML_OPENVINO_SPILL_DIR 将权重缓冲落盘；4）加入 pass::KVStateSeqAxis 改变 KV 布局，并修复超出滑动窗口长度后的状态化解码。",
+        "comparison": "候选摘要未给出与其它后端或旧版本的量化 benchmark、速度或成本对比数据，暂无可信公开对比数据。",
+        "who": "适合在 Intel GPU/NPU 等 OpenVINO 目标上部署本地推理的开发者、需要在显存受限设备上运行 MoE 或长上下文模型的工程师，以及维护 llama.cpp 多后端兼容性的框架贡献者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10981",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "09-15 07:00"
+      },
+      {
+        "candidate_id": "2",
+        "title": "llama.cpp b10977：Windows x64 CUDA 构建升级至 13.4.1",
+        "what": "这是 ggml-org/llama.cpp 的官方 release b10977，主要变更是把 CI 中 Windows x64 的 CUDA 构建基线提升到 13.4.1（PR #28930）。该 release 同时提供 macOS Apple Silicon（arm64）、macOS Intel（x64）、iOS XCFramework、Ubuntu x64/arm64/s390x（CPU）等平台的预编译产物下载，其中 macOS Apple Silicon 的 KleidiAI 启用版本处于 DISABLED 状态。",
+        "plain_explanation": "CUDA 是 NVIDIA 显卡用来跑计算的工具包，版本越新通常对新型号显卡和新指令支持越好。这次更新相当于把 Windows 上编译 llama.cpp 所用的 CUDA 工具链从旧版本换到 13.4.1，让在 Windows + NVIDIA 显卡上从源码构建或使用官方构建的用户，能跟上较新的 CUDA 生态。对普通用户来说，最直接的影响是 Windows 下的 CUDA 构建更贴近当前驱动与工具链要求，减少因版本不匹配导致的编译失败或运行异常。",
+        "purpose": "让 llama.cpp 在 Windows x64 平台上的 CUDA 构建与较新的 CUDA 13.4.1 工具链对齐，降低因 CUDA 版本过旧带来的兼容性问题和构建摩擦，同时继续为多平台提供预编译二进制。",
+        "features": "1）CI 中 Windows x64 CUDA 构建升级到 13.4.1；2）继续发布 macOS Apple Silicon/Intel、iOS XCFramework、Ubuntu x64/arm64/s390x 等多平台预编译产物；3）macOS Apple Silicon 的 KleidiAI 启用版本标记为 DISABLED。",
+        "comparison": "候选摘要未提供升级前后在吞吐、延迟或显存占用上的对比数据，暂无可信公开对比数据。",
+        "who": "适合在 Windows + NVIDIA 显卡上构建或运行 llama.cpp 的开发者、依赖官方预编译二进制的 Windows 用户，以及需要跟进 CUDA 工具链版本以适配新硬件的工程团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b10977",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "09-15 05:07"
+      }
+    ],
+    "footer": "本期两条均来自 llama.cpp 官方 GitHub Release，内容以候选摘要为准；未在摘要中出现的 benchmark、速度与成本数据不作推断。"
+  },
+  "candidate_count": 2
+}

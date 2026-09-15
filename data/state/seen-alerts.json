@@ -2409,6 +2409,26 @@
       "first_seen_at": "2026-09-15T00:10:13.441818+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10981|ggml-org/llama.cpp release b10981: openvino: optimize stateful decode and gpu moe inference (28638) exclude gpu/npu fail",
+      "title": "ggml-org/llama.cpp release b10981: OpenVINO: optimize stateful decode and GPU MoE inference (28638) exclude GPU/NPU failing POOL2D case Fix pool case ggml-openvino: fix sta",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10981",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-15T12:00:14+00:00",
+      "first_seen_at": "2026-09-15T13:03:30.065747+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10977|ggml-org/llama.cpp release b10977: ci: bump cuda windows x64 builds to 13.4.1 (28930) website",
+      "title": "ggml-org/llama.cpp release b10977: ci: Bump CUDA Windows x64 builds to 13.4.1 (28930) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10977",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-15T10:07:04+00:00",
+      "first_seen_at": "2026-09-15T13:03:30.065780+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
