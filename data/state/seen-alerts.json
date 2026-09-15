@@ -2429,6 +2429,16 @@
       "first_seen_at": "2026-09-15T13:03:30.065780+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b10984|ggml-org/llama.cpp release b10984: cuda: support row-contiguous sumrows (26308) cuda: support row-contiguous sumrows org",
+      "title": "ggml-org/llama.cpp release b10984: cuda: support row-contiguous SUMROWS (26308) cuda: support row-contiguous SUMROWS organize the code and add GGMLOPMEAN to support row-cont",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10984",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-15T13:41:51+00:00",
+      "first_seen_at": "2026-09-15T17:52:33.583180+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
