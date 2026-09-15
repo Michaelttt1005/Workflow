@@ -2399,6 +2399,16 @@
       "first_seen_at": "2026-09-14T14:40:45.434289+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.4.1|ggml-org/llama.cpp release v0.4.1: overview llama.cpp 0.4.1 adds maple 20b-a1b, tencent hy 4, and spark2.5 support, impr",
+      "title": "ggml-org/llama.cpp release v0.4.1: Overview llama.cpp 0.4.1 adds Maple 20B-A1B, Tencent Hy 4, and Spark2.5 support, improves JSON schema handling, chat parsing, logging, and s",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.4.1",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-14T18:27:29+00:00",
+      "first_seen_at": "2026-09-15T00:10:13.441818+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }

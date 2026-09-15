@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-09-15T00:10:11.329778Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "09-14 | llama.cpp 0.4.1 发布：新增三款模型架构支持并改进 JSON 与子进程管理",
+    "overview": "本期聚焦 llama.cpp 0.4.1 官方发布。该版本一次性加入 Maple 20B-A1B 三元 MoE、Tencent Hy 4 预览架构与 Spark2.5 支持，同时调整采样器 API 返回值、增强 JSON schema 处理与聊天解析，并引入路由子进程监控机制，对本地推理与多模型服务部署影响较大。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp 发布 v0.4.1：新增 Maple 20B-A1B、Tencent Hy 4 与 Spark2.5 模型支持，改进 JSON schema 与子进程管理",
+        "what": "llama.cpp 0.4.1 是 ggml-org 维护的本地大模型推理引擎的一次官方版本更新。该版本新增了对 Maple 20B-A1B 三元 MoE 架构（CPU 路径）、Tencent Hy 4（hy_v4）预览架构以及 Spark2.5 的支持，同时把 ggml 升级到 v0.24.0，并改动了采样器链长度 API 的返回类型、加入路由子进程监控能力，还优化了 JSON schema 处理、聊天解析与日志输出。",
+        "plain_explanation": "可以把 llama.cpp 理解成一个“让大模型在普通电脑上跑起来”的引擎。这次更新相当于给这个引擎加装了三种新发动机的适配器：Maple 20B-A1B 是一种用三值权重和混合专家结构来省算力的模型，Tencent Hy 4 和 Spark2.5 则是另外两种新模型格式。除此之外，它还修好了“让模型按固定 JSON 格式回答”的能力，并让服务器在同时管理多个子模型进程时更稳，不容易因为某个子进程挂掉而整个服务失控。",
+        "purpose": "解决本地推理引擎对新模型架构支持滞后、结构化输出不稳定以及多模型服务子进程难以监控的问题。对希望在自有硬件上运行最新开源模型、或需要稳定 JSON 输出的开发者来说，这次更新直接扩大了可运行的模型范围并提升了服务可靠性。",
+        "features": "新增 Maple 20B-A1B 三元 MoE 架构的 CPU 支持；新增 Tencent Hy 4（hy_v4）预览架构与 Spark2.5 支持；改进 JSON schema 处理与聊天解析；新增 server_subproc 与 waiter 用于路由子进程监控，并将 llama_sampler_chain_n() 返回值改为 int32_t；ggml 升级至 v0.24.0。",
+        "comparison": "候选摘要未提供与其它推理引擎的 benchmark、速度或成本对比数据，暂无可信公开对比数据。",
+        "who": "适合在本地或私有服务器部署大模型的开发者、需要 CPU 推理三元 MoE 模型的研究者、依赖 llama.cpp server 做多模型路由的工程团队，以及关注 JSON 结构化输出稳定性的应用开发者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.4.1",
+        "score": "8",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "09-14 13:27"
+      }
+    ],
+    "footer": "本期仅依据候选中的 GitHub Release 信息整理，未引入外部数据；具体性能与兼容性请以官方 release 说明为准。"
+  },
+  "candidate_count": 1
+}
