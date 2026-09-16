@@ -2439,6 +2439,36 @@
       "first_seen_at": "2026-09-15T17:52:33.583180+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11007|ggml-org/llama.cpp release b11007: enable cuda graph for mtp draft (28549) improve cuda graph usage for mtp rename field",
+      "title": "ggml-org/llama.cpp release b11007: Enable CUDA graph for MTP draft (28549) Improve CUDA graph usage for MTP Rename field Address review feedback Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11007",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-16T17:45:31+00:00",
+      "first_seen_at": "2026-09-16T19:17:32.347006+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://developer.nvidia.com/blog/translating-cuda-tile-operations-from-python-to-rust-using-agentic-ai/|translating cuda tile operations from python to rust using agentic ai",
+      "title": "Translating CUDA Tile Operations from Python to Rust Using Agentic AI",
+      "url": "https://developer.nvidia.com/blog/translating-cuda-tile-operations-from-python-to-rust-using-agentic-ai/",
+      "source": "NVIDIA Developer Blog",
+      "published_at": "2026-09-16T16:28:59+00:00",
+      "first_seen_at": "2026-09-16T19:17:32.347047+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11002|ggml-org/llama.cpp release b11002: cuda/hip: improve access patterns in im2col (28013) website",
+      "title": "ggml-org/llama.cpp release b11002: CUDA/HIP: improve access patterns in im2col (28013) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11002",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-16T14:38:34+00:00",
+      "first_seen_at": "2026-09-16T19:17:32.347077+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
