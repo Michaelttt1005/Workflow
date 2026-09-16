@@ -2469,6 +2469,26 @@
       "first_seen_at": "2026-09-16T19:17:32.347077+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/agent-anomaly-detection-now-in-private-preview-on-the-gemini-enterprise-agent-platform/|agent anomaly detection, now in private preview on the gemini enterprise agent platform",
+      "title": "Agent Anomaly Detection, now in Private Preview on the Gemini Enterprise Agent Platform",
+      "url": "https://developers.googleblog.com/agent-anomaly-detection-now-in-private-preview-on-the-gemini-enterprise-agent-platform/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-09-16T22:33:09.130987+00:00",
+      "first_seen_at": "2026-09-16T22:33:36.523965+00:00",
+      "score": 9,
+      "alert_sent": true
+    },
+    {
+      "key": "https://developer.nvidia.com/blog/tensorrt-edge-llm-completes-the-mlperf-edge-agentic-benchmark-6-4x-faster-on-jetson-agx-thor/|tensorrt edge-llm completes the mlperf edge agentic benchmark 6.4x faster on jetson agx thor",
+      "title": "TensorRT Edge-LLM Completes the MLPerf Edge Agentic Benchmark 6.4x Faster on Jetson AGX Thor",
+      "url": "https://developer.nvidia.com/blog/tensorrt-edge-llm-completes-the-mlperf-edge-agentic-benchmark-6-4x-faster-on-jetson-agx-thor/",
+      "source": "NVIDIA Developer Blog",
+      "published_at": "2026-09-16T20:37:07+00:00",
+      "first_seen_at": "2026-09-16T22:33:36.523993+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
