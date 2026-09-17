@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-09-17T19:29:01.259467Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "09-17 | Google 发布 autofinetune：用 AI 智能体自动完成 LLM 后训练",
+    "overview": "本期聚焦 Google Developers Blog 发布的 autofinetune 项目。它把 LLM 后训练（SFT 与 GRPO 强化学习）变成一条由 AI 智能体驱动的自主研究循环：开发者只需用一份 Markdown 写明边界条件和评测指标，智能体就会反复修改训练脚本、启动实验，并把验证过的超参数优化自动提交到 Git。该框架构建在 Tunix、Gemma 与 Cloud TPU 之上，官方演示了在函数调用与数学推理模型上的免手动性能提升。",
+    "checked_sources": [
+      "Google Developers Blog"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "Google 发布 autofinetune：基于 Tunix 与 TPU 的自主 LLM 后训练循环",
+        "what": "autofinetune 是 Google 在官方开发者博客上介绍的一个自主研究循环项目，目标是全自动完成大语言模型的后训练流程，覆盖监督微调（SFT）和基于 GRPO 的强化学习。开发者不再需要手动一轮轮改脚本、调超参数、跑实验，而是把边界条件和评测指标写进一份 Markdown 规格文件，然后交给一个 AI 智能体去迭代执行：它会编辑训练脚本、启动实验、评估结果，并把经过验证的超参数优化自动提交到 Git。整个框架构建在 Google 的 AI 技术栈上，包括 Tunix、Gemma 模型和 Cloud TPU。",
+        "plain_explanation": "可以把后训练想象成给一个已经会说话的学生做考前冲刺辅导。传统做法是老师（工程师）自己一遍遍改练习册、换题目难度、记录哪种练法提分最快，非常耗人力。autofinetune 相当于请了一个不知疲倦的助教：你只写一张纸说明“目标是函数调用更准、数学题正确率更高，别把模型练崩”，助教就自己改练习册、自己安排模拟考、自己看成绩，发现某套超参数有效就把它记进档案（Git 提交）。这样人只需要定目标和验收标准，重复的试错交给智能体。",
+        "purpose": "它解决的是 LLM 后训练中大量重复、依赖人工经验且容易出错的手动调参问题。过去做 SFT 或 GRPO 强化学习，工程师要反复修改训练脚本、手动启动实验、对比指标、记录有效配置，周期长且难以复现。autofinetune 把这些环节交给智能体闭环执行，让团队把精力放在定义目标和评测标准上，从而缩短从想法到可用模型的迭代周期，并让超参数优化过程有 Git 记录可追溯。",
+        "features": "第一，单一 Markdown 规格驱动：用一份文档定义边界条件与评测指标，即可启动整个自主后训练流程。第二，智能体迭代闭环：自动编辑训练脚本、启动实验、读取评测结果并据此调整下一轮配置。第三，自动 Git 提交：把验证有效的超参数优化提交到版本库，保留可审计的优化历史。第四，覆盖 SFT 与 GRPO 两类后训练，并基于 Tunix、Gemma 与 Cloud TPU 的 Google AI 栈运行。",
+        "comparison": "候选摘要中明确提到，该框架在函数调用和数学推理模型上成功演示了免手动的性能提升（hands-off performance gains），但未给出与人工调参或其他自动调参方案的具体 benchmark 数值、速度倍数或成本对比，因此暂无可信公开对比数据。",
+        "who": "适合需要频繁做 LLM 后训练与对齐的机器学习工程师、负责模型微调与强化学习的研究者，以及希望减少人工调参投入、把后训练流程自动化的 AI 平台团队。对于已经在使用 Gemma、Tunix 或 Cloud TPU 的团队，迁移和试用成本相对更低；对想了解智能体如何驱动真实训练实验的开发者也有参考价值。",
+        "link": "https://developers.googleblog.com/autonomous-llm-post-training-with-tunix-on-tpus/",
+        "score": "7",
+        "source": "Google Developers Blog",
+        "type": "官方发布",
+        "topic": "智能体与开发者平台",
+        "published": "09-17 14:28"
+      }
+    ],
+    "footer": "本期仅收录 Google Developers Blog 一条高可信官方发布，其余候选未达到重大更新提醒的收录标准。"
+  },
+  "candidate_count": 1
+}
