@@ -2509,6 +2509,16 @@
       "first_seen_at": "2026-09-18T22:09:56.619169+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11047|ggml-org/llama.cpp release b11047: cuda : fix cub argsort corruption caused by in-place keys (28389) argsortf32i32cudacu",
+      "title": "ggml-org/llama.cpp release b11047: cuda : fix CUB argsort corruption caused by in-place keys (28389) argsortf32i32cudacub called the one-shot DeviceRadixSort::SortPairs API wi",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11047",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-19T07:24:38+00:00",
+      "first_seen_at": "2026-09-19T08:27:06.839816+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
