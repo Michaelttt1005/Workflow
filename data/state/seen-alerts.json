@@ -2529,6 +2529,16 @@
       "first_seen_at": "2026-09-20T17:13:34.956308+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11065|ggml-org/llama.cpp release b11065: cuda: tune fa for gemma 4 on ampere or newer (29152) website",
+      "title": "ggml-org/llama.cpp release b11065: CUDA: tune FA for Gemma 4 on Ampere or newer (29152) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11065",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-20T21:52:35+00:00",
+      "first_seen_at": "2026-09-20T23:46:58.684870+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
