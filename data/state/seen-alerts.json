@@ -2559,6 +2559,16 @@
       "first_seen_at": "2026-09-21T16:08:52.604558+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/run-llama/llama_index/releases/tag/v0.14.25|run-llama/llama_index release v0.14.25: release notes [2026-09-21] llama-index-agent-agentmesh [0.3.0]",
+      "title": "run-llama/llama_index release v0.14.25: Release Notes [2026-09-21] llama-index-agent-agentmesh [0.3.0]",
+      "url": "https://github.com/run-llama/llama_index/releases/tag/v0.14.25",
+      "source": "GitHub Release: run-llama/llama_index",
+      "published_at": "2026-09-21T16:22:27+00:00",
+      "first_seen_at": "2026-09-21T21:33:12.457989+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
