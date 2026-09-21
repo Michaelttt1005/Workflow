@@ -2539,6 +2539,26 @@
       "first_seen_at": "2026-09-20T23:46:58.684870+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11071|ggml-org/llama.cpp release b11071: ci : upgrade cuda to 13.4 for ubuntu cuda release builds (29202) website",
+      "title": "ggml-org/llama.cpp release b11071: ci : Upgrade CUDA to 13.4 for Ubuntu CUDA Release Builds (29202) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11071",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-21T14:12:33+00:00",
+      "first_seen_at": "2026-09-21T16:08:52.604521+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11069|ggml-org/llama.cpp release b11069: cuda : tune mmvq to mmq crossover for sm70 (volta) (28912) tune mmvq to mmq crossover",
+      "title": "ggml-org/llama.cpp release b11069: cuda : tune MMVQ to MMQ crossover for SM70 (Volta) (28912) tune MMVQ to MMQ crossover for SM70 (Volta) Signed-off-by: Yangyu Chen Apply su",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11069",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-21T10:14:56+00:00",
+      "first_seen_at": "2026-09-21T16:08:52.604558+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

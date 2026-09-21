@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-09-21T16:08:50.257904Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "09-21 | llama.cpp 同日双发：CUDA 13.4 构建升级与 Volta 架构 MMVQ/MMQ 调优",
+    "overview": "本期聚焦 llama.cpp 在 2026-09-21 的两个官方 release：b11071 将 Ubuntu CUDA Release 构建升级到 CUDA 13.4，b11069 针对 SM70（Volta）调整 MMVQ 到 MMQ 的切换阈值。两条更新都属于本地推理基础设施层面的改动，前者影响构建与分发链路，后者影响老架构 GPU 上的量化矩阵运算路径选择。",
+    "checked_sources": [
+      "GitHub Release: ggml-org/llama.cpp b11071",
+      "GitHub Release: ggml-org/llama.cpp b11069"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11071：Ubuntu CUDA Release 构建升级至 CUDA 13.4",
+        "what": "这是 ggml-org/llama.cpp 的官方 release b11071，核心变更是在 CI 中把 Ubuntu 平台的 CUDA Release 构建工具链升级到 CUDA 13.4（对应 PR #29202）。该 release 同时附带 macOS/iOS 与 Linux 多平台预编译产物，包括 macOS Apple Silicon（arm64）、macOS Intel（x64）、iOS XCFramework，以及 Ubuntu x64、arm64、s390x 的 CPU 构建包。",
+        "plain_explanation": "llama.cpp 是一个让普通电脑和服务器都能跑大语言模型的推理框架。它需要针对不同硬件编译出不同版本，其中 NVIDIA 显卡走的是 CUDA 路线。这次更新相当于把“给 Ubuntu 系统编译 CUDA 版 llama.cpp 的厨房设备”换成了更新的一代 CUDA 13.4。对使用者来说，最直接的影响是官方发布的 Ubuntu CUDA 预编译包会基于更新的 CUDA 工具链生成，更容易匹配新驱动和新显卡环境；如果你自己从源码编译，CI 配置也同步到了这个版本。",
+        "purpose": "解决 Ubuntu 平台 CUDA Release 构建工具链版本偏旧的问题，让官方分发的预编译二进制与较新的 CUDA 生态保持一致，减少用户在新驱动、新 GPU 环境下自行编译或遇到兼容性问题的概率。",
+        "features": "1）CI 中 Ubuntu CUDA Release 构建升级到 CUDA 13.4；2）保留并发布多平台预编译产物，覆盖 macOS Apple Silicon、macOS Intel、iOS XCFramework；3）Linux 侧提供 Ubuntu x64、arm64、s390x 的 CPU 构建包；4）release 附带 attestations 等构建溯源信息。",
+        "comparison": "暂无可信公开对比数据；候选摘要未给出升级 CUDA 13.4 前后的吞吐、延迟或构建耗时对比。",
+        "who": "适合在 Ubuntu 上使用 NVIDIA GPU 部署 llama.cpp 的开发者与运维团队、维护自建 CI 的工程团队，以及需要为 macOS/iOS/Linux 多平台分发 llama.cpp 二进制的打包人员。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11071",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "09-21 09:12"
+      },
+      {
+        "candidate_id": "2",
+        "title": "llama.cpp b11069：为 SM70（Volta）调优 MMVQ 到 MMQ 的切换阈值",
+        "what": "这是 ggml-org/llama.cpp 的官方 release b11069，核心变更是针对 CUDA 的 SM70（Volta）架构，调优 MMVQ 到 MMQ 之间的 crossover（切换阈值），对应 PR #28912，由 Yangyu Chen 提交并经 Johannes Gäßler 审阅。MMVQ 与 MMQ 是 llama.cpp CUDA 后端中两种量化矩阵乘法实现，前者面向向量-矩阵场景，后者面向矩阵-矩阵场景，crossover 决定在什么规模下从一种切换到另一种。",
+        "plain_explanation": "在 GPU 上做量化推理时，矩阵乘法可以走不同的“车道”：小批量、偏向量形态的计算适合 MMVQ，大批量、偏矩阵形态的计算适合 MMQ。选错车道会浪费算力。这次改动就是为 Volta 这一代老架构显卡重新标定“什么时候该换车道”的分界点。可以类比为导航软件针对某款老车型重新校准了“走小路还是上高速”的里程阈值，让它在不同路况下都尽量少绕路。",
+        "purpose": "解决 SM70（Volta）架构上 MMVQ 与 MMQ 切换点不理想、可能导致量化矩阵运算效率未达最优的问题，让 Volta 显卡在 llama.cpp CUDA 后端下选择更合适的计算路径。",
+        "features": "1）针对 CUDA SM70（Volta）架构调整 MMVQ 到 MMQ 的 crossover；2）改动位于 llama.cpp 的 CUDA 后端量化矩阵运算路径选择逻辑；3）由社区贡献者提交并经维护者审阅合入；4）随 release 一并发布 macOS/iOS 与 Linux 多平台预编译产物。",
+        "comparison": "暂无可信公开对比数据；候选摘要未提供调优前后在 Volta 上的 tokens/s、延迟或吞吐对比。",
+        "who": "适合仍在使用 Volta 架构 NVIDIA GPU（如 V100 等 SM70 设备）跑 llama.cpp 量化推理的研究者与工程团队，以及关注 CUDA 后端量化算子性能调优的开发者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11069",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "09-21 05:14"
+      }
+    ],
+    "footer": "以上内容均基于候选中的 GitHub Release 摘要整理，未补充候选之外的 benchmark、价格或性能数字；如需评估实际收益，建议在目标硬件上自行基准测试。"
+  },
+  "candidate_count": 2
+}
