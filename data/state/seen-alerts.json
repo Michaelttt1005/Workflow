@@ -2589,6 +2589,36 @@
       "first_seen_at": "2026-09-22T07:10:30.666750+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://pytorch.org/blog/how-shopify-built-a-continual-learning-loop-with-pytorch-and-vllm/|how shopify built a continual learning loop with pytorch and vllm",
+      "title": "How Shopify built a continual learning loop with PyTorch and vLLM",
+      "url": "https://pytorch.org/blog/how-shopify-built-a-continual-learning-loop-with-pytorch-and-vllm/",
+      "source": "PyTorch Blog",
+      "published_at": "2026-09-22T13:45:18+00:00",
+      "first_seen_at": "2026-09-22T17:52:14.139046+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11109|ggml-org/llama.cpp release b11109: metal : gate mulmmid src1 rescale behind ggmlprec (29029) metal : gate mulmmid src1 r",
+      "title": "ggml-org/llama.cpp release b11109: metal : gate mulmmid src1 rescale behind ggmlprec (29029) metal : gate mulmmid src1 rescale behind ggmlprec Assisted-by: Claude Fable 5.1",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11109",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-22T17:45:29+00:00",
+      "first_seen_at": "2026-09-22T17:52:14.139085+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://pytorch.org/blog/hardware-agnostic-models-in-vllm/|hardware-agnostic models in vllm",
+      "title": "Hardware-Agnostic Models in vLLM",
+      "url": "https://pytorch.org/blog/hardware-agnostic-models-in-vllm/",
+      "source": "PyTorch Blog",
+      "published_at": "2026-09-22T15:45:46+00:00",
+      "first_seen_at": "2026-09-22T17:52:14.139108+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
