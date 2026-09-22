@@ -2569,6 +2569,26 @@
       "first_seen_at": "2026-09-21T21:33:12.457989+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/vllm-project/vllm/releases/tag/v0.30.0|vllm-project/vllm release v0.30.0: v0.30.0 highlights this release features 762 commits from 315 contributors (104 new)!",
+      "title": "vllm-project/vllm release v0.30.0: v0.30.0 Highlights This release features 762 commits from 315 contributors (104 new)! New models: DeepSeek-V4.1-Flash (56214, 56228, 56208",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.30.0",
+      "source": "GitHub Release: vllm-project/vllm",
+      "published_at": "2026-09-22T05:20:54+00:00",
+      "first_seen_at": "2026-09-22T07:10:30.666683+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11090|ggml-org/llama.cpp release b11090: cuda: fix sm70 tile compilation error (29224) the 5-argument loadldmatrix added in 18",
+      "title": "ggml-org/llama.cpp release b11090: cuda: fix sm70 tile compilation error (29224) The 5-argument loadldmatrix added in 1884824fd only defines tile , so the Volta tile does not",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11090",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-21T23:29:59+00:00",
+      "first_seen_at": "2026-09-22T07:10:30.666750+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
