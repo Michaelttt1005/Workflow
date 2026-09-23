@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-09-23T19:23:46.446191Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "09-23 | Antigravity SDK 本地模型支持、llama.cpp 服务端修复、SWE-Serve 评测新视角",
+    "overview": "本期聚焦开发者工具与推理服务：Google Antigravity SDK 新增本地 AI 模型支持，推动离线智能体工作流；llama.cpp 发布 b11139 修复服务端休眠崩溃；NVIDIA 博客介绍 SWE-Serve，揭示本地测试与真实服务之间的评测鸿沟。",
+    "checked_sources": [
+      "Google Developers Blog",
+      "GitHub Release",
+      "NVIDIA Developer Blog"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "Google Antigravity SDK 新增本地 AI 模型支持，实现离线智能体工作流",
+        "what": "Google Antigravity SDK 现在允许开发者在本地执行离线、智能体式的工作流，使用如 Gemma 4 26B A4B 等模型，通过 LiteRT 运行。该更新支持混合编排架构，云端模型作为轻量规划器，本地模型安全处理令牌密集型任务（如代码审计和补丁），并直接支持 OpenAI 兼容的推理服务器（如 Ollama 和 vLLM），便于创建隐私优先的自主本地工具。",
+        "plain_explanation": "通俗来说，这就像给你的电脑装了一个能离线工作的 AI 助手。以前很多 AI 功能需要联网把数据传到云端，现在 Antigravity SDK 可以让 AI 模型直接在本地运行，比如用 Gemma 4 模型在电脑上分析代码、找漏洞、打补丁，数据不用出本地，更安全。同时，它还能和云端模型配合：云端模型只负责简单的规划，本地模型干重活，既省流量又保护隐私。",
+        "purpose": "解决开发者在离线或隐私敏感环境下运行 AI 智能体的问题，避免数据外传，同时利用本地算力处理高令牌消耗任务，降低云成本，并支持混合编排以平衡性能与隐私。",
+        "features": "1. 支持本地运行 Gemma 4 26B A4B 等模型，通过 LiteRT 实现离线推理；2. 提供混合编排架构，云端模型规划、本地模型执行；3. 直接兼容 OpenAI 兼容的推理服务器（Ollama、vLLM）；4. 可构建隐私优先的自主本地工具，如代码审计与补丁。",
+        "comparison": "暂无可信公开对比数据。",
+        "who": "适合需要在离线或隐私敏感环境中部署 AI 智能体的开发者、关注本地推理与混合编排的研究者，以及希望降低云成本、增强数据安全的团队。",
+        "link": "https://developers.googleblog.com/introducing-support-for-local-ai-models-in-the-antigravity-sdk/",
+        "score": "7",
+        "source": "Google Developers Blog",
+        "type": "官方发布",
+        "topic": "智能体与开发者平台",
+        "published": "09-23 14:23"
+      },
+      {
+        "candidate_id": "2",
+        "title": "llama.cpp 发布 b11139：修复服务端休眠时令牌计数 API 崩溃并正确唤醒",
+        "what": "llama.cpp 发布 b11139 版本，主要修复了服务端在休眠状态下令牌计数 API 崩溃的问题，并确保休眠中的服务端能被正确唤醒。该版本提供了 macOS、iOS、Linux 等多平台预编译二进制包。",
+        "plain_explanation": "llama.cpp 是一个让大语言模型能在普通电脑上高效运行的开源项目。这次更新修复了一个 bug：当服务端进入休眠（比如为了省电）时，如果调用令牌计数接口，程序会崩溃。现在修复后，服务端能正常休眠和唤醒，令牌计数也能稳定工作。就像手机锁屏后闹钟还能正常响一样，服务端休眠后也能被正确叫醒。",
+        "purpose": "解决 llama.cpp 服务端在休眠状态下调用令牌计数 API 导致崩溃的稳定性问题，确保服务端能可靠休眠与唤醒，提升长时间运行服务的健壮性。",
+        "features": "1. 修复令牌计数 API 在服务端休眠时的崩溃；2. 实现休眠服务端的正确唤醒机制；3. 提供多平台预编译二进制（macOS arm64/x64、iOS XCFramework、Ubuntu x64/arm64 等）。",
+        "comparison": "暂无可信公开对比数据。",
+        "who": "适合使用 llama.cpp 部署本地推理服务的开发者、需要长时间运行服务端并关注稳定性的运维人员，以及依赖令牌计数功能的集成开发者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11139",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "09-23 11:11"
+      },
+      {
+        "candidate_id": "3",
+        "title": "NVIDIA 博客：SWE-Serve 揭示本地测试与真实服务之间的评测鸿沟",
+        "what": "NVIDIA 开发者博客介绍 SWE-Serve，探讨 AI 编码智能体生成的补丁可能通过本地测试，但在服务器加载真实模型并处理请求时却失败的问题。该内容聚焦于评估推理服务软件的变更，强调本地测试与实时服务之间的差距。",
+        "plain_explanation": "想象一个 AI 程序员写了一段代码，在本地测试时全部通过，但一上线到真实服务器就出问题。SWE-Serve 就是用来暴露这种差距的工具或方法。它模拟真实服务环境，让 AI 编码智能体的补丁在加载真实模型、处理实际请求时接受检验，从而发现那些本地测试无法捕捉的缺陷。",
+        "purpose": "解决 AI 编码智能体补丁在本地测试通过但真实服务失败的问题，帮助开发者更准确地评估推理服务软件的变更，提升上线可靠性。",
+        "features": "1. 评估 AI 编码智能体补丁在真实服务环境下的表现；2. 暴露本地测试与实时服务之间的差距；3. 针对推理服务软件变更进行验证。",
+        "comparison": "暂无可信公开对比数据。",
+        "who": "适合从事 AI 编码智能体开发的研究者、负责推理服务部署与测试的工程师，以及关注软件变更评估与上线可靠性的团队。",
+        "link": "https://developer.nvidia.com/blog/how-swe-serve-exposes-the-gap-between-local-tests-and-live-serving/",
+        "score": "7",
+        "source": "NVIDIA Developer Blog",
+        "type": "官方发布",
+        "topic": "智能体与开发者平台",
+        "published": "09-23 11:00"
+      }
+    ],
+    "footer": "本期内容基于公开候选源整理，具体性能与对比数据请以官方发布为准。"
+  },
+  "candidate_count": 3
+}
