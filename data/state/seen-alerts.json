@@ -2619,6 +2619,26 @@
       "first_seen_at": "2026-09-22T17:52:14.139108+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11120|ggml-org/llama.cpp release b11120: vulkan: hide internal symbols to prevent duplicate-dlopen state destruction (29139) s",
+      "title": "ggml-org/llama.cpp release b11120: vulkan: hide internal symbols to prevent duplicate-dlopen state destruction (29139) Since 28732 our internal symbols are exported",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11120",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-23T07:07:17+00:00",
+      "first_seen_at": "2026-09-23T08:59:39.430975+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/mlflow/mlflow/releases/tag/v2.11.5|mlflow 2.11.5",
+      "title": "MLflow 2.11.5",
+      "url": "https://github.com/mlflow/mlflow/releases/tag/v2.11.5",
+      "source": "GitHub Release: mlflow/mlflow",
+      "published_at": "2026-09-23T06:17:56+00:00",
+      "first_seen_at": "2026-09-23T08:59:39.431012+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-09-23T08:59:37.544684Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "09-23 | llama.cpp 修复 Vulkan 后端符号冲突，MLflow 2.11.5 打通 Unity Catalog 制品传输",
+    "overview": "本期聚焦两条开发者工具链更新：llama.cpp 发布 b11120，通过隐藏内部符号修复 Vulkan 后端在重复 dlopen 场景下的状态销毁崩溃；MLflow 发布 2.11.5 补丁版，为 Unity Catalog 模型注册表新增可选的 Databricks SDK Files API 制品上传下载路由。两条更新均面向本地推理与机器学习工程化场景，属于稳定性与集成能力改进。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11120：隐藏 Vulkan 内部符号，修复重复 dlopen 导致的状态销毁崩溃",
+        "what": "这是 ggml-org/llama.cpp 的官方 release b11120，核心变更是对 Vulkan 后端隐藏内部符号，只导出 GGML_BACKEND_API，从而避免 ggml_backend_load_all() 重复 dlopen 同一份库时内部符号互相抢占，导致析构函数提前销毁仍在使用的 vk_instance，后续设备查询触发 GGML_ASSERT 断言失败。该问题由 #28732 引入，因为那次改动开始导出内部符号；本次修复恢复了 #28732 之前的可见性策略，并关闭了 #29138。",
+        "plain_explanation": "可以把 Vulkan 后端想象成一栋大楼，内部符号就是楼里的水电阀门。之前有人把阀门都标成了公共设施，于是当程序第二次加载同一栋楼时，新来的管理员误以为旧阀门归自己管，在离开时顺手把旧楼还在用的总闸关掉了，结果旧楼里正在查询设备的代码一开灯就跳闸。b11120 的做法是把阀门重新藏回楼内，只留一个对外的正式接口，这样重复加载也不会互相误关。",
+        "purpose": "解决 llama.cpp 在 Vulkan 后端上因重复加载动态库而引发的状态销毁与断言崩溃问题，提升多后端加载、插件式后端发现以及反复初始化场景下的稳定性，避免用户遇到难以定位的 GGML_ASSERT 失败。",
+        "features": "1) 将 Vulkan 后端内部符号改为隐藏可见性，仅导出 GGML_BACKEND_API；2) 修复 ggml_backend_load_all() 重复 dlopen/dlclose 时析构函数互相干扰的问题；3) 恢复 #28732 之前的符号导出策略，保持向后兼容；4) 附带 macOS Apple Silicon、macOS Intel 与 iOS XCFramework 等平台构建产物。",
+        "comparison": "候选摘要未提供与其它版本或后端的 benchmark、速度、成本对比数据，暂无可信公开对比数据。",
+        "who": "适合在本地或边缘设备上使用 llama.cpp 进行推理的开发者、维护多后端加载逻辑的框架工程师，以及遇到 Vulkan 后端初始化崩溃、需要升级到稳定构建的团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11120",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "09-23 02:07"
+      },
+      {
+        "candidate_id": "2",
+        "title": "MLflow 2.11.5：为 Unity Catalog 模型注册表新增 Databricks SDK Files API 制品传输选项",
+        "what": "这是 MLflow 的官方补丁版本 2.11.5，主要新增一项可选功能：在 Model Registry / Models 模块中，允许将 Unity Catalog 模型注册表的制品上传与下载路由到 Databricks SDK Files API。该功能由 #25986 引入，属于 opt-in 支持，意味着用户需要显式开启才会走这条新路径。",
+        "plain_explanation": "MLflow 管理模型时，除了记录模型本身，还要把模型文件存到某个地方，就像快递公司除了登记包裹信息，还要决定用哪条运输线路送货。以前 Unity Catalog 的模型制品走的是默认通道，现在 2.11.5 提供了一个可选的“新专线”，通过 Databricks SDK 的 Files API 来收发文件。你可以继续用老通道，也可以主动切换到新专线，适合对传输路径有特定要求的团队。",
+        "purpose": "为使用 Unity Catalog 作为模型注册表后端的团队提供更灵活的制品传输方式，使其能够通过 Databricks SDK Files API 完成上传下载，便于统一权限、审计与网络策略，同时以 opt-in 方式避免影响现有工作流。",
+        "features": "1) 在 Model Registry / Models 中新增 opt-in 的 Unity Catalog 制品路由；2) 支持通过 Databricks SDK Files API 上传模型制品；3) 支持通过同一 API 下载模型制品；4) 作为 2.11.5 补丁版本发布，保持对既有行为的兼容。",
+        "comparison": "候选摘要未提供与旧传输路径在速度、成本或吞吐上的量化对比，暂无可信公开对比数据。",
+        "who": "适合在 Databricks 平台上使用 Unity Catalog 管理模型注册表的机器学习工程师、平台团队，以及需要统一制品传输权限与网络策略的 MLOps 从业者。",
+        "link": "https://github.com/mlflow/mlflow/releases/tag/v2.11.5",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "09-23 01:17"
+      }
+    ],
+    "footer": "本期两条均为官方 GitHub Release，信息以候选摘要为准；未在摘要中出现的 benchmark、价格与性能数字均未采用。"
+  },
+  "candidate_count": 2
+}
