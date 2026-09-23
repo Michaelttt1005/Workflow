@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-09-23T14:36:10.383680Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "09-23 | llama.cpp 新增 Gemma 4 DSpark 草稿模型支持",
+    "overview": "本期聚焦 llama.cpp 的一次重要版本更新：b11132 为 Gemma 4 DSpark 草稿骨干网络加入 GGUF 转换与运行时支持，覆盖 full-attention 与 SWA 两类草稿结构，并处理了 tied output weights 与布尔型 backbone 元数据。对于在本地或边缘设备上做 Gemma 系列推理的开发者，这意味着可以更完整地利用草稿模型加速解码流程。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11132 发布：支持 Gemma 4 DSpark 草稿骨干网络与 GGUF 转换",
+        "what": "这是 ggml-org/llama.cpp 的官方 release b11132，核心变更是为 Gemma 4 DSpark 草稿骨干网络（draft backbone）增加支持。具体包括：为 full-attention 和 SWA（滑动窗口注意力）两种 Gemma 4 DSpark 草稿结构加入 GGUF 转换流程与运行时推理支持；处理 tied output weights（输出权重共享）场景；引入布尔型 backbone 元数据；并让 dflash 路径能够从元数据中推断 Gemma 草稿特征。该 release 同时提供 macOS Apple Silicon（arm64）、macOS Intel（x64）、iOS XCFramework 以及 Ubuntu x64（CPU）等平台的预编译产物。",
+        "plain_explanation": "可以把它想象成“大模型 + 小助手”的协作方式：大模型负责最终输出，小助手（草稿模型）先快速猜出接下来可能出现的若干词，大模型再一次性验证这些猜测。如果猜得准，就能一次生成多个词，从而加快整体速度。llama.cpp 这次做的事情，就是让这个“小助手”能够正确加载 Gemma 4 系列的 DSpark 草稿模型，并且兼容两种注意力结构（full-attention 和 SWA），还能处理权重共享这种特殊保存方式。以前这些草稿模型可能无法被正确转换或运行，现在通过 GGUF 格式和元数据推断，开发者可以直接在本地跑起来。",
+        "purpose": "解决 Gemma 4 DSpark 草稿模型在 llama.cpp 生态中无法完整转换与运行的问题，让本地推理能够利用草稿模型加速解码，同时兼容 full-attention 与 SWA 两种结构以及 tied output weights 等权重组织方式。对于希望在消费级硬件或边缘设备上部署 Gemma 系列模型的团队，这次更新降低了适配成本，避免自行修改转换脚本或运行时逻辑。",
+        "features": "1）为 Gemma 4 DSpark 草稿骨干网络新增 GGUF 转换支持，覆盖 full-attention 与 SWA 两种注意力结构；2）运行时支持加载并执行这些草稿模型，配合主模型完成推测解码；3）处理 tied output weights，并引入布尔型 backbone 元数据；4）dflash 路径可从元数据推断 Gemma 草稿特征，减少手工配置。",
+        "comparison": "候选摘要中未提供与其它版本或其它推理框架的 benchmark、速度、成本对比数据，暂无可信公开对比数据。",
+        "who": "适合在本地或边缘设备上部署 Gemma 系列模型的开发者、研究推理加速与推测解码的研究者，以及使用 llama.cpp 构建端侧 AI 应用的工程团队；也适合需要为 macOS、iOS、Ubuntu 等多平台打包推理产物的团队参考。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11132",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "开发者生态与数据工具",
+        "published": "09-23 08:22"
+      }
+    ],
+    "footer": "本期仅基于候选中的 GitHub Release 信息整理，未引入外部数据；具体性能表现请以实际部署环境为准。"
+  },
+  "candidate_count": 1
+}
