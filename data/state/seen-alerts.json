@@ -2709,6 +2709,16 @@
       "first_seen_at": "2026-09-24T19:42:40.685620+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11166|ggml-org/llama.cpp release b11166: cuda : add f16 kernel support for conv2ddw (29064) website",
+      "title": "ggml-org/llama.cpp release b11166: cuda : add F16 kernel support for CONV2DDW (29064) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11166",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-24T20:40:50+00:00",
+      "first_seen_at": "2026-09-24T22:55:25.084486+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

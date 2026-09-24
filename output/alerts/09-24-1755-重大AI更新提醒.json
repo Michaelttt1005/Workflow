@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-09-24T22:55:22.747825Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "09-24 | llama.cpp 为 CUDA 后端补上 CONV_2D_DW 的 F16 卷积核支持",
+    "overview": "本期聚焦 llama.cpp 的一次底层推理更新：CUDA 后端新增对深度可分离二维卷积（CONV_2D_DW）的 F16 半精度卷积核支持。这类改动不改变模型结构，但会直接影响多模态模型在 NVIDIA GPU 上的推理效率与显存占用，属于推理基础设施层面的实用优化。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11166：CUDA 后端新增 CONV_2D_DW 的 F16 卷积核支持",
+        "what": "这是 ggml-org/llama.cpp 在 2026-09-24 发布的构建版本 b11166，核心变更是为 CUDA 后端增加了 CONV_2D_DW（深度可分离二维卷积）的 F16 半精度卷积核支持，对应 PR #29064。llama.cpp 是一个用 C/C++ 实现、面向本地与边缘设备的高效大模型推理框架，支持 CPU、CUDA、Metal 等多种后端，并同时提供 macOS、iOS、Linux 等多平台预编译产物。本次改动落在 CUDA 算子层，属于推理内核级别的补全，而不是模型权重或 API 层面的变化。",
+        "plain_explanation": "可以把深度可分离卷积理解成“先逐通道各自做一次小范围扫描，再用 1x1 卷积把通道信息混合起来”，它比普通卷积省很多计算量，因此在视觉编码器、多模态模型里很常见。F16 就是半精度浮点，用 16 位而不是 32 位来存数字，好处是显存占用更小、GPU 计算吞吐更高，代价是数值精度略低。此前 CUDA 后端对这类卷积可能缺少 F16 专用实现，只能退回较慢或较费显存的路径；现在补上这个卷积核，相当于给 GPU 上跑视觉相关算子换了一条更顺的快车道。",
+        "purpose": "解决 CUDA 后端在深度可分离二维卷积上缺少 F16 原生支持的问题，让依赖这类卷积的模型（尤其是带视觉编码器的多模态模型）在 NVIDIA GPU 上推理时能更充分地利用半精度算力，减少因算子缺失导致的回退与额外开销。对本地部署和自建推理服务的团队来说，这类底层补全往往比上层参数调优更直接地影响吞吐和显存表现。",
+        "features": "第一，为 CUDA 后端新增 CONV_2D_DW 的 F16 卷积核实现，补齐半精度下的深度可分离卷积路径；第二，改动位于 ggml/llama.cpp 的 CUDA 算子层，与既有 CPU、Metal 等后端保持同一套图执行体系；第三，随版本提供 macOS Apple Silicon（arm64）、macOS Intel（x64）、iOS XCFramework、Ubuntu x64/arm64/s390x 等预编译产物，便于直接替换验证；第四，对应 PR #29064，可回溯具体实现与讨论。",
+        "comparison": "候选摘要未给出该卷积核相对旧路径的具体加速比、显存节省数值或 benchmark 结果，暂无可信公开对比数据。",
+        "who": "适合在 NVIDIA GPU 上本地部署或自建 llama.cpp 推理服务的开发者、负责多模态模型推理性能优化的工程师，以及关注 ggml CUDA 算子实现、需要评估是否升级到 b11166 的框架维护者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11166",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "09-24 15:40"
+      }
+    ],
+    "footer": "本期仅 1 条候选，均为 GitHub Release 来源；性能影响以实际硬件与模型实测为准。"
+  },
+  "candidate_count": 1
+}
