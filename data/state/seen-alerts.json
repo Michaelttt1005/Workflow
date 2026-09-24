@@ -2689,6 +2689,16 @@
       "first_seen_at": "2026-09-23T22:37:02.729456+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11157|ggml-org/llama.cpp release b11157: cuda : add conv3d with implicit gemm (29137) cuda : add conv3d with implicit gemm cud",
+      "title": "ggml-org/llama.cpp release b11157: cuda : add conv3d with implicit GEMM (29137) cuda : add conv3d with implicit GEMM cuda : refine conv3d implicit GEMM and handle empty kern",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11157",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-24T08:45:04+00:00",
+      "first_seen_at": "2026-09-24T08:55:32.691430+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
