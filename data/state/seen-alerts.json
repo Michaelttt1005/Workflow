@@ -2699,6 +2699,16 @@
       "first_seen_at": "2026-09-24T08:55:32.691430+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/tensorflow/tensorflow/releases/tag/v2.22.0-rc0|tensorflow 2.22.0-rc0",
+      "title": "TensorFlow 2.22.0-rc0",
+      "url": "https://github.com/tensorflow/tensorflow/releases/tag/v2.22.0-rc0",
+      "source": "GitHub Release: tensorflow/tensorflow",
+      "published_at": "2026-09-24T19:10:59+00:00",
+      "first_seen_at": "2026-09-24T19:42:40.685620+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
