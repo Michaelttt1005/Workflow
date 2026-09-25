@@ -2719,6 +2719,16 @@
       "first_seen_at": "2026-09-24T22:55:25.084486+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11177|ggml-org/llama.cpp release b11177: cuda: fuse rmsnorm + scale into one kernel (29393)",
+      "title": "ggml-org/llama.cpp release b11177: CUDA: fuse RMSNORM + SCALE into one kernel (29393)",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11177",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-25T05:54:17+00:00",
+      "first_seen_at": "2026-09-25T09:16:37.809240+00:00",
+      "score": 9,
+      "alert_sent": true
     }
   ]
 }
