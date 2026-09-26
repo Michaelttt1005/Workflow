@@ -2729,6 +2729,16 @@
       "first_seen_at": "2026-09-25T09:16:37.809240+00:00",
       "score": 9,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11195|ggml-org/llama.cpp release b11195: ggml-cpu: tiled mulmat for k-quants (27851) added tiled mulmat",
+      "title": "ggml-org/llama.cpp release b11195: ggml-cpu: tiled mulmat for k-quants (27851) Added tiled mulmat",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11195",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-26T08:27:10+00:00",
+      "first_seen_at": "2026-09-26T08:59:10.914904+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
