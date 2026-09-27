@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-09-27T22:46:21.617776Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "09-27 | llama.cpp 修复因果 LLM 重排序的批处理与多模态长文档支持",
+    "overview": "本期聚焦 llama.cpp 的一次服务器端更新：它让 Qwen3、Qwen3-VL 这类被改造成重排序器（reranker）的因果语言模型，也能像普通解码器一样对超长输入做分块预填充（chunked prefill），从而修复了长文档与多模态重排序此前被拒绝或出错的问题。对在本地或自建服务上跑重排序的开发者来说，这是一次直接影响可用性的修复。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11223：server 允许因果 LLM 重排序器按 RANK pooling 拆分批次",
+        "what": "这是 ggml-org/llama.cpp 的 GitHub Release b11223，核心变更是修改 server 端对 RANK pooling 输入的处理逻辑。重排序模型分两类：一类是双向交叉编码器（如 BERT），必须把所有 token 放进同一个物理批次；另一类是被改造成重排序器的因果 LLM（如 Qwen3、Qwen3-VL），它们可以像普通解码器一样使用分块预填充。此前 server 会拒绝所有大于 n_ubatch 的 RANK-pooling 输入，并且图构建器把 QWEN3/QWEN3VL 的架构检查硬编码进去来判断是否取最后一个 token 做池化，导致因果模型在长文档和多模态重排序场景下失效。本次修复暴露了 llama_get_causal_attn(ctx)，让 server 能查询运行时生效的注意力类型（反映 --attention 覆盖或 set_causal_attn 调用），同时暴露 llama_model_is_causal(model) 用于查询静态架构属性。",
+        "plain_explanation": "通俗地说，重排序就是给一堆候选答案按相关性打分排序。BERT 类模型像“必须一口气读完整篇文章才能打分”的读者，文章太长就塞不进一次阅读；而 Qwen3 这类因果模型本来就能“分段读、边读边记”，但 llama.cpp 的服务器之前却把它们也当成必须一口气读完的类型，于是长文档一提交就被拒绝。这次更新相当于给服务器加了一个判断：先问清楚“这个模型到底是不是能分段读的因果模型”，如果是，就允许把长输入切成多块依次处理。这样你用 Qwen3 给一篇很长的合同或带图片的文档做重排序时，就不会再因为输入超过 n_ubatch 而失败。",
+        "purpose": "解决因果 LLM 重排序器在长文档和多模态输入下无法工作的问题。此前 server 对所有 RANK-pooling 输入统一按 n_ubatch 限制，且用硬编码架构判断池化方式，使得 Qwen3、Qwen3-VL 这类模型在长文本或图文混合重排序时被拒绝或结果错误。本次修复让这些模型能正常使用分块预填充，提升本地重排序服务的可用性与输入长度上限。",
+        "features": "1) 允许对因果 LLM 重排序器按 RANK pooling 拆分批次，支持分块预填充；2) 新增 llama_get_causal_attn(ctx) 查询运行时有效注意力类型，兼容 --attention 覆盖与 set_causal_attn；3) 新增 llama_model_is_causal(model) 查询模型静态架构属性；4) 修复图构建器对 QWEN3/QWEN3VL 的硬编码检查，改为基于运行时/架构属性判断最后 token 池化。",
+        "comparison": "暂无可信公开对比数据。候选摘要未给出与旧版本或其他推理框架在吞吐、延迟、显存占用上的量化 benchmark，仅说明修复了此前对超过 n_ubatch 的 RANK-pooling 输入一律拒绝、以及硬编码架构检查导致长文档与多模态重排序失效的问题。",
+        "who": "适合在本地或自建服务上部署重排序能力的开发者与团队，尤其是使用 Qwen3、Qwen3-VL 做长文档检索增强生成（RAG）重排序、图文混合检索重排序的工程师；也适合维护 llama.cpp server 分支、需要理解因果注意力与池化逻辑的框架贡献者与研究者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11223",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "多模态理解",
+        "published": "09-27 17:03"
+      }
+    ],
+    "footer": "本期仅收录 1 条候选，内容基于 llama.cpp 官方 release 摘要整理，未补充外部 benchmark 或价格信息。"
+  },
+  "candidate_count": 1
+}
