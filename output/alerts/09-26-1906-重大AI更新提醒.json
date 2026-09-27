@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-09-27T00:06:13.043158Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "09-26 | llama.cpp 新增 CUDA 对 Nemotron 3 Puzzle SSM 扫描的支持",
+    "overview": "本期聚焦 llama.cpp 的最新官方 release：在 CUDA 后端加入对 Nemotron 3 Puzzle 状态维度 96 的 SSM scan 支持。该改动直接关系到混合状态空间模型在本地推理框架中的可用性与性能，对关注高效推理、边缘部署和模型兼容性的开发者具有参考价值。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11205：CUDA 后端支持 Nemotron 3 Puzzle 的 SSM scan 状态维度 96",
+        "what": "这是 ggml-org/llama.cpp 的官方 release b11205，核心变更是为 CUDA 后端增加对 Nemotron 3 Puzzle 模型在 SSM（状态空间模型）scan 阶段状态维度为 96 的支持。llama.cpp 是一个用 C/C++ 实现的高效大模型推理框架，支持 CPU、CUDA、Metal 等多种后端，广泛用于本地和边缘设备上的模型部署。该 release 同时提供了 macOS、iOS、Linux 等多平台预编译二进制包，方便用户直接下载使用。",
+        "plain_explanation": "可以把它想象成给一个翻译引擎新增了一门方言的支持。Nemotron 3 Puzzle 这类模型内部用一种叫 SSM 的机制来处理长序列信息，它需要按固定大小的“状态块”逐步扫描计算。之前 llama.cpp 的 CUDA 加速路径只认某些固定尺寸的状态块，遇到 96 这个尺寸就会走不通或效率低下。这次更新相当于让 CUDA 路径也能正确、高效地处理 96 尺寸的状态块，于是这类模型在 NVIDIA 显卡上跑起来就更顺畅了。",
+        "purpose": "解决 llama.cpp 在 CUDA 后端上无法正确或高效支持 Nemotron 3 Puzzle 模型 SSM scan 状态维度 96 的问题。对于希望在 NVIDIA GPU 上本地运行该系列模型的开发者来说，这次更新消除了兼容性障碍，避免因状态维度不匹配导致的推理失败或性能损失，也让 llama.cpp 对混合状态空间模型的支持更加完整。",
+        "features": "1）CUDA 后端新增对 SSM scan 状态维度 96 的处理路径，覆盖 Nemotron 3 Puzzle 相关模型；2）保持 llama.cpp 一贯的多平台发布节奏，同步提供 macOS Apple Silicon、macOS Intel、iOS XCFramework、Ubuntu x64/arm64/s390x 等预编译包；3）通过官方 release 附带 attestations，便于验证构建产物来源；4）延续 ggml 生态对新型模型架构的快速跟进能力。",
+        "comparison": "暂无可信公开对比数据。候选摘要未提供与其它后端或其它版本在吞吐、延迟、显存占用上的量化对比，也未给出与其它推理框架的 benchmark 结果。",
+        "who": "适合在 NVIDIA GPU 上使用 llama.cpp 部署或实验 Nemotron 3 Puzzle 及类似混合状态空间模型的开发者、推理基础设施工程师和边缘 AI 团队；也适合关注 ggml/llama.cpp 对新模型架构支持进度的研究者，以及需要为 macOS、iOS、Linux 多平台打包推理二进制的工程人员。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11205",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "09-26 15:59"
+      }
+    ],
+    "footer": "本期仅基于候选中的 llama.cpp 官方 release 撰写，未引入候选之外的事实、链接或数据。"
+  },
+  "candidate_count": 1
+}

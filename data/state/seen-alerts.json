@@ -2739,6 +2739,16 @@
       "first_seen_at": "2026-09-26T08:59:10.914904+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11205|ggml-org/llama.cpp release b11205: cuda: support nemotron 3 puzzle state size 96 for ssm scan (28717) website",
+      "title": "ggml-org/llama.cpp release b11205: cuda: support Nemotron 3 Puzzle state size 96 for ssm scan (28717) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11205",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-26T20:59:58+00:00",
+      "first_seen_at": "2026-09-27T00:06:15.157703+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
