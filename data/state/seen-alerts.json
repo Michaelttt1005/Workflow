@@ -2759,6 +2759,16 @@
       "first_seen_at": "2026-09-27T22:46:23.428718+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11227|ggml-org/llama.cpp release b11227: context : do not re-reserve the scheduler when toggling causalattn (28751) context : ",
+      "title": "ggml-org/llama.cpp release b11227: context : do not re-reserve the scheduler when toggling causalattn (28751) context : do not re-reserve the scheduler when toggling causalat",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11227",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-28T09:29:57+00:00",
+      "first_seen_at": "2026-09-28T10:23:29.633220+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

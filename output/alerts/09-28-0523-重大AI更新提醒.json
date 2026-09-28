@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-09-28T10:23:27.631289Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "09-28 | llama.cpp 修复多模态推理中重复调度器预留的性能问题",
+    "overview": "本期聚焦 llama.cpp 的一个关键性能修复：在切换 causal_attn 标志时不再重复执行昂贵的调度器预留（sched_reserve），从而显著加速 Gemma 等模型的多图与视频输入推理。该改动直接针对视觉输入场景中每张图片触发两次全量预留的开销，对本地多模态部署有实际收益。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11227：切换 causal_attn 时不再重复预留调度器，加速多模态推理",
+        "what": "这是 ggml-org/llama.cpp 的一个 GitHub Release（b11227），核心变更是修改 llama_context::set_causal_attn() 的行为：此前每次切换 causal_attn 标志都会将调度器标记为需要完整重新预留（full re-reserve），现在不再触发这一昂贵操作。该标志在 Gemma 等模型处理非因果图像块时会被翻转两次，导致每张图片执行两次 sched_reserve()，而新版本消除了这种不必要的重复预留。",
+        "plain_explanation": "可以把 llama.cpp 的调度器想象成一个仓库管理员，每次你改变工作方式（比如从处理文字切换到处理图片），他都会把整个仓库重新整理一遍。对于 Gemma 这类模型，每处理一张图片，系统会两次切换工作方式，于是管理员就整理两次仓库，图片越多、视频越长，浪费的时间就越多。实际上，切换 causal_attn 只是改变写入 KQ mask 的数值，并不改变张量形状或缓冲区大小，所以根本不需要重新整理仓库。这个更新就是告诉管理员：这种切换不用再重新整理，直接继续干活即可。",
+        "purpose": "解决多模态推理中因 causal_attn 标志切换而反复执行 sched_reserve() 导致的性能浪费。该问题在多图或视频输入场景下尤为严重，因为每张图片都会触发两次全量预留，且预留成本随上下文和 ubatch 配置增大而增加。修复后可以显著降低每张图片的处理开销，提升本地多模态推理的吞吐和响应速度。",
+        "features": "1. 消除 causal_attn 切换时的冗余调度器预留，避免每张图片两次 sched_reserve()；2. 保留图重建逻辑，因为 causal_attn 仍是图复用键，新图仍会构建，但不再需要重新预留缓冲区；3. 对 Gemma 等视觉模型的多图与视频输入有直接加速效果；4. 不改变张量形状或缓冲区大小，因此不影响正确性。",
+        "comparison": "候选摘要中明确提到：此前每张非因果图像块会触发两次昂贵的 sched_reserve() 过程，且重新预留的成本随上下文和 ubatch 配置增大而增加，更大的设置每张图片付出更多。修复后不再执行这些不必要的预留。暂未提供与其他推理框架的对比数据。",
+        "who": "适合在本地或边缘设备部署 llama.cpp 的开发者、使用 Gemma 等多模态模型进行图像或视频推理的研究者，以及需要优化多图/视频输入吞吐的工程团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11227",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "多模态理解",
+        "published": "09-28 04:29"
+      }
+    ],
+    "footer": "本期仅一条高可信 GitHub Release，聚焦 llama.cpp 多模态推理性能修复。"
+  },
+  "candidate_count": 1
+}
