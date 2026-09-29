@@ -2779,6 +2779,16 @@
       "first_seen_at": "2026-09-29T07:45:59.964614+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developer.nvidia.com/blog/ai-native-by-design-lessons-learned-from-building-nvidia-tensorrt-model-connect/|ai native by design: lessons learned from building nvidia tensorrt model connect",
+      "title": "AI Native by Design: Lessons Learned from Building NVIDIA TensorRT Model Connect",
+      "url": "https://developer.nvidia.com/blog/ai-native-by-design-lessons-learned-from-building-nvidia-tensorrt-model-connect/",
+      "source": "NVIDIA Developer Blog",
+      "published_at": "2026-09-29T19:10:51+00:00",
+      "first_seen_at": "2026-09-29T20:23:34.549458+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
