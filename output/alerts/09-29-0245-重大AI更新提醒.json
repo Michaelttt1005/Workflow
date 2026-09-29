@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-09-29T07:45:57.782744Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "09-29 | LangChain 1.4.3 发布：修复工具调用与结构化输出，新增 Bedrock Mantle 支持",
+    "overview": "本期聚焦 LangChain 官方发布的 1.4.3 版本。该版本集中修复了 create_agent 中无效工具调用、GPT-6 结构化输出识别、fallback 模型缓存设置等关键问题，并新增对 Bedrock Mantle 聊天模型的支持，对构建智能体应用的开发者有直接影响。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "LangChain 1.4.3 发布：修复 create_agent 工具调用与 GPT-6 结构化输出，新增 Bedrock Mantle 支持",
+        "what": "LangChain 官方发布 langchain==1.4.3 版本，是 1.4.2 之后的补丁更新。该版本包含多项针对智能体（agent）与模型集成层的修复和功能增强：修复 create_agent 中无效工具调用的处理逻辑；修复在未配置 profiles 时识别 GPT-6 结构化输出的问题；对 fallback 模型的缓存设置进行清理（sanitize）；在 init_chat_model 中新增对 Bedrock Mantle 聊天模型的支持；同时更新了文档与依赖（anyio 从 4.11.0 升至 4.14.2），并移除无用的 cohere extra 注释。",
+        "plain_explanation": "可以把 LangChain 想象成一个“乐高积木盒”，开发者用它拼出能调用大模型、能使用工具（比如查天气、搜网页）的智能助手。这次更新相当于给积木盒做了几处关键修补：第一，当智能助手调用工具出错时，以前可能直接崩溃或返回乱码，现在框架会自动尝试修复无效的工具调用，让助手更稳定；第二，GPT-6 这类新模型在返回结构化数据（比如固定格式的 JSON）时，以前需要额外配置才能正确识别，现在不配置也能认出来；第三，当主模型不可用、切换到备用模型时，缓存设置可能互相干扰，这次做了清理，避免“串味”；第四，新增支持 Bedrock Mantle 这个模型服务，相当于多接了一个新的模型供应商。",
+        "purpose": "该版本主要解决智能体在生产环境中常见的稳定性问题：工具调用失败导致流程中断、新模型结构化输出识别异常、fallback 切换时缓存配置冲突，以及扩展模型供应商支持。对于正在使用 LangChain 构建 agent 应用的团队，升级到 1.4.3 可以减少因工具调用错误和模型切换引发的线上故障，同时获得对 Bedrock Mantle 的官方支持，避免自行适配。",
+        "features": "1）修复 create_agent 中的无效工具调用，提升智能体工具调用链路的健壮性；2）在未配置 profiles 的情况下也能正确识别 GPT-6 的结构化输出；3）清理 fallback 模型的缓存设置，避免主备模型切换时的缓存污染；4）在 init_chat_model 中新增 Bedrock Mantle 聊天模型支持，扩展模型接入范围。",
+        "comparison": "暂无可信公开对比数据。候选摘要中未提供与 1.4.2 或其他框架在 benchmark、速度、成本上的量化对比。",
+        "who": "适合正在使用或评估 LangChain 构建智能体应用的开发者、AI 应用工程团队，尤其是需要工具调用、结构化输出、多模型 fallback 以及使用 AWS Bedrock 生态的团队。对关注 agent 框架稳定性的研究者也有参考价值。",
+        "link": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.4.3",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "09-28 15:17"
+      }
+    ],
+    "footer": "本期内容基于 GitHub Release 候选源整理，未引入外部数据；版本升级前建议在测试环境验证工具调用与 fallback 行为。"
+  },
+  "candidate_count": 1
+}

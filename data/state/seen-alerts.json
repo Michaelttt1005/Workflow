@@ -2769,6 +2769,16 @@
       "first_seen_at": "2026-09-28T10:23:29.633220+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3d%3d1.4.3|langchain==1.4.3",
+      "title": "langchain==1.4.3",
+      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.4.3",
+      "source": "GitHub Release: langchain-ai/langchain",
+      "published_at": "2026-09-28T20:17:43+00:00",
+      "first_seen_at": "2026-09-29T07:45:59.964614+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
