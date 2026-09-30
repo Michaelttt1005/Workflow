@@ -2799,6 +2799,46 @@
       "first_seen_at": "2026-09-30T07:48:59.404006+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/huggingface/transformers/releases/tag/v5.18.0|huggingface/transformers release v5.18.0: new model additions nemotron 3 diarization nemotron 3 diarization is an open-w",
+      "title": "huggingface/transformers release v5.18.0: New Model additions Nemotron 3 Diarization Nemotron 3 Diarization is an open-weight streaming speaker diarization model designed to determi",
+      "url": "https://github.com/huggingface/transformers/releases/tag/v5.18.0",
+      "source": "GitHub Release: huggingface/transformers",
+      "published_at": "2026-09-30T16:46:27+00:00",
+      "first_seen_at": "2026-09-30T20:27:41.788169+00:00",
+      "score": 9,
+      "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/accelerating-spatio-temporal-attention-for-video-diffusion-on-tpus/|accelerating spatio-temporal attention for video diffusion on tpus",
+      "title": "Accelerating Spatio-Temporal Attention for Video Diffusion on TPUs",
+      "url": "https://developers.googleblog.com/accelerating-spatio-temporal-attention-for-video-diffusion-on-tpus/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-09-30T20:27:10.782386+00:00",
+      "first_seen_at": "2026-09-30T20:27:41.788214+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/pytorch/pytorch/releases/tag/v2.14.1|pytorch 2.14.1 release",
+      "title": "PyTorch 2.14.1 Release",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/v2.14.1",
+      "source": "GitHub Release: pytorch/pytorch",
+      "published_at": "2026-09-30T19:14:48+00:00",
+      "first_seen_at": "2026-09-30T20:27:41.788247+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11293|ggml-org/llama.cpp release b11293: ggml : add bf16 unary, glu, binary and scale ops (cpu, cuda) (29675) ggml : add bf16 ",
+      "title": "ggml-org/llama.cpp release b11293: ggml : add BF16 unary, GLU, binary and scale ops (CPU, CUDA) (29675) ggml : add BF16 unary, GLU, binary and scale ops (CPU, CUDA) ggml-cpu",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11293",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-30T17:35:09+00:00",
+      "first_seen_at": "2026-09-30T20:27:41.788282+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
