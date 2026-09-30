@@ -2789,6 +2789,16 @@
       "first_seen_at": "2026-09-29T20:23:34.549458+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11270|ggml-org/llama.cpp release b11270: ggml-cuda: hip: optimize packed byte subtraction (vsubss4",
+      "title": "ggml-org/llama.cpp release b11270: ggml-cuda: HIP: optimize packed byte subtraction (vsubss4",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11270",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-09-30T03:52:21+00:00",
+      "first_seen_at": "2026-09-30T07:48:59.404006+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
