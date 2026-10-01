@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-10-01T08:08:45.012159Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-01 | llama.cpp 修复 CUDA 后端 IQ4_NL 反量化越界读写",
+    "overview": "本期聚焦 llama.cpp 的一次关键 CUDA 内核修复：IQ4_NL 反量化行内核在短行场景下会越界读写，可能引发显存错误或结果异常。该修复通过跳过无效子块来消除隐患，对使用 IQ4_NL 量化模型进行本地推理的开发者尤为重要。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11310：CUDA 后端修复 IQ4_NL 反量化行内核短行越界问题",
+        "what": "这是 ggml-org/llama.cpp 项目在 GitHub 上发布的 b11310 版本更新，核心变更位于 CUDA 后端：为 IQ4_NL 反量化行内核增加短行保护。具体来说，dequantize_block_iq4_nl 每个块会写入 QK_K 个值，但一行数据可能短于 QK_K（IQ4_NL 行只保证是 QK4_NL 的倍数）。当某个线程的 32 值子块起始位置等于或超过行尾 k 时，当前实现会读写超出该行末尾的内存。修复方式是跳过这些子块；对于长度是 QK_K 倍数的行，该检查永远不会触发，因此不影响正常路径性能。",
+        "plain_explanation": "可以把量化模型的一行数据想象成一排固定长度的储物格。IQ4_NL 这种量化格式规定，每个“大格子”里要放 QK_K 个值，但实际一行可能只够放几个“小格子”（QK4_NL 的倍数），并不一定凑满一个大格子。原来的 CUDA 内核在并行处理时，有些线程会从已经超出这一行末尾的位置开始读写，就像有人伸手去够不存在的储物格，可能碰到隔壁的数据甚至越界。这次修复让这些线程直接跳过无效的小格子，只处理真正属于这一行的部分。对于长度刚好是 QK_K 倍数的行，检查条件永远不成立，所以不会带来额外开销。",
+        "purpose": "解决 CUDA 后端在 IQ4_NL 量化模型推理时可能出现的越界读写问题。越界读写轻则导致计算结果错误、生成乱码，重则触发 CUDA 非法内存访问、程序崩溃或显存损坏。对于在 NVIDIA GPU 上运行 IQ4_NL 量化模型的用户，这次修复提升了推理的稳定性和正确性，属于值得尽快升级的可靠性补丁。",
+        "features": "1）针对 CUDA 后端的 IQ4_NL 反量化行内核增加短行边界保护；2）当线程的 32 值子块起始位置等于或超过行尾时直接跳过，避免读写越界；3）对长度为 QK_K 倍数的行不触发检查，保持原有性能路径；4）随 b11310 发布提供 macOS Apple Silicon、macOS Intel 和 iOS XCFramework 等预编译产物。",
+        "comparison": "暂无可信公开对比数据。候选摘要未提供修复前后的 benchmark、速度或显存占用对比，仅说明该检查在行长为 QK_K 倍数时不会触发。",
+        "who": "适合在 NVIDIA GPU 上使用 llama.cpp 运行 IQ4_NL 量化模型的开发者、本地推理部署团队，以及维护 CUDA 内核或量化推理路径的工程师。对于只使用其他量化格式或纯 CPU 推理的用户，影响相对有限，但升级到最新 release 仍有助于保持代码一致性。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11310",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "09-30 21:05"
+      }
+    ],
+    "footer": "本期仅收录 1 条候选，信息均来自 llama.cpp 官方 GitHub Release b11310，未补充候选之外的数据。"
+  },
+  "candidate_count": 1
+}
