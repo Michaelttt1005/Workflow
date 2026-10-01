@@ -2839,6 +2839,16 @@
       "first_seen_at": "2026-09-30T20:27:41.788282+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11307|ggml-org/llama.cpp release b11307: llama : preserve original batch order for speculative decoding layer inputs (29019) l",
+      "title": "ggml-org/llama.cpp release b11307: llama : preserve original batch order for speculative decoding layer inputs (29019) llama: preserve original batch order for layer inputs A",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11307",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-01T00:34:06+00:00",
+      "first_seen_at": "2026-10-01T00:59:59.394275+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

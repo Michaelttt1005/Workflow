@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-10-01T00:59:56.949694Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "09-30 | llama.cpp 修复投机解码层输入顺序，提升多卡与 NextN 场景正确性",
+    "overview": "本期聚焦 llama.cpp 最新 release b11307。该版本修复了投机解码（speculative decoding）中层输入批次顺序被破坏的问题，并补充了覆盖 KV 布局、CUDA 设备、tensor split 与 NextN 的回归测试。对于依赖 llama.cpp 做本地推理、多卡部署或投机解码加速的开发者，这是一次值得关注的正确性修复。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11307：修复投机解码层输入顺序，兼容 tensor split 与 NextN",
+        "what": "这是 ggml-org/llama.cpp 的官方 release b11307，核心变更是让投机解码（speculative decoding）过程中各层输入的批次顺序保持原始顺序。具体做法是：每个 microbatch 张量从 offset zero 拷贝，并在同步之后恢复原始行顺序；同时为未掩码的 NextN embeddings 恢复 token 顺序，掩码的 NextN 行仍沿用 logits 输出映射，并保留 offset-zero 的张量拷贝。该 release 还扩展了层输入顺序的回归测试，覆盖不同 KV 布局、CUDA 设备、tensor split 以及重复读取与解码。",
+        "plain_explanation": "可以把大模型推理想象成一条流水线：一句话被拆成多个 token，按顺序送进每一层。投机解码会先让一个小模型快速“猜”出若干 token，再让大模型一次性验证。如果在这一过程中 token 的顺序被打乱，就像流水线上零件装错位置，验证结果就会出错。b11307 做的事情，就是确保无论是否使用多卡切分（tensor split）、无论 KV 缓存怎么排布，进入每一层的 token 顺序都和原始输入一致，从而让投机解码和 NextN 这类加速机制在多卡环境下也能得到正确结果。",
+        "purpose": "解决投机解码与 NextN 在层输入重排后可能出现的顺序错乱问题，尤其是多卡 tensor split、不同 KV 布局和 CUDA 设备下的正确性隐患。对于把 llama.cpp 用于生产推理、追求低延迟的团队，这类顺序错误可能导致输出不稳定或结果偏差，因此该修复直接关系到推理结果的可靠性。",
+        "features": "1) 为投机解码的层输入保留原始批次顺序，microbatch 张量从 offset zero 拷贝并在同步后恢复行顺序；2) 对未掩码的 NextN embeddings 恢复 token 顺序，掩码行继续使用 logits 输出映射；3) 层输入重排兼容 tensor split，支持多卡切分场景；4) 扩展回归测试，覆盖 KV 布局、CUDA 设备、tensor split、重复读取与解码。",
+        "comparison": "暂无可信公开对比数据。候选摘要未提供与旧版本或其他推理框架的 benchmark、速度或成本对比。",
+        "who": "适合使用 llama.cpp 进行本地或服务端推理的开发者、负责多卡部署与推理优化的工程师，以及研究投机解码、NextN 等加速机制的研究者。对于在 CUDA 设备上做 tensor split 并依赖 KV 缓存复用的团队尤其相关。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11307",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "检索增强与向量模型",
+        "published": "09-30 19:34"
+      }
+    ],
+    "footer": "本期仅收录 1 条候选，内容基于 llama.cpp 官方 release 摘要，未引入外部数据。"
+  },
+  "candidate_count": 1
+}
