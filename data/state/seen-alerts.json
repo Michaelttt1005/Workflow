@@ -2859,6 +2859,36 @@
       "first_seen_at": "2026-10-01T08:08:47.269904+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11335|ggml-org/llama.cpp release b11335: cuda : route sm70 to the turing mmvq nwarps table (29753) cuda : route sm70 to the tu",
+      "title": "ggml-org/llama.cpp release b11335: cuda : route sm70 to the Turing MMVQ nwarps table (29753) cuda : route sm70 to the Turing MMVQ nwarps table Volta (sm70) has no MMVQ parame",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11335",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-02T03:08:12+00:00",
+      "first_seen_at": "2026-10-02T03:34:47.646101+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11331|ggml-org/llama.cpp release b11331: cuda: handle compute type for nvfp4 on cublass path (29173) cuda: handle compute type",
+      "title": "ggml-org/llama.cpp release b11331: CUDA: Handle compute type for NVFP4 on cublass path (29173) CUDA: Handle compute type for NVFP4 on cublass path Signed-off-by: ynankani Us",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11331",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-02T00:48:32+00:00",
+      "first_seen_at": "2026-10-02T03:34:47.646132+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://pytorch.org/blog/optimizing-jagged-flash-attention-with-tlx-the-road-toward-sota-fa4-on-blackwell/|optimizing jagged flash attention with tlx: the road toward sota fa4 on blackwell",
+      "title": "Optimizing Jagged Flash Attention with TLX: The Road Toward SOTA FA4 on Blackwell",
+      "url": "https://pytorch.org/blog/optimizing-jagged-flash-attention-with-tlx-the-road-toward-sota-fa4-on-blackwell/",
+      "source": "PyTorch Blog",
+      "published_at": "2026-10-01T22:26:57+00:00",
+      "first_seen_at": "2026-10-02T03:34:47.646155+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
