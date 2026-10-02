@@ -2889,6 +2889,26 @@
       "first_seen_at": "2026-10-02T03:34:47.646155+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ray-project/ray/releases/tag/ray-2.59.0|ray-2.59.0",
+      "title": "Ray-2.59.0",
+      "url": "https://github.com/ray-project/ray/releases/tag/ray-2.59.0",
+      "source": "GitHub Release: ray-project/ray",
+      "published_at": "2026-10-02T07:04:37+00:00",
+      "first_seen_at": "2026-10-02T10:14:49.285855+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11344|ggml-org/llama.cpp release b11344: cuda: fix 2 broken volta fa cases (29803) website",
+      "title": "ggml-org/llama.cpp release b11344: CUDA: fix 2 broken Volta FA cases (29803) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11344",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-02T08:54:49+00:00",
+      "first_seen_at": "2026-10-02T10:14:49.285902+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
