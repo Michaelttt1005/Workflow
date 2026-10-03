@@ -2919,6 +2919,26 @@
       "first_seen_at": "2026-10-02T21:42:09.791195+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11362|ggml-org/llama.cpp release b11362: metal : add tensor api flash attention kernel for f16 kv (29570) metal : add tensor a",
+      "title": "ggml-org/llama.cpp release b11362: metal : add tensor API flash attention kernel for F16 KV (29570) metal : add tensor API flash attention kernel for F16 KV cont : add tenso",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11362",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-03T00:26:08+00:00",
+      "first_seen_at": "2026-10-03T00:52:35.872281+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11361|ggml-org/llama.cpp release b11361: llama, server: add /v1/systemone api (models: laya, julia-1, lev, openjev, kev) (2981",
+      "title": "ggml-org/llama.cpp release b11361: llama, server: add /v1/systemone API (models: laya, julia-1, lev, openjev, kev) (29818) init conversion convert: ok model loaded add ser",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11361",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-02T23:53:18+00:00",
+      "first_seen_at": "2026-10-03T00:52:35.872315+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

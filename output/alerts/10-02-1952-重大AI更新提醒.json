@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-10-03T00:52:33.759578Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-02 | llama.cpp 双版本更新：Metal 张量 Flash Attention 与 /v1/systemone 新 API",
+    "overview": "本期聚焦 llama.cpp 在同一天发布的两个重要版本。b11362 为 Apple Metal 后端引入基于张量 API 的 Flash Attention 内核，覆盖 F16 KV 缓存及多种头维度；b11361 在服务端新增 /v1/systemone API，并扩展对 laya、julia-1、lev、openjev、kev 等模型的支持。两者分别从推理性能与模型/接口兼容性两个方向推进本地大模型部署能力。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11362：Metal 后端新增张量 API Flash Attention 内核（支持 F16 KV）",
+        "what": "这是 ggml-org/llama.cpp 的官方 release b11362，核心变更是为 Apple Metal 后端加入基于张量 API 的 Flash Attention 内核，面向 F16 类型的 KV 缓存。该内核还扩展支持 DK=DV=512、DK=576/DV=512、DK=192/DV=128 等不同头维度组合，并在张量 FA 内核中支持 attention sinks、ALiBi 与 logit softcap。发布同时提供 macOS Apple Silicon（arm64）、macOS Intel（x64）以及 iOS XCFramework 等预编译产物。",
+        "plain_explanation": "大模型生成文字时，需要让每个词“回头看”前面所有词，这个机制叫注意力。上下文越长，回看的计算量越大，速度就越慢。Flash Attention 是一种把注意力计算分块、减少显存来回搬运的加速方法。这次 llama.cpp 把这种方法用在了苹果芯片的 Metal 图形/计算接口上，并且专门针对半精度（F16）的 KV 缓存做了张量内核。通俗地说，就像把原来在仓库里反复搬运货物的工作，改成在流水线旁就地分块处理，从而让 Mac 和 iPhone 上跑长上下文模型时更快、更省内存。",
+        "purpose": "解决 Apple 设备上本地大模型推理在长上下文场景下注意力计算开销大的问题，让 Mac 与 iOS 设备能更高效地运行支持 F16 KV 缓存的模型，并兼容 attention sinks、ALiBi、logit softcap 等常见注意力变体，减少因后端不支持而无法运行或性能退化的情况。",
+        "features": "1）为 Metal 后端新增基于张量 API 的 Flash Attention 内核，针对 F16 KV 缓存；2）覆盖多种头维度组合，包括 DK=DV=512、DK=576/DV=512、DK=192/DV=128；3）在张量 FA 内核中支持 attention sinks、ALiBi 与 logit softcap；4）随 release 提供 macOS Apple Silicon、macOS Intel 与 iOS XCFramework 预编译包。",
+        "comparison": "候选摘要未给出与其它后端或旧内核的 benchmark、速度或成本对比数据，暂无可信公开对比数据。",
+        "who": "适合在 Apple Silicon Mac、Intel Mac 或 iOS 设备上部署本地大模型的开发者与团队，尤其是需要长上下文推理、使用 F16 KV 缓存并依赖 attention sinks、ALiBi 或 logit softcap 等注意力变体的研究者与工程人员。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11362",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "10-02 19:26"
+      },
+      {
+        "candidate_id": "2",
+        "title": "llama.cpp b11361：服务端新增 /v1/systemone API，支持 laya、julia-1、lev、openjev、kev 等模型",
+        "what": "这是 ggml-org/llama.cpp 的官方 release b11361，主要变更是为 llama 与服务端新增 /v1/systemone API，并配套模型转换与加载流程。该版本支持 laya、julia-1、lev、openjev、kev 等模型，包含转换脚本改进、共享 prompt 前缀、文档与 UX 优化、视觉支持，以及用于测试的 openjev tiny 模型和开发文档；同时明确说明不支持 date_facts。发布提供 macOS Apple Silicon、macOS Intel 与 iOS XCFramework 等预编译产物。",
+        "plain_explanation": "llama.cpp 不只是一个跑模型的程序，它自带一个本地服务端，可以像调用云端 API 一样用 HTTP 请求和模型对话。这次新增的 /v1/systemone 接口，相当于给服务端开了一个新的“窗口”，让特定系列模型（laya、julia-1、lev、openjev、kev）能通过统一接口被调用。同时项目补上了模型转换脚本、共享 prompt 前缀、视觉输入支持和开发文档，让接入新模型不再需要大量手工改造。可以理解为：以前要自己拼装零件才能装上新模型，现在官方给了一套标准接口和说明书。",
+        "purpose": "解决 llama.cpp 服务端在接入 laya、julia-1、lev、openjev、kev 等模型时缺少统一 API 与转换支持的问题，并通过共享 prompt 前缀、视觉支持与开发文档降低集成成本，让开发者能更快把这些模型跑在本地服务端上。",
+        "features": "1）新增 /v1/systemone API，服务端可直接调用指定系列模型；2）支持 laya、julia-1、lev、openjev、kev 等模型，并提供 openjev tiny 测试模型；3）支持共享 prompt 前缀与视觉输入；4）改进转换脚本、补充文档与开发文档，并明确不支持 date_facts。",
+        "comparison": "候选摘要未给出与其它 API 或模型服务方案的 benchmark、速度或成本对比数据，暂无可信公开对比数据。",
+        "who": "适合需要在本地或私有环境部署 laya、julia-1、lev、openjev、kev 等模型并通过 HTTP API 调用的开发者与团队，也适合关注 llama.cpp 服务端接口扩展、模型转换流程与视觉能力的工程人员。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11361",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "10-02 18:53"
+      }
+    ],
+    "footer": "以上内容均基于候选中的 GitHub Release 信息整理，未引入候选之外的 benchmark、价格或日期；具体性能请以官方发布与实测为准。"
+  },
+  "candidate_count": 2
+}
