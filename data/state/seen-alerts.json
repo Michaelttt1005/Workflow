@@ -2939,6 +2939,16 @@
       "first_seen_at": "2026-10-03T00:52:35.872315+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11370|ggml-org/llama.cpp release b11370: cuda: fuse shared experts into mmvq (29184) cuda: fuse shared experts into mmvq check",
+      "title": "ggml-org/llama.cpp release b11370: CUDA: fuse shared experts into MMVQ (29184) CUDA: fuse shared experts into MMVQ check if buffer is null move stridecoldst to fusion args",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11370",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-03T06:24:16+00:00",
+      "first_seen_at": "2026-10-03T07:26:12.897824+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
