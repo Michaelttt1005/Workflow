@@ -2949,6 +2949,16 @@
       "first_seen_at": "2026-10-03T07:26:12.897824+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11390|ggml-org/llama.cpp release b11390: cuda: fix mmq memory fault if nexpert nubatch (29941) website",
+      "title": "ggml-org/llama.cpp release b11390: CUDA: fix MMQ memory fault if nexpert nubatch (29941) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11390",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-04T12:52:49+00:00",
+      "first_seen_at": "2026-10-04T13:37:02.060003+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
