@@ -2969,6 +2969,16 @@
       "first_seen_at": "2026-10-04T17:56:56.022563+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11397|ggml-org/llama.cpp release b11397: cuda : move neupadded to where it is used (29940) signed-off-by: adrien gallouët webs",
+      "title": "ggml-org/llama.cpp release b11397: cuda : move neupadded to where it is used (29940) Signed-off-by: Adrien Gallouët Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11397",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-04T19:47:29+00:00",
+      "first_seen_at": "2026-10-04T20:51:02.586172+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
