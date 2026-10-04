@@ -2959,6 +2959,16 @@
       "first_seen_at": "2026-10-04T13:37:02.060003+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11391|ggml-org/llama.cpp release b11391: cuda : move blockspercol to where it is used (29939) signed-off-by: adrien gallouët w",
+      "title": "ggml-org/llama.cpp release b11391: cuda : move blockspercol to where it is used (29939) Signed-off-by: Adrien Gallouët Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11391",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-04T14:09:48+00:00",
+      "first_seen_at": "2026-10-04T17:56:56.022563+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
