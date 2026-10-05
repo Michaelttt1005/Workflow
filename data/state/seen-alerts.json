@@ -2979,6 +2979,36 @@
       "first_seen_at": "2026-10-04T20:51:02.586172+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.6.0|ggml-org/llama.cpp release v0.6.0: overview llama.cpp v0.6.0 introduces the new llamabatchext extended batch api (with l",
+      "title": "ggml-org/llama.cpp release v0.6.0: Overview llama.cpp v0.6.0 introduces the new llamabatchext extended batch API (with llamaprocess) for mixed token/embedding inputs and MTP/d",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.6.0",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-05T16:56:22+00:00",
+      "first_seen_at": "2026-10-05T19:00:17.806955+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11425|ggml-org/llama.cpp release b11425: cuda: make the allocdeps check batch independent (29986) fixes 29980 website",
+      "title": "ggml-org/llama.cpp release b11425: CUDA: make the allocdeps check batch independent (29986) Fixes 29980 Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11425",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-05T15:17:10+00:00",
+      "first_seen_at": "2026-10-05T19:00:17.807005+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/vllm-project/vllm/releases/tag/v0.31.0|vllm-project/vllm release v0.31.0: v0.31.0 highlights this release features 717 commits from 307 contributors (96 new)! ",
+      "title": "vllm-project/vllm release v0.31.0: v0.31.0 Highlights This release features 717 commits from 307 contributors (96 new)! DeepSeek-V4.1-Flash performance: FlashMLA mega attent",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.31.0",
+      "source": "GitHub Release: vllm-project/vllm",
+      "published_at": "2026-10-05T06:44:55+00:00",
+      "first_seen_at": "2026-10-05T19:00:17.807063+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
