@@ -3009,6 +3009,16 @@
       "first_seen_at": "2026-10-05T19:00:17.807063+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/huggingface/diffusers/releases/tag/v0.41.0|diffusers 0.41.0: qwenimage 2.1 pipeline and more",
+      "title": "Diffusers 0.41.0: QwenImage 2.1 pipeline and more",
+      "url": "https://github.com/huggingface/diffusers/releases/tag/v0.41.0",
+      "source": "GitHub Release: huggingface/diffusers",
+      "published_at": "2026-10-06T06:43:25+00:00",
+      "first_seen_at": "2026-10-06T08:26:02.969668+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }
