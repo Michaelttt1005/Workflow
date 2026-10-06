@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-10-06T16:26:25.751169Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-06 | Google 发布 EmbeddingGemma 2，把多模态语义搜索搬到端侧",
+    "overview": "本期聚焦 Google 官方发布的 EmbeddingGemma 2：一个 740M 参数的开源权重多模态嵌入模型，把文本、图像、视频、音频映射到统一向量空间，主打隐私优先的端侧检索。开发者可通过 MediaPipe Tasks 跨平台集成，或用 LiteRT 在 CPU、GPU、NPU 上做细粒度性能优化，实现搜索即输入、视频关键帧定位、零样本意图路由等超低延迟本地能力。",
+    "checked_sources": [
+      "Google Developers Blog"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "Google 发布 EmbeddingGemma 2：740M 开源多模态嵌入模型，支持端侧语义搜索",
+        "what": "EmbeddingGemma 2 是 Google 推出的 740M 参数开放权重多模态嵌入模型，能够把文本、图像、视频和音频统一映射到同一个向量空间，用于隐私优先的端侧检索。开发者可以用 MediaPipe Tasks 跨平台集成这些能力，也可以借助 LiteRT 针对 CPU、GPU、NPU 加速器做细粒度性能优化。它支撑搜索即输入式媒体检索、视频关键帧时刻查找以及零样本意图路由等超低延迟本地方案。",
+        "plain_explanation": "通俗地说，这个模型像一个“万能翻译器”，把文字、图片、视频、声音都翻译成同一种数字坐标。比如你输入“海边日落”，它能在你手机本地相册里直接找出对应的照片、视频片段甚至相关音频，而不需要把内容上传到云端。因为所有计算都在设备上完成，所以速度快、隐私好，断网也能用。",
+        "purpose": "它解决的是多模态检索依赖云端、延迟高、隐私风险大的问题。过去做跨模态搜索往往要把数据传到服务器，既慢又涉及用户隐私；EmbeddingGemma 2 让端侧设备自己完成语义匹配，适合需要实时响应和本地数据保护的场景，比如手机相册搜索、视频剪辑关键帧定位、离线语音助手意图识别。",
+        "features": "第一，统一向量空间支持文本、图像、视频、音频四种模态互相检索；第二，740M 参数开放权重，便于开发者本地部署和微调；第三，通过 MediaPipe Tasks 实现跨平台集成，覆盖移动端和桌面端；第四，借助 LiteRT 在 CPU、GPU、NPU 上做加速优化，实现超低延迟。",
+        "comparison": "候选摘要提到该模型支持 CPU、GPU、NPU 加速器优化，并强调超低延迟本地方案，但未给出与其它嵌入模型的具体 benchmark、速度或成本对比数据，暂无可信公开对比数据。",
+        "who": "适合做移动端和边缘设备 AI 应用的开发者、需要本地多模态检索能力的团队、关注隐私计算的研究者，以及希望用开放权重模型做端侧语义搜索产品的工程团队。",
+        "link": "https://developers.googleblog.com/google-ai-edge-with-embeddinggemma-2/",
+        "score": "8",
+        "source": "Google Developers Blog",
+        "type": "官方发布",
+        "topic": "智能体与开发者平台",
+        "published": "10-06 11:26"
+      }
+    ],
+    "footer": "本期仅收录 Google Developers Blog 官方发布的一条高可信更新，其余候选因信息不足未纳入。"
+  },
+  "candidate_count": 1
+}

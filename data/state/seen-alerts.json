@@ -3019,6 +3019,16 @@
       "first_seen_at": "2026-10-06T08:26:02.969668+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/google-ai-edge-with-embeddinggemma-2/|bring multimodal semantic search to the edge with embeddinggemma 2",
+      "title": "Bring multimodal semantic search to the edge with EmbeddingGemma 2",
+      "url": "https://developers.googleblog.com/google-ai-edge-with-embeddinggemma-2/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-10-06T16:26:06.299320+00:00",
+      "first_seen_at": "2026-10-06T16:26:28.059460+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }
