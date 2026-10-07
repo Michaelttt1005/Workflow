@@ -3049,6 +3049,16 @@
       "first_seen_at": "2026-10-07T10:46:21.449266+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/langchain-ai/langchain/releases/tag/langchain-huggingface%3d%3d1.2.3|langchain-huggingface==1.2.3",
+      "title": "langchain-huggingface==1.2.3",
+      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-huggingface%3D%3D1.2.3",
+      "source": "GitHub Release: langchain-ai/langchain",
+      "published_at": "2026-10-07T20:10:07+00:00",
+      "first_seen_at": "2026-10-07T23:58:24.683496+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

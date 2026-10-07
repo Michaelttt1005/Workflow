@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-10-07T23:58:22.618960Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-07 | langchain-huggingface 1.2.3 发布：安全修复与依赖升级",
+    "overview": "本期聚焦 langchain-huggingface 1.2.3 版本发布。该版本主要包含一项安全修复（隐藏 repr 中的 huggingfacehub_api_token）以及多项依赖升级（langgraph-sdk、fsspec、sentence-transformers、urllib3、tornado 等），并修复了流式测试中使用的 Scaleway 模型支持问题。对于使用 LangChain 与 Hugging Face 集成的开发者，建议关注此次更新以提升安全性与兼容性。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "langchain-huggingface 1.2.3 发布：隐藏 API Token 并升级多项依赖",
+        "what": "langchain-huggingface 是 LangChain 生态中用于集成 Hugging Face 模型与工具的官方库。1.2.3 版本是一个维护性更新，主要包含一项安全修复：在对象的 repr 输出中隐藏 huggingfacehub_api_token，避免敏感信息意外泄露；同时升级了多个依赖包，包括 langgraph-sdk（从 0.4.4 到 0.4.6）、fsspec（从 2026.6.0 到 2026.9.0）、sentence-transformers（从 5.2.3 到 5.6.0）、urllib3（从 2.7.0 到 2.8.0）、tornado（从 6.5.8 到 6.5.9）等；此外还修复了流式测试中使用的 Scaleway 模型支持问题。",
+        "plain_explanation": "你可以把 langchain-huggingface 想象成一个“翻译官”，它让 LangChain 这个 AI 应用框架能够方便地调用 Hugging Face 上的各种 AI 模型。这次更新就像给这个翻译官换了一本更安全的密码本：以前如果你不小心打印了它的内部信息，可能会把 Hugging Face 的访问令牌（相当于密码）也显示出来，现在它会自动把密码藏起来，只显示星号。同时，它还更新了随身携带的几本“工具手册”（依赖库），让翻译官能更顺畅地使用最新的工具，比如更快的网络请求库和更聪明的文本嵌入模型。",
+        "purpose": "本次更新的主要目的是修复一个潜在的安全隐患，防止开发者在调试或日志中意外泄露 Hugging Face API Token；同时通过升级依赖库，确保库与最新版本的 LangGraph SDK、文件系统抽象层、句子嵌入模型等保持兼容，并修复了流式测试中特定模型（Scaleway）的支持问题，提升整体稳定性和安全性。",
+        "features": "1. 安全增强：在对象的 repr 输出中隐藏 huggingfacehub_api_token，避免敏感信息泄露。2. 依赖升级：将 langgraph-sdk 升级至 0.4.6，fsspec 升级至 2026.9.0，sentence-transformers 升级至 5.6.0，urllib3 升级至 2.8.0，tornado 升级至 6.5.9。3. 测试修复：在流式测试中使用受支持的 Scaleway 模型，确保测试稳定。4. 锁文件更新：同步更新依赖锁文件，保证环境一致性。",
+        "comparison": "暂无可信公开对比数据。",
+        "who": "适合使用 LangChain 框架并集成 Hugging Face 模型或工具的开发者、机器学习工程师和数据科学团队。特别是那些在生产环境中使用 langchain-huggingface 并关注安全性与依赖兼容性的团队，建议尽快升级。",
+        "link": "https://github.com/langchain-ai/langchain/releases/tag/langchain-huggingface%3D%3D1.2.3",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "10-07 15:10"
+      }
+    ],
+    "footer": "本期简报基于 GitHub Release 候选生成，内容真实可查。建议开发者关注依赖升级带来的兼容性变化。"
+  },
+  "candidate_count": 1
+}
