@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-10-08T04:53:59.566903Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-07 | llama.cpp 新增 LiquidAI/d1-omni-600M 决策模型支持",
+    "overview": "本期聚焦 llama.cpp 的一次重要 release：b11488 版本新增对 LiquidAI/d1-omni-600M 决策模型的支持，并同步调整了多模态音频输入路径与 CUDA 上的 conformer GLU sigmoid 实现。该更新让本地推理框架能够直接加载并运行这一轻量级决策模型，对关注端侧多模态与决策推理的开发者具有参考价值。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11488 新增 LiquidAI/d1-omni-600M 决策模型支持",
+        "what": "这是 ggml-org/llama.cpp 的 b11488 版本发布，核心变更是为 llama.cpp 增加 LiquidAI/d1-omni-600M 决策模型的加载与推理支持。该模型被归类为 lfm2-d1-omni 决策类型，同时更新了 mtmd 多模态模块，使 conformer GLU sigmoid 在 CUDA 上保持正确行为，并让 server 端能够通过 images 与 input_audio 两种入口接收 d1omni 的音频输入，还把 images 设为 files 的别名。",
+        "plain_explanation": "可以把 llama.cpp 理解成一个能在本地电脑上跑各种 AI 模型的通用引擎，而这次更新相当于给这个引擎新增了一款叫 LiquidAI/d1-omni-600M 的“小排量”模型适配器。这个模型只有 6 亿参数左右，体积小、适合在本地设备上做决策类任务。通俗地说，以前这个引擎不认这款模型，现在它不仅能认，还能处理音频输入——就像你给一个只会看文字的助手装上了耳朵，并且让它能在显卡上更稳定地处理音频特征。",
+        "purpose": "解决 llama.cpp 此前无法直接加载和运行 LiquidAI/d1-omni-600M 决策模型的问题，同时修复多模态音频路径在 CUDA 上的数值行为，并统一 server 端的输入接口，让开发者可以用同一套本地推理框架试验轻量级决策模型与音频输入场景。",
+        "features": "1) 新增 LiquidAI/d1-omni-600M 决策模型支持，内部类型命名为 lfm2-d1-omni；2) mtmd 模块在 CUDA 上保留 conformer GLU sigmoid，保证音频特征处理一致性；3) server 端支持通过 images 和 input_audio 两种方式传入 d1omni 音频；4) 将 images 设为 files 的别名，简化接口调用。",
+        "comparison": "暂无可信公开对比数据。候选摘要未提供该模型与其它模型在 benchmark、速度或成本上的量化对比。",
+        "who": "适合在本地或端侧部署 AI 模型的开发者、研究轻量级决策模型与多模态音频输入的研究者，以及使用 llama.cpp 构建推理服务的工程团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11488",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "检索增强与向量模型",
+        "published": "10-07 23:16"
+      }
+    ],
+    "footer": "本期仅基于候选中的 GitHub Release 信息整理，未引入外部数据；具体性能表现请以官方仓库与模型卡为准。"
+  },
+  "candidate_count": 1
+}

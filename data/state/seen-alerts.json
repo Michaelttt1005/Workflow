@@ -3059,6 +3059,16 @@
       "first_seen_at": "2026-10-07T23:58:24.683496+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11488|ggml-org/llama.cpp release b11488: model : add liquidai/d1-omni-600m decision model (30114) model : add liquidai/d1-omni",
+      "title": "ggml-org/llama.cpp release b11488: model : add LiquidAI/d1-omni-600M decision model (30114) model : add LiquidAI/d1-omni-600M decision model Assisted-by: Claude Opus 5.5 mtm",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11488",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-08T04:16:16+00:00",
+      "first_seen_at": "2026-10-08T04:54:01.510040+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
