@@ -3069,6 +3069,26 @@
       "first_seen_at": "2026-10-08T04:54:01.510040+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11499|ggml-org/llama.cpp release b11499: cuda : use byte strides for roll to allow non-contiguous roll operations (29547) webs",
+      "title": "ggml-org/llama.cpp release b11499: cuda : Use byte strides for roll to allow non-contiguous ROLL operations (29547) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11499",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-08T12:20:18+00:00",
+      "first_seen_at": "2026-10-08T12:37:23.720079+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11498|ggml-org/llama.cpp release b11498: cuda: fix norm family kernels when ne[2]/ne[3] exceed grid dim limits (28175) website",
+      "title": "ggml-org/llama.cpp release b11498: CUDA: fix norm family kernels when ne[2]/ne[3] exceed grid dim limits (28175) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11498",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-08T11:55:34+00:00",
+      "first_seen_at": "2026-10-08T12:37:23.720152+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
