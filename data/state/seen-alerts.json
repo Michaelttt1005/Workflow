@@ -3089,6 +3089,56 @@
       "first_seen_at": "2026-10-08T12:37:23.720152+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/ml-drift-next-gen-gpu-aiml-inference-at-the-edge/|ml drift: next-gen gpu ai/ml inference at the edge",
+      "title": "ML Drift: Next-Gen GPU AI/ML Inference at the Edge",
+      "url": "https://developers.googleblog.com/ml-drift-next-gen-gpu-aiml-inference-at-the-edge/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-10-08T19:36:57.165216+00:00",
+      "first_seen_at": "2026-10-08T19:37:21.324600+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11513|ggml-org/llama.cpp release b11513: cuda: improve top-k algorithm selection (28713) cuda: radix top-k for large row count",
+      "title": "ggml-org/llama.cpp release b11513: CUDA: improve top-k algorithm selection (28713) CUDA: radix top-k for large row counts Replaces CUB's per-row DeviceTopKKernel with a grid-",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11513",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-08T19:18:57+00:00",
+      "first_seen_at": "2026-10-08T19:37:21.324639+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11512|ggml-org/llama.cpp release b11512: model : fix dflash output head sharing (30111) llama : fix dflash output head sharing",
+      "title": "ggml-org/llama.cpp release b11512: model : fix DFlash output head sharing (30111) llama : fix DFlash output head sharing Assisted-by: Codex dflash : read tied output weights",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11512",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-08T17:39:33+00:00",
+      "first_seen_at": "2026-10-08T19:37:21.324670+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11511|ggml-org/llama.cpp release b11511: cuda: fix mmq out-of-bounds reads (29953) website",
+      "title": "ggml-org/llama.cpp release b11511: CUDA: fix MMQ out-of-bounds reads (29953) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11511",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-08T17:23:43+00:00",
+      "first_seen_at": "2026-10-08T19:37:21.324698+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11510|ggml-org/llama.cpp release b11510: cuda : looped pad kernel for more than 65535 rows or slices (30147) website",
+      "title": "ggml-org/llama.cpp release b11510: CUDA : looped PAD kernel for more than 65535 rows or slices (30147) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11510",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-08T16:15:32+00:00",
+      "first_seen_at": "2026-10-08T19:37:21.324727+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
