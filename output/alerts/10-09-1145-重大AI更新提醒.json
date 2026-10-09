@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-10-09T16:45:26.253016Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-09 | llama.cpp 聊天 API 重构，本地推理框架迎来接口层大改",
+    "overview": "本期聚焦 llama.cpp 最新 release b11531，该版本对 chat 相关 API 进行了重构，涉及本地大模型推理与聊天接口的调用方式。对于依赖 llama.cpp 构建本地 AI 应用、智能体或开发者工具的团队，这次接口层调整可能影响现有集成代码，建议尽快评估升级路径。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11531 发布：chat API 重构，本地推理聊天接口迎来调整",
+        "what": "llama.cpp 是 ggml-org 维护的开源大语言模型推理框架，主打在 CPU、Apple Silicon、Linux 等多种硬件上高效运行量化模型。本次 release b11531 的核心变更是对 chat 相关 API 进行重构（PR #30210），并同步提供 macOS Apple Silicon、macOS Intel、iOS XCFramework、Ubuntu x64/arm64/s390x 等平台的预编译二进制包。",
+        "plain_explanation": "可以把 llama.cpp 想象成一个“万能翻译器”，它让各种大模型能在普通电脑甚至手机上跑起来，而不需要昂贵的 GPU 服务器。这次更新相当于把这个翻译器的“聊天窗口”重新装修了一遍：以前你调用聊天功能的方式可能和现在不一样了，就像手机系统升级后，某些按钮的位置变了。如果你之前写好的程序直接调用旧接口，升级后可能需要按新方式改一改才能继续用。",
+        "purpose": "这次重构主要解决 chat API 在长期迭代中积累的接口一致性和可维护性问题，让开发者调用聊天补全、对话管理等能力时结构更清晰。对于正在用 llama.cpp 做本地 AI 助手、智能体或边缘推理产品的团队，及时跟进可以避免后续版本兼容性断裂，也能获得更稳定的接口行为。",
+        "features": "第一，chat API 重构，调整了聊天相关接口的组织方式；第二，继续提供多平台预编译包，覆盖 macOS Apple Silicon、macOS Intel、iOS XCFramework 以及 Ubuntu x64、arm64、s390x；第三，保留 KleidiAI 相关构建选项（当前标记为 DISABLED）；第四，通过 GitHub Release 附带 attestations，便于验证构建来源。",
+        "comparison": "暂无可信公开对比数据。候选摘要未提供与旧版本或其他推理框架在速度、内存占用或准确率上的量化对比。",
+        "who": "适合使用 llama.cpp 构建本地大模型聊天应用、智能体、桌面端或移动端 AI 工具的开发者；也适合在 Apple Silicon、Linux 服务器或 s390x 平台上做边缘推理部署的工程团队；对关注开源推理框架接口演进的研究者也有参考价值。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11531",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "10-09 11:38"
+      }
+    ],
+    "footer": "本期仅收录 1 条高可信 GitHub Release 更新；建议升级前先阅读 PR #30210 的接口变更说明并回归测试现有聊天集成。"
+  },
+  "candidate_count": 1
+}

@@ -3149,6 +3149,16 @@
       "first_seen_at": "2026-10-09T08:18:15.701001+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11531|ggml-org/llama.cpp release b11531: chat : refactor api (30210) website",
+      "title": "ggml-org/llama.cpp release b11531: chat : refactor API (30210) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11531",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-09T16:38:06+00:00",
+      "first_seen_at": "2026-10-09T16:45:28.827178+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
