@@ -3159,6 +3159,36 @@
       "first_seen_at": "2026-10-09T16:45:28.827178+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11535|ggml-org/llama.cpp release b11535: llama-bench: respect -fitc if bigger than required benchmark size (28331) assisted-by",
+      "title": "ggml-org/llama.cpp release b11535: llama-bench: respect -fitc if bigger than required benchmark size (28331) Assisted-By: opencode,llama.cpp,Qwen3.6-35B-A3B,Qwen3.8-27B Websit",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11535",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-09T18:49:51+00:00",
+      "first_seen_at": "2026-10-09T22:07:09.902696+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11538|ggml-org/llama.cpp release b11538: cuda: fix round issue, under msvc the cpu and gpu agree (30229) website",
+      "title": "ggml-org/llama.cpp release b11538: CUDA: fix round issue, under MSVC the CPU and GPU agree (30229) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11538",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-09T20:11:03+00:00",
+      "first_seen_at": "2026-10-09T22:07:09.902734+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11534|ggml-org/llama.cpp release b11534: cuda: remove redundant cuda copies after ssmscan (29807) cuda: fuse copy of updated s",
+      "title": "ggml-org/llama.cpp release b11534: CUDA: Remove redundant CUDA copies after SSMSCAN (29807) CUDA: fuse copy of updated state snapshots into recurrent cache with ssmscan CUDA",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11534",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-09T18:29:32+00:00",
+      "first_seen_at": "2026-10-09T22:07:09.902766+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
