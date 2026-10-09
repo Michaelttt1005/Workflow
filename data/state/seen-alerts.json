@@ -3139,6 +3139,16 @@
       "first_seen_at": "2026-10-08T19:37:21.324727+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11517|ggml-org/llama.cpp release b11517: cuda: pass src1 precision to host mmq config helpers (30168) cuda: pass src1 precisio",
+      "title": "ggml-org/llama.cpp release b11517: CUDA: pass src1 precision to host MMQ config helpers (30168) CUDA: pass src1 precision to host MMQ config helpers Signed-off-by: ynankani",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11517",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-09T08:08:44+00:00",
+      "first_seen_at": "2026-10-09T08:18:15.701001+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
