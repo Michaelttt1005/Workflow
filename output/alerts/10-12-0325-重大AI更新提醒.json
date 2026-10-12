@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-10-12T08:25:09.001165Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-12 | llama.cpp 发布 b11563，ggml 默认符号可见性改为 hidden",
+    "overview": "本期聚焦 llama.cpp 的一次底层构建变更：ggml 将默认符号可见性从公开改为 hidden，减少内部符号通过 GGML_API 泄漏。该改动影响所有基于 llama.cpp 构建的本地推理应用与下游绑定，属于需要开发者关注的 ABI/链接层面更新。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp 发布 b11563：ggml 默认符号可见性改为 hidden，减少内部符号泄漏",
+        "what": "这是 ggml-org/llama.cpp 的 GitHub Release b11563，核心变更是 ggml 组件把默认符号可见性（default visibility）改为 hidden，对应 PR #30014，讨论见 #29997。该改动会阻止一批内部符号通过 GGML_API 对外暴露，同时该 release 仍按惯例提供 macOS Apple Silicon（arm64）、macOS Intel（x64）、iOS XCFramework、Ubuntu x64（CPU）、Ubuntu arm64（CPU）等预编译产物。",
+        "plain_explanation": "可以把一个 C/C++ 库想象成一栋大楼：以前大楼的很多内部房间门都没有锁，外面的人可以随便推门进去，甚至误用里面的工具。这次改动相当于给内部房间统一上了锁，只保留少数正式对外的门（GGML_API）供外部调用。对普通用户来说，跑模型的效果不会变；但对写代码调用 llama.cpp 的开发者来说，如果之前不小心依赖了某个“没上锁的内部符号”，升级后可能会链接失败，需要改用官方公开的接口。",
+        "purpose": "它解决的是 ggml 内部符号意外泄漏的问题：当默认可见性为公开时，一些本应私有的函数或变量会通过 GGML_API 暴露出去，导致下游代码可能误用这些非稳定接口，也让库的 ABI 边界变得模糊。把默认可见性改为 hidden 后，只有显式标记为公开的符号才会导出，从而收紧接口边界、降低误用风险，并让后续维护者更容易控制哪些符号属于稳定 API。",
+        "features": "第一，默认符号可见性改为 hidden，内部实现细节不再自动导出；第二，保留 GGML_API 作为显式对外接口，公开符号仍可被下游正常调用；第三，减少内部符号泄漏，有助于稳定 ABI 边界；第四，release 继续提供 macOS arm64、macOS x64、iOS XCFramework、Ubuntu x64 与 Ubuntu arm64 的 CPU 预编译包，方便直接下载使用。",
+        "comparison": "暂无可信公开对比数据。候选摘要未提供该改动前后的性能、体积或速度 benchmark，仅说明其目的是阻止内部符号通过 GGML_API 泄漏。",
+        "who": "适合直接编译或链接 llama.cpp/ggml 的 C/C++ 开发者、维护 Python/Go/Rust 等语言绑定的库作者，以及把 llama.cpp 集成进本地推理产品的团队。如果你只是下载预编译二进制跑模型，通常不受影响；如果你自己写代码调用 ggml 内部符号，升级前需要检查是否依赖了未公开接口。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11563",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "10-12 01:38"
+      }
+    ],
+    "footer": "本期仅收录 1 条候选，内容基于 GitHub Release 摘要，未补充外部 benchmark 或价格信息。"
+  },
+  "candidate_count": 1
+}

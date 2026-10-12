@@ -3189,6 +3189,16 @@
       "first_seen_at": "2026-10-09T22:07:09.902766+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11563|ggml-org/llama.cpp release b11563: ggml: change default visibility of symbols to hidden (30014) see discussion in 29997",
+      "title": "ggml-org/llama.cpp release b11563: ggml: Change default visibility of symbols to hidden (30014) See discussion in 29997",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11563",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-12T06:38:24+00:00",
+      "first_seen_at": "2026-10-12T08:25:10.835979+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
