@@ -3199,6 +3199,16 @@
       "first_seen_at": "2026-10-12T08:25:10.835979+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11574|ggml-org/llama.cpp release b11574: hexagon: optimize cpy/concat — round 3, short-rows edition (30341) hexagon: move the ",
+      "title": "ggml-org/llama.cpp release b11574: hexagon: optimize CPY/CONCAT — round 3, short-rows edition (30341) hexagon: move the converting CPY in blocks of rows per DMA descriptor so",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11574",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-12T15:13:57+00:00",
+      "first_seen_at": "2026-10-12T19:33:53.758811+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

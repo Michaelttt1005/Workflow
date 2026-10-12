@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-10-12T19:33:51.917115Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-12 | llama.cpp Hexagon 后端 CPY/CONCAT 第三轮优化，短行 DMA 延迟显著缓解",
+    "overview": "本期聚焦 llama.cpp 在 Hexagon DSP 上的推理性能优化。该 release 针对 CPY/CONCAT 算子的短行场景重构 DMA 描述符调度，引入按行分块、线程化 gather-row、双缓冲与 f16 快速路径，目标是降低 DMA 延迟瓶颈并提升移动端/边缘端推理吞吐。对于在骁龙 Hexagon 上部署量化模型的开发者，这是一次值得关注的底层性能更新。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11574：Hexagon 后端 CPY/CONCAT 第三轮优化，短行 DMA 延迟不再成为瓶颈",
+        "what": "这是 ggml-org/llama.cpp 的官方 release b11574，核心是对 Hexagon DSP 后端的 CPY（数据拷贝）与 CONCAT（张量拼接）算子进行第三轮优化，代号“short-rows edition”。改动把转换型 CPY 按行分块打包进每个 DMA 描述符，避免短行场景被 DMA 延迟拖慢；同时清理 cpy 游标处理、引入线程化 DMA/HVX gather-row 辅助函数、移除扩展缓冲区的遗留拒绝逻辑、放宽快速路径门控、去掉标量除法与 VTCM 访问并改用显式 gather_sync、支持 mdev 工作拆分、优化稠密 gather-row 任务、展开 gather-rows 循环、新增 f16 快速路径、支持 3/4 维维度折叠、加入双缓冲，并把 gather-rows 抽成独立算子、去重 kernel 参数、以步降 nr 适配而非硬性拒绝。",
+        "plain_explanation": "可以把 Hexagon DSP 想象成一台专门搬箱子的传送带：以前搬“短箱子”（短行数据）时，传送带每次启动都要等固定时间，箱子越短越不划算，大量时间浪费在等待上。这次优化相当于把很多短箱子先按行打包成一批再交给传送带，还开了多条并行通道（线程化 gather-row）、准备了备用缓冲区（双缓冲），并针对半精度 f16 数据开了专用快车道。结果就是短行数据搬运不再被启动延迟卡住，整体推理时数据在内存与 DSP 之间流动更顺畅。",
+        "purpose": "解决移动端与边缘设备上 Hexagon DSP 推理时，CPY/CONCAT 算子在短行、小批量场景下受 DMA 延迟限制、吞吐偏低的问题。对于在骁龙平台跑量化大模型的开发者，这类底层算子优化能直接减少每层张量搬运的等待时间，让端侧推理更接近硬件理论上限，也降低了对大 batch 才能跑满带宽的依赖。",
+        "features": "1）按行分块的转换型 CPY，把短行合并进单个 DMA 描述符以摊薄延迟；2）线程化 DMA/HVX gather-row 辅助函数，支持 mdev 工作拆分与稠密 gather-row 任务优化；3）新增 f16 快速路径、双缓冲与 3/4 维维度折叠，并移除标量除法与 VTCM 访问、改用显式 gather_sync；4）把 gather-rows 抽成独立算子并去重 kernel 参数，以步降 nr 适配替代硬性拒绝。",
+        "comparison": "候选摘要未给出具体 benchmark 数值、吞吐提升百分比或延迟对比，仅说明优化目标是缓解短行 DMA 延迟瓶颈，因此暂无可信公开对比数据。",
+        "who": "适合在骁龙 Hexagon DSP 上部署 llama.cpp 的移动端/边缘端推理工程师、做端侧大模型量化的研究者，以及维护 ggml/llama.cpp 后端算子、关注 DMA 与 HVX 向量化性能的底层开发者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11574",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "10-12 10:13"
+      }
+    ],
+    "footer": "本期仅收录 1 条高可信官方 release；Hexagon 相关优化建议在真实设备上复测后再评估收益。"
+  },
+  "candidate_count": 1
+}
