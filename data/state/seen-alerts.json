@@ -3209,6 +3209,16 @@
       "first_seen_at": "2026-10-12T19:33:53.758811+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11576|ggml-org/llama.cpp release b11576: graph: pad the kv dimension of the no-cache attention to 256 (30416) the no-cache pat",
+      "title": "ggml-org/llama.cpp release b11576: graph: pad the KV dimension of the no-cache attention to 256 (30416) The no-cache path builds a [ntokens, ntokens] mask and passes K and V u",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11576",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-12T21:30:50+00:00",
+      "first_seen_at": "2026-10-13T01:45:55.588153+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

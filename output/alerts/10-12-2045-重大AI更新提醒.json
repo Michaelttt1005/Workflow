@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-10-13T01:45:53.473834Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-12 | llama.cpp 修复 no-cache attention 的 KV 维度填充问题，恢复长序列 Flash Attention 加速",
+    "overview": "本期聚焦 llama.cpp 的一次关键推理性能修复。该更新针对 no-cache attention 路径中 KV 维度未按 256 对齐的问题，避免 CUDA 内核因 head size 512 要求 FATTN_KQ_STRIDE 倍数而回退到 CPU，从而让 Flash Attention 在更多模型和序列长度下正常启用。对于依赖 llama.cpp 部署长上下文推理的开发者，这是一次值得关注的稳定性与性能改进。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11576：为 no-cache attention 的 KV 维度填充至 256，修复 Flash Attention 回退 CPU 问题",
+        "what": "这是 ggml-org/llama.cpp 项目在 GitHub 上发布的 b11576 版本更新。核心变更是对 no-cache attention 路径中的 KV 维度进行填充（pad）到 256。具体来说，no-cache 路径会构建一个 [n_tokens, n_tokens] 的 mask，并直接传入未填充的 K 和 V，导致 FLASH_ATTN_EXT 看到 K->ne[1] 等于 n_tokens。对于 head size 为 512 的 CUDA 内核，要求维度必须是 FATTN_KQ_STRIDE 的倍数，否则该算子会回退到 CPU 执行；同时 -fa auto 探测（仅 1 个 token）也会因此对这类模型禁用 flash attention。本次更新像 llama_kv_cache::get_n_kv 一样填充 mask，并将 K 和 V 用零填充到 mask 的 KV 维度，clef 也以相同方式构建并填充自己的 causal mask。",
+        "plain_explanation": "可以把 attention 计算想象成一场需要按固定座位数入座的会议：GPU 上的 Flash Attention 内核要求参会者（KV 维度）必须坐满 256 的整数倍座位，否则就拒绝开会，转交给速度慢得多的 CPU 来主持。llama.cpp 的 no-cache 路径之前直接带着“零散人数”的 K 和 V 去开会，导致 GPU 内核看到人数不对就罢工，于是大部分长度下都退回 CPU，连自动探测（只试 1 个 token）也会误判并关闭 Flash Attention。这次修复相当于给会议补足空座位（用零填充到 256 的倍数），让 GPU 内核愿意接手，长序列推理就能重新用上 Flash Attention 的加速。",
+        "purpose": "解决 no-cache attention 路径下因 KV 维度未对齐而导致 CUDA Flash Attention 内核回退 CPU 的问题，恢复 GPU 加速能力，并避免 -fa auto 探测对 head size 512 模型错误禁用 Flash Attention。对于使用 llama.cpp 部署长上下文或大 head size 模型的用户，这能显著改善推理速度和 GPU 利用率。",
+        "features": "1）将 no-cache attention 的 mask 按 llama_kv_cache::get_n_kv 的方式填充，并把 K、V 用零填充到 mask 的 KV 维度；2）使 FLASH_ATTN_EXT 在 head size 512 时满足 FATTN_KQ_STRIDE 倍数要求，避免算子回退 CPU；3）修复 -fa auto 探测（1 token）对这类模型错误禁用 flash attention 的行为；4）clef 以相同方式构建并填充 causal mask，保持路径一致性。",
+        "comparison": "候选摘要未提供与修复前相比的具体 benchmark、速度提升百分比或成本数据，暂无可信公开对比数据。",
+        "who": "适合使用 llama.cpp 进行本地或服务端推理的开发者、负责 GPU 推理性能优化的工程师，以及部署长上下文或 head size 512 模型（如部分大参数量模型）的团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11576",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "10-12 16:30"
+      }
+    ],
+    "footer": "本期仅收录 1 条高可信 GitHub Release 更新；性能提升幅度以官方后续 benchmark 为准。"
+  },
+  "candidate_count": 1
+}
