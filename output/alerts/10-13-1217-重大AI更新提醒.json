@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-10-13T17:17:58.703194Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-13 | MLflow 3.17.1 补丁发布：评测与追踪能力增强",
+    "overview": "本期聚焦 MLflow 3.17.1 补丁发布。该版本虽为小版本更新，但在 LLM 评测与可观测性方面带来若干实用增强：make_judge() 支持 Decision API，新增 Databricks 评审队列管理接口，并修复了 Claude Code 的 OpenTelemetry 追踪渲染问题。对于使用 MLflow 做生成式 AI 评测与追踪的团队，值得尽快升级。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "MLflow 3.17.1 发布：make_judge() 支持 Decision API，新增 Databricks 评审队列管理",
+        "what": "MLflow 3.17.1 是 MLflow 的一个补丁版本，主要包含少量功能增强、缺陷修复与文档更新。功能方面，评测模块的 make_judge() 新增对 Decision API 的支持，并引入 mlflow.genai.databricks.review_queues 用于在 Databricks 上管理评审队列；修复方面，解决了 MLflow UI 中 Claude Code 的 OpenTelemetry 追踪渲染问题，并改为从 scheduled-scorers REST 配置加载最新的 Databricks scorers，使反馈记录能正确关联 scorer 版本。",
+        "plain_explanation": "可以把 MLflow 理解成一个记录和评估 AI 应用表现的“实验台账”。这次更新相当于给台账加了两个实用功能：一是让自动打分器（judge）能通过 Decision API 更灵活地做判断，就像给裁判多了一套明确的判罚规则；二是新增了“评审队列”管理，团队可以把需要人工复核的 AI 输出排队处理，类似客服工单系统。此外还修好了一个显示问题——之前用 Claude Code 产生的调用链路在 MLflow 界面里显示不正常，现在能正确渲染了。",
+        "purpose": "解决生成式 AI 应用在评测与可观测性上的实际痛点：让自动评测更可控、让人工复核流程更顺畅、让追踪数据展示更准确。对于依赖 MLflow 做 LLM 评测和调试的团队，这次升级能减少因渲染错误或 scorer 版本错配导致的误判，提升评测结果的可信度。",
+        "features": "1) make_judge() 支持 Decision API，评测逻辑更灵活；2) 新增 mlflow.genai.databricks.review_queues，可在 Databricks 上管理评审队列；3) 修复 Claude Code 的 OTel 追踪在 MLflow UI 中的渲染问题；4) 从 scheduled-scorers REST 配置加载最新 Databricks scorers，确保反馈记录关联正确的 scorer 版本。",
+        "comparison": "暂无可信公开对比数据。该版本为补丁发布，候选摘要未提供与前一版本或其他工具的 benchmark、速度或成本对比。",
+        "who": "适合使用 MLflow 进行 LLM 评测、追踪与实验管理的开发者、数据科学家和 AI 平台团队，尤其是已经在 Databricks 上运行评测流水线、或使用 Claude Code 并需要查看 OpenTelemetry 追踪的团队。",
+        "link": "https://github.com/mlflow/mlflow/releases/tag/v3.17.1",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "10-13 04:33"
+      }
+    ],
+    "footer": "本期仅收录 1 条候选，均为 GitHub Release 来源；建议升级前先在测试环境验证评测流水线兼容性。"
+  },
+  "candidate_count": 1
+}

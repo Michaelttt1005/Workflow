@@ -3229,6 +3229,16 @@
       "first_seen_at": "2026-10-13T08:49:41.464044+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/mlflow/mlflow/releases/tag/v3.17.1|mlflow 3.17.1",
+      "title": "MLflow 3.17.1",
+      "url": "https://github.com/mlflow/mlflow/releases/tag/v3.17.1",
+      "source": "GitHub Release: mlflow/mlflow",
+      "published_at": "2026-10-13T09:33:43+00:00",
+      "first_seen_at": "2026-10-13T17:18:00.901065+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
