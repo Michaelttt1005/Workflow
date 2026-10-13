@@ -3219,6 +3219,16 @@
       "first_seen_at": "2026-10-13T01:45:55.588153+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11581|ggml-org/llama.cpp release b11581: models : remove redundant ggmlcont calls now supported by all unary kernels (30198) m",
+      "title": "ggml-org/llama.cpp release b11581: models : remove redundant ggmlcont calls now supported by all unary kernels (30198) models: remove redundant ggmlcont calls now supported b",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11581",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-13T07:54:11+00:00",
+      "first_seen_at": "2026-10-13T08:49:41.464044+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
