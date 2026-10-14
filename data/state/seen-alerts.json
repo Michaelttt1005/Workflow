@@ -3239,6 +3239,26 @@
       "first_seen_at": "2026-10-13T17:18:00.901065+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/announcing-mcp-support-in-apigee-hybrid-agentic-tools-that-run-in-your-own-cluster/|announcing mcp support in apigee hybrid: agentic tools that run in your own cluster",
+      "title": "Announcing MCP support in Apigee hybrid: agentic tools that run in your own cluster",
+      "url": "https://developers.googleblog.com/announcing-mcp-support-in-apigee-hybrid-agentic-tools-that-run-in-your-own-cluster/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-10-14T19:55:04.395447+00:00",
+      "first_seen_at": "2026-10-14T19:55:30.495705+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11623|ggml-org/llama.cpp release b11623: cuda : use simt implicit gemm conv2d on amd without wmma (30325) cuda : use simt impl",
+      "title": "ggml-org/llama.cpp release b11623: cuda : use SIMT implicit GEMM conv2d on AMD without WMMA (30325) cuda : use SIMT implicit GEMM conv2d on AMD without WMMA Assisted-by: Clau",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11623",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-14T19:51:04+00:00",
+      "first_seen_at": "2026-10-14T19:55:30.495745+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
