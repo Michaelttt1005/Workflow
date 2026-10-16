@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-10-16T02:42:00.705736Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-15 | llama.cpp 新增 Muse Spark Open 多模态模型支持",
+    "overview": "本期重点：llama.cpp 发布 b11671，正式在推理框架中接入 Muse Spark Open 模型，支持文本、视觉与音频三种模态。该模型采用潜空间 MoE 架构，把残差流与专家层解耦，并针对量化做了专门设计，意味着本地多模态推理又多了一个可落地的选择。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11671 新增 Muse Spark Open：文本、视觉与音频三模态模型支持",
+        "what": "这是 ggml-org/llama.cpp 的官方 release b11671，核心变更是为推理框架加入 Muse Spark Open 模型。Muse Spark Open 是一个潜空间 MoE 模型：残差流保持在 8192 维，而 256 个专家位于 4096 维空间，专家前后各有一个投影层做降维和升维，路由采用 top-8 sigmoid 并带一个修正偏置。注意力层交替使用三个 2048 窗口的滑动层（带 rope）和一个不带 rope 的全局层，并配有 sigmoid 输出门与无权重 QK-norm。视觉部分复用 Muse Glimmer tower，音频部分是无注意力、无频谱图的因果卷积金字塔，分四级把 16、6、5、4 个采样点折叠进通道维，每 80 毫秒 24 kHz 音频对应一个 embedding。",
+        "plain_explanation": "可以把它想成一个“多感官翻译官”：你给它一段文字、一张图或一段声音，它都能理解并继续推理。传统大模型像一个巨大的单一办公室，所有计算都在同一层里完成；Muse Spark Open 则像把办公室分成 256 个专业小组，平时只叫其中 8 个最相关的小组来干活，所以计算更省。它的“记忆通道”保持 8192 宽，但专家小组住在 4096 宽的空间里，中间用投影层来回转换，就像把宽轨道上的列车换到窄轨道再换回来。音频处理不画频谱图，而是像用几层筛子把声音一点点压进通道里，每 80 毫秒产出一个声音“指纹”。",
+        "purpose": "它解决的是在本地或轻量环境中运行多模态模型的问题。过去想在 llama.cpp 里跑文本、图像、音频统一模型，往往需要自己写适配层或等社区支持；这次官方 release 直接把 Muse Spark Open 的架构、量化和多模态输入路径接进框架，让开发者可以用同一套 GGUF 推理流程处理三种模态，降低多模态本地部署的门槛。",
+        "features": "第一，三模态统一支持：文本、视觉、音频共用同一模型入口，视觉复用 Muse Glimmer tower，音频走因果卷积金字塔。第二，潜空间 MoE 设计：残差流 8192 维、256 个专家在 4096 维、top-8 sigmoid 路由加修正偏置，兼顾容量与计算效率。第三，混合注意力结构：三个 2048 窗口滑动层带 rope，一个全局层不带 rope，配合 sigmoid 输出门和无权重 QK-norm。第四，量化友好：转换时把 latent 投影和注意力门保持在 Q8_0，这部分只占权重略超 1%，残差流则做 norm preserving 处理，门在转换时折叠。",
+        "comparison": "候选摘要未给出与其它模型在 benchmark、速度或成本上的直接对比数据，暂无可信公开对比数据。摘要中明确提到的量化细节是：latent 投影与注意力门保持 Q8_0，占权重略超 1%，残差流做 norm preserving 且门在转换时折叠。",
+        "who": "适合希望在本地或边缘设备上跑多模态推理的开发者、研究多模态架构的研究者，以及使用 llama.cpp 生态做产品原型的团队。对想研究 MoE 路由、混合注意力或音频卷积前端的人来说，这个 release 也提供了可读的参考实现。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11671",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "多模态理解",
+        "published": "10-15 19:18"
+      }
+    ],
+    "footer": "本期仅一条候选，信息均来自 llama.cpp 官方 release b11671，未引入外部对比数据。"
+  },
+  "candidate_count": 1
+}
