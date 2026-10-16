@@ -3309,6 +3309,16 @@
       "first_seen_at": "2026-10-16T08:40:34.059704+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/huggingface/transformers/releases/tag/v5.20.1|huggingface/transformers release v5.20.1: release v5.20.1 special surprise including the new model beam from reflection ",
+      "title": "huggingface/transformers release v5.20.1: Release v5.20.1 Special surprise including the new model Beam from Reflection AI :partyingface: Beam is a token-efficient, frontier-scale mo",
+      "url": "https://github.com/huggingface/transformers/releases/tag/v5.20.1",
+      "source": "GitHub Release: huggingface/transformers",
+      "published_at": "2026-10-16T13:02:29+00:00",
+      "first_seen_at": "2026-10-16T14:27:32.246725+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }
