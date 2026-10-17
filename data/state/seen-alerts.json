@@ -3369,6 +3369,16 @@
       "first_seen_at": "2026-10-17T16:47:41.883353+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11715|ggml-org/llama.cpp release b11715: ggml-cuda: hip: use builtinamdgcnperm for q10 unpacking (29927) website",
+      "title": "ggml-org/llama.cpp release b11715: ggml-cuda: HIP: use builtinamdgcnperm for q10 unpacking (29927) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11715",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-17T19:34:47+00:00",
+      "first_seen_at": "2026-10-17T19:57:04.906216+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
