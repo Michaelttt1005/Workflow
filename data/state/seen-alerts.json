@@ -3319,6 +3319,36 @@
       "first_seen_at": "2026-10-16T14:27:32.246725+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11711|ggml-org/llama.cpp release b11711: cuda : fix -wtautological-compare in fattn vec dispatch (30519) signed-off-by: adrien",
+      "title": "ggml-org/llama.cpp release b11711: cuda : fix -Wtautological-compare in fattn vec dispatch (30519) Signed-off-by: Adrien Gallouët Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11711",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-17T13:04:16+00:00",
+      "first_seen_at": "2026-10-17T13:24:51.443335+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11710|ggml-org/llama.cpp release b11710: cuda : add grouped experts top-k fusion (29181) fuse grouped experts add tests hip fi",
+      "title": "ggml-org/llama.cpp release b11710: cuda : add grouped experts top-k fusion (29181) fuse grouped experts add tests hip fix add to graphoptimize apply suggestion from am17a",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11710",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-17T12:45:54+00:00",
+      "first_seen_at": "2026-10-17T13:24:51.443458+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11709|ggml-org/llama.cpp release b11709: model : add kolibri-1 (aleph-alpha) support (30673) model : add kolibri-1 (aleph-alph",
+      "title": "ggml-org/llama.cpp release b11709: model : add Kolibri-1 (Aleph-Alpha) support (30673) model : add Kolibri-1 (Aleph-Alpha) support Kolibri-1 is a bilingual German/English MoE",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11709",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-17T12:28:30+00:00",
+      "first_seen_at": "2026-10-17T13:24:51.443534+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
