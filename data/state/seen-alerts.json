@@ -3349,6 +3349,26 @@
       "first_seen_at": "2026-10-17T13:24:51.443534+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11713|ggml-org/llama.cpp release b11713: cuda: faster mmvq for low-bit types (30517) cuda: faster mmvq for low-bit types ggml-",
+      "title": "ggml-org/llama.cpp release b11713: CUDA: faster MMVQ for low-bit types (30517) CUDA: faster MMVQ for low-bit types ggml-cuda: hip: small nwarps GCN fix on Q3K(ncols=2,3), Q6",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11713",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-17T16:00:52+00:00",
+      "first_seen_at": "2026-10-17T16:47:41.883276+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11712|ggml-org/llama.cpp release b11712: tests: give the random model generator a per-tensor filler table (30674) tests: give ",
+      "title": "ggml-org/llama.cpp release b11712: tests: give the random model generator a per-tensor filler table (30674) tests: give the random model generator a per-tensor filler table M",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11712",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-17T14:01:29+00:00",
+      "first_seen_at": "2026-10-17T16:47:41.883353+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
