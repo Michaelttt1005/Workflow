@@ -3389,6 +3389,16 @@
       "first_seen_at": "2026-10-18T13:43:19.574502+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11732|ggml-org/llama.cpp release b11732: cuda: fix warning for nonexistent extra semicolon (30774) website",
+      "title": "ggml-org/llama.cpp release b11732: CUDA: fix warning for nonexistent extra semicolon (30774) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11732",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-19T13:50:27+00:00",
+      "first_seen_at": "2026-10-19T16:44:49.418068+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
