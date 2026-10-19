@@ -3399,6 +3399,16 @@
       "first_seen_at": "2026-10-19T16:44:49.418068+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/huggingface/transformers/releases/tag/v5.20.2|huggingface/transformers: patch release v5.20.2",
+      "title": "huggingface/transformers: Patch release v5.20.2",
+      "url": "https://github.com/huggingface/transformers/releases/tag/v5.20.2",
+      "source": "GitHub Release: huggingface/transformers",
+      "published_at": "2026-10-19T17:45:37+00:00",
+      "first_seen_at": "2026-10-19T21:55:29.722727+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
