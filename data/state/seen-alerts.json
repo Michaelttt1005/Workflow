@@ -3449,6 +3449,26 @@
       "first_seen_at": "2026-10-20T18:14:04.581674+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11760|ggml-org/llama.cpp release b11760: hip/cuda: fix reduction in mmf getting tile widths not devisiable by 64 (30836) websi",
+      "title": "ggml-org/llama.cpp release b11760: HIP/CUDA: Fix reduction in mmf getting tile widths not devisiable by 64 (30836) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11760",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-20T21:49:57+00:00",
+      "first_seen_at": "2026-10-20T22:53:15.811713+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11757|ggml-org/llama.cpp release b11757: cuda: clear cuda graphs after legacy memory pool flush (26771) assisted-by: claude op",
+      "title": "ggml-org/llama.cpp release b11757: CUDA: Clear CUDA graphs after legacy memory pool flush (26771) Assisted-by: Claude Opus 5.5 Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11757",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-20T19:56:46+00:00",
+      "first_seen_at": "2026-10-20T22:53:15.811766+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

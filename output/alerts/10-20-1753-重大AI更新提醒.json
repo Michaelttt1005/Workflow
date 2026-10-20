@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-10-20T22:53:13.517480Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-20 | llama.cpp 连续发布两个 CUDA/HIP 后端修复版本，聚焦 GPU 推理稳定性",
+    "overview": "本期关注 llama.cpp 在 10 月 20 日连续发布的两个版本 b11760 与 b11757。两者均为 GPU 后端（CUDA/HIP）的缺陷修复，分别涉及 mmf 归约操作中 tile 宽度不能被 64 整除的边界情况，以及 legacy 内存池刷新后 CUDA graphs 未清理的问题。对于在 NVIDIA/AMD GPU 上部署本地大模型推理的开发者，这两项修复直接关系到数值正确性与长时间运行的稳定性。",
+    "checked_sources": [
+      "GitHub Release: ggml-org/llama.cpp b11760",
+      "GitHub Release: ggml-org/llama.cpp b11757"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11760 修复 HIP/CUDA 后端 mmf 归约在 tile 宽度非 64 整除时的错误",
+        "what": "这是 ggml-org/llama.cpp 的官方 release b11760，核心变更是一条针对 HIP/CUDA 后端的修复：在 mmf（矩阵乘加类归约）操作中，当 tile 宽度不能被 64 整除时，归约逻辑会得到错误的 tile 宽度，该版本修正了这一边界条件。release 同时附带 macOS/iOS、Linux 各平台预编译二进制包。",
+        "plain_explanation": "可以把 GPU 计算想象成一条流水线，工人按固定大小的托盘（tile）搬运数据。llama.cpp 的 CUDA/HIP 内核默认假设托盘宽度是 64 的整数倍，遇到不是 64 倍数的宽度时，最后一个托盘会装不满，旧代码仍按满托盘去汇总结果，于是算出来的数就偏了。b11760 相当于给流水线加了一条规则：托盘不满时按实际宽度汇总。对普通用户来说，这避免了某些模型在特定矩阵尺寸下输出乱码或数值异常。",
+        "purpose": "解决 GPU 后端在非 64 对齐 tile 宽度下的归约计算错误，保证 llama.cpp 在 NVIDIA CUDA 与 AMD HIP 平台上对任意矩阵形状的推理结果正确，减少因形状边界触发的数值错误和输出异常。",
+        "features": "1）修正 HIP/CUDA mmf 归约中 tile 宽度不能被 64 整除时的宽度计算逻辑；2）同时覆盖 CUDA 与 HIP 两条 GPU 后端路径；3）提供 macOS Apple Silicon、macOS Intel、iOS XCFramework、Ubuntu x64/arm64/s390x 等平台预编译包，便于直接替换验证。",
+        "comparison": "候选摘要未提供修复前后的 benchmark、吞吐或精度对比数据，暂无可信公开对比数据。",
+        "who": "适合在 NVIDIA GPU 或 AMD GPU 上使用 llama.cpp 部署本地推理的开发者、负责推理服务稳定性的工程团队，以及维护自定义 ggml 内核、需要关注 tile 对齐边界的研究者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11760",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "10-20 16:49"
+      },
+      {
+        "candidate_id": "2",
+        "title": "llama.cpp b11757 在 legacy 内存池刷新后清理 CUDA graphs，避免残留图状态",
+        "what": "这是 ggml-org/llama.cpp 的官方 release b11757，核心变更是在 legacy 内存池 flush 之后清除 CUDA graphs。CUDA graphs 会把一串 GPU 操作录制成可复用的执行图，当底层内存池被刷新、地址发生变化时，旧图仍指向过期状态，该版本在 flush 后主动清理图，避免后续执行使用失效的图。",
+        "plain_explanation": "CUDA graphs 类似提前录好的“操作剧本”，之后按剧本快速重放，省去每次重新调度的时间。但剧本里写死了内存地址，一旦内存池被刷新、地址重新分配，旧剧本就会指向已经不存在的位置。b11757 的做法是：每次刷新内存池后，把旧剧本作废，下次需要时重新录制。这样长时间运行、反复加载卸载模型的场景就不容易因为地址错位而崩溃或算错。",
+        "purpose": "解决 legacy 内存池刷新后 CUDA graphs 仍保留旧状态所导致的潜在执行错误或崩溃，提升 llama.cpp 在 CUDA 上长时间运行、动态调整内存场景下的稳定性。",
+        "features": "1）在 legacy memory pool flush 之后显式清除 CUDA graphs；2）针对 CUDA 后端的内存生命周期管理进行修复；3）随 release 提供 macOS、iOS、Linux 多平台预编译产物，便于用户直接升级验证。",
+        "comparison": "候选摘要未给出修复前后的性能、显存占用或稳定性指标对比，暂无可信公开对比数据。",
+        "who": "适合在 CUDA 环境运行 llama.cpp、需要长时间保持推理服务或在运行中动态加载/卸载模型的开发者与运维团队，也适合排查 GPU 显存复用相关崩溃问题的工程师。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11757",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "检索增强与向量模型",
+        "published": "10-20 14:56"
+      }
+    ],
+    "footer": "以上内容仅基于候选 release 摘要整理，未引入外部 benchmark 或价格数据；建议升级前在自有模型与硬件上做回归验证。"
+  },
+  "candidate_count": 2
+}
