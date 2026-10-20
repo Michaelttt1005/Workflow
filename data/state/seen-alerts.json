@@ -3419,6 +3419,16 @@
       "first_seen_at": "2026-10-20T00:52:28.713911+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/unifying-edge-ai-how-coral-npus-open-standard-brings-portable-energy-viable-intelligence-from-model-to-silicon/|unifying edge ai: how coral npu’s open standard brings portable, energy-viable intelligence from model to silicon",
+      "title": "Unifying Edge AI: How Coral NPU’s open standard brings portable, energy-viable intelligence from model to silicon",
+      "url": "https://developers.googleblog.com/unifying-edge-ai-how-coral-npus-open-standard-brings-portable-energy-viable-intelligence-from-model-to-silicon/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-10-20T13:11:52.251083+00:00",
+      "first_seen_at": "2026-10-20T13:12:22.665324+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }
