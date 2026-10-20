@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-10-20T18:14:01.973956Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-20 | vLLM 与 SGLang 原生支持 TPU，Model Explorer 支持自定义边缘编译器可视化调试",
+    "overview": "Google 今日发布两项面向开发者的重要更新：vLLM 和 SGLang 推理引擎通过 TorchTPU 获得原生 PyTorch 后端，可在 Ironwood TPU 上运行并优化长上下文与智能体工作负载；同时 Model Explorer 新增对自定义编译器中间表示及 TOSA、VGF、PTE 等开源适配器的支持，帮助团队可视化调试端侧机器学习执行图。",
+    "checked_sources": [
+      "Google Developers Blog"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "vLLM 与 SGLang 推出原生 TPU 推理引擎，基于 TorchTPU 支持 PyTorch 后端",
+        "what": "Google 宣布为 vLLM 和 SGLang 两个主流开源推理引擎提供原生 PyTorch 后端，底层由 TorchTPU 驱动。该能力与开源项目维护者合作构建，包含针对 TPU 优化的内核实现、基于 TPU Sync 的 KV cache 管理以及分离式服务（disaggregated serving）等生产级特性，使开发者能用熟悉的 PyTorch 工具链在 Ironwood TPU 上运行和调优服务负载。",
+        "plain_explanation": "可以把 vLLM 和 SGLang 想象成餐厅里负责把顾客订单快速分发给厨房的系统，而 TPU 是专门为 AI 计算设计的厨房设备。过去这套分发系统主要适配 GPU 厨房，现在 Google 让它原生支持 TPU 厨房，并且用的还是 PyTorch 这套大家熟悉的菜谱语言。比如一个团队原本用 PyTorch 训练模型，现在可以直接把模型放到 TPU 上用 vLLM 提供服务，不需要重写大量底层代码；KV cache 管理则像把常用食材提前备好，减少重复计算，长对话和智能体任务会更流畅。",
+        "purpose": "解决开发者在 TPU 上部署 vLLM/SGLang 时缺乏原生 PyTorch 支持、难以复用现有工具链的问题，同时通过优化内核、KV cache 管理和分离式服务提升长上下文与智能体工作负载的推理效率与成本效益。",
+        "features": "1）基于 TorchTPU 的原生 PyTorch 后端，可直接用 PyTorch 工具运行和优化服务；2）针对 TPU 优化的内核实现，提升推理执行效率；3）TPU Sync 支持的 KV cache 管理，面向生产环境；4）支持分离式服务，将不同计算阶段解耦调度。",
+        "comparison": "候选摘要称公开 benchmark 显示在 Ironwood TPU 上于长上下文和智能体工作负载达到 state-of-the-art 性能与行业领先的成本效率，但未给出具体数值、对比基线或价格，暂无可信公开对比数据。",
+        "who": "适合需要在 TPU 上部署大模型推理服务的开发者、负责推理基础设施的工程团队、使用 vLLM 或 SGLang 的开源贡献者，以及关注长上下文和智能体工作负载成本效率的研究与平台团队。",
+        "link": "https://developers.googleblog.com/announcing-new-vllm-and-sglang-inference-engines-on-tpu/",
+        "score": "8",
+        "source": "Google Developers Blog",
+        "type": "官方发布",
+        "topic": "智能体与开发者平台",
+        "published": "10-20 13:13"
+      },
+      {
+        "candidate_id": "2",
+        "title": "Model Explorer 为自定义边缘编译器带来可视化图调试能力",
+        "what": "Google AI Edge 的 Model Explorer 工具新增对自定义编译器中间表示（IR）以及 TOSA、VGF、PTE 等开源适配器的支持，面向端侧机器学习场景。开发者可以使用分层图可视化、分屏视图和逐节点 trace 叠加来发现导出回归、验证硬件委托，并在本地透明调试执行图、定位周期级延迟瓶颈。",
+        "plain_explanation": "端侧模型在部署前要经过编译器转换，就像把一份中文菜谱翻译成不同厨房设备能读的格式，翻译过程中可能出错却很难看出错在哪。Model Explorer 现在能把翻译后的执行图以可视化方式展开，像地图一样分层显示每个节点，还能把运行时的 trace 叠加到对应节点上。比如模型导出后精度下降，开发者可以逐节点对比转换前后的图，快速找到是哪一步翻译错了；也可以查看某个算子是否被正确交给硬件加速器执行，以及哪一段拖慢了整体延迟。",
+        "purpose": "解决自定义边缘编译器中间表示缺乏可视化调试手段的问题，帮助工程团队在本地透明地检查执行图、发现导出回归、验证硬件委托并定位周期级延迟瓶颈，减少端侧部署的排查成本。",
+        "features": "1）支持自定义编译器 IR 及 TOSA、VGF、PTE 等开源适配器；2）分层图可视化与分屏视图，便于对比不同阶段的图结构；3）逐节点 trace 叠加，将运行时数据映射到执行图节点；4）支持导出回归检测与硬件委托验证。",
+        "comparison": "候选摘要未提供与其它调试工具的 benchmark、速度或成本对比数据，暂无可信公开对比数据。",
+        "who": "适合从事端侧机器学习部署的开发者、编译器与运行时工程师、需要验证硬件委托和排查延迟瓶颈的工程团队，以及使用 TOSA、VGF、PTE 等格式的研究与产品团队。",
+        "link": "https://developers.googleblog.com/bringing-visual-graph-debugging-to-custom-edge-compilers-with-model-explorer/",
+        "score": "7",
+        "source": "Google Developers Blog",
+        "type": "官方发布",
+        "topic": "智能体与开发者平台",
+        "published": "10-20 13:13"
+      }
+    ],
+    "footer": "本期内容基于 Google Developers Blog 2026-10-20 候选源整理，性能与成本描述均引自候选摘要，未补充外部数据。"
+  },
+  "candidate_count": 2
+}

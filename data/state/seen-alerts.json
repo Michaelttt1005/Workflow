@@ -3429,6 +3429,26 @@
       "first_seen_at": "2026-10-20T13:12:22.665324+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/announcing-new-vllm-and-sglang-inference-engines-on-tpu/|announcing new vllm and sglang inference engines on tpu",
+      "title": "Announcing New vLLM and SGLang Inference Engines on TPU",
+      "url": "https://developers.googleblog.com/announcing-new-vllm-and-sglang-inference-engines-on-tpu/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-10-20T18:13:48.483077+00:00",
+      "first_seen_at": "2026-10-20T18:14:04.581611+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/bringing-visual-graph-debugging-to-custom-edge-compilers-with-model-explorer/|bringing visual graph debugging to custom edge compilers with model explorer",
+      "title": "Bringing Visual Graph Debugging to Custom Edge Compilers with Model Explorer",
+      "url": "https://developers.googleblog.com/bringing-visual-graph-debugging-to-custom-edge-compilers-with-model-explorer/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-10-20T18:13:48.483098+00:00",
+      "first_seen_at": "2026-10-20T18:14:04.581674+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
