@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-10-20T00:52:26.490001Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-19 | llama.cpp 修复 SYCL 后端量化权重 get_rows 问题",
+    "overview": "本期只有一条值得关注的更新：llama.cpp 发布 b11748 版本，修复了 SYCL 后端在处理重排（reordered）量化权重时 get_rows 的实现问题。该修复直接影响在 Intel GPU 等 SYCL 设备上运行量化模型的正确性，属于推理框架层面的稳定性补丁，而非新模型或新功能发布。",
+    "checked_sources": [
+      "GitHub Release: ggml-org/llama.cpp b11748"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11748 修复 SYCL 后端重排量化权重的 get_rows 实现",
+        "what": "这是 ggml-org/llama.cpp 的一个 GitHub Release（b11748），核心变更是一条针对 SYCL 后端的修复：修正 get_rows 在“重排后的量化权重”上的行为。llama.cpp 是用 C/C++ 实现、支持多种硬件后端（CPU、CUDA、Metal、SYCL 等）的本地大模型推理框架，SYCL 后端主要用于在 Intel GPU 等支持 SYCL 的设备上加速推理。该版本同时按惯例提供 macOS Apple Silicon、macOS Intel、iOS XCFramework、Ubuntu x64/arm64/s390x 等预编译产物。",
+        "plain_explanation": "大模型为了省显存，常把权重压成 4bit、5bit 这类低精度格式，叫量化。有些后端为了计算更快，会在加载时把权重按硬件喜欢的顺序重新排列，这就是“重排”。get_rows 是推理时按索引取出若干行权重的操作，比如查词嵌入表或做 MoE 路由时就会用到。如果重排后的权重仍按旧顺序去取行，取出来的数就是错的，模型输出会变得混乱甚至崩溃。这次修复相当于把“书架重新整理过之后，取书时仍按新编号去找”这件事做对了，让 SYCL 设备上的量化模型能正确出结果。",
+        "purpose": "解决 SYCL 后端在加载重排量化权重后 get_rows 取数错误的问题，避免在 Intel GPU 等 SYCL 设备上运行量化模型时出现结果错误或异常，保证该后端与其它后端行为一致。对依赖 SYCL 做本地推理的团队来说，这是一个应当跟进的正确性修复。",
+        "features": "1) 修复 SYCL 后端 get_rows 对重排量化权重的索引与反量化逻辑；2) 覆盖量化权重在重排布局下的取行路径，保证与未重排布局结果一致；3) 随版本提供 macOS arm64/x64、iOS XCFramework、Ubuntu x64/arm64/s390x 等多平台预编译包，便于直接替换验证。",
+        "comparison": "暂无可信公开对比数据；候选摘要未给出修复前后的性能或精度 benchmark。",
+        "who": "适合在 Intel GPU 或其他 SYCL 设备上部署 llama.cpp 做本地量化模型推理的开发者；维护 SYCL 后端适配的框架贡献者；以及需要验证量化权重重排路径正确性的推理引擎测试团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11748",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "开发者生态与数据工具",
+        "published": "10-19 19:23"
+      }
+    ],
+    "footer": "本期仅一条候选通过筛选；GitHub Release 类更新以正确性修复为主，建议 SYCL 用户升级后回归测试量化模型输出。"
+  },
+  "candidate_count": 1
+}

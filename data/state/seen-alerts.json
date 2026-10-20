@@ -3409,6 +3409,16 @@
       "first_seen_at": "2026-10-19T21:55:29.722727+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11748|ggml-org/llama.cpp release b11748: sycl : fix getrows on reordered quantized weights (30430) co-authored-by: sam website",
+      "title": "ggml-org/llama.cpp release b11748: sycl : fix getrows on reordered quantized weights (30430) Co-authored-by: Sam Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11748",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-20T00:23:31+00:00",
+      "first_seen_at": "2026-10-20T00:52:28.713911+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
