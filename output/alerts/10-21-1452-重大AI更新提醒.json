@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-10-21T19:52:10.232210Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-21 | LangChain Perplexity 集成修复 Agent API 搜索与缓存统计，TorchTitan 更新 SOTA 模型与 TitanRL",
+    "overview": "本期聚焦两条开发者工具链更新：LangChain 的 Perplexity 集成发布 1.4.2，重点修复 Agent API 搜索结果保留、流式输出中 search_context_size 重复发送以及 Responses API 缓存 token 映射问题；PyTorch 官方博客介绍 TorchTitan 在 SOTA 模型、大规模训练性能和 TitanRL 方面的进展。两条更新均面向构建和训练生成式 AI 模型的工程团队。",
+    "checked_sources": [
+      "GitHub Release: langchain-perplexity==1.4.2",
+      "PyTorch Blog: TorchTitan Update: New SOTA Models, Performance at Scale, TitanRL"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "LangChain Perplexity 集成发布 1.4.2：修复 Agent API 搜索结果保留与缓存 token 统计",
+        "what": "这是 LangChain 官方仓库中 langchain-perplexity 合作伙伴包的 1.4.2 版本发布。该包提供 ChatPerplexity 等类，让开发者可以在 LangChain 的链、智能体和工具调用流程中接入 Perplexity 的聊天与搜索能力。本次发布包含多项修复和依赖更新，核心变更包括：保留 Agent API 的搜索结果、将 Responses API 的缓存 token 映射到 input_token_details、在 _astream 中每次流式输出只发送一次 search_context_size，以及刷新模型配置数据。",
+        "plain_explanation": "可以把 LangChain 想象成一个“万能遥控器”，它统一控制不同 AI 服务；langchain-perplexity 就是其中一个按钮，专门用来调用 Perplexity。以前这个按钮有两个小毛病：一是当 Perplexity 的 Agent 接口返回搜索结果时，LangChain 有时会把结果弄丢，就像遥控器收到了电视信号却没显示在屏幕上；二是流式输出时会把“搜索上下文大小”这个参数重复发送多次，造成浪费。1.4.2 版本把这两个问题修好了，还让缓存 token 的统计更准确，方便开发者看清每次调用到底用了多少输入 token。",
+        "purpose": "解决开发者在 LangChain 中集成 Perplexity 时遇到的搜索结果丢失、流式参数重复发送和 token 统计不准确问题，提升智能体搜索场景的可靠性和可观测性，同时保持依赖项更新以降低安全与兼容风险。",
+        "features": "1）修复 Agent API 搜索结果保留问题，确保 Perplexity 返回的搜索上下文能完整传递到 LangChain 流程中；2）将 Responses API 的缓存 token 正确映射到 input_token_details，便于成本核算；3）在 _astream 中每次流式输出只发送一次 search_context_size，避免重复参数；4）刷新模型配置数据并升级 certifi、urllib3、anyio 等依赖。",
+        "comparison": "候选摘要未提供与 1.4.1 或其他版本的 benchmark、速度或成本对比数据，暂无可信公开对比数据。",
+        "who": "适合使用 LangChain 构建智能体、检索增强生成或搜索问答应用的开发者，尤其是需要接入 Perplexity Agent API 并关注流式输出与 token 成本统计的团队。",
+        "link": "https://github.com/langchain-ai/langchain/releases/tag/langchain-perplexity%3D%3D1.4.2",
+        "score": "8",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "10-21 12:31"
+      },
+      {
+        "candidate_id": "2",
+        "title": "TorchTitan 更新：新增 SOTA 模型、大规模训练性能优化与 TitanRL",
+        "what": "TorchTitan 是 PyTorch 原生的平台，用于生成式 AI 模型的快速实验以及大规模预训练和后训练。它被设计为 PyTorch 原生技术的极简、干净实现，具备灵活的配置能力。本次 PyTorch 官方博客更新介绍了 TorchTitan 在新 SOTA 模型、规模化性能以及 TitanRL 方面的进展，说明该平台在模型覆盖和强化学习后训练方向上有新的扩展。",
+        "plain_explanation": "训练大模型就像盖一栋超高层建筑，需要一套标准化的施工平台来管理吊车、材料和工人。TorchTitan 就是 PyTorch 官方提供的这样一套“施工平台”，它把分布式训练、并行策略等复杂技术封装成干净、可复用的模块，让研究者不用从零搭脚手架。这次更新相当于平台新增了几种“标准户型”（SOTA 模型），优化了大规模施工效率，还加入了 TitanRL 这个专门做强化学习后训练的“装修队”，让模型在预训练之后能继续通过强化学习调优。",
+        "purpose": "为需要大规模预训练和后训练生成式 AI 模型的研究者与工程团队提供 PyTorch 原生、可快速实验的平台，降低分布式训练和强化学习后训练的工程门槛，并跟上 SOTA 模型与规模化性能需求。",
+        "features": "1）新增 SOTA 模型支持，扩展 TorchTitan 可训练和实验的模型范围；2）面向大规模训练的性能优化，强调在规模化场景下的表现；3）引入 TitanRL，覆盖强化学习后训练流程；4）保持 PyTorch 原生、极简干净实现的设计，便于灵活配置和快速实验。",
+        "comparison": "候选摘要提到“Performance at Scale”和“含可比较性能/成本线索”，但未给出具体 benchmark 数值、速度提升比例或成本对比，暂无可信公开对比数据。",
+        "who": "适合从事大模型预训练、后训练和强化学习研究的研究者，以及需要基于 PyTorch 原生技术栈搭建大规模训练平台的工程团队。",
+        "link": "https://pytorch.org/blog/torchtitan-update-new-sota-models-performance-at-scale-titanrl/",
+        "score": "7",
+        "source": "PyTorch Blog",
+        "type": "官方发布",
+        "topic": "智能体与开发者平台",
+        "published": "10-21 14:45"
+      }
+    ],
+    "footer": "本期两条更新均来自官方渠道；具体性能数据请以原始发布链接为准。"
+  },
+  "candidate_count": 2
+}

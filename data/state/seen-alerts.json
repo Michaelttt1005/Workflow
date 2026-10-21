@@ -3499,6 +3499,26 @@
       "first_seen_at": "2026-10-21T09:02:51.982250+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/langchain-ai/langchain/releases/tag/langchain-perplexity%3d%3d1.4.2|langchain-perplexity==1.4.2",
+      "title": "langchain-perplexity==1.4.2",
+      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-perplexity%3D%3D1.4.2",
+      "source": "GitHub Release: langchain-ai/langchain",
+      "published_at": "2026-10-21T17:31:04+00:00",
+      "first_seen_at": "2026-10-21T19:52:12.778333+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://pytorch.org/blog/torchtitan-update-new-sota-models-performance-at-scale-titanrl/|torchtitan update: new sota models, performance at scale, titanrl",
+      "title": "TorchTitan Update: New SOTA Models, Performance at Scale, TitanRL",
+      "url": "https://pytorch.org/blog/torchtitan-update-new-sota-models-performance-at-scale-titanrl/",
+      "source": "PyTorch Blog",
+      "published_at": "2026-10-21T19:45:44+00:00",
+      "first_seen_at": "2026-10-21T19:52:12.778386+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
