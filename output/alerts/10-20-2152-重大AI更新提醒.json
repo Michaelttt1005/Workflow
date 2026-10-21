@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-10-21T02:52:05.877681Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-20 | llama.cpp 的 CUDA 后端补齐 SSM 卷积 kernel size 7 支持",
+    "overview": "本期只有一条值得单独提醒的更新：llama.cpp 发布 b11770，在 ggml-cuda 后端新增对 ssm_conv kernel size 7 的支持。这条改动看似只是卷积核尺寸的一个数字，但它直接关系到 Mamba 类状态空间模型能否在 GPU 上正确、高效地跑起来，对本地推理和边缘部署的开发者有实际意义。",
+    "checked_sources": [
+      "GitHub Release: ggml-org/llama.cpp b11770"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11770：ggml-cuda 后端支持 ssm_conv kernel size 7",
+        "what": "这是 ggml-org/llama.cpp 的第 b11770 号构建发布，核心变更是给 ggml-cuda 后端增加了对 ssm_conv 卷积核尺寸为 7 的支持（对应 PR #30873）。ssm_conv 是状态空间模型（SSM，如 Mamba 系列）在推理时对输入序列做短卷积的算子，卷积核大小决定了每次看多少个相邻 token；此前 CUDA 后端只覆盖了部分 kernel size，这次把 7 补上，意味着采用 7 宽短卷积的 SSM 结构可以在 NVIDIA GPU 上走原生 CUDA 路径，而不是回退到其他实现。该 release 同时照例提供 macOS Apple Silicon（arm64）、macOS Intel（x64）、iOS XCFramework、Ubuntu x64/arm64/s390x 等预编译包。",
+        "plain_explanation": "可以把 SSM 模型想象成一边读句子一边做笔记：每读到一个词，它要把前面几个词的“笔记”按权重混合一下再写下去，这个“往前看几个词”的窗口宽度就是卷积核大小。窗口是 7，就表示每次混合最近 7 个位置的信息。如果 GPU 代码只写死了窗口 3 或 4 的快速通道，遇到窗口 7 的模型就只能绕远路，速度慢甚至算错。这次更新相当于给窗口 7 也修了一条直达高速路，模型在显卡上跑得更顺。",
+        "purpose": "解决 CUDA 后端对 SSM 短卷积核尺寸覆盖不全的问题，避免使用 kernel size 7 的 Mamba 类模型在 NVIDIA GPU 上回退到低效路径或无法正确执行，从而让本地推理框架对新式非 Transformer 架构的支持更完整。",
+        "features": "一是在 ggml-cuda 中新增 ssm_conv kernel size 7 的 CUDA 实现，扩展了 SSM 算子的 GPU 覆盖范围；二是随 release 提供多平台预编译二进制，包括 macOS Apple Silicon arm64、macOS Intel x64、iOS XCFramework 以及 Ubuntu x64、arm64、s390x 的 CPU 版本，方便直接下载验证；三是变更以独立 PR #30873 合入，便于追溯具体实现与后续回归。",
+        "comparison": "候选摘要未给出该 kernel 的吞吐、延迟或显存对比数据，暂无可信公开对比数据。",
+        "who": "适合在本地或边缘设备上跑 Mamba/SSM 类模型的开发者、维护 llama.cpp 各语言绑定的工程师，以及研究非 Transformer 架构推理优化的研究者；如果你的模型短卷积窗口不是 7，这次更新对你影响有限，但可以作为升级到最新构建的参考。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11770",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "10-20 20:27"
+      }
+    ],
+    "footer": "本期仅一条候选通过筛选；评分与对比信息严格依据候选摘要，未做外部补充。"
+  },
+  "candidate_count": 1
+}
