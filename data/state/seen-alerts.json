@@ -3519,6 +3519,16 @@
       "first_seen_at": "2026-10-21T19:52:12.778386+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11801|ggml-org/llama.cpp release b11801: model: add support for sensenova u1 model (28919) model : add sensenova u1 understand",
+      "title": "ggml-org/llama.cpp release b11801: model: Add support for SenseNova U1 model (28919) model : add SenseNova U1 understanding support Add support for the dense SenseNova U1 und",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11801",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-21T21:56:03+00:00",
+      "first_seen_at": "2026-10-21T22:58:05.142197+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

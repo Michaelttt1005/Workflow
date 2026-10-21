@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-10-21T22:58:03.268910Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-21 | llama.cpp 新增 SenseNova U1 多模态理解支持",
+    "overview": "本期重点：llama.cpp 发布 b11801 版本，正式加入对 SenseNova U1 稠密理解分支的 GGUF 推理支持，覆盖 U1.5-8B-MoT 模型，并实现视觉编码器转换与时空 Q/K 归一化。这意味着本地推理栈可以更早跑通该多模态理解模型，但生成分支在转换阶段被有意拒绝。",
+    "checked_sources": [
+      "GitHub Release: ggml-org/llama.cpp b11801"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11801 新增 SenseNova U1 多模态理解模型支持",
+        "what": "这是 ggml-org/llama.cpp 的官方 release b11801，核心变更是为 SenseNova U1 模型增加推理支持。具体包括：新增 HF 到 GGUF 的转换逻辑（NEOChatModel），排除 MoT 生成张量并拼接时间与空间 Q/K 归一化权重；注册 sensenova_u1 GGUF 架构和自定义空间 RoPE 元数据；实现时间/空间 Q/K 归一化与 4 轴 RoPE；保留 U1 专属文本位置处理；并加入合成架构覆盖测试。同时 mtmd 模块新增 SenseNova U1 视觉编码器转换与实现。该版本仅支持稠密理解分支，生成分支在转换时被明确拒绝。",
+        "plain_explanation": "可以把 llama.cpp 理解成一个让大模型在普通电脑上跑的“通用引擎”。这次引擎新增了对一款叫 SenseNova U1 的模型的支持，而且只支持它“看懂”图片和文字的那部分能力，不支持它“生成”内容的那部分。打个比方：你给引擎装了一个新的翻译插件，这个插件能帮你阅读外文说明书，但不能帮你写外文文章。技术上，它处理了模型里时间与空间维度的归一化权重，让模型在本地运行时能正确理解图像的空间关系。",
+        "purpose": "解决 SenseNova U1 稠密理解分支无法在 llama.cpp 生态中直接加载和推理的问题，让开发者和研究者能在本地或边缘设备上跑通该多模态理解模型，而不必依赖原厂推理框架。同时通过明确拒绝生成分支，避免用户误用不支持的生成能力。",
+        "features": "1）新增 sensenova_u1 GGUF 架构注册与自定义空间 RoPE 元数据；2）实现时间/空间 Q/K 归一化与 4 轴 RoPE，支持 U1.5-8B-MoT 稠密理解模型；3）mtmd 模块加入 SenseNova U1 视觉编码器转换与推理支持；4）HF-to-GGUF 转换排除 MoT 生成张量并拼接归一化权重，生成分支在转换阶段被拒绝。",
+        "comparison": "暂无可信公开对比数据。候选摘要未提供与其它模型或框架的速度、精度、成本对比。",
+        "who": "适合需要在本地或边缘设备部署多模态理解模型的开发者、研究 SenseNova U1 架构的研究者，以及维护 llama.cpp 转换与推理管线的工程团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11801",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "多模态理解",
+        "published": "10-21 16:56"
+      }
+    ],
+    "footer": "本期仅一条候选，信息均来自 llama.cpp 官方 release b11801；生成分支不支持，使用前请确认模型分支。"
+  },
+  "candidate_count": 1
+}
