@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-10-21T09:02:49.973339Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-21 | MLflow 评测血缘增强与 llama.cpp 本地 TTS 服务上线",
+    "overview": "本期聚焦两条开发者工具链更新：MLflow 3.17.2 在 genai.evaluate 运行中记录数据集、评分器与智能体血缘，并修复 Optuna 与 Spark 相关缺陷；llama.cpp b11781 为 server 新增 POST /tts 端点，让本地推理服务可直接输出语音。两者分别补强实验可追溯性与多模态服务能力。",
+    "checked_sources": [
+      "GitHub Release: mlflow/mlflow v3.17.2",
+      "GitHub Release: ggml-org/llama.cpp b11781"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "MLflow 3.17.2 发布：genai.evaluate 运行记录数据集、评分器与智能体血缘",
+        "what": "MLflow 3.17.2 是 MLflow 的一个补丁版本，核心变更是让 mlflow.genai.evaluate 在运行时把数据集、评分器（scorer）以及智能体（agent）的血缘信息记录到对应 run 中，同时修复了 MlflowSparkStudy 执行器采样器与批设置的重播种问题，以及 MlflowStorage 在 Optuna trial 数值保存前就标记完成的问题。",
+        "plain_explanation": "可以把 MLflow 想成实验记录本：以前你跑一次大模型评测，只记下分数，却说不清用的是哪份测试题、哪个打分程序、哪个智能体版本。现在 3.17.2 会自动把这三样“配料表”写进实验记录，就像做菜时把食材品牌和用量都记下来，日后复现或排查分数波动时能直接追溯。补丁还修了两个小毛病：Spark 上跑 Optuna 调参时随机种子和批大小会被正确重置，Optuna 试验也不会在结果还没存好时就被误标为完成。",
+        "purpose": "解决生成式 AI 评测中血缘信息缺失、实验难以复现的问题，并提升分布式调参与 Optuna 集成的稳定性，让团队在对比不同智能体或评分器时有据可查。",
+        "features": "1）在 mlflow.genai.evaluate 运行中自动记录数据集、scorer 和 agent 血缘；2）修复 MlflowSparkStudy 执行器的采样器重播种与批设置转发；3）修复 MlflowStorage 过早将 Optuna trial 标记为完成的问题；4）作为补丁版本保持向后兼容，升级风险低。",
+        "comparison": "暂无可信公开对比数据。",
+        "who": "适合使用 MLflow 做生成式 AI 评测与实验追踪的机器学习工程师、数据科学家，以及用 Optuna 做超参搜索、在 Spark 上跑分布式调参的团队。",
+        "link": "https://github.com/mlflow/mlflow/releases/tag/v3.17.2",
+        "score": "8",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "10-20 22:51"
+      },
+      {
+        "candidate_id": "2",
+        "title": "llama.cpp b11781 发布：server 新增 POST /tts 端点，支持 TTS 模型语音输出",
+        "what": "llama.cpp 的 b11781 构建为 server 增加了 POST /tts 端点，用于 TTS 模型；同时在 mtmd 中新增音频输出流 API，补充文档，接入 mtmd_helper_model_can_chat，支持通过 form-data 上传 speaker_ref、向 API 暴露 seed，并修复 PCM 头、penalty_last_n、server_output_limits 与 pocket-tts 流式输出等问题，还新增了 TTS 的 server_schema 与路由。",
+        "plain_explanation": "llama.cpp 原本是一个在本地跑大模型的推理引擎，现在它内置的 HTTP 服务多了一个“语音合成”接口。你可以像调用聊天接口一样，向 /tts 发一个请求，附上参考说话人音频（speaker_ref）和随机种子，服务就会把文字转成语音流返回。这好比给本地模型服务装了一个“朗读按钮”，不用再单独部署一套 TTS 系统；表单字段里的 seed 和 stream 也会被正确解析成整数和布尔值，避免 -F seed=42 这类请求被拒绝。",
+        "purpose": "让 llama.cpp 的本地 server 直接承担文本转语音任务，减少额外服务依赖，并为多模态模型提供统一的音频输出流接口，方便开发者构建语音交互应用。",
+        "features": "1）新增 POST /tts 端点，支持 TTS 模型推理；2）mtmd 新增音频输出流 API，支持流式返回；3）支持 form-data 上传 speaker_ref 并暴露 seed 参数；4）修复 PCM 响应头、penalty_last_n、server_output_limits 与 pocket-tts 流式输出，并补充 server_schema 与路由文档。",
+        "comparison": "暂无可信公开对比数据。",
+        "who": "适合在本地或边缘设备部署 llama.cpp server 的开发者、做语音交互与多模态应用的研究者，以及希望用单一推理服务同时处理文本与语音的团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11781",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "10-20 23:36"
+      }
+    ],
+    "footer": "以上信息均来自候选 GitHub Release 摘要，未引入外部数据；升级前建议在测试环境验证兼容性。"
+  },
+  "candidate_count": 2
+}
