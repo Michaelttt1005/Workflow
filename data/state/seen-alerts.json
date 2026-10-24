@@ -3549,6 +3549,16 @@
       "first_seen_at": "2026-10-22T19:40:52.006634+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11846|ggml-org/llama.cpp release b11846: ggm-cuda: enforce dp4a mmq tile height multiple of warp size (30837) added static ass",
+      "title": "ggml-org/llama.cpp release b11846: ggm-cuda: Enforce DP4A MMQ tile height multiple of warp size (30837) Added static assertion to enforce DP4A MMQ tile height requirement",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11846",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-24T00:01:59+00:00",
+      "first_seen_at": "2026-10-24T02:51:53.323840+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
