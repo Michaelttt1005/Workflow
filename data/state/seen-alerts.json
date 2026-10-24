@@ -3579,6 +3579,16 @@
       "first_seen_at": "2026-10-24T08:33:44.544605+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11861|ggml-org/llama.cpp release b11861: minimax-m3 : forward quant scales to the graph (fixes 31063) (31097) the generic scal",
+      "title": "ggml-org/llama.cpp release b11861: minimax-m3 : forward quant scales to the graph (fixes 31063) (31097) The generic scale pass in llama-model.cpp loads the per-expert NVFP4 sc",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11861",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-24T19:13:12+00:00",
+      "first_seen_at": "2026-10-24T20:04:17.670548+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

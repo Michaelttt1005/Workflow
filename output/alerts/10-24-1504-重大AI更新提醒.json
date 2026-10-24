@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-10-24T20:04:15.479613Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-24 | llama.cpp 修复 minimax-m3 量化缩放未传入计算图导致的输出乱码问题",
+    "overview": "本期只有一条值得立即关注的更新：llama.cpp 发布 b11861，修复 minimax-m3 在 NVFP4/MXFP8 量化路径下缩放张量未转发到计算图的问题。该缺陷会让路由专家权重被放大 global_scale 倍，直接导致模型输出变成乱码。使用 llama.cpp 跑 minimax-m3 量化版本的用户应尽快升级。",
+    "checked_sources": [
+      "GitHub Release: ggml-org/llama.cpp b11861"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11861 修复 minimax-m3 量化缩放未传入计算图导致的输出乱码",
+        "what": "这是 ggml-org/llama.cpp 的一个 GitHub Release（b11861），核心变更是在 minimax-m3.cpp 的三处调用点把量化缩放张量转发到计算图中。具体来说，llama-model.cpp 的通用 scale pass 会加载每个专家的 NVFP4 scale2 张量（ffn_{up,gate,down}_exps_s）以及稠密 FFN 和共享专家的 per-tensor MXFP8 缩放，但 minimax-m3.cpp 此前没有把这些张量传给图。由于 build_moe_ffn() 默认把它们置为 nullptr，build_lora_mm_id() 会完全跳过 w_s 分支，导致路由专家权重被放大 global_scale 倍。",
+        "plain_explanation": "可以把量化模型想成一张被整体缩小过的地图，缩放系数就是“放大倍数”。加载权重时必须按这个倍数还原，否则数值全错。minimax-m3 的代码在组装计算图时忘了把“放大倍数”这张便签递过去，程序就按默认的 1 倍处理，结果专家权重比真实值大了 global_scale 倍。这些过大的数值盖过了残差信号，模型吐出来的就不是正常文字，而是一串乱码。这个补丁相当于把便签补上，让三个调用点都按 flint 等其它支持 NVFP4 的 MoE 模型的做法，把缩放张量正确传进去。",
+        "purpose": "解决 minimax-m3 在 llama.cpp 中使用 NVFP4/MXFP8 量化权重时输出乱码的严重正确性问题。候选摘要提到，M3.1 Flash 上报告的 G 约为 15123，说明误差量级极大，模型基本不可用。对于依赖 llama.cpp 本地部署 minimax-m3 量化版的开发者，这是一个必须升级的修复，否则推理结果完全不可信。",
+        "features": "第一，在 minimax-m3.cpp 的三个调用点转发全部缩放张量，覆盖路由专家 NVFP4 scale2 与稠密 FFN、共享专家的 MXFP8 per-tensor 缩放；第二，修复 build_moe_ffn() 默认 nullptr 导致 build_lora_mm_id() 跳过 w_s 分支的问题；第三，实现方式对齐 flint 等已支持 NVFP4 的 MoE 模型，保持代码路径一致；第四，随 release 提供 macOS Apple Silicon（arm64）等预编译二进制。",
+        "comparison": "候选摘要只给出修复前后的定性对比：修复前路由专家权重被放大 global_scale 倍、残差被淹没、输出为 token soup，M3.1 Flash 上报告 G 约为 15123；修复后缩放正确传入。摘要中没有提供吞吐、延迟或内存等量化 benchmark 数据，暂无可信公开对比数据。",
+        "who": "适合使用 llama.cpp 在本地或服务端部署 minimax-m3（尤其是 M3.1 Flash 等 NVFP4/MXFP8 量化版本）的开发者与推理运维团队；也适合维护 MoE 量化推理路径、关注缩放张量传递正确性的框架贡献者和研究者参考。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11861",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "开发者生态与数据工具",
+        "published": "10-24 14:13"
+      }
+    ],
+    "footer": "本期仅一条候选，已按 alert 模式聚焦最高优先级修复；升级前建议先用小样本验证 minimax-m3 输出是否恢复正常。"
+  },
+  "candidate_count": 1
+}
