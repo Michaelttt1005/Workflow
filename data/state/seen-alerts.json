@@ -3559,6 +3559,26 @@
       "first_seen_at": "2026-10-24T02:51:53.323840+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11851|ggml-org/llama.cpp release b11851: mtmd : lfm2 resize matches torchvision (30943) mtmd : lfm2 bilinear resize matches to",
+      "title": "ggml-org/llama.cpp release b11851: mtmd : lfm2 resize matches torchvision (30943) mtmd : lfm2 bilinear resize matches torchvision Lfm2VlImageProcessor and d1-omni vision.py r",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11851",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-24T07:22:41+00:00",
+      "first_seen_at": "2026-10-24T08:33:44.544551+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11850|ggml-org/llama.cpp release b11850: mtmd : add soprano tts support (28607) add soprano-80m and soprano-1.1-80m (https://h",
+      "title": "ggml-org/llama.cpp release b11850: mtmd : add Soprano TTS support (28607) Add Soprano-80M and Soprano-1.1-80M (https://huggingface.co/ekwek/Soprano-1.1-80M) as an audio genera",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11850",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-24T05:30:02+00:00",
+      "first_seen_at": "2026-10-24T08:33:44.544605+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

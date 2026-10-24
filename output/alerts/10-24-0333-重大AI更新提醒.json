@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-10-24T08:33:42.676937Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-24 | llama.cpp 双更新：多模态图像预处理对齐 torchvision，新增 Soprano TTS 语音生成",
+    "overview": "本期聚焦 llama.cpp 的两个重要 release：b11851 修正了 LFM2 与 d1-omni 视觉模型在图像缩放时与 torchvision 的数值偏差，提升多模态推理一致性；b11850 新增 Soprano 系列 TTS 模型支持，使 llama.cpp 具备端到端语音生成能力。两项更新均来自官方仓库，适合关注本地推理与多模态部署的开发者。",
+    "checked_sources": [
+      "GitHub Release: ggml-org/llama.cpp b11851",
+      "GitHub Release: ggml-org/llama.cpp b11850"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11851：LFM2 与 d1-omni 图像缩放对齐 torchvision，修复约 1% 像素偏差",
+        "what": "这是 ggml-org/llama.cpp 的官方 release b11851，核心变更是 mtmd（多模态工具链）中针对 LFM2 和 d1-omni 视觉模型的图像预处理修正。此前 llama.cpp 使用 Pillow 风格的 bilinear/bicubic 缩放算法，但 LFM2VlImageProcessor 与 d1-omni 的 vision.py 实际采用 torchvision 的缩放实现（antialias=True）。新版本新增 RESIZE_ALGO_BILINEAR_TORCH 与 RESIZE_ALGO_BICUBIC_TORCH，将 Pillow 移植版的权重精度从 22 位调整为与 torchvision 一致的 int16 定点表示，使 LFM2 与 d1-omni 的 bilinear/bicubic 缩放输出与 torchvision 逐像素对齐，其他模型仍保留原有 Pillow 算法。",
+        "plain_explanation": "想象你有一张照片要喂给 AI 看，但 AI 只接受固定尺寸的图片，所以得先缩放。缩放算法不同，每个像素的颜色值会有细微差别。llama.cpp 原来用的是 Pillow 的算法，而 LFM2 和 d1-omni 这两个视觉模型在训练时用的是 torchvision 的算法，两者在约 1% 的像素值上会差 1 到 2 个色阶。就像同一张图用两个不同品牌的打印机打出来，肉眼看差不多，但逐像素对比就有偏差。这次更新让 llama.cpp 的缩放结果和 torchvision 完全一致，模型看到的图就和训练时看到的一模一样，推理结果更可靠。",
+        "purpose": "解决多模态模型在 llama.cpp 本地推理时，因图像预处理算法与训练框架不一致而导致的输入分布偏移问题。对于 LFM2 和 d1-omni 这类对像素精度敏感的视觉语言模型，1% 的像素偏差可能累积成输出差异，影响评测复现和实际部署的一致性。该更新让本地推理的预处理与官方 torchvision 管线对齐，减少“同样的图、不同的答案”这类问题。",
+        "features": "1）新增 RESIZE_ALGO_BILINEAR_TORCH 与 RESIZE_ALGO_BICUBIC_TORCH 两种缩放算法，权重按 int16 定点精度舍入后再缩放回 22 位，复现 torchvision 的输出；2）LFM2 与 d1-omni 的 bilinear/bicubic 缩放自动映射到 torchvision 对齐算法，覆盖 d1-3B、LFM2-VL 等 checkpoint；3）其他模型继续使用原有 Pillow 算法，避免影响已有模型的行为；4）修复了此前 Pillow 移植版在 d1-omni 与 LFM2.5-VL 裁剪区域约 1% 数值上偏差 1-2 个色阶的问题。",
+        "comparison": "候选摘要明确给出：Pillow 移植版在 d1-omni 和 LFM2.5-VL 的裁剪区域中，约 1% 的像素值偏差 1-2 个色阶；新算法与 torchvision 输出一致。未提供速度、内存或端到端精度 benchmark 对比数据。",
+        "who": "适合在本地或边缘设备上部署 LFM2、d1-omni 等多模态视觉语言模型的开发者；需要复现官方评测结果的研究者；以及维护 llama.cpp 多模态推理管线的工程师。对于只使用文本模型或非 LFM2/d1-omni 视觉模型的用户，此更新无行为变化。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11851",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "多模态理解",
+        "published": "10-24 02:22"
+      },
+      {
+        "candidate_id": "2",
+        "title": "llama.cpp b11850：新增 Soprano TTS 支持，Qwen3 骨干 + Vocos 解码器实现语音生成",
+        "what": "这是 ggml-org/llama.cpp 的官方 release b11850，为 mtmd 多模态工具链新增 Soprano TTS 音频生成模型支持，涵盖 Soprano-80M 与 Soprano-1.1-80M。Soprano 的架构由 Qwen3 骨干网络加 Vocos 解码器组成，在 llama.cpp 中以 gen-only mmproj 形式运行。该 release 在转换脚本中识别 Soprano checkpoint，将骨干导出为 qwen3、将 decoder.pth 的 Vocos 权重导出为 mmproj；在词表中加入 Soprano 预分词器（小写化、空白折叠、按数字切分、[UNK] 回退）；在 mtmd 中新增 Vocos 计算图与 ISTFT，并允许加载 gen-only mmproj；mtmd-helper 增加 Soprano 管线，由于解码器需对整句音频运行，流式模式在 flush() 后一次性发送音频。",
+        "plain_explanation": "TTS 就是让电脑把文字读出来。Soprano 是一个小体积语音生成模型，思路分两步：先用 Qwen3 语言模型把文字“理解”成中间表示，再用 Vocos 解码器把中间表示还原成声音波形。llama.cpp 这次把这两步都接进了自己的推理框架，并且因为解码器必须拿到整句话才能生成连贯音频，所以流式模式下会等你说完（flush）再一次性输出，而不是边打字边出声。好比翻译官要先听完一整句才能翻得通顺，而不是逐词硬翻。",
+        "purpose": "让 llama.cpp 从纯文本/多模态理解扩展到语音生成，为本地推理场景提供端到端 TTS 能力。此前 llama.cpp 的音频能力主要集中在语音识别等输入侧，Soprano 的接入补上了输出侧，使开发者可以在同一套 ggml 推理栈里完成文本到语音的生成，减少对外部 TTS 服务的依赖，便于离线、隐私敏感或低延迟场景部署。",
+        "features": "1）支持 Soprano-80M 与 Soprano-1.1-80M 两个 checkpoint，骨干为 Qwen3、解码器为 Vocos；2）转换脚本自动检测 Soprano checkpoint 并分别导出 qwen3 骨干与 Vocos mmproj 权重；3）mtmd 新增 Vocos 计算图与 ISTFT，支持加载 gen-only mmproj，并在 mtmd_get_memory_usage 中计入音频生成上下文；4）新增 Soprano 预分词器（小写化、空白折叠、按数字切分、[UNK] 回退）与 mtmd-helper 的 Soprano 管线，流式模式在 flush() 后单块发送音频。",
+        "comparison": "候选摘要未提供 Soprano 与其它 TTS 模型在音质、延迟、RTF 或成本上的 benchmark 对比数据，暂无可信公开对比数据。",
+        "who": "适合需要在本地或离线环境集成 TTS 的开发者；使用 llama.cpp 构建语音助手、有声内容生成或无障碍朗读功能的团队；以及研究小型语音生成模型在 ggml 后端上推理表现的研究者。对仅做文本推理的用户无直接影响。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11850",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "检索增强与向量模型",
+        "published": "10-24 00:30"
+      }
+    ],
+    "footer": "以上信息均来自 llama.cpp 官方 GitHub Release，未引入外部评测或价格数据；建议结合自身模型版本验证预处理对齐效果与 TTS 输出质量。"
+  },
+  "candidate_count": 2
+}
