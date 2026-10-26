@@ -3609,6 +3609,16 @@
       "first_seen_at": "2026-10-26T16:24:48.389270+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/huggingface/transformers/releases/tag/v5.21|huggingface/transformers: release: v5.21.0",
+      "title": "huggingface/transformers: Release: v5.21.0",
+      "url": "https://github.com/huggingface/transformers/releases/tag/v5.21",
+      "source": "GitHub Release: huggingface/transformers",
+      "published_at": "2026-10-26T18:17:42+00:00",
+      "first_seen_at": "2026-10-26T22:10:35.766667+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
