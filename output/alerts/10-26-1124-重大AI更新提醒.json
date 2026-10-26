@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-10-26T16:24:46.286671Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-26 | llama.cpp 连续发布两个构建：模型解析测试固化与多模态能力查询接口",
+    "overview": "本期聚焦 llama.cpp 在同一天发布的两个构建。b11900 把 Hugging Face 上真实 GGUF 仓库的文件命名布局固化为回归测试，用于锁定模型解析行为；b11899 为 mtmd 多模态模块新增能力查询接口，并补充音频流等能力标记。两条更新都偏底层基础设施，但对依赖本地推理与多模态输入的开发者影响直接。",
+    "checked_sources": [
+      "GitHub Release - ggml-org/llama.cpp"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11900：用 63 个真实 HF 仓库布局固化 GGUF 模型解析测试",
+        "what": "这是 ggml-org/llama.cpp 的官方构建 b11900，核心变更是 common 模块的模型解析（model resolution）测试增强。维护者从 Hugging Face API 原样抓取了 63 个仓库的文件列表，覆盖主流发布者在 1237 个 GGUF 仓库中出现的各种文件命名模式，并按完整量化组裁剪。每个仓库在测试中固定其解析计划（resolved plans）与缓存列表，期望值依据文件 GGUF 头中记录的真实类型，而不是当前解析器的选择结果，因此任何不一致都会被判定为解析 bug，并在测试失败前集中汇总报告。",
+        "plain_explanation": "GGUF 模型在 Hugging Face 上的文件名五花八门，比如有的叫 Model.Q2_K.gguf，有的把分片写成 Model.Q2_K.gguf-00001-of-00012.gguf 并放在量化子目录里。llama.cpp 需要从这些名字推断出“这是哪个模型、什么量化、第几片”。过去这种推断逻辑缺少真实数据检验，改一行代码可能悄悄弄坏某类仓库的加载。这次相当于把 63 个真实仓库的文件清单拍成照片存进测试里，以后谁改动解析逻辑，只要和照片对不上就会立刻报错，就像给快递分拣线装上标准样本箱，分错格马上亮红灯。",
+        "purpose": "解决模型解析逻辑缺乏真实世界回归保护的问题。GGUF 生态的命名习惯由众多发布者各自决定，解析器一旦回归，用户表现为模型加载失败或量化识别错误，且难以复现。该更新把真实仓库布局变成可重复执行的测试基线，让解析行为变更可被审查，降低下游用户遇到“昨天能跑今天不能跑”的风险。",
+        "features": "第一，引入 63 个从 HF API 逐字抓取的仓库列表，覆盖 1237 个 GGUF 仓库中出现的主要文件命名模式；第二，每个仓库固定解析计划与缓存列表，形成可对比的快照；第三，期望值以 GGUF 头中的真实文件类型为准，而非当前解析器输出，从而把偏差定义为 bug；第四，不匹配项先集中收集再统一报告，便于一次性定位多类问题；第五，对 Windows 上因 MAX_PATH 限制无法落盘的超长分片名（如 DevQuasar 的 Model.Q2_K.gguf-00001-of-00012.gguf）跳过列表校验并附注说明。",
+        "comparison": "暂无可信公开对比数据。候选摘要未给出解析准确率、测试耗时或与旧版本的性能差异，仅说明测试覆盖范围来自 1237 个 GGUF 仓库的命名模式抽样。",
+        "who": "适合维护 llama.cpp 或其它 GGUF 加载器的开发者、在本地部署量化模型的工程师，以及需要保证模型分发仓库命名兼容性的团队；对研究 GGUF 格式与量化打包规范的人也有参考价值。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11900",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "10-26 09:00"
+      },
+      {
+        "candidate_id": "2",
+        "title": "llama.cpp b11899：mtmd 多模态模块新增能力查询接口 mtmd_helper_get_capabilities",
+        "what": "这是 ggml-org/llama.cpp 的官方构建 b11899，核心变更是为 mtmd（多模态）模块新增 mtmd_helper_get_capabilities 接口。该接口用于查询多模态助手所支持的能力集合，本次新增的能力标记包括 audio_stream（音频流），并保留旧 API 以维持兼容；同时涉及 audio_gen_spk_ref 与 text_gen 相关能力项。发布页同时提供 macOS Apple Silicon、macOS Intel、iOS XCFramework、Ubuntu x64 与 arm64 等平台的预编译包。",
+        "plain_explanation": "多模态模型能处理的东西越来越多：图片、音频、甚至音频流。但调用方在把一段音频或一张图丢给模型之前，往往不知道这个模型到底支不支持这类输入。新接口相当于给模型挂了一块“能力铭牌”，程序可以先问一句“你能处理音频流吗”，再决定走哪条代码路径，而不是先试错再捕获异常。就像电器插头旁的标识，告诉你这个口能不能接 220V，避免插错烧设备。保留旧 API 则保证已经写好调用代码的项目升级后不会突然编译失败。",
+        "purpose": "解决多模态调用方缺少统一能力探测手段的问题。此前开发者需要按模型类型硬编码分支，或依赖文档判断是否支持音频流等输入，容易在模型切换时出错。能力查询接口把“支持什么”变成运行时可得的信息，便于构建通用的多模态前端、路由层与自动化评测管线，同时通过兼容旧 API 降低升级成本。",
+        "features": "第一，新增 mtmd_helper_get_capabilities 统一查询多模态能力；第二，能力集合中纳入 audio_stream，用于标识音频流输入支持；第三，保留旧 API 以兼容既有集成代码；第四，涉及 audio_gen_spk_ref 与 text_gen 能力项，扩展能力描述的覆盖面；第五，随发布提供 macOS arm64/x64、iOS XCFramework、Ubuntu x64/arm64 等多平台预编译产物，便于直接验证。",
+        "comparison": "暂无可信公开对比数据。候选摘要未提供与旧接口在延迟、吞吐或能力覆盖数量上的量化对比，也未给出基准测试结果。",
+        "who": "适合在 llama.cpp 之上构建多模态应用的开发者、需要按模型能力动态路由请求的后端团队，以及做语音与文本混合输入实验的研究者；维护跨平台本地推理分发的工程团队也可直接使用其预编译包。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11899",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "10-26 07:25"
+      }
+    ],
+    "footer": "以上内容均依据候选中的 GitHub Release 标题与摘要整理，未补充候选之外的 benchmark、价格或日期信息；两个构建同日发布，建议按自身依赖的模块分别评估升级。"
+  },
+  "candidate_count": 2
+}

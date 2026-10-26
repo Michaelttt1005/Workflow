@@ -3589,6 +3589,26 @@
       "first_seen_at": "2026-10-24T20:04:17.670548+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11900|ggml-org/llama.cpp release b11900: common: pin model resolution on real hf repo layouts (30548) tests: pin model resolut",
+      "title": "ggml-org/llama.cpp release b11900: common: pin model resolution on real HF repo layouts (30548) tests: pin model resolution on real repo listings Extend test-model-resolution",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11900",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-26T14:00:15+00:00",
+      "first_seen_at": "2026-10-26T16:24:48.389233+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11899|ggml-org/llama.cpp release b11899: mtmd: add mtmdhelpergetcapabilities (31183) mtmd: add mtmdhelpergetcapabilities cap a",
+      "title": "ggml-org/llama.cpp release b11899: mtmd: add mtmdhelpergetcapabilities (31183) mtmd: add mtmdhelpergetcapabilities cap audiostream add back old api for compat audiogenspkr",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11899",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-26T12:25:42+00:00",
+      "first_seen_at": "2026-10-26T16:24:48.389270+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
