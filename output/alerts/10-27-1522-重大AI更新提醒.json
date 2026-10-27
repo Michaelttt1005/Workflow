@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-10-27T20:22:00.338617Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-27 | Google A2UI 推出可换推理格式与 A2UI Express，显著降低 token 用量与延迟",
+    "overview": "Google Developers Blog 发布 A2UI 重要更新：新增可换推理格式，并推出 A2UI Express，通过将紧凑的 Python 风格语法编译为标准 A2UI JSON，最多减少 3 倍 token 用量并降低延迟。同时支持结合 TypeSafe Jev 系统决策模型的受控生成，可在 300 毫秒内渲染已知形状的界面。前端渲染器与组件目录无需改动，为生成式 UI 开发提供灵活的性能调节手段。",
+    "checked_sources": [
+      "Google Developers Blog"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "Google A2UI 更新：可换推理格式与 A2UI Express 降低 token 用量和延迟",
+        "what": "A2UI 是 Google 推出的生成式 UI 开发框架，本次更新为其增加了可换推理格式（swappable inference formats），并引入 A2UI Express。A2UI Express 允许开发者用紧凑的 Python 风格语法描述界面，再通过 Agent SDK 编译成标准 A2UI JSON，从而减少 token 消耗并降低延迟。此外，开发者还可以结合 TypeSafe 的 Jev 系统决策模型进行受控生成，快速渲染已知形状的屏幕，同时让较小模型流式输出文本。",
+        "plain_explanation": "可以把 A2UI 想象成一套“界面乐高说明书”，模型需要按标准 JSON 格式告诉前端怎么拼界面。以前模型要输出很长的 JSON，既费 token 又慢。A2UI Express 就像给模型一套更简短的“速记符号”，比如用类似 Python 的短句描述界面，再由 Agent SDK 自动翻译成标准 JSON。这样模型说话更少、更快，前端拿到的东西却没变。举个例子，原本要写一大段 JSON 才能生成一个带标题和按钮的卡片，现在用紧凑语法几行就能表达，翻译工作交给 SDK，前端渲染器完全不用改。",
+        "purpose": "解决生成式 UI 中模型输出冗长 JSON 导致 token 成本高、延迟大的问题，同时保持前端渲染器和组件目录不变，让开发者可以在不重构前端的情况下灵活调节性能与成本。",
+        "features": "1）支持可换推理格式，开发者可根据场景选择不同的推理输出格式；2）A2UI Express 使用紧凑 Python 风格语法，经 Agent SDK 编译为标准 A2UI JSON，最多减少 3 倍 token 用量并降低延迟；3）支持结合 TypeSafe Jev 系统决策模型进行受控生成，可在 300 毫秒内渲染已知形状的屏幕；4）兼容 Python、TypeScript 和 Dart，前端渲染器与组件目录无需改动。",
+        "comparison": "根据候选摘要，A2UI Express 最多使用少 3 倍的 token，并降低延迟；结合 Jev 系统决策模型的受控生成可在 300 毫秒内渲染已知形状的屏幕。暂无可信公开对比数据说明与其他生成式 UI 框架的横向性能差异。",
+        "who": "适合正在开发生成式 UI 的前端与全栈开发者、使用 Agent SDK 构建智能体界面的团队，以及需要在 Python、TypeScript 或 Dart 技术栈中平衡 token 成本与响应延迟的研究者和工程团队。",
+        "link": "https://developers.googleblog.com/fast-reliable-a2ui/",
+        "score": "7",
+        "source": "Google Developers Blog",
+        "type": "官方发布",
+        "topic": "智能体与开发者平台",
+        "published": "10-27 15:21"
+      }
+    ],
+    "footer": "本期仅一条候选，信息均来自 Google Developers Blog 官方发布；性能数据以原文摘要为准，未做额外推断。"
+  },
+  "candidate_count": 1
+}

@@ -3629,6 +3629,16 @@
       "first_seen_at": "2026-10-27T09:30:52.183302+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/fast-reliable-a2ui/|fast, reliable a2ui, with swappable inference formats",
+      "title": "Fast, reliable A2UI, with swappable inference formats",
+      "url": "https://developers.googleblog.com/fast-reliable-a2ui/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-10-27T20:21:41.468615+00:00",
+      "first_seen_at": "2026-10-27T20:22:02.419977+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
