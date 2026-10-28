@@ -3689,6 +3689,26 @@
       "first_seen_at": "2026-10-28T14:46:31.410805+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/pytorch/pytorch/releases/tag/v2.15.0|pytorch 2.15.0 release",
+      "title": "PyTorch 2.15.0 Release",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/v2.15.0",
+      "source": "GitHub Release: pytorch/pytorch",
+      "published_at": "2026-10-28T17:09:49+00:00",
+      "first_seen_at": "2026-10-28T20:43:43.525972+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/smaller-apps-and-faster-gpu-inference-with-litert-in-google-play-services/|smaller apps and faster gpu inference with litert in google play services",
+      "title": "Smaller apps and faster GPU inference with LiteRT in Google Play services",
+      "url": "https://developers.googleblog.com/smaller-apps-and-faster-gpu-inference-with-litert-in-google-play-services/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-10-28T20:43:11.054451+00:00",
+      "first_seen_at": "2026-10-28T20:43:43.526030+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
