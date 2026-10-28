@@ -3649,6 +3649,16 @@
       "first_seen_at": "2026-10-28T00:52:39.376392+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11941|ggml-org/llama.cpp release b11941: model : add liquidai/lfm3-audio-2b and liquidai/lfm3-omni-2b (31257) model : add liqu",
+      "title": "ggml-org/llama.cpp release b11941: model : add LiquidAI/LFM3-Audio-2B and LiquidAI/LFM3-Omni-2B (31257) model : add LiquidAI/LFM3-Audio-2B and LiquidAI/LFM3-Omni-2B Co-author",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11941",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-28T01:03:03+00:00",
+      "first_seen_at": "2026-10-28T07:49:15.167577+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

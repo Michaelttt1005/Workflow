@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-10-28T07:49:13.068454Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-28 | llama.cpp 原生支持 LiquidAI LFM3 音频与全模态模型",
+    "overview": "本期只有一条值得单独提醒的更新：llama.cpp 发布 b11941 版本，把 LiquidAI 的 LFM3-Audio-2B 与 LFM3-Omni-2B 纳入官方支持范围，并补齐了语音选择、配置转换与多模态推理路径。这意味着本地推理栈开始能直接跑 2B 级别的音频与全模态模型，对做端侧语音与多模态应用的开发者影响直接。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11941 新增 LiquidAI LFM3-Audio-2B 与 LFM3-Omni-2B 模型支持",
+        "what": "这是 ggml-org/llama.cpp 的一个官方 release（b11941），核心变更是在其模型支持列表中加入 LiquidAI 的 LFM3-Audio-2B 和 LFM3-Omni-2B 两个模型，并配套修改了模型转换脚本、多模态（mtmd）推理路径与 TTS 语音选项。具体包括：转换脚本按 model_type 识别 LFM3-Audio 与 LFM3-Omni；读取官方发布的 LFM3-Audio config.json 布局；为 LFM3-Audio 的 depthformer 关闭 flash attention；在 llama-tts 与 server 的 /tts 接口中增加 voice 参数；把 banned tokens 处理迁移为 logits bias 并移入 mtmd_helper。",
+        "plain_explanation": "可以把 llama.cpp 理解成一个“万能播放器”，它本身不生产模型，但负责让各种开源模型在普通电脑、手机、树莓派上跑起来。以前这个播放器只认文字模型，现在它学会了认两个新格式：一个能“听声音、说声音”（LFM3-Audio-2B），一个能同时处理声音和其他模态（LFM3-Omni-2B）。打个比方，就像你的本地播放器突然支持了带配音的有声书，而且还能选男声或女声——开发者只要加一个 --tts-voice 参数，就能让模型用不同音色说话，不用自己再写一套音频前后处理代码。",
+        "purpose": "解决的是“本地跑音频/全模态模型门槛高”的问题。此前想在 llama.cpp 生态里用 LiquidAI 的 LFM3 系列，需要自己改转换脚本、处理 config 布局差异、绕开 flash attention 与音频编码器不兼容的问题。这个 release 把这些适配工作收进上游，让开发者可以直接用官方工具链加载模型、调用 TTS 接口，减少自研胶水代码和调试成本，也让端侧语音助手、离线多模态问答这类场景更容易落地。",
+        "features": "第一，新增 LFM3-Audio-2B 与 LFM3-Omni-2B 两个模型的加载与推理支持，覆盖音频理解与全模态输入。第二，转换脚本改为按 model_type 自动识别两个模型，并能正确读取官方发布的 LFM3-Audio config.json 布局，避免因 transformers 重写配置导致缺 key 的报错。第三，针对 LFM3-Audio 的 depthformer 关闭 flash attention，规避该结构下的兼容性问题。第四，TTS 增加 voice 选项：llama-tts 用 --tts-voice，server 的 /tts 接口用 voice 字段，对应模型卡提供的女声与男声。",
+        "comparison": "候选摘要中未给出与其它模型或其它推理框架的 benchmark、速度、显存占用或成本对比，暂无可信公开对比数据。",
+        "who": "适合在本地或端侧部署语音与多模态能力的开发者，例如做离线语音助手、TTS 应用、音频理解流水线的工程团队；也适合研究 2B 级别小模型多模态能力的研究者，以及维护 llama.cpp 下游发行版、需要跟进上游模型支持列表的打包者。对想在消费级硬件上验证 LFM3 系列、又不想自己写转换与推理适配代码的团队尤其有用。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11941",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "开发者生态与数据工具",
+        "published": "10-27 20:03"
+      }
+    ],
+    "footer": "本期仅一条候选通过筛选；所有信息均来自候选 release 说明，未补充外部 benchmark 或价格数据。"
+  },
+  "candidate_count": 1
+}
