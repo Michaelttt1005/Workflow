@@ -3659,6 +3659,36 @@
       "first_seen_at": "2026-10-28T07:49:15.167577+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11962|ggml-org/llama.cpp release b11962: cuda: fuse moe (mulmatid) gate/up and glu in mmq (31188) website",
+      "title": "ggml-org/llama.cpp release b11962: cuda: fuse MoE (MULMATID) gate/up and GLU in MMQ (31188) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11962",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-28T13:42:20+00:00",
+      "first_seen_at": "2026-10-28T14:46:31.410699+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.8.0|ggml-org/llama.cpp release v0.8.0: overview this release adds the liquidai lfm3 family (text, vision, audio and omni) to",
+      "title": "ggml-org/llama.cpp release v0.8.0: Overview This release adds the LiquidAI LFM3 family (text, vision, audio and omni) together with a new experimental streaming-audio API in m",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.8.0",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-28T12:47:51+00:00",
+      "first_seen_at": "2026-10-28T14:46:31.410758+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11953|ggml-org/llama.cpp release b11953: cuda : add top-k moe fusion for 384 experts (31288) assisted-by: codex website",
+      "title": "ggml-org/llama.cpp release b11953: cuda : add top-k MoE fusion for 384 experts (31288) Assisted-by: Codex Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11953",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-28T10:11:24+00:00",
+      "first_seen_at": "2026-10-28T14:46:31.410805+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
