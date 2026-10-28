@@ -3639,6 +3639,16 @@
       "first_seen_at": "2026-10-27T20:22:02.419977+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://openai.com/index/retell-ai|retell uses openai models to help power 100m monthly calls",
+      "title": "Retell uses OpenAI models to help power 100M monthly calls",
+      "url": "https://openai.com/index/retell-ai",
+      "source": "OpenAI News",
+      "published_at": "2026-10-27T15:00:00+00:00",
+      "first_seen_at": "2026-10-28T00:52:39.376392+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
