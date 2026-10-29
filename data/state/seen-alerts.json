@@ -3709,6 +3709,26 @@
       "first_seen_at": "2026-10-28T20:43:43.526030+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11979|ggml-org/llama.cpp release b11979: sycl : vectorize reordered-layout dequantization stores (q40, k-quants, iq3, mxfp4) (",
+      "title": "ggml-org/llama.cpp release b11979: sycl : vectorize reordered-layout dequantization stores (Q40, K-quants, IQ3, MXFP4) (30976) sycl : widen reordered q40 dequantization store",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11979",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-29T06:45:13+00:00",
+      "first_seen_at": "2026-10-29T07:54:56.158331+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b11978|ggml-org/llama.cpp release b11978: tests : fix comppadding cuda graph reservation (31344) assisted-by: codex website",
+      "title": "ggml-org/llama.cpp release b11978: tests : fix comppadding CUDA graph reservation (31344) Assisted-by: Codex Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11978",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-29T05:39:55+00:00",
+      "first_seen_at": "2026-10-29T07:54:56.158367+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
