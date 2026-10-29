@@ -3729,6 +3729,16 @@
       "first_seen_at": "2026-10-29T07:54:56.158367+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/huggingface/transformers/releases/tag/v5.22.0|huggingface/transformers: v5.22.0: mistral large 4 (le chonk)",
+      "title": "huggingface/transformers: v5.22.0: Mistral Large 4 (Le Chonk)",
+      "url": "https://github.com/huggingface/transformers/releases/tag/v5.22.0",
+      "source": "GitHub Release: huggingface/transformers",
+      "published_at": "2026-10-29T14:15:39+00:00",
+      "first_seen_at": "2026-10-29T14:53:01.180167+00:00",
+      "score": 9,
+      "alert_sent": true
     }
   ]
 }
