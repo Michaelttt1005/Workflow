@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-10-30T01:30:21.917391Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "10-29 | llama.cpp 新增 Mistral Le Chonk 模型支持并扩展 DSA 与 sdpark",
+    "overview": "本期聚焦 llama.cpp 最新 release b11998，该版本加入对 Mistral Le Chonk 模型的支持，并将 DSA 与 sdpark 技术扩展到新模型，同时修复 CI。对于本地推理和边缘部署开发者，这是值得关注的框架更新。",
+    "checked_sources": [
+      "GitHub Release: ggml-org/llama.cpp b11998"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b11998 新增 Mistral Le Chonk 模型支持并扩展 DSA 与 sdpark",
+        "what": "这是 ggml-org/llama.cpp 的第 b11998 号发布版本，核心变更是为 Mistral Le Chonk 模型（PR #31376）增加推理支持，同时将 DSA（动态稀疏注意力）和 sdpark 技术扩展到该新模型，并修复了持续集成（CI）流程。发布包覆盖 macOS Apple Silicon、macOS Intel、iOS XCFramework、Ubuntu x64/arm64/s390x 等多个平台。",
+        "plain_explanation": "llama.cpp 是一个让大模型能在普通电脑、手机甚至树莓派上跑起来的开源推理框架。你可以把它想象成一个“万能翻译器”，把不同厂商的模型文件翻译成各种硬件能执行的指令。这次更新相当于给这个翻译器加了一本新词典——Mistral 新出的 Le Chonk 模型现在也能被它流畅翻译了。同时，它还把两种省内存、提速度的技巧（DSA 和 sdpark）用在了新模型上，就像给新来的员工配了更高效的工具，让它在本地设备上跑得更快、更省资源。",
+        "purpose": "解决开发者在本地或边缘设备上运行 Mistral Le Chonk 模型时缺乏官方推理支持的问题，并让该模型能受益于 llama.cpp 已有的稀疏注意力和内存优化技术，从而降低部署门槛、提升推理效率。",
+        "features": "1. 新增 Mistral Le Chonk 模型架构支持，可直接加载并推理该模型；2. 将 DSA（动态稀疏注意力）和 sdpark 技术适配到新模型，优化长上下文或稀疏场景下的计算效率；3. 提供多平台预编译二进制包，包括 macOS Apple Silicon/Intel、iOS XCFramework、Ubuntu x64/arm64/s390x；4. 修复 CI 流程，保证后续构建稳定性。",
+        "comparison": "候选摘要中未提供与其它框架或旧版本的速度、内存、成本对比数据，暂无可信公开对比数据。",
+        "who": "适合需要在本地电脑、手机或边缘设备上部署大模型的开发者、研究者和嵌入式 AI 团队；尤其适合关注 Mistral 系列模型、希望用统一框架管理多模型推理的工程师。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b11998",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "开发者生态与数据工具",
+        "published": "10-29 20:11"
+      }
+    ],
+    "footer": "本期仅一条候选，信息来自 llama.cpp 官方 GitHub Release；性能对比数据以官方后续 benchmark 为准。"
+  },
+  "candidate_count": 1
+}
