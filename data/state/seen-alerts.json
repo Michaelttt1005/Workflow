@@ -3749,6 +3749,16 @@
       "first_seen_at": "2026-10-30T01:30:24.390735+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12024|ggml-org/llama.cpp release b12024: reshaping so mm on 2d instead of 3d tensor for lfm sc (30831) website",
+      "title": "ggml-org/llama.cpp release b12024: reshaping so mm on 2d instead of 3d tensor for lfm sc (30831) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12024",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-10-31T21:35:54+00:00",
+      "first_seen_at": "2026-10-31T22:58:20.219900+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
