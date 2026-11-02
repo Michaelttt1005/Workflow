@@ -3759,6 +3759,16 @@
       "first_seen_at": "2026-10-31T22:58:20.219900+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/vllm-project/vllm/releases/tag/v0.33.0rc3|vllm-project/vllm release v0.33.0rc3: v0.33.0 highlights this release features 927 commits from 389 contributors (122 ne",
+      "title": "vllm-project/vllm release v0.33.0rc3: v0.33.0 Highlights This release features 927 commits from 389 contributors (122 new)! New models: Reflection Beam-1.0 (501B MoE, 23B activ",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.33.0rc3",
+      "source": "GitHub Release: vllm-project/vllm",
+      "published_at": "2026-11-02T10:10:05+00:00",
+      "first_seen_at": "2026-11-02T19:55:56.858928+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }

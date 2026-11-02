@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-11-02T19:55:54.950958Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "11-02 | vLLM v0.33.0rc3 发布：927 次提交、十余款新模型接入、升级 PyTorch 2.14 并停发 CUDA 12.9 构建",
+    "overview": "本期只有一条但分量很重：vLLM 发布 v0.33.0rc3 候选版本，一次性合入 927 次提交、来自 389 位贡献者（其中 122 位是新贡献者）。这次更新同时带来大批新模型支持、PyTorch 2.14 升级，以及 CUDA 12.9 构建的正式停发，对正在做推理部署的团队属于需要提前评估的破坏性变更。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "vLLM v0.33.0rc3 发布：新增 Reflection Beam-1.0 等十余款模型，升级 PyTorch 2.14，仅保留 CUDA 13.0 构建",
+        "what": "这是 vLLM 项目 v0.33.0 的候选发布版本（rc3）。vLLM 是当前主流的开源大模型推理与服务框架，本次版本包含 927 次提交、389 位贡献者（122 位新贡献者）。核心内容包括：新增 Reflection Beam-1.0（501B MoE、23B 激活参数）及其 DFlash2 drafter、Yandex AliceAI-Foundation-80B-A3B、Recursive Flint（40B MoE、2.5B 激活）、Muse Spark Open、Step-5 Preview、NVIDIA Alpamayo 2 Super、Nemotron-Labs Dory1.0-4B、Nemotron Parse 3.5、MiniCPM-OCR 1.0、Domyn Edge 以及 ColUltraVBERT 视觉文档检索模型；框架整体升级到 PyTorch 2.14.0，配套 torchvision 0.29.0 与 Triton 3.8.0；同时停止发布 CUDA 12.9 的 wheel 和 -cu129 系列镜像，只提供 CUDA 13.0 产物，并引入 libtorch ABI 稳定的 CUDA wheel。",
+        "plain_explanation": "可以把 vLLM 理解成一个“模型服务引擎”：你手里有一个几十亿甚至上千亿参数的大模型，想让它同时服务很多用户、又快又省显存，就需要这类框架来调度。这次更新好比一个大型应用商店的年度大版本：一方面上架了一大批新“商品”（新模型），比如 501B 参数但每次只激活 23B 的 Reflection Beam-1.0，这类 MoE 模型像一家大公司里只叫醒需要干活的部门，能省算力；另一方面把底层“发动机”从旧版 PyTorch 换成 2.14，并规定以后只提供适配 CUDA 13.0 的安装包。对使用者最直接的影响是：如果你还在用 CUDA 12.9 环境，升级后原来的安装命令会找不到对应包，需要先升级驱动和 CUDA 工具链。",
+        "purpose": "这次发布主要解决三类问题：一是让 vLLM 尽快支持社区新出的模型架构（尤其是 MoE、视觉文档检索、OCR 等方向），避免用户自己写适配代码；二是跟进 PyTorch 2.14 与 Triton 3.8 的生态升级，获得新算子与编译优化；三是通过停发 CUDA 12.9 构建、引入 libtorch ABI 稳定的 wheel，收敛发布矩阵、降低长期维护成本。对推理团队来说，它值得看是因为这是一次包含破坏性变更的大版本，需要提前做兼容性评估。",
+        "features": "第一，新模型覆盖广：Reflection Beam-1.0（501B MoE、23B 激活）及其 DFlash2 drafter、Yandex AliceAI-Foundation-80B-A3B、Recursive Flint（40B MoE、2.5B 激活）、Muse Spark Open、Step-5 Preview、NVIDIA Alpamayo 2 Super、Nemotron-Labs Dory1.0-4B、Nemotron Parse 3.5、MiniCPM-OCR 1.0、Domyn Edge、ColUltraVBERT 视觉文档检索模型等。第二，运行时栈升级到 PyTorch 2.14.0，配套 torchvision 0.29.0 与 Triton 3.8.0。第三，构建矩阵收敛：release wheel 与镜像仅提供 CUDA 13.0，不再发布 CUDA 12.9 wheel 及 -cu129 / -cu129-ubuntu2404 镜像。第四，引入 libtorch ABI 稳定的 CUDA wheel，减少因底层库版本不匹配导致的安装问题。",
+        "comparison": "候选摘要中未给出吞吐、延迟或成本方面的量化对比数据，仅明确了版本层面的变化：相对此前版本，本次新增十余款模型支持、PyTorch 由旧版本升至 2.14.0、Triton 升至 3.8.0，并且 CUDA 12.9 构建被移除、只保留 CUDA 13.0。除此之外暂无可信公开对比数据。",
+        "who": "适合正在用 vLLM 做线上推理服务的平台与基础设施团队（需要评估 CUDA 13.0 迁移和 PyTorch 2.14 兼容性）；适合想部署 Reflection Beam-1.0、Step-5 Preview、MiniCPM-OCR 1.0、ColUltraVBERT 等新模型的研究者与工程团队；也适合关注 MoE 推理、视觉文档检索和多模态 OCR 方向、希望基于开源框架做二次开发的数据科学与算法人员。",
+        "link": "https://github.com/vllm-project/vllm/releases/tag/v0.33.0rc3",
+        "score": "8",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "多模态理解",
+        "published": "11-02 04:10"
+      }
+    ],
+    "footer": "本期仅一条候选，且为候选发布版本（rc3），正式上线前建议先在测试环境验证 CUDA 13.0 与 PyTorch 2.14 的兼容性。"
+  },
+  "candidate_count": 1
+}
