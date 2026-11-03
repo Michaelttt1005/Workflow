@@ -3769,6 +3769,16 @@
       "first_seen_at": "2026-11-02T19:55:56.858928+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12061|ggml-org/llama.cpp release b12061: support for voices without voice cloning (31429) feat: support pockettts voices with ",
+      "title": "ggml-org/llama.cpp release b12061: support for voices without voice cloning (31429) feat: support PocketTTS voices with no voice cloning The kyutai/pocket-tts-without-voice-c",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12061",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-02T23:17:24+00:00",
+      "first_seen_at": "2026-11-03T01:57:02.195723+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
