@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-11-03T17:36:24.310530Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "11-03 | 用廉价分类器按任务成本路由 Gemini 模型与思考层级",
+    "overview": "Google Developers Blog 发布文章，讨论在自主编码智能体场景下，虽然每 token 的 API 价格持续下降，但工程账单仍在攀升的问题，并提出用廉价分类器在 Gemini 不同模型和思考层级之间进行路由，以按任务成本优化调用。本期聚焦这一智能体成本控制思路。",
+    "checked_sources": [
+      "Google Developers Blog"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "Google 提出按任务成本路由：用廉价分类器在 Gemini 模型与思考层级间调度",
+        "what": "这是 Google Developers Blog 发布的一篇官方技术文章，主题是“Cost per task: Using cheap classifiers to route across Gemini models and thinking levels”。文章指出，尽管按 token 计价的 API 价格不断下降，但自主编码智能体（autonomous coding agents）的工程账单仍在持续上升，因此提出用廉价分类器根据任务特征，把请求路由到不同的 Gemini 模型以及不同的思考层级（thinking levels）上，从而按“每任务成本”而非单纯“每 token 价格”来优化整体开销。",
+        "plain_explanation": "可以把这件事类比成打车：不是所有行程都需要叫豪华专车。短途、简单的任务用便宜的小模型就能完成；只有复杂、需要多步推理的任务才调用更强、更贵的模型或更高的思考层级。文章的核心思路是先用一个很便宜的分类器判断“这个任务有多难”，再决定派哪个模型去处理。例如，一个只改一行配置的编码任务，可能只需要低思考层级的轻量模型；而一个需要跨文件重构的任务，才值得调用高思考层级的强模型。这样整体账单就不会因为所有请求都走最贵路径而失控。",
+        "purpose": "解决自主编码智能体在真实工程中成本失控的问题。虽然单 token 价格在降，但智能体往往会反复调用、多轮推理，导致总成本上升。文章希望让开发者从“按 token 比价”转向“按任务成本”做架构决策，通过路由机制在保证任务完成质量的前提下压低平均成本，这对需要大规模运行编码智能体的团队尤其有参考价值。",
+        "features": "第一，提出用廉价分类器对任务进行预判和分流，而不是让所有请求统一走同一模型；第二，路由维度同时覆盖 Gemini 的不同模型和不同思考层级，形成二维调度空间；第三，以“每任务成本”作为核心优化指标，而非单纯看 token 单价；第四，面向自主编码智能体这一具体高成本场景给出工程化思路。",
+        "comparison": "候选摘要中明确提到“per-token API prices keep falling, yet engineering bills for autonomous coding agents keep climbing”，即 token 单价下降与智能体工程账单上升之间的反差；但未给出具体 benchmark、速度或成本数字，因此暂无可信公开对比数据。",
+        "who": "适合正在构建或运营自主编码智能体的开发者与平台团队，尤其是需要控制大规模 API 调用成本的工程负责人；也适合研究模型路由、成本感知推理调度的研究者和对 Gemini 多模型体系感兴趣的架构师。",
+        "link": "https://developers.googleblog.com/cost-per-task-using-cheap-classifiers-to-route-across-gemini-models-and-thinking-levels/",
+        "score": "8",
+        "source": "Google Developers Blog",
+        "type": "官方发布",
+        "topic": "智能体与开发者平台",
+        "published": "11-03 11:36"
+      }
+    ],
+    "footer": "本期仅一条候选，内容基于 Google Developers Blog 原文摘要，未引入外部数据；具体成本数字与 benchmark 请以原文为准。"
+  },
+  "candidate_count": 1
+}

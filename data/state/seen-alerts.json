@@ -3779,6 +3779,16 @@
       "first_seen_at": "2026-11-03T01:57:02.195723+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/cost-per-task-using-cheap-classifiers-to-route-across-gemini-models-and-thinking-levels/|cost per task: using cheap classifiers to route across gemini models and thinking levels",
+      "title": "Cost per task: Using cheap classifiers to route across Gemini models and thinking levels",
+      "url": "https://developers.googleblog.com/cost-per-task-using-cheap-classifiers-to-route-across-gemini-models-and-thinking-levels/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-11-03T17:36:05.705811+00:00",
+      "first_seen_at": "2026-11-03T17:36:26.147182+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }
