@@ -3789,6 +3789,16 @@
       "first_seen_at": "2026-11-03T17:36:26.147182+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.9.0|ggml-org/llama.cpp release v0.9.0: overview this release adds ocp fp8 e4m3 quantization support, a new flashattnextrows ",
+      "title": "ggml-org/llama.cpp release v0.9.0: Overview This release adds OCP FP8 E4M3 quantization support, a new flashattnextrows op that makes the unified KV cache efficient for multi-",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.9.0",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-04T13:08:06+00:00",
+      "first_seen_at": "2026-11-04T13:37:36.007961+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }
