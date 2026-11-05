@@ -3809,6 +3809,16 @@
       "first_seen_at": "2026-11-05T08:54:53.353653+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12136|ggml-org/llama.cpp release b12136: fit : account for skipped nextn layers when setting ngpulayers (31569) fit : account ",
+      "title": "ggml-org/llama.cpp release b12136: fit : account for skipped NextN layers when setting ngpulayers (31569) fit : account for skipped NextN layers when setting ngpulayers Witho",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12136",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-05T21:32:43+00:00",
+      "first_seen_at": "2026-11-05T23:08:27.178856+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

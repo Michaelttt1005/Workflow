@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-11-05T23:08:25.115857Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "11-05 | llama.cpp 修复 GPU 层卸载计数，避免大模型因 NextN 空层误判而少卸载一层",
+    "overview": "本期聚焦 llama.cpp 的一个关键修复：在自动决定 GPU 卸载层数（fit）时，此前未把不承载权重的 NextN 层计入 n_gpu_layers，导致本应全部卸载的模型仍有一层留在 CPU，出现“offloaded 65/66 layers”这类性能损失。该修复让 fit 的测量结果与模型加载器的实际计数对齐，对多 GPU 部署大模型尤其重要。",
+    "checked_sources": [
+      "GitHub Release: ggml-org/llama.cpp b12136"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b12136 修复 fit 对 NextN 空层的 GPU 卸载计数，避免大模型少卸载一层",
+        "what": "这是 ggml-org/llama.cpp 的 b12136 版本发布，核心变更在 fit 功能：在设置 n_gpu_layers 时，把被跳过的 NextN 层也计入卸载层数，并同步调整持有输出层设备的 tensor split。此前在没有 MTP 的情况下，fit 按 n_layer + 1 计数，而模型加载器按 n_layer_all + 1 计数，后者包含不承载权重的 NextN 层，导致 fit 认为全部卸载后仍有一层留在 CPU，例如 Qwen3.8-27B 在两块 GPU 上显示“offloaded 65/66 layers”。该提交还修复了 #31531，并把 hp_ngl_skip 按引用传递、加入 common_get_device_memory_data。",
+        "plain_explanation": "可以把 llama.cpp 的 fit 想成搬家前先量家具尺寸的师傅：它先估算每块 GPU 能放下多少层模型，再告诉加载器往每块卡上放几层。模型里有一些“空箱子”层（NextN 层），里面没有实际权重，但加载器数层数时会把它们算进去。以前 fit 量尺寸时没算这些空箱子，导致它说“全放得下”，加载器却因为总数对不上，把第一层留在了 CPU 上。结果就是两块 GPU 明明还有空间，模型却有一层跑在慢速 CPU 上，推理变慢。这次修复让 fit 和加载器用同一套数法，空箱子也算进卸载数量，于是该上 GPU 的层都能上去。",
+        "purpose": "解决自动 GPU 层卸载时 fit 与加载器计数不一致的问题，避免大模型在多 GPU 环境下因 NextN 空层被漏算而少卸载一层、把部分计算留在 CPU 上，从而恢复预期的 GPU 利用率和推理速度。对于依赖 fit 自动分配显存的部署场景，这是一次直接影响性能正确性的修复。",
+        "features": "第一，fit 在设置 n_gpu_layers 时把跳过的 NextN 层计入总数，使卸载决策与加载器计数一致；第二，同步调整持有输出层设备的 tensor split，保证层分配落在 fit 实际测量的设备上；第三，hp_ngl_skip 改为按引用传递，并加入 common_get_device_memory_data，便于显存数据计算时使用该参数；第四，修复 #31531 所报告的具体症状，即全部卸载后 layer 0 仍留在 CPU。",
+        "comparison": "候选摘要中明确给出的对比是修复前后的层卸载计数：修复前 Qwen3.8-27B 在两块 GPU 上显示“offloaded 65/66 layers”，修复后按 fit 测量结果应卸载全部可卸载层；摘要未提供吞吐、延迟或显存占用的具体 benchmark 数字，暂无可信公开对比数据。",
+        "who": "适合使用 llama.cpp 在多 GPU 或显存受限环境部署大语言模型的开发者与运维团队，尤其是依赖 fit 自动决定 n_gpu_layers 的用户；也适合关注 GGML 后端层分配逻辑、需要排查“明明有显存却有一层在 CPU”问题的研究者与贡献者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b12136",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "检索增强与向量模型",
+        "published": "11-05 15:32"
+      }
+    ],
+    "footer": "本期仅一条候选，聚焦 llama.cpp 层卸载计数修复；未包含未经候选证实的速度或显存数据。"
+  },
+  "candidate_count": 1
+}
