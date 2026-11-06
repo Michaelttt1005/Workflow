@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-11-06T04:39:56.390675Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "11-05 | llama.cpp 双版本更新：MoE 推理加速与 YaRN 长上下文兼容",
+    "overview": "本期聚焦 llama.cpp 的两个官方 release：b12144 针对 CUDA 后端优化 MoE 数据布局与 MMQ/MMF 内核，提升混合专家模型推理效率；b12140 为 YaRN 位置编码补上 truncate=false 支持，使 gpt-oss 与部分 PLaMo-3 模型能在本地正确运行。两条更新均直接影响本地推理的兼容性与性能，建议关注。",
+    "checked_sources": [
+      "GitHub Release: ggml-org/llama.cpp b12144",
+      "GitHub Release: ggml-org/llama.cpp b12140"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b12144：CUDA 后端线性化 MoE 数据布局，优化 MMQ/MMF 内核",
+        "what": "这是 ggml-org/llama.cpp 的官方 release b12144，核心变更是对 CUDA 后端中 MoE（混合专家）模型的数据布局进行线性化处理，并让 MMQ（量化矩阵乘）的 tile 尺寸优化更普遍地生效，同时修复了一处 F16 性能回退。该版本提供 macOS Apple Silicon、macOS Intel、iOS XCFramework、Ubuntu x64/arm64 等预编译包。",
+        "plain_explanation": "MoE 模型像一家有多个专科门诊的医院：每个 token 只找其中几位专家看病。过去在 GPU 上，这些专家的“病历”分散存放在不同抽屉里，取一次要来回跑；b12144 把同一类数据按顺序排成一排，GPU 一次就能连续读取，减少等待。MMQ tile 优化则像把搬运箱子换成更合适的尺寸，让量化计算更整齐高效。",
+        "purpose": "解决 MoE 模型在 CUDA 上因数据布局分散导致的访存效率低和内核调度不优的问题，让本地运行大 MoE 模型时推理更快、更稳定，并避免 F16 路径的性能回退。",
+        "features": "1）CUDA 后端对 MoE 数据布局做线性化，改善连续访存；2）MMQ tile 尺寸优化从特定场景推广到更一般情况；3）修复 F16 性能回退；4）随版本提供多平台预编译二进制，覆盖 macOS、iOS、Linux。",
+        "comparison": "候选摘要未给出具体 benchmark、吞吐或延迟数字，暂无可信公开对比数据；仅说明修复了 F16 性能回退并推广了 MMQ tile 优化。",
+        "who": "适合在本地或自建 GPU 服务器上运行 MoE 大模型的开发者、推理基础设施团队，以及维护 llama.cpp CUDA 后端的贡献者；需要 macOS/iOS/Linux 预编译包的用户也可直接使用。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b12144",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "11-05 21:45"
+      },
+      {
+        "candidate_id": "2",
+        "title": "llama.cpp b12140：ggml 为 YaRN 增加 truncate=false 支持，兼容 gpt-oss 与 PLaMo-3",
+        "what": "这是 ggml-org/llama.cpp 的官方 release b12140，核心变更是让 ggml 的 YaRN 位置编码支持 truncate=false。YaRN 通过计算校正区间来切换频率插值方式，此前不支持不对区间边界取整的设置；该版本修改 GGML 算子与 CPU 后端以支持不取整计算，并同步支持 CUDA 后端、补充测试、将 RoPE 辅助函数移入内部头文件。默认行为仍为 truncate=true，未显式配置的调用保持原行为。",
+        "plain_explanation": "YaRN 像给长文本调“时间刻度”的尺子：不同段落要用不同刻度换算。过去尺子只允许整数刻度，遇到需要小数刻度的模型就会算错。b12140 让尺子支持小数刻度，于是 gpt-oss 和部分 PLaMo-3 这类要求小数刻度的模型就能在 llama.cpp 里正确运行，而老模型仍按整数刻度工作，不受影响。",
+        "purpose": "解决使用 truncate=false 的模型（如 gpt-oss 和部分 PLaMo-3）在 llama.cpp 中无法正确进行 YaRN 频率插值的问题，扩展本地推理框架对长上下文模型的兼容性，同时保持向后兼容。",
+        "features": "1）GGML 算子与 CPU 后端支持 YaRN truncate=false 的不取整计算；2）CUDA 后端同步支持；3）新增测试覆盖；4）RoPE 辅助函数移入内部头文件并做格式化整理；5）默认 truncate=true，现有调用行为不变。",
+        "comparison": "候选摘要未提供与旧版本或其他框架的 benchmark、速度或精度对比，暂无可信公开对比数据；仅说明此前不支持 truncate=false，现已补齐。",
+        "who": "适合需要在本地运行 gpt-oss、PLaMo-3 等使用 YaRN truncate=false 的长上下文模型的开发者与研究者，以及维护 llama.cpp GGML/CPU/CUDA 后端的贡献者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b12140",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "11-05 19:11"
+      }
+    ],
+    "footer": "以上信息均来自候选 GitHub Release 摘要，未补充外部 benchmark 或价格数据；具体性能请以本地实测为准。"
+  },
+  "candidate_count": 2
+}

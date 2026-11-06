@@ -3819,6 +3819,26 @@
       "first_seen_at": "2026-11-05T23:08:27.178856+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12144|ggml-org/llama.cpp release b12144: cuda: linearize moe data layout for mmq/mmf (31047) cuda: linearize moe data layout f",
+      "title": "ggml-org/llama.cpp release b12144: CUDA: linearize MoE data layout for MMQ/MMF (31047) CUDA: linearize MoE data layout for MMQ/MMF Apply MMQ tile size optimization more gene",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12144",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-06T03:45:50+00:00",
+      "first_seen_at": "2026-11-06T04:39:58.542808+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12140|ggml-org/llama.cpp release b12140: ggml : support truncate=false for yarn (30206) ggml : support truncate=false for yarn",
+      "title": "ggml-org/llama.cpp release b12140: ggml : support truncate=false for YaRN (30206) ggml : support truncate=false for YaRN YaRN calculates correction intervals to switch freque",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12140",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-06T01:11:25+00:00",
+      "first_seen_at": "2026-11-06T04:39:58.542874+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
