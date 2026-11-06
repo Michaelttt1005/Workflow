@@ -3839,6 +3839,16 @@
       "first_seen_at": "2026-11-06T04:39:58.542874+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12167|ggml-org/llama.cpp release b12167: cuda: fix maxwell build (31787) website",
+      "title": "ggml-org/llama.cpp release b12167: CUDA: fix Maxwell build (31787) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12167",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-06T09:45:44+00:00",
+      "first_seen_at": "2026-11-06T13:35:06.954951+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

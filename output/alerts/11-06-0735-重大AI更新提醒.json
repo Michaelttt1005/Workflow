@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-11-06T13:35:05.196658Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "11-06 | llama.cpp 修复 CUDA Maxwell 构建，老显卡本地推理恢复可用",
+    "overview": "本期只有一条值得提醒的更新：llama.cpp 发布 b12167 版本，核心变更是修复 CUDA 后端在 Maxwell 架构显卡上的构建问题。这属于面向本地推理基础设施的兼容性修复，对仍在使用 Maxwell 世代 NVIDIA 显卡跑本地大模型的开发者有直接影响，同时该版本照常提供 macOS、iOS、Linux 多平台预编译包。",
+    "checked_sources": [
+      "GitHub Release: ggml-org/llama.cpp b12167"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp 发布 b12167：修复 CUDA 后端在 Maxwell 架构显卡上的构建失败",
+        "what": "这是 ggml-org/llama.cpp 的一个官方构建版本 b12167，核心变更是一条 CUDA 相关修复（PR #31787），解决 Maxwell 架构 GPU 上 CUDA 后端的编译/构建问题。该 release 同时附带 macOS Apple Silicon（arm64）、macOS Intel（x64）、iOS XCFramework、Ubuntu x64/arm64/s390x（CPU）等平台的预编译二进制包，其中 macOS arm64 的 KleidiAI 加速版本在本版中处于禁用状态。",
+        "plain_explanation": "llama.cpp 是一个让普通电脑也能跑大语言模型的开源推理框架，它可以把模型放到 CPU 或 NVIDIA 显卡（CUDA）上运行。Maxwell 是 NVIDIA 在 2014 年前后推出的一代显卡架构（例如 GTX 750 Ti、GTX 970 等）。显卡架构不同，编译器生成的代码也要相应调整；这次修复就是让 llama.cpp 的 CUDA 代码在 Maxwell 这类老显卡上重新能够顺利编译通过。打个比方：新版软件原本只适配近几年出厂的新车，这次补丁让十年前的老车也能正常点火上路，而不必换车。",
+        "purpose": "解决 Maxwell 架构 GPU 用户在编译 llama.cpp CUDA 后端时遇到的构建失败问题，避免这部分用户被新版本挡在门外。对于把旧显卡、旧工作站或二手 GPU 服务器用于本地模型推理的个人开发者和实验室来说，这直接决定了他们能否升级到最新代码并继续获得后续修复与性能改进。",
+        "features": "第一，修复 CUDA 后端在 Maxwell 架构上的构建问题，使该世代显卡可以重新编译出可用的 CUDA 版本；第二，保持多平台预编译产物的持续交付，覆盖 macOS Apple Silicon、macOS Intel、iOS XCFramework 以及 Ubuntu x64/arm64/s390x 的 CPU 构建；第三，发布附带构建证明（Attestations），便于使用者核验二进制来源；第四，macOS arm64 的 KleidiAI 加速构建在本版中标记为禁用，使用者需注意该平台加速路径的可用状态。",
+        "comparison": "暂无可信公开对比数据。该候选摘要只说明这是一条 CUDA Maxwell 构建修复，未给出任何 benchmark、吞吐、延迟或成本对比数字。",
+        "who": "适合仍在使用 Maxwell 世代 NVIDIA 显卡（如 GTX 750 Ti、GTX 970 等）做本地大模型推理的个人开发者、把旧硬件改造成推理节点的小型团队，以及维护 llama.cpp 下游发行版、需要跟进上游 CUDA 兼容性修复的打包者和研究者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b12167",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "11-06 03:45"
+      }
+    ],
+    "footer": "本期仅一条候选入选；评分依据为高可信官方来源与 CUDA 强信号关键词，未引入候选之外的信息。"
+  },
+  "candidate_count": 1
+}
