@@ -3849,6 +3849,26 @@
       "first_seen_at": "2026-11-06T13:35:06.954951+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developer.nvidia.com/blog/speed-up-image-generation-with-flux-3-image-klein-on-nvidia-blackwell-gpus/|speed up image generation with flux 3 image klein on nvidia blackwell gpus",
+      "title": "Speed Up Image Generation with FLUX 3 Image Klein on NVIDIA Blackwell GPUs",
+      "url": "https://developer.nvidia.com/blog/speed-up-image-generation-with-flux-3-image-klein-on-nvidia-blackwell-gpus/",
+      "source": "NVIDIA Developer Blog",
+      "published_at": "2026-11-06T22:20:20+00:00",
+      "first_seen_at": "2026-11-07T01:30:07.261318+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12180|ggml-org/llama.cpp release b12180: model: add kimi-k3.1-pro text model (31779) model: add kimi-k3.1-pro text model k3 wi",
+      "title": "ggml-org/llama.cpp release b12180: model: add Kimi-K3.1-Pro text model (31779) model: add Kimi-K3.1-Pro text model K3 with the full-attention MLA layers replaced by DSA: on t",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12180",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-06T23:18:52+00:00",
+      "first_seen_at": "2026-11-07T01:30:07.261364+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
