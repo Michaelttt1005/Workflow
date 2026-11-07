@@ -3869,6 +3869,16 @@
       "first_seen_at": "2026-11-07T01:30:07.261364+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12185|ggml-org/llama.cpp release b12185: cuda: fix shared memory bank conflicts in the lightning indexer (31803) website",
+      "title": "ggml-org/llama.cpp release b12185: CUDA: fix shared memory bank conflicts in the lightning indexer (31803) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12185",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-07T10:52:05+00:00",
+      "first_seen_at": "2026-11-07T16:01:34.921521+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
