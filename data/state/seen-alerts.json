@@ -3879,6 +3879,16 @@
       "first_seen_at": "2026-11-07T16:01:34.921521+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12202|ggml-org/llama.cpp release b12202: llama, mtmd: follow the reference precision of ggmlprecsetacc calls (31851) llama, mt",
+      "title": "ggml-org/llama.cpp release b12202: llama, mtmd: follow the reference precision of ggmlprecsetacc calls (31851) llama, mtmd: follow the reference precision of ggmlprecsetacc c",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12202",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-08T08:11:09+00:00",
+      "first_seen_at": "2026-11-08T08:27:12.786071+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
