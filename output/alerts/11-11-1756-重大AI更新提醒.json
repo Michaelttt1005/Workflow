@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-11-11T23:56:14.100940Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "11-11 | llama.cpp 连续发布 CUDA BF16 小批量推理优化与测试 API 收敛两项更新",
+    "overview": "本期聚焦 llama.cpp 在同一天内的两个官方 release：b12287 针对 CUDA 后端在 BF16 矩阵行数少、batch size 小的场景引入 MMVF 路径，直接关系到本地推理的 GPU 利用率；b12289 则把测试代码收敛到公开的 ggml API，属于框架工程质量改进。两条更新分别对应推理性能与开发者生态，适合关注本地部署与 ggml 生态的团队跟进。",
+    "checked_sources": [
+      "GitHub Release: ggml-org/llama.cpp b12287",
+      "GitHub Release: ggml-org/llama.cpp b12289"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b12287：CUDA 后端对少行 BF16 矩阵在小 batch 下改用 MMVF",
+        "what": "这是 ggml-org/llama.cpp 的官方 release b12287，核心变更在 CUDA 后端：当 BF16 矩阵的行数很少、且 batch size 处于 2 到 8 的小批量区间时，改用 MMVF 内核而不是原来的 MMF。候选摘要给出的典型例子是 qwen4exp 的 hyper-connection 投影，形状为 320 行、K=10240。MMF 每个 block 处理 32 行，这种少行矩阵只能填满少数几个 block，大部分 SM 处于空闲；MMVF 则每个 block 处理一行，在 K 足够长时反而更快。",
+        "plain_explanation": "可以把 GPU 想象成一条有很多工位的流水线。原来的 MMF 方案一次把 32 行数据捆成一包交给一个工位，但有些矩阵只有 320 行，捆完只有 10 包，绝大多数工位闲着。MMVF 改成一行一包，工位立刻被填满，只要每行的计算量（K 很长）足够大，摊薄调度开销后就更快。代价是 MMVF 的开销随“行数 × batch”增长，所以只在行数 × ne11 × 256 不超过 1024 时启用，并且预算随 SM 数量缩放，像 A16 这种 SM 很少的 GPU 继续走 MMF。",
+        "purpose": "解决小 batch 推理时少行 BF16 矩阵导致 GPU SM 利用率低的问题。本地部署大模型、尤其是带 hyper-connection 类投影结构的模型时，batch size 2 到 8 是常见场景，这项改动直接减少空转、提升吞吐，值得关注推理性能的开发者查看。",
+        "features": "1）按行数、batch 与 K 长度动态选择 MMVF 或 MMF，阈值条件为 rows * ne11 * 256 <= 1024；2）预算随 SM 数量缩放，SM 较少的 GPU（如 A16）保留 MMF 路径；3）按 GPU 架构区分能力上限，Blackwell 支持最多 8 列、max_k=6144，较老 GPU 为 5 列、max_k=4096；4）新增 128x2560、512x2560、320x10240 三组形状在 n=2、3、4、5、8 下的评测用例。",
+        "comparison": "候选摘要明确给出的是内核选择层面的对比：MMF 每 block 32 行，少行矩阵下只跑少数 block、多数 SM 空闲；MMVF 每 block 一行，在 K 足够长时胜出，但其成本随 rows × batch 增长，而 MMF 在该区间大致持平。摘要未给出端到端吞吐或延迟数字，暂无可信公开对比数据。",
+        "who": "适合在本地或私有环境用 CUDA GPU 跑 llama.cpp 的开发者、做小 batch 在线推理的服务团队，以及维护 ggml CUDA 内核、关心 SM 利用率与内核调度策略的底层工程师。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b12287",
+        "score": "8",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "11-11 12:15"
+      },
+      {
+        "candidate_id": "2",
+        "title": "llama.cpp b12289：测试代码改为只使用公开的 ggml API",
+        "what": "这是 ggml-org/llama.cpp 的官方 release b12289，核心变更是把测试代码改为只依赖公开的 ggml API（PR #32077），不再触碰内部实现细节。release 同时附带 macOS Apple Silicon、macOS Intel、iOS XCFramework、Ubuntu x64/arm64、Ubuntu 24.04 s390x 等平台的预编译产物。它属于框架工程质量与接口边界治理，而不是模型能力或推理速度的变化。",
+        "plain_explanation": "打个比方：一个库的内部函数就像公司内部流程，测试如果直接调用内部流程，公司一改流程测试就全挂。这次改动要求测试只走“对外窗口”，也就是公开 API。这样 ggml 内部怎么重构，测试都只验证对外承诺的行为，既减少误报，也让外部开发者照着测试学到的用法就是官方支持的用法。",
+        "purpose": "降低测试对内部实现的耦合，让 ggml 内部重构时测试更稳定，同时保证测试覆盖的是对外承诺的接口行为。对基于 ggml 做二次开发或自行编译 llama.cpp 的团队来说，这意味着公开 API 的边界更清晰，升级时踩坑更少。",
+        "features": "1）测试代码统一收敛到公开 ggml API，移除对内部符号与实现的依赖；2）覆盖多平台预编译产物，包括 macOS arm64/x64、iOS XCFramework、Ubuntu x64/arm64 与 s390x；3）作为官方 release 发布，便于直接下载对应平台二进制验证。",
+        "comparison": "候选摘要未包含任何 benchmark、速度或成本对比，暂无可信公开对比数据。",
+        "who": "适合维护 ggml/llama.cpp 测试与 CI 的贡献者、基于 ggml 公开 API 做上层封装的框架开发者，以及需要自行编译并在多平台（含 s390x 等非主流架构）部署 llama.cpp 的工程团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b12289",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "11-11 13:03"
+      }
+    ],
+    "footer": "以上内容均基于候选中的 llama.cpp 官方 release 摘要整理，未补充摘要之外的性能数字；具体收益请以本地实测为准。"
+  },
+  "candidate_count": 2
+}

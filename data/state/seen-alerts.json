@@ -3939,6 +3939,26 @@
       "first_seen_at": "2026-11-11T17:38:23.103316+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12287|ggml-org/llama.cpp release b12287: cuda : use mmvf for bf16 matrices of few rows at small batch sizes (31959) mmf tiles ",
+      "title": "ggml-org/llama.cpp release b12287: cuda : use MMVF for BF16 matrices of few rows at small batch sizes (31959) MMF tiles 32 rows per block, so a BF16 matrix with few rows (e.g",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12287",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-11T18:15:36+00:00",
+      "first_seen_at": "2026-11-11T23:56:16.190264+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12289|ggml-org/llama.cpp release b12289: tests : use only the public ggml api (32077) website",
+      "title": "ggml-org/llama.cpp release b12289: tests : use only the public ggml API (32077) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12289",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-11T19:03:19+00:00",
+      "first_seen_at": "2026-11-11T23:56:16.190310+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
