@@ -3889,6 +3889,56 @@
       "first_seen_at": "2026-11-08T08:27:12.786071+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/on-device-speech-recognition-and-text-to-speech-in-google-ai-edge-gallery/|on-device speech recognition and text-to-speech in google ai edge gallery",
+      "title": "On-Device Speech Recognition and Text-to-Speech in Google AI Edge Gallery",
+      "url": "https://developers.googleblog.com/on-device-speech-recognition-and-text-to-speech-in-google-ai-edge-gallery/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-11-11T17:37:54.476706+00:00",
+      "first_seen_at": "2026-11-11T17:38:23.103170+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/a2ui-10-build-delightful-fast-reliable-agentic-experiences/|a2ui 1.0: build delightful, fast, reliable, agentic experiences",
+      "title": "A2UI 1.0: Build delightful, fast, reliable, agentic experiences",
+      "url": "https://developers.googleblog.com/a2ui-10-build-delightful-fast-reliable-agentic-experiences/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-11-11T17:37:54.476674+00:00",
+      "first_seen_at": "2026-11-11T17:38:23.103216+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12284|ggml-org/llama.cpp release b12284: cuda: add ocp fp8 support (28413) initial cuda wip version use fp8 intrinsics do w8a1",
+      "title": "ggml-org/llama.cpp release b12284: CUDA: Add OCP FP8 support (28413) Initial CUDA WIP version Use fp8 intrinsics Do W8A16 for FP8 in GEMV case (base) osimons@ub-osimons:~/l",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12284",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-11T13:13:19+00:00",
+      "first_seen_at": "2026-11-11T17:38:23.103252+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3d%3d1.4.10|langchain==1.4.10",
+      "title": "langchain==1.4.10",
+      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.4.10",
+      "source": "GitHub Release: langchain-ai/langchain",
+      "published_at": "2026-11-10T18:37:31+00:00",
+      "first_seen_at": "2026-11-11T17:38:23.103284+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://developer.nvidia.com/blog/running-av-reasoning-models-within-onboard-compute-and-latency-limits/|running av reasoning models within onboard compute and latency limits",
+      "title": "Running AV Reasoning Models Within Onboard Compute and Latency Limits",
+      "url": "https://developer.nvidia.com/blog/running-av-reasoning-models-within-onboard-compute-and-latency-limits/",
+      "source": "NVIDIA Developer Blog",
+      "published_at": "2026-11-10T16:00:00+00:00",
+      "first_seen_at": "2026-11-11T17:38:23.103316+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

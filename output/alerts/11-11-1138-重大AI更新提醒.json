@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-11-11T17:38:21.033383Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "11-11 | 端侧语音、生成式 UI 协议与 llama.cpp FP8 推理更新",
+    "overview": "本期聚焦三项对开发者有直接影响的更新：Google AI Edge Gallery 将离线语音识别与合成带到端侧，并可与 Gemini Nano、Gemma 4 等小模型串联；A2UI 1.0 发布开放协议，让 AI 智能体直接渲染原生交互界面；llama.cpp 新增 CUDA OCP FP8 支持，在 Blackwell 显卡上给出可复现的吞吐数据。",
+    "checked_sources": [
+      "Google Developers Blog",
+      "GitHub Release",
+      "NVIDIA Developer Blog"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "Google AI Edge Gallery 新增端侧离线语音识别与语音合成",
+        "what": "Google AI Edge Gallery 现在支持在设备本地、完全离线运行自动语音识别（ASR）和文本转语音（TTS）。开发者可以通过 ML Kit 获得针对 Android 优化的性能，也可以使用 MediaPipe Tasks 与 LiteRT 接入跨平台的开源权重模型。该本地流水线能把轻量语音模型与 Gemini Nano、Gemma 4 等端侧小语言模型配对，实现实时流式转写和低延迟语音合成。",
+        "plain_explanation": "可以把它想成手机里自带了一个“耳朵”和“嘴巴”：你说的话在手机本地就被转成文字，不需要把录音上传到云端；手机生成的回答也能在本地直接读出来。比如在地铁没有信号时，你仍然可以用语音向一个离线小助手提问，它先听懂你的话，再用本地小模型组织答案，最后用本地语音合成念给你听，整个过程不依赖网络。",
+        "purpose": "解决语音应用对云端依赖强、隐私敏感、弱网或离线场景不可用的问题，同时降低语音交互的端到端延迟，让开发者能在移动设备上构建实时语音助手、无障碍工具和离线记录类应用。",
+        "features": "支持完全离线的 ASR 与 TTS；提供 ML Kit 的 Android 优化路径；提供 MediaPipe Tasks 与 LiteRT 的跨平台开源权重模型集成方式；可与 Gemini Nano、Gemma 4 等端侧小模型串联，形成实时流式转写与低延迟合成的本地流水线。",
+        "comparison": "候选摘要明确提到实时流式转写和低延迟合成，但未给出与云端方案的具体延迟、吞吐或成本数值，暂无可信公开对比数据。",
+        "who": "适合做移动端语音交互的 Android 与跨平台开发者、需要离线或隐私优先语音能力的产品团队，以及研究端侧语音模型与小语言模型协同的研究者。",
+        "link": "https://developers.googleblog.com/on-device-speech-recognition-and-text-to-speech-in-google-ai-edge-gallery/",
+        "score": "8",
+        "source": "Google Developers Blog",
+        "type": "官方发布",
+        "topic": "智能体与开发者平台",
+        "published": "11-11 11:37"
+      },
+      {
+        "candidate_id": "2",
+        "title": "A2UI 1.0 发布：面向智能体的生成式 UI 开放协议",
+        "what": "A2UI 1.0 是一个用于生成式 UI 的开放协议，让 AI 智能体能够在 Web、移动端和桌面应用中渲染可交互的原生界面。它提供开源渲染器 SDK，覆盖 React、Angular、Lit、Flutter、SwiftUI 和 Jetpack Compose，同时提供 Python、TypeScript 和 Dart 的智能体 SDK。该版本引入双向函数调用、可替换的推理格式以及安全数据绑定。",
+        "plain_explanation": "过去智能体大多只能返回一段文字或 Markdown，用户还得自己点按钮、填表单。A2UI 相当于给智能体一套“界面积木”：智能体说“这里需要一个日期选择器和一个确认按钮”，前端就能用原生组件把界面搭出来，而且用户的操作还能通过双向函数调用传回智能体。比如订票助手可以直接生成一个带座位图和支付按钮的原生页面，而不是让用户在一堆文字里找链接。",
+        "purpose": "解决智能体输出与真实产品界面脱节的问题，让生成式 UI 能以标准化、可跨框架的方式嵌入现有产品栈，同时通过安全数据绑定和可替换推理格式降低集成与合规风险。",
+        "features": "开放协议定义智能体到原生界面的渲染方式；提供 React、Angular、Lit、Flutter、SwiftUI、Jetpack Compose 渲染器 SDK；提供 Python、TypeScript、Dart 智能体 SDK；支持双向函数调用、可替换推理格式和安全数据绑定。",
+        "comparison": "候选摘要未给出与其它生成式 UI 方案在渲染速度、包体积或成本上的对比数据，暂无可信公开对比数据。",
+        "who": "适合正在产品中集成智能体交互的前端与全栈开发者、需要跨 Web 与移动端统一生成式 UI 的团队，以及研究智能体与用户界面协同的研究者。",
+        "link": "https://developers.googleblog.com/a2ui-10-build-delightful-fast-reliable-agentic-experiences/",
+        "score": "7",
+        "source": "Google Developers Blog",
+        "type": "官方发布",
+        "topic": "智能体与开发者平台",
+        "published": "11-11 11:37"
+      },
+      {
+        "candidate_id": "3",
+        "title": "llama.cpp b12284 为 CUDA 后端加入 OCP FP8 支持",
+        "what": "llama.cpp 发布 b12284，在 CUDA 后端加入 OCP FP8 支持（PR #28413）。该实现使用 fp8 intrinsics，并在 GEMV 场景下对 FP8 采用 W8A16 计算方式。发布说明附带在 NVIDIA RTX PRO 4500 Blackwell 上使用 Qwen3.6-27B-NVFP4 的 fp8 GGUF 模型运行 llama-bench 的实测数据。",
+        "plain_explanation": "FP8 是一种用 8 位浮点数表示模型权重和计算的数据格式，相比常见的 16 位格式更省显存、理论上也更快。可以类比为把高清照片压缩成体积更小的格式：画质略有损失，但手机存得下、打开也更快。llama.cpp 这次让 CUDA 显卡能直接吃 FP8 格式的模型，并在矩阵向量乘这类推理常见操作里用 W8A16 的方式计算，从而在消费级或工作站级 Blackwell 显卡上跑更大的模型。",
+        "purpose": "解决 FP8 量化模型在 llama.cpp CUDA 路径上缺乏原生支持的问题，让开发者能在 NVIDIA 显卡上以更低显存占用运行 FP8 GGUF 模型，并为后续 FP8 推理优化提供可复现的基准起点。",
+        "features": "CUDA 后端新增 OCP FP8 支持；使用 fp8 intrinsics 实现；GEMV 场景采用 W8A16 计算；发布说明提供 llama-bench 在 RTX PRO 4500 Blackwell 上的可复现命令与吞吐数据。",
+        "comparison": "候选摘要给出 Qwen3.6-27B-NVFP4 fp8 GGUF 在 RTX PRO 4500 Blackwell 上的 llama-bench 结果：pp8196 为 2781.53 ± 8.48 t/s，tg256 为 37.56 ± 0.02 t/s；未提供与 FP16 或其它后端的直接对比，暂无可信公开对比数据。",
+        "who": "适合在 NVIDIA 显卡上部署本地推理的开发者、维护 llama.cpp CUDA 后端的贡献者，以及关注 FP8 量化与低显存推理的研究者和工程团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b12284",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "11-11 07:13"
+      }
+    ],
+    "footer": "以上内容均基于候选源摘要整理，未补充候选之外的事实；性能数据以发布说明中的实测为准。"
+  },
+  "candidate_count": 5
+}
