@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-11-12T22:00:05.730114Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "11-12 | Google 发布 Agent Anomaly Detection，异步监控智能体异常行为",
+    "overview": "Google Developers Blog 今日发布 Agent Anomaly Detection（AAD），一种面向 AI 智能体的异步低延迟监控方案。它通过分析 OpenTelemetry 追踪与日志，识别目标劫持和工具滥用等风险行为。在五个公开安全基准测试中，AAD 成功捕获 87% 的有害指令执行，且不增加运行时延迟。",
+    "checked_sources": [
+      "Google Developers Blog"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "Google 发布 Agent Anomaly Detection：异步监控智能体异常，公开基准捕获率 87%",
+        "what": "Agent Anomaly Detection（AAD）是 Google 推出的智能体异常检测方案，它异步分析 AI 智能体产生的 OpenTelemetry 追踪和日志，识别目标劫持（goal hijack）与工具滥用（tool misuse）等安全风险，并以低延迟方式发出告警。",
+        "plain_explanation": "可以把 AAD 想象成给 AI 智能体配了一位“后台安全员”：智能体在调用工具、执行任务时会产生大量追踪和日志，AAD 不打断智能体工作，而是在旁边异步查看这些记录，一旦发现智能体被诱导去执行危险操作（比如被恶意指令劫持目标，或滥用工具访问敏感数据），就立刻标记出来。例如，一个客服智能体本应查询订单，却突然尝试调用删除数据库的工具，AAD 就能从日志模式中识别出这种异常并告警。",
+        "purpose": "解决智能体在真实业务中可能被恶意指令劫持或滥用工具的安全问题，提供一种不增加运行时延迟的监控手段，帮助开发团队在防御纵深策略中增加一层行为级检测。",
+        "features": "1）异步低延迟监控：不阻塞智能体主流程，通过分析 OpenTelemetry 追踪与日志实现实时告警；2）目标劫持检测：识别智能体被诱导偏离原始任务目标的行为；3）工具滥用检测：发现智能体对工具的不当或越权调用；4）可与语义治理和严格工具限制配合，形成防御纵深。",
+        "comparison": "在五个公开安全基准测试中，AAD 成功捕获 87% 的有害指令执行，且不增加运行时延迟；候选摘要未提供与其他方案的直接对比数据。",
+        "who": "适合构建智能体应用的开发者、负责 AI 安全的研究者，以及需要为智能体系统增加行为监控与合规保障的平台团队。",
+        "link": "https://developers.googleblog.com/how-agent-anomaly-detection-scores-on-benchmarks-we-didnt-write/",
+        "score": "7",
+        "source": "Google Developers Blog",
+        "type": "官方发布",
+        "topic": "智能体与开发者平台",
+        "published": "11-12 15:59"
+      }
+    ],
+    "footer": "本期仅一条候选，聚焦智能体安全监控；AAD 的 87% 捕获率来自五个公开安全基准，具体基准名称与测试细节请参阅原文。"
+  },
+  "candidate_count": 1
+}

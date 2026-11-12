@@ -4009,6 +4009,16 @@
       "first_seen_at": "2026-11-12T14:27:51.906350+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/how-agent-anomaly-detection-scores-on-benchmarks-we-didnt-write/|how agent anomaly detection scores on benchmarks we didn't write",
+      "title": "How Agent Anomaly Detection scores on benchmarks we didn't write",
+      "url": "https://developers.googleblog.com/how-agent-anomaly-detection-scores-on-benchmarks-we-didnt-write/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-11-12T21:59:46.975925+00:00",
+      "first_seen_at": "2026-11-12T22:00:07.567816+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
