@@ -3959,6 +3959,36 @@
       "first_seen_at": "2026-11-11T23:56:16.190310+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/huggingface/diffusers/releases/tag/v0.43.0|diffusers 0.43.0: minimax-h3-image, pika h3 flex, p-h3-image, kandinsky s2v, and pan 2",
+      "title": "Diffusers 0.43.0: MiniMax-H3-Image, Pika H3 Flex, P-H3-Image, Kandinsky S2V, and PAN 2",
+      "url": "https://github.com/huggingface/diffusers/releases/tag/v0.43.0",
+      "source": "GitHub Release: huggingface/diffusers",
+      "published_at": "2026-11-12T05:22:22+00:00",
+      "first_seen_at": "2026-11-12T05:23:21.326868+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12311|ggml-org/llama.cpp release b12311: ui: keep downloads in discover during search and fix their progress with a draft (314",
+      "title": "ggml-org/llama.cpp release b12311: ui: keep downloads in Discover during search and fix their progress with a draft (31467) ui : keep downloads in Discover sidebar during sea",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12311",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-12T05:02:04+00:00",
+      "first_seen_at": "2026-11-12T05:23:21.326932+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12306|ggml-org/llama.cpp release b12306: vulkan: support batched tensor copy api (31418) vulkan: support batched tensor copy a",
+      "title": "ggml-org/llama.cpp release b12306: vulkan: support batched tensor copy API (31418) vulkan: support batched tensor copy API allocate staging buffer only for copies that actua",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12306",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-12T03:45:58+00:00",
+      "first_seen_at": "2026-11-12T05:23:21.326983+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
