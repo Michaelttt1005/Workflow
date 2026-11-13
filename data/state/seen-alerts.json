@@ -4019,6 +4019,66 @@
       "first_seen_at": "2026-11-12T22:00:07.567816+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/huggingface/transformers/releases/tag/v5.23.0|huggingface/transformers release v5.23.0: release v5.23.0 new model additions inkling2 inkling 2 small is a multimodal m",
+      "title": "huggingface/transformers release v5.23.0: Release v5.23.0 New Model additions Inkling2 Inkling 2 Small is a multimodal model from Thinking Machines Lab that accepts text and image",
+      "url": "https://github.com/huggingface/transformers/releases/tag/v5.23.0",
+      "source": "GitHub Release: huggingface/transformers",
+      "published_at": "2026-11-13T14:10:57+00:00",
+      "first_seen_at": "2026-11-13T19:03:21.734705+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12364|ggml-org/llama.cpp release b12364: spec : warn when --spec-draft-p-min is used with probabilistic draft sampling (31294)",
+      "title": "ggml-org/llama.cpp release b12364: spec : Warn when --spec-draft-p-min is used with probabilistic draft sampling (31294) spec : skip pmin for sampled MTP and DFlash2 drafts U",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12364",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-13T18:52:36+00:00",
+      "first_seen_at": "2026-11-13T19:03:21.734744+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12362|ggml-org/llama.cpp release b12362: grammar : optimize matching with left factoring (29557) grammar : limit the number of",
+      "title": "ggml-org/llama.cpp release b12362: grammar : optimize matching with left factoring (29557) grammar : limit the number of alternatives grammar : introduce an AST for grammar",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12362",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-13T17:58:20+00:00",
+      "first_seen_at": "2026-11-13T19:03:21.734772+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://developer.nvidia.com/blog/when-one-gpu-isnt-enough-serving-glm-5-3-across-two-nvidia-dgx-stations-with-vllm/|when one gpu isn’t enough: serving glm-5.3 across two nvidia dgx stations with vllm",
+      "title": "When One GPU Isn’t Enough: Serving GLM-5.3 Across Two NVIDIA DGX Stations with vLLM",
+      "url": "https://developer.nvidia.com/blog/when-one-gpu-isnt-enough-serving-glm-5-3-across-two-nvidia-dgx-stations-with-vllm/",
+      "source": "NVIDIA Developer Blog",
+      "published_at": "2026-11-13T17:00:00+00:00",
+      "first_seen_at": "2026-11-13T19:03:21.734803+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/langchain-ai/langchain/releases/tag/langchain-openai%3d%3d1.8.0|langchain-openai==1.8.0",
+      "title": "langchain-openai==1.8.0",
+      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-openai%3D%3D1.8.0",
+      "source": "GitHub Release: langchain-ai/langchain",
+      "published_at": "2026-11-13T16:48:27+00:00",
+      "first_seen_at": "2026-11-13T19:03:21.734826+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0|ggml-org/llama.cpp release v1.0.0: blog post: https://huggingface.co/blog/ggml-org/llama-cpp-v1 overview llama.cpp v1.0.",
+      "title": "ggml-org/llama.cpp release v1.0.0: Blog post: https://huggingface.co/blog/ggml-org/llama-cpp-v1 Overview llama.cpp v1.0.0 removes the deprecated public API and promotes the N",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-13T10:20:19+00:00",
+      "first_seen_at": "2026-11-13T19:03:21.734851+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
