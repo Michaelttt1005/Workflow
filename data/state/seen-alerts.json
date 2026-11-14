@@ -4099,6 +4099,16 @@
       "first_seen_at": "2026-11-14T00:36:17.297142+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12385|ggml-org/llama.cpp release b12385: qwen2vl : apply ffn weight scales (32241) the qwen2vl graph passed null for the ffnup",
+      "title": "ggml-org/llama.cpp release b12385: qwen2vl : apply FFN weight scales (32241) The qwen2vl graph passed NULL for the ffnup/gate/down scales, so the per-tensor NVFP4 scales loade",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12385",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-14T18:48:53+00:00",
+      "first_seen_at": "2026-11-14T21:52:59.825606+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

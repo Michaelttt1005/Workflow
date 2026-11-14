@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-11-14T21:52:58.009190Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "11-14 | llama.cpp 修复 Qwen2-VL 量化推理崩溃",
+    "overview": "本期聚焦 llama.cpp 针对 Qwen2-VL 模型在 NVFP4 量化下推理输出乱码或 NaN 的严重缺陷修复。该问题会导致模型完全不可用，修复后恢复了量化推理的正确性，对本地部署多模态模型的开发者尤为关键。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b12385 修复 Qwen2-VL 的 FFN 权重缩放未应用问题",
+        "what": "这是 ggml-org/llama.cpp 项目的一个 GitHub Release（b12385），核心变更是在 qwen2vl 计算图中正确传递 FFN 的 ffn_up、gate、down 三组权重缩放（scales）。此前 qwen2vl 图在构建 FFN 时对这些缩放传入了 NULL，导致通用流程加载的 per-tensor NVFP4 量化缩放从未被应用，模型输出完全错误。",
+        "plain_explanation": "可以把量化模型想象成一本被压缩过的说明书：每个章节的数值都按一个“缩放系数”压缩存储，阅读时必须乘回这个系数才能还原原意。Qwen2-VL 的 FFN 部分有三个关键章节（ffn_up、gate、down），但 llama.cpp 在读取时忘了把对应的缩放系数传进去，相当于用错误的比例去还原，结果整本书读出来全是乱码。修复方式就是像 qwen2 那样，把这三个系数正确传给 build_ffn，让还原过程恢复正常。",
+        "purpose": "解决 Qwen2-VL 在 NVFP4 量化下推理结果完全不可用的问题。根据 release 说明，该缺陷会导致 CUDA 上困惑度（PPL）飙到约 1e6、CPU 上直接出现 NaN，模型输出垃圾。修复后量化推理恢复正确，避免开发者在本地部署多模态模型时遇到难以定位的静默错误。",
+        "features": "1) 在 qwen2vl 图中将 ffn_up/gate/down 的 per-tensor NVFP4 scales 正确传入 build_ffn；2) 对齐 qwen2 的已有实现，保持不同模型架构间缩放处理的一致性；3) 修复了因缩放缺失导致的 CUDA PPL 异常与 CPU NaN 问题；4) 随 release 提供 macOS（arm64/x64）、iOS XCFramework、Ubuntu x64 等多平台预编译包。",
+        "comparison": "候选摘要中明确给出修复前后的对比：修复前 CUDA 上 PPL 约 1e6、CPU 上为 NaN；修复后恢复正确推理。未提供与其他推理框架的速度或成本对比数据。",
+        "who": "适合在本地或边缘设备上使用 llama.cpp 部署 Qwen2-VL 多模态模型的开发者、做量化推理研究的研究者，以及依赖 NVFP4 低比特量化在 CUDA/CPU 上跑视觉语言模型的工程团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b12385",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "11-14 12:48"
+      }
+    ],
+    "footer": "本期仅一条候选，聚焦 llama.cpp 量化推理正确性修复；建议使用 Qwen2-VL + NVFP4 的团队尽快升级到 b12385。"
+  },
+  "candidate_count": 1
+}
