@@ -4079,6 +4079,26 @@
       "first_seen_at": "2026-11-13T19:03:21.734851+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12370|ggml-org/llama.cpp release b12370: ggml-cuda: hip: tune gcn mmq configs (30021) website",
+      "title": "ggml-org/llama.cpp release b12370: ggml-cuda: hip: tune GCN MMQ configs (30021) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12370",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-13T22:59:05+00:00",
+      "first_seen_at": "2026-11-14T00:36:17.297097+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/run-llama/llama_index/releases/tag/v0.14.26|run-llama/llama_index release v0.14.26: release notes [2026-11-13] llama-index-agent-agentmesh [0.3.0]",
+      "title": "run-llama/llama_index release v0.14.26: Release Notes [2026-11-13] llama-index-agent-agentmesh [0.3.0]",
+      "url": "https://github.com/run-llama/llama_index/releases/tag/v0.14.26",
+      "source": "GitHub Release: run-llama/llama_index",
+      "published_at": "2026-11-13T22:38:15+00:00",
+      "first_seen_at": "2026-11-14T00:36:17.297142+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
