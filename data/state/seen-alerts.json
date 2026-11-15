@@ -4109,6 +4109,16 @@
       "first_seen_at": "2026-11-14T21:52:59.825606+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12414|ggml-org/llama.cpp release b12414: cuda/hip: refactor the use of sync warp primitives (31617) uses the rocm-native primi",
+      "title": "ggml-org/llama.cpp release b12414: CUDA/HIP: Refactor the use of sync warp primitives (31617) Uses the rocm-native primitives, increases the rocm version requirement to 6.3 an",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12414",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-15T14:57:37+00:00",
+      "first_seen_at": "2026-11-15T16:44:44.785838+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
