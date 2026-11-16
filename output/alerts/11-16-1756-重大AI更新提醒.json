@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-11-16T23:56:51.131986Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "11-16 | vLLM v0.34.0 大版本升级、GKE 智能体会话调度优化、llama.cpp 启用 CDNA 新内核",
+    "overview": "本期聚焦推理基础设施与智能体部署效率：vLLM 发布 v0.34.0，带来 10 个新模型、默认启用的可扩展 KV cache 以及 Blackwell/MI355X 上的显著加速；Google 开发者博客提出“智能体会话而非请求”的 GKE 节点池规划思路，可降低最多 40% 的节点成本；llama.cpp 在 CDNA 架构上启用 GDN mma 内核，继续扩展 AMD GPU 支持。",
+    "checked_sources": [
+      "GitHub Release: vllm-project/vllm v0.34.0",
+      "Google Developers Blog: Agents are sessions, not requests",
+      "GitHub Release: ggml-org/llama.cpp b12444"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "vLLM v0.34.0 发布：默认启用可扩展 KV cache，新增 10 个模型，Blackwell 解码提速最高 1.95 倍",
+        "what": "vLLM 是面向大语言模型推理的高吞吐开源服务框架，v0.34.0 是一个包含 1061 次提交、412 位贡献者（其中 120 位新贡献者）的大版本。该版本新增 10 个模型支持（包括 Mistral Large 4、MiniMax-M3.1-Flash、Nemotron-3.5-Transcribe 等），默认启用可扩展 KV cache，移除 Model Runner V1 并仅保留 Model Runner V2 作为 GPU 运行器，同时在 Blackwell 和 MI355X 上带来显著性能提升。",
+        "plain_explanation": "可以把 vLLM 想象成一个“模型服务餐厅”：KV cache 是后厨提前备好的食材，缓存越大，能同时招待的客人越多。过去 vLLM 按固定规则估算缓存大小，常常留有余量浪费；v0.34.0 改为在预热后根据实际剩余显存来分配缓存，相当于“看冰箱里真正空出多少地方再进货”，因此多数模型能获得更大缓存、更高吞吐。另外，它把旧的“跑堂方式”（Model Runner V1）彻底换成了更高效的 V2，并在新硬件上跑得更快。",
+        "purpose": "解决大模型推理部署中显存利用率不足、吞吐上不去的问题，同时简化运行器架构、扩展新模型支持，让自托管推理服务在相同硬件上服务更多请求、降低单位 token 成本。",
+        "features": "1）可扩展 KV cache 默认开启，按预热后实际空闲内存动态确定缓存大小，多数模型获得更大缓存与更高吞吐；2）新增 10 个模型支持，覆盖 Mistral Large 4、MiniMax-M3.1-Flash、Nemotron-3.5-Transcribe 等；3）Model Runner V2 成为唯一 GPU 运行器，V1 被移除；4）Blackwell 与 MI355X 上多项加速：GB200 上 Step5 解码最高 1.95 倍、GLM-5.3-Flash 吞吐 1.6 倍、GLM-5.3 长提示 TTFT 快 1.24–1.40 倍。",
+        "comparison": "候选摘要明确给出：GB200 上 Step5 解码最高 1.95 倍加速；GLM-5.3-Flash 吞吐提升 1.6 倍；GLM-5.3 长提示首 token 延迟（TTFT）提升 1.24–1.40 倍。升级注意项包括默认 block size 变为 64、ROCm 7.2 镜像移除、要求 huggingface_hub >= 2.0.0。",
+        "who": "适合自托管大模型推理服务的平台工程师、MLOps 团队、需要高吞吐低延迟部署的 AI 应用后端开发者，以及关注 Blackwell/AMD MI355X 新硬件推理性能的研究与工程人员。",
+        "link": "https://github.com/vllm-project/vllm/releases/tag/v0.34.0",
+        "score": "9",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "检索增强与向量模型",
+        "published": "11-16 17:22"
+      },
+      {
+        "candidate_id": "2",
+        "title": "Google 提出“智能体是会话而非请求”：用 GKE 节点池为 AI 智能体会话省下最多 40% 成本",
+        "what": "这是 Google Developers Blog 的一篇工程实践文章，核心观点是 AI 智能体的运行模式更像“长时间保持的会话”而不是“一次性的请求”：会话在工作日大部分时间处于活跃但空闲的状态。文章介绍用开源工具 Agent Substrate 和 AX on GKE，把空闲会话“停放”到对象存储中以释放计算资源，同时保留会话状态，从而优化 Kubernetes 节点池的资源利用率。",
+        "plain_explanation": "传统 Web 服务像快餐店：客人点完餐就走，桌子可以马上翻台。但 AI 智能体更像包间里的会议：人大部分时间在发呆、等资料、等下一步指令，却一直占着包间。如果每个会话都独占一个 Pod，就等于每个包间只开一场会，浪费严重。文章的做法是：会议暂停时把“会议记录”存到对象存储，把包间腾出来给别人用；等会议继续时再把记录搬回来，状态不丢。这样节点成本最多可降 40%。",
+        "purpose": "解决 AI 智能体在 Kubernetes 上部署时资源长期被空闲会话占用、节点成本高的问题，为平台团队提供一套可落地的会话生命周期管理与节点池规划方法。",
+        "features": "1）把智能体会话建模为长生命周期会话而非短请求，据此规划 GKE 节点池；2）使用开源工具 Agent Substrate 与 AX on GKE 管理会话；3）空闲会话可停放到对象存储，释放计算资源但保留会话状态；4）据称可降低 Kubernetes 节点成本最多 40%。",
+        "comparison": "候选摘要明确给出：相比传统“每会话一个 Pod”的分配方式，该方案可降低 Kubernetes 节点成本最多 40%。其他性能对比暂无可信公开对比数据。",
+        "who": "适合在 Kubernetes/GKE 上部署 AI 智能体平台的云平台工程师、SRE、基础设施架构师，以及需要控制智能体运行成本的产品与工程团队。",
+        "link": "https://developers.googleblog.com/agents-are-sessions-not-requests-size-gke-node-pools-for-ai-agent-sessions/",
+        "score": "7",
+        "source": "Google Developers Blog",
+        "type": "官方发布",
+        "topic": "智能体与开发者平台",
+        "published": "11-16 17:56"
+      },
+      {
+        "candidate_id": "3",
+        "title": "llama.cpp b12444 发布：在 CDNA 架构上启用 GDN mma 内核，扩展 AMD GPU 推理支持",
+        "what": "llama.cpp 是广泛使用的开源大模型本地推理框架，b12444 是一个构建版本，核心变更是通过 HIP/CUDA 后端在 CDNA 架构（AMD GPU 的数据中心架构）上启用 GDN mma 内核（PR #31327）。该版本同时提供 macOS/iOS、Linux 等多平台预编译二进制包。",
+        "plain_explanation": "可以把 mma 内核理解为 GPU 里的“批量矩阵乘法专用流水线”，专门加速模型中最耗时的矩阵运算。GDN 是一种模型结构，过去在 AMD CDNA 显卡上可能没有走这条专用流水线，只能绕路计算；b12444 让这条流水线在 CDNA 上也能用，相当于给 AMD 数据中心显卡开通了“快车道”，让相关模型在 AMD 平台上跑得更顺畅。",
+        "purpose": "解决 llama.cpp 在 AMD CDNA 架构 GPU 上对 GDN 相关模型支持不完整、未能利用矩阵乘加硬件指令的问题，提升 AMD 平台上的推理兼容性与执行效率。",
+        "features": "1）通过 HIP/CUDA 后端在 CDNA 架构上启用 GDN mma 内核（PR #31327）；2）继续提供 macOS Apple Silicon、macOS Intel、iOS XCFramework、Ubuntu x64/arm64/s390x 等多平台预编译包；3）属于 llama.cpp 持续集成构建，跟进最新内核与后端改动。",
+        "comparison": "候选摘要未提供具体 benchmark、速度或成本对比数据，暂无可信公开对比数据。",
+        "who": "适合在 AMD CDNA 架构 GPU 上运行本地大模型推理的开发者、关注 llama.cpp 后端内核优化的贡献者，以及需要跨平台（macOS/iOS/Linux）部署轻量推理的工程团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b12444",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "11-16 13:06"
+      }
+    ],
+    "footer": "以上内容均基于候选源摘要整理，未引入外部数据；升级 vLLM 前请留意 block size、ROCm 镜像与 huggingface_hub 版本等破坏性变更。"
+  },
+  "candidate_count": 3
+}

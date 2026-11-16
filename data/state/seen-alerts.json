@@ -4139,6 +4139,36 @@
       "first_seen_at": "2026-11-16T14:29:49.062741+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/vllm-project/vllm/releases/tag/v0.34.0|vllm-project/vllm release v0.34.0: v0.34.0 1,061 commits from 412 contributors (120 new)",
+      "title": "vllm-project/vllm release v0.34.0: v0.34.0 1,061 commits from 412 contributors (120 new)",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.34.0",
+      "source": "GitHub Release: vllm-project/vllm",
+      "published_at": "2026-11-16T23:22:00+00:00",
+      "first_seen_at": "2026-11-16T23:56:53.241931+00:00",
+      "score": 9,
+      "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/agents-are-sessions-not-requests-size-gke-node-pools-for-ai-agent-sessions/|agents are sessions, not requests: size gke node pools for ai agent sessions",
+      "title": "Agents are sessions, not requests: size GKE node pools for AI agent sessions",
+      "url": "https://developers.googleblog.com/agents-are-sessions-not-requests-size-gke-node-pools-for-ai-agent-sessions/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-11-16T23:56:25.728307+00:00",
+      "first_seen_at": "2026-11-16T23:56:53.242021+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12444|ggml-org/llama.cpp release b12444: hip/cuda: enable gdn mma kernel on cdna (31327) website",
+      "title": "ggml-org/llama.cpp release b12444: HIP/CUDA: enable GDN mma kernel on CDNA (31327) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12444",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-16T19:06:03+00:00",
+      "first_seen_at": "2026-11-16T23:56:53.242079+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
