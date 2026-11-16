@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-11-16T04:16:17.103764Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "11-15 | langchain-mistralai 1.2.0 发布：推理模型流式修复与 LangSmith 网关路由",
+    "overview": "本期聚焦 langchain-mistralai 1.2.0 版本更新。该版本修复了推理模型在流式输出场景下的行为问题，并将 ChatMistralAI 的调用路由至 LangSmith 网关，同时刷新模型档案数据并调整依赖边界。对于使用 LangChain 接入 Mistral 模型的开发者，这是一次值得关注的兼容性与可观测性升级。",
+    "checked_sources": [
+      "GitHub Release: langchain-ai/langchain releases/tag/langchain-mistralai==1.2.0"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "langchain-mistralai 1.2.0 发布：修复推理模型流式输出并接入 LangSmith 网关",
+        "what": "langchain-mistralai 是 LangChain 官方维护的 Mistral AI 集成包，提供 ChatMistralAI 聊天模型接口。1.2.0 版本包含多项变更：修复了推理模型（reasoning models）的流式输出行为；将 ChatMistralAI 的请求路由至 LangSmith 网关；刷新模型档案（model profile）数据；移除已停止支持的 Python 3.10；放宽第三方依赖上限并更新 certifi 等依赖版本。",
+        "plain_explanation": "可以把 langchain-mistralai 想象成一个“翻译插头”：你的程序用 LangChain 的统一接口说话，它负责把话转给 Mistral 的模型。以前当模型一边思考一边输出（推理模型）时，这个插头在流式传输上会出小毛病，就像水管接口漏水，导致你看到的内容断断续续或顺序不对。1.2.0 修好了这个接口。另外，它把请求改道经过 LangSmith 网关，相当于给水管加了一个带流量计的中间站，方便你观察和记录每次调用。",
+        "purpose": "解决开发者在 LangChain 中使用 Mistral 推理模型时流式输出不稳定、难以调试的问题，并通过 LangSmith 网关提升调用链路的可观测性与统一管理能力，同时保持依赖与 Python 版本支持的现代性。",
+        "features": "1）修复推理模型流式输出行为，使 token 按正确顺序稳定返回；2）ChatMistralAI 请求路由至 LangSmith 网关，便于追踪与观测；3）刷新模型档案数据，保持模型元信息最新；4）移除 EOL 的 Python 3.10 支持并放宽第三方依赖上限，降低安装冲突。",
+        "comparison": "候选摘要未提供与旧版本或其他集成包在速度、成本、准确率上的量化对比，暂无可信公开对比数据。",
+        "who": "适合使用 LangChain 接入 Mistral 模型的应用开发者、需要流式对话体验的产品团队，以及关注调用链路可观测性与依赖治理的平台工程团队。",
+        "link": "https://github.com/langchain-ai/langchain/releases/tag/langchain-mistralai%3D%3D1.2.0",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "安全与可信评测",
+        "published": "11-15 16:38"
+      }
+    ],
+    "footer": "本期仅一条候选入选；版本升级前建议在测试环境验证流式输出与 LangSmith 网关路由对现有调用链的影响。"
+  },
+  "candidate_count": 1
+}

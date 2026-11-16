@@ -4119,6 +4119,16 @@
       "first_seen_at": "2026-11-15T16:44:44.785838+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/langchain-ai/langchain/releases/tag/langchain-mistralai%3d%3d1.2.0|langchain-mistralai==1.2.0",
+      "title": "langchain-mistralai==1.2.0",
+      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-mistralai%3D%3D1.2.0",
+      "source": "GitHub Release: langchain-ai/langchain",
+      "published_at": "2026-11-15T22:38:03+00:00",
+      "first_seen_at": "2026-11-16T04:16:19.096541+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
