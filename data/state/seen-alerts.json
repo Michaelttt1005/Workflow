@@ -4129,6 +4129,16 @@
       "first_seen_at": "2026-11-16T04:16:19.096541+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12433|ggml-org/llama.cpp release b12433: cuda : fix mulmatid abort with odd src0 columns on amd (32385) on amd devices mulmati",
+      "title": "ggml-org/llama.cpp release b12433: cuda : fix MULMATID abort with odd src0 columns on AMD (32385) On AMD devices MULMATID with an F32, F16 or BF16 src0 and at most 8 tokens al",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12433",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-16T11:16:33+00:00",
+      "first_seen_at": "2026-11-16T14:29:49.062741+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }

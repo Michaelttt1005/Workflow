@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-11-16T14:29:47.316103Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "11-16 | llama.cpp 修复 AMD 上 LoRA 推理崩溃",
+    "overview": "本期聚焦 llama.cpp 的一个关键修复：在 AMD GPU 上使用 LoRA 适配器进行 MoE 模型推理时，特定形状会触发 MUL_MAT_ID 中止。该修复让 rank 1 LoRA 在 AMD 设备上稳定运行，对本地部署和微调实验有直接影响。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b12433 修复 AMD 上 LoRA 推理 MUL_MAT_ID 中止问题",
+        "what": "这是 ggml-org/llama.cpp 的 GitHub Release b12433，核心变更是在 CUDA 后端修复 AMD 设备上 MUL_MAT_ID 算子在 src0 列数为奇数时触发中止的问题。具体来说，当 src0 为 F32、F16 或 BF16 且 token 数不超过 8 时，代码原本总是走 MMVF 路径，而 MMVF 按成对读取 src0 并断言 ne[0] 为偶数，导致 rank 1 LoRA 的 lora_b（ne[0] == 1）在 MoE 专家权重上直接 abort。修复后仅在 ne[0] 为偶数时使用 MMVF，其他形状回退到已有 fallback 路径。",
+        "plain_explanation": "可以把 LoRA 想成给大模型贴的一层“小补丁”，rank 1 就是最薄的那种补丁，只改一个方向。llama.cpp 在 AMD 显卡上处理 MoE 模型时，有个快速通道叫 MMVF，它习惯一次读两个数，所以要求数据宽度是偶数。rank 1 补丁的宽度是 1，是奇数，快速通道一读就报错退出。这次修复相当于加了一个判断：宽度是偶数才走快速通道，奇数就走普通通道，于是最薄的补丁也能正常加载和推理了。",
+        "purpose": "解决 AMD 用户在使用 rank 1 LoRA 适配 MoE 模型时推理进程直接中止的问题，让本地部署、微调实验和边缘设备上的低秩适配推理不再因形状不匹配而崩溃，提升 llama.cpp 在 AMD ROCm 环境下的可用性。",
+        "features": "1）针对 AMD 设备上 MUL_MAT_ID 的 MMVF 路径增加 ne[0] 奇偶判断；2）覆盖 F32、F16、BF16 三种 src0 类型；3）修复 rank 1 LoRA 在 MoE 专家权重上的中止问题；4）保留原有 fallback 路径处理非偶数形状。",
+        "comparison": "候选摘要未提供修复前后的 benchmark、速度或成本对比数据，暂无可信公开对比数据。",
+        "who": "适合在 AMD GPU 上使用 llama.cpp 进行本地推理的开发者、需要加载 LoRA 适配器的微调实验者、以及维护 MoE 模型部署管线的团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b12433",
+        "score": "8",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "11-16 05:16"
+      }
+    ],
+    "footer": "本期仅一条候选，聚焦 llama.cpp 在 AMD 上的 LoRA 推理修复；建议 AMD 用户升级到 b12433 或更高版本。"
+  },
+  "candidate_count": 1
+}
