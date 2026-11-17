@@ -4169,6 +4169,26 @@
       "first_seen_at": "2026-11-16T23:56:53.242079+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12456|ggml-org/llama.cpp release b12456: opencl: fix three defects of the bin flash-attention prefill path (32110) opencl: rel",
+      "title": "ggml-org/llama.cpp release b12456: opencl: fix three defects of the bin flash-attention prefill path (32110) opencl: release the WMM flash-attention mask fallback image The f",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12456",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-17T05:05:58+00:00",
+      "first_seen_at": "2026-11-17T06:23:32.599177+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/tensorflow/tensorflow/releases/tag/v2.22.0-rc1|tensorflow 2.22.0-rc1",
+      "title": "TensorFlow 2.22.0-rc1",
+      "url": "https://github.com/tensorflow/tensorflow/releases/tag/v2.22.0-rc1",
+      "source": "GitHub Release: tensorflow/tensorflow",
+      "published_at": "2026-11-17T01:34:09+00:00",
+      "first_seen_at": "2026-11-17T06:23:32.599226+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

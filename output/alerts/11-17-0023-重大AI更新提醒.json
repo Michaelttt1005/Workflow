@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-11-17T06:23:29.961068Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "11-17 | llama.cpp 修复 OpenCL 闪存注意力缺陷，TensorFlow 2.22.0-rc1 发布",
+    "overview": "本期聚焦两个重要开源框架更新：llama.cpp 发布 b12456 版本，修复 OpenCL 后端 bin flash-attention 预填充路径的三个缺陷，提升推理服务器稳定性；TensorFlow 发布 2.22.0-rc1，带来 Python 3.14 支持、CUDA 13 初步支持及多项算子增强，同时移除默认 TensorBoard 依赖。",
+    "checked_sources": [
+      "GitHub Release: ggml-org/llama.cpp b12456",
+      "GitHub Release: TensorFlow 2.22.0-rc1"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b12456 修复 OpenCL 闪存注意力预填充路径三个缺陷",
+        "what": "llama.cpp 是一个用 C/C++ 实现的高效大语言模型推理框架，支持在多种硬件后端（包括 OpenCL）上运行模型。本次 b12456 版本针对 OpenCL 后端的 bin flash-attention 预填充路径修复了三个缺陷：释放 WMM flash-attention 掩码回退图像以避免内存泄漏；在 q8_0 K/V 且头维度为 512 时绕过 WMM flash-attention 内核，因为该组合下结果错误；以及相关形状处理逻辑的修正。",
+        "plain_explanation": "想象你有一个快递分拣中心（推理服务器），每次处理一批包裹（请求）时都会临时占用一个储物格（K-cache 子缓冲区）。之前系统每次都会新建一个储物格却从不归还，导致储物格越占越多，分拣速度越来越慢。这次修复就是让系统用完储物格后及时归还，并且对于某些特殊尺寸的包裹（q8_0 量化、头维度 512），不再使用会出错的快速分拣通道，而是走更稳妥的路径，保证结果正确。",
+        "purpose": "解决 OpenCL 后端在闪存注意力预填充阶段的内存泄漏和数值错误问题，避免服务器随请求增多而性能下降，并确保特定量化配置下的推理结果正确。",
+        "features": "1. 释放 WMM flash-attention 掩码回退图像，消除每次调用 bin flash-attention 内核时的 K-cache 子缓冲区泄漏；2. 在 q8_0 K/V 且 DK=512 时禁用 WMM flash-attention 内核，避免 V 与 K 值不同时产生错误结果；3. 与后端自有 flash-attention 内核行为对齐，统一对 q8_0 DK=512 形状的处理方式。",
+        "comparison": "候选摘要中提及：在 X2-90 上测试 q8_0 K/V 且 DK=512 时，bin flash-attention 内核最大误差为 2.04，而 f16 K/V 在 DK=512 时结果正确；修复后该形状走与后端自有内核一致的拒绝路径。暂无可信公开的吞吐或延迟对比数据。",
+        "who": "适合使用 llama.cpp 在 OpenCL 设备（如集成显卡、移动端 GPU）上部署大模型推理的开发者、运维团队，以及关注量化推理数值正确性的研究者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b12456",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "开发者生态与数据工具",
+        "published": "11-16 23:05"
+      },
+      {
+        "candidate_id": "2",
+        "title": "TensorFlow 2.22.0-rc1 发布：支持 Python 3.14 与 CUDA 13",
+        "what": "TensorFlow 2.22.0-rc1 是 TensorFlow 深度学习框架的候选发布版本。该版本新增对 Python 3.14（包括 cp314 和 cp314t 自由线程并发）在 Linux、macOS 和 Windows 上的支持；升级 Intel oneDNN 至 v3.14.1 以优化卷积和转置内核；初步支持 NVIDIA CUDA 13（通过 pip install tensorflow-cuda13 安装）；在 tf.lite 中为 Dequantize 算子增加 QUI4（量化无符号 4 位）支持，并为 Unpack 算子增加 FP16 和 BF16 支持。同时，TensorBoard 依赖不再默认包含，使用 tf.summary.* 或 tf.keras.callbacks.TensorBoard 需单独安装 tensorboard 包。",
+        "plain_explanation": "TensorFlow 就像一套乐高积木，让开发者搭建和训练机器学习模型。这次更新相当于：积木套装支持了最新的操作系统语言环境（Python 3.14），并且能适配新一代显卡驱动（CUDA 13）；同时优化了积木拼接的底层工艺（oneDNN 升级），让卷积等操作更快。另外，以前套装里默认附赠的展示板（TensorBoard）现在需要单独购买，如果你要用可视化功能，得自己再装一下。",
+        "purpose": "帮助开发者在新版 Python 和 CUDA 生态中继续使用 TensorFlow，并通过底层算子优化和量化支持提升模型训练与推理效率，同时明确依赖管理以减小默认安装体积。",
+        "features": "1. 跨平台支持 Python 3.14（含自由线程并发版本）；2. 初步支持 NVIDIA CUDA 13，提供独立安装包；3. 升级 Intel oneDNN 至 v3.14.1，优化卷积和转置内核；4. tf.lite 新增 QUI4 反量化支持及 Unpack 算子的 FP16/BF16 支持。",
+        "comparison": "候选摘要未提供与上一版本的具体性能或速度对比数据，暂无可信公开对比数据。",
+        "who": "适合使用 TensorFlow 进行模型训练和部署的开发者、需要在新版 Python 或 CUDA 环境中工作的团队，以及关注 TensorFlow Lite 量化推理能力的研究者和移动端开发者。",
+        "link": "https://github.com/tensorflow/tensorflow/releases/tag/v2.22.0-rc1",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "11-16 19:34"
+      }
+    ],
+    "footer": "以上信息均来自候选源，未添加外部数据；版本为候选发布，使用前请关注后续正式版说明。"
+  },
+  "candidate_count": 2
+}
