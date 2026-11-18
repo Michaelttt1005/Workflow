@@ -4189,6 +4189,26 @@
       "first_seen_at": "2026-11-17T06:23:32.599226+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12502|ggml-org/llama.cpp release b12502: cuda: use mmq for moe on v100 (32504) website",
+      "title": "ggml-org/llama.cpp release b12502: CUDA: use MMQ for MoE on V100 (32504) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12502",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-18T08:09:23+00:00",
+      "first_seen_at": "2026-11-18T09:36:55.136821+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12498|ggml-org/llama.cpp release b12498: server: slotsched: fix lora and recurrent (32434) server: fix lora and recurrent test",
+      "title": "ggml-org/llama.cpp release b12498: server: slotsched: fix lora and recurrent (32434) server: fix lora and recurrent tests: run the hybrid SWA checkpoint test with one token",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12498",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-18T04:18:01+00:00",
+      "first_seen_at": "2026-11-18T09:36:55.136869+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }

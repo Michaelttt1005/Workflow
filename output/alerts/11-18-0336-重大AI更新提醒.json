@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-11-18T09:36:53.166895Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "11-18 | llama.cpp 连续两个 release：V100 上的 MoE 推理提速与 server 调度修复",
+    "overview": "本期聚焦 llama.cpp 的两个官方 release。b12502 让 CUDA 后端在 V100 这类较老显卡上对 MoE 模型启用 MMQ 量化矩阵乘内核，直接关系到本地部署大模型的显存与速度；b12498 修复了 server 端 slot 调度在 LoRA 与循环（recurrent）模型上的问题，并调整了混合 SWA 检查点测试的批处理方式，使缓存与非缓存路径的输出可以精确比对。两条都属于推理基础设施层面的实用改动，对自建推理服务的团队有直接参考价值。",
+    "checked_sources": [
+      "GitHub Release: ggml-org/llama.cpp b12502",
+      "GitHub Release: ggml-org/llama.cpp b12498"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b12502：CUDA 后端在 V100 上为 MoE 模型启用 MMQ 内核",
+        "what": "这是 ggml-org/llama.cpp 的官方构建版本 b12502，核心变更是 CUDA 后端在 V100（SM70 架构）显卡上对 MoE（混合专家）模型使用 MMQ 量化矩阵乘内核。MMQ 是 llama.cpp 中针对量化权重实现的矩阵乘法内核，此前在部分较老架构上对 MoE 路径未启用，本次提交（#32504）将其打开。该 release 同时附带 macOS Apple Silicon、macOS Intel、iOS XCFramework、Ubuntu x64/arm64/s390x 等平台预编译包。",
+        "plain_explanation": "MoE 模型可以理解为一个大模型里有很多个“专家小模型”，每次输入只叫醒其中几个来干活，所以总参数很大但每次计算量相对小。V100 是几年前的数据中心显卡，很多实验室和小团队还在用。以前 llama.cpp 在这类卡上跑 MoE 模型时，量化后的矩阵乘法走的不是最优内核，速度打了折扣；这次改动相当于给这条路径换上了专门优化过的“计算流水线”，让老卡也能更顺畅地跑 MoE 模型。",
+        "purpose": "解决 V100 等较老 CUDA 显卡上 MoE 模型推理路径未使用高效量化内核的问题，让存量硬件在本地或私有环境部署 MoE 大模型时获得更好的计算效率，减少因硬件代际落后而被迫升级的压力。",
+        "features": "1) CUDA 后端针对 V100（SM70）在 MoE 路径启用 MMQ 量化矩阵乘内核；2) 覆盖 MoE 模型的专家层计算，而非仅 dense 层；3) 随 release 提供多平台预编译二进制，包括 macOS arm64/x64、iOS XCFramework、Ubuntu x64/arm64/s390x；4) 变更以独立 PR（#32504）形式合入，便于追溯与回滚。",
+        "comparison": "候选摘要未给出该改动前后的吞吐、延迟或显存占用数据，暂无可信公开对比数据。",
+        "who": "适合仍在使用 V100 等较老 NVIDIA 显卡做本地推理的开发者、实验室与中小团队；也适合维护 llama.cpp 下游发行版、需要评估是否升级构建版本的工程人员。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b12502",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "11-18 02:09"
+      },
+      {
+        "candidate_id": "2",
+        "title": "llama.cpp b12498：修复 server 的 slot 调度对 LoRA 与循环模型的支持",
+        "what": "这是 llama.cpp 的官方构建版本 b12498，主要修复 server 模块中 slot_sched（槽位调度）对 LoRA 适配器和循环（recurrent）模型的处理问题（#32434）。同时调整了混合 SWA（滑动窗口注意力）检查点测试：改为每个 ubatch 只放一个 token 运行，使带缓存与不带缓存的两条路径经过相同内核，从而可以精确比对输出。提交说明指出，此前在 CUDA 上，小模型的 top logprobs 会因批处理方式不同而偏移最多 0.03，并导致接近并列的候选发生交换，测试因此失败，而缓存本身行为是符合预期的。",
+        "plain_explanation": "llama.cpp 的 server 会把并发请求分配到不同的“槽位”上排队处理，类似银行多个窗口叫号。当请求里带了 LoRA（给模型临时加的一层小补丁，比如某种说话风格）或者模型本身是循环结构（会记住前文状态、逐字推进）时，原来的调度逻辑会出错。这次修复让这类请求也能被正确排队和执行。另一个改动是测试方法：以前一次喂多个 token，带缓存和不带缓存的计算批次不一样，结果自然对不上；现在一次只喂一个 token，两边走完全相同的计算路径，就能严格比较输出是否一致。",
+        "purpose": "保证 llama.cpp server 在多请求并发场景下，对 LoRA 适配器请求和循环结构模型请求的调度正确性，避免请求错配或状态混乱；同时让缓存一致性测试更严格可靠，减少因测试方法本身导致的误报，提升推理服务的稳定性。",
+        "features": "1) 修复 slot_sched 对 LoRA 请求的调度处理；2) 修复 slot_sched 对循环（recurrent）模型的调度处理；3) 混合 SWA 检查点测试改为每 ubatch 单 token，使缓存与非缓存路径走相同内核并精确比对；4) 明确记录了此前 CUDA 上 top logprobs 偏移最多 0.03 的现象，为后续排查提供依据。",
+        "comparison": "候选摘要仅提到测试中 CUDA 上小模型 top logprobs 偏移最多 0.03 并导致接近并列项交换，未提供吞吐、延迟或成本层面的对比，暂无可信公开对比数据。",
+        "who": "适合基于 llama.cpp server 搭建多用户推理服务、使用 LoRA 微调适配器或多模型热切换的工程团队；也适合关注循环结构模型与 KV 缓存一致性、需要编写或维护推理测试的开发者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b12498",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "11-17 22:18"
+      }
+    ],
+    "footer": "本期两条均来自 llama.cpp 官方 release，属构建版本级更新；具体性能收益建议在自有硬件与模型上实测后再决定是否升级。"
+  },
+  "candidate_count": 2
+}
