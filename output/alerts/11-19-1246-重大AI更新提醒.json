@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-11-19T18:46:27.449260Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "11-19 | llama.cpp 双版本更新：WebGPU 新增 POOL2D 支持，Metal 为 M5 引入 CONV2D 张量 API 与全芯片 split-K",
+    "overview": "llama.cpp 今日连续发布两个构建版本，分别强化 WebGPU 后端的二维池化算子支持，以及 Metal 后端在 Apple M5 上的卷积张量核心利用率和长归约并行效率。两项更新均直接提升本地推理框架在浏览器 GPU 与 Apple 芯片上的算子覆盖和计算吞吐，对端侧部署与跨平台推理开发者具有实际意义。",
+    "checked_sources": [
+      "GitHub Release: ggml-org/llama.cpp b12547",
+      "GitHub Release: ggml-org/llama.cpp b12543"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b12547：WebGPU 后端新增 POOL2D 二维池化算子支持",
+        "what": "这是 ggml-org/llama.cpp 的官方构建版本 b12547，核心变更是为 WebGPU 后端加入 POOL_2D（二维池化）算子支持，包含对应的 WGSL 着色器、计算管线与启动器代码，并同步更新文档与格式修正。该版本同时提供 macOS Apple Silicon、macOS Intel、iOS XCFramework、Ubuntu x64 与 Ubuntu arm64 等平台预编译包。",
+        "plain_explanation": "二维池化可以理解为把一张特征图切成若干小方块，每个方块只保留最大值或平均值，从而缩小尺寸、保留显著信息。就像把一张大合照按区域挑出每块里最显眼的人，拼成一张小图。此前 llama.cpp 的 WebGPU 后端缺少这个算子，某些视觉模型或包含池化层的网络在浏览器 GPU 上运行时可能回退到较慢路径或无法执行；现在补上后，这类模型可以完整跑在 WebGPU 上。",
+        "purpose": "解决 WebGPU 后端对池化类算子覆盖不足的问题，使依赖二维池化的模型（如视觉编码器、部分多模态结构）能在浏览器或 WebGPU 环境中获得原生 GPU 加速，减少算子回退带来的性能损失与兼容性障碍。",
+        "features": "1）新增 POOL_2D 的 WGSL 着色器实现，覆盖池化窗口计算；2）配套 WebGPU 计算管线与启动器，使算子可被 ggml 图调度；3）更新相关文档并修正 wgsl 换行与格式问题；4）随版本发布多平台预编译二进制，包括 macOS arm64/x64、iOS XCFramework、Ubuntu x64/arm64。",
+        "comparison": "暂无可信公开对比数据。候选摘要未提供该算子加入前后的吞吐、延迟或基准测试数字。",
+        "who": "适合在浏览器或 WebGPU 环境部署本地大模型与多模态模型的开发者、维护 llama.cpp WebGPU 后端的贡献者，以及需要跨平台（macOS/iOS/Linux）预编译包进行端侧推理验证的团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b12547",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "11-19 11:08"
+      },
+      {
+        "candidate_id": "2",
+        "title": "llama.cpp b12543：Metal 后端为 M5 增加 CONV2D 张量 API 内核，并为所有芯片启用 split-K",
+        "what": "这是 ggml-org/llama.cpp 的官方构建版本 b12543，核心变更是 Metal 后端新增基于张量 API 的 conv_2d 内核 kernel_conv_2d_mm_tensor，面向支持张量 API 的设备（如 Apple M5），同时为所有芯片的卷积归约引入 split-K 拆分机制。原有 simdgroup 卷积内核保留给不支持张量 API 的设备。",
+        "plain_explanation": "卷积计算可以想象成用一个小滤镜在图像上滑动，每个输出位置都要把大量输入通道与卷积核数值相乘再求和，这个求和叫归约。旧内核只使用 simdgroup 矩阵，在 M5 上张量核心闲置，而且当输出位置少、归约很长（输入通道乘卷积核宽高达到数千）时，只有少量线程组在工作，GPU 大部分空闲。新内核把 64 个输出位置的图像块收集到线程组内存作为左操作数，把卷积核行从设备内存读作右操作数，并允许把长归约拆成多段并行计算，每段把部分和写入输出后的缓冲区，从而填满 GPU。",
+        "purpose": "解决 Metal 后端卷积在 Apple M5 上无法利用张量核心、以及长归约卷积并行度不足导致 GPU 利用率低的问题，提升卷积类算子在 Apple 芯片上的计算效率，对包含卷积层的视觉模型与混合架构推理有直接帮助。",
+        "features": "1）新增 kernel_conv_2d_mm_tensor，使用张量 API 将输出块聚合到线程组内存并读取卷积核行；2）为所有芯片的卷积归约加入 split-K，按需拆分长归约以生成足够线程组；3）拆分后的部分和写入输出之后的缓冲区，保持结果正确性；4）不支持张量 API 的设备继续使用原 simdgroup 内核，保证兼容性。",
+        "comparison": "暂无可信公开对比数据。候选摘要描述了 M5 上张量核心未被利用、长归约时线程组过少的问题，但未给出具体加速比、吞吐或延迟数字。",
+        "who": "适合在 Apple Silicon（尤其 M5）上做本地推理优化的开发者、维护 llama.cpp Metal 后端的贡献者，以及需要在 macOS/iOS 上部署含卷积层视觉模型或多模态模型的团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b12543",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "11-19 10:33"
+      }
+    ],
+    "footer": "本期两条均来自 llama.cpp 官方 GitHub Release，聚焦后端算子覆盖与 GPU 利用率；候选摘要未提供基准测试数据，性能对比请以官方后续评测为准。"
+  },
+  "candidate_count": 2
+}

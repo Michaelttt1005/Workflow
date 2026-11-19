@@ -4239,6 +4239,26 @@
       "first_seen_at": "2026-11-19T09:44:12.714669+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12547|ggml-org/llama.cpp release b12547: webgpu: add pool2d support (32250) shader, pipeline, and launcher update docs and add",
+      "title": "ggml-org/llama.cpp release b12547: webgpu: add POOL2D support (32250) Shader, pipeline, and launcher Update docs and add newline to wgsl Formatting fixes Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12547",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-19T17:08:58+00:00",
+      "first_seen_at": "2026-11-19T18:46:45.088970+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12543|ggml-org/llama.cpp release b12543: metal : conv2d tensor api for m5, split-k for all chips (32542) metal: add a tensor a",
+      "title": "ggml-org/llama.cpp release b12543: metal : CONV2D tensor API for M5, split-K for all chips (32542) metal: add a tensor API conv2d kernel and split long reductions The conv2d",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12543",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-19T16:33:59+00:00",
+      "first_seen_at": "2026-11-19T18:46:45.089010+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
