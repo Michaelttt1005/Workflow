@@ -4209,6 +4209,36 @@
       "first_seen_at": "2026-11-18T09:36:55.136869+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3d%3d1.5.1|langchain==1.5.1",
+      "title": "langchain==1.5.1",
+      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.5.1",
+      "source": "GitHub Release: langchain-ai/langchain",
+      "published_at": "2026-11-18T15:45:13+00:00",
+      "first_seen_at": "2026-11-19T09:44:12.714576+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ray-project/ray/releases/tag/ray-2.58.2|ray-2.58.2",
+      "title": "Ray-2.58.2",
+      "url": "https://github.com/ray-project/ray/releases/tag/ray-2.58.2",
+      "source": "GitHub Release: ray-project/ray",
+      "published_at": "2026-11-18T23:44:53+00:00",
+      "first_seen_at": "2026-11-19T09:44:12.714629+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/jax-ml/jax/releases/tag/jax-v0.12.1|jax v0.12.1",
+      "title": "JAX v0.12.1",
+      "url": "https://github.com/jax-ml/jax/releases/tag/jax-v0.12.1",
+      "source": "GitHub Release: jax-ml/jax",
+      "published_at": "2026-11-18T14:05:43+00:00",
+      "first_seen_at": "2026-11-19T09:44:12.714669+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
