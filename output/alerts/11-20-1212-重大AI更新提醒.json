@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-11-20T18:12:29.853615Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "11-20 | llama.cpp CUDA 后端更新 GDN 算子支持检查",
+    "overview": "本期聚焦 llama.cpp 的一次 CUDA 后端更新：在 supports_op 检查中完善对 GDN 的支持判断，影响模型在 GPU 上的算子回退与执行路径选择。该改动属于推理基础设施层面的兼容性修正，对使用 CUDA 部署 GGUF 模型的开发者有直接参考价值。",
+    "checked_sources": [
+      "GitHub Release: ggml-org/llama.cpp b12578"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b12578：CUDA 后端更新 GDN supports_op 检查",
+        "what": "这是 ggml-org/llama.cpp 的第 b12578 号构建发布，核心变更是 CUDA 后端更新了 GDN（Gated Delta Net 类算子）的 supports_op 检查逻辑。supports_op 是 llama.cpp 后端在把计算图节点分配给具体设备前调用的能力查询接口，用于判断某个算子能否由该后端执行；本次改动让 CUDA 后端对 GDN 相关算子的支持判断更准确，从而影响图切分与回退策略。发布同时附带 macOS Apple Silicon、macOS Intel、iOS XCFramework、Ubuntu x64/arm64/s390x 等平台预编译包。",
+        "plain_explanation": "可以把 llama.cpp 想成一个翻译官，把大模型的计算任务分派给 CPU、CUDA GPU 等不同“工人”。分派前它会先问每个工人“这个活你能干吗”，supports_op 就是这句问话。GDN 是一种带门控的线性注意力类计算，以前 CUDA 工人对这类活的回答可能不准确，导致要么把能干的活推给别人、要么接了干不好。这次更新就是修正 CUDA 工人对 GDN 活的回答，让任务分派更合理，模型跑起来更稳。",
+        "purpose": "解决 CUDA 后端在遇到 GDN 类算子时支持判断不准确的问题，避免计算图被错误切分或回退到低效路径，提升含 GDN 结构模型在 NVIDIA GPU 上的推理兼容性与执行效率。对于依赖 llama.cpp 做本地或服务端 GGUF 推理的团队，这类底层修正直接关系到模型能否正确加载与运行。",
+        "features": "1）更新 CUDA 后端的 GDN supports_op 检查，使算子能力查询与真实实现对齐；2）影响计算图在 CUDA 与其他后端之间的切分与回退决策；3）随发布提供多平台预编译二进制，包括 macOS arm64/x64、iOS XCFramework、Ubuntu x64/arm64/s390x；4）属于 llama.cpp 持续集成构建序列中的一次常规发布，便于用户直接拉取验证。",
+        "comparison": "暂无可信公开对比数据；候选摘要未提供与前一版本的速度、显存或精度对比。",
+        "who": "适合使用 llama.cpp 在 NVIDIA GPU 上部署 GGUF 模型的推理工程师、维护本地推理服务的开发者，以及关注 GDN/线性注意力类模型在 CUDA 后端支持情况的研究者与框架贡献者。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b12578",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "11-20 09:09"
+      }
+    ],
+    "footer": "本期仅一条候选，信息以 llama.cpp 官方 release 页面为准；预编译包链接见候选摘要。"
+  },
+  "candidate_count": 1
+}
