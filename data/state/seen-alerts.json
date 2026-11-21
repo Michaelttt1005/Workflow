@@ -4289,6 +4289,16 @@
       "first_seen_at": "2026-11-21T01:00:54.377881+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/huggingface/transformers/releases/tag/v5.24.0|huggingface/transformers release v5.24.0: release v5.24.0 new model additions inkling 2 mini inkling 2 mini is a multimo",
+      "title": "huggingface/transformers release v5.24.0: Release v5.24.0 New Model additions Inkling 2 Mini Inkling 2 Mini is a multimodal model from Thinking Machines Lab that accepts text and i",
+      "url": "https://github.com/huggingface/transformers/releases/tag/v5.24.0",
+      "source": "GitHub Release: huggingface/transformers",
+      "published_at": "2026-11-21T12:28:26+00:00",
+      "first_seen_at": "2026-11-21T17:02:35.100526+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }
