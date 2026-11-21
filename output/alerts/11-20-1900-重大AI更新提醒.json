@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-11-21T01:00:51.627702Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "11-20 | llama.cpp 为 AMD RDNA1 显卡补上 MMVQ 量化矩阵乘参数表",
+    "overview": "本期只有一条值得提醒的更新：llama.cpp 发布 b12599，在 HIP 后端为第一代 RDNA（RDNA1）架构新增专用的 MMVQ 参数表，让 ncols=1 的场景按每 block 1 个 warp 执行。这属于底层推理性能修补，对使用 AMD 老卡本地跑量化模型的开发者有直接意义。",
+    "checked_sources": [
+      "GitHub Release"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b12599：HIP 后端为 RDNA1 新增 MMVQ 参数表，ncols=1 时每 block 用 1 个 warp",
+        "what": "这是 ggml-org/llama.cpp 的官方构建版本 b12599，核心改动位于 ggml/src/ggml-cuda/mmvq.cu：在 HIP（AMD GPU）后端中为 RDNA1 架构新增一张独立的 MMVQ 参数表，明确写出 RDNA1 的取值，而不是递归复用通用表，并在枚举中把 RDNA1 表排在 RDNA2 之前。MMVQ 指量化矩阵乘向量内核，是 llama.cpp 在 GPU 上执行低比特量化权重推理的关键算子。",
+        "plain_explanation": "大模型为了省显存，权重常被压成 4 比特之类的低精度格式，推理时要把这些压缩权重和输入向量相乘，这个算子就是 MMVQ。不同显卡的并行结构不一样：有的适合一次开多个 warp（GPU 里的并行小组）协作算一行，有的只适合一个 warp 干。RDNA1 属于后者，在 ncols=1 这种窄场景下，一个 block 配一个 warp 更合适。打个比方，搬一箱货，以前不管箱子大小都派四个人抬，现在针对 RDNA1 这种“小箱子”改成派一个人抬，避免四个人互相等、白耗力气。",
+        "purpose": "解决 RDNA1 显卡在 llama.cpp HIP 后端上跑量化模型时，MMVQ 内核沿用通用或 RDNA2 参数、并行配置不匹配导致的效率损失问题。对仍在使用 RX 5000 系列等 RDNA1 显卡做本地推理的用户，这是一次针对性的底层调优，值得升级验证。",
+        "features": "1) 为 RDNA1 单独维护 MMVQ 参数表，ncols=1 时按每 block 1 个 warp 配置；2) 参数值显式写出，不再递归进入通用表，便于后续按架构维护；3) 枚举顺序把 RDNA1 表放在 RDNA2 之前，保证架构匹配优先级正确；4) 随版本提供 macOS arm64/x64、iOS XCFramework 与 Linux 等预编译包。",
+        "comparison": "候选摘要未给出任何 benchmark、吞吐或延迟数据，暂无可信公开对比数据。",
+        "who": "适合在 AMD RDNA1 显卡上使用 llama.cpp HIP 后端跑量化 GGUF 模型的开发者与本地部署爱好者；维护 ggml CUDA/HIP 内核的贡献者；以及需要评估老卡推理性价比、做多架构适配测试的团队。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b12599",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "11-20 17:13"
+      }
+    ],
+    "footer": "本期仅一条候选通过筛选；RDNA1 实际加速幅度需自行在目标显卡上实测，摘要未提供数据。"
+  },
+  "candidate_count": 1
+}

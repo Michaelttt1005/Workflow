@@ -4279,6 +4279,16 @@
       "first_seen_at": "2026-11-20T18:12:31.817730+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12599|ggml-org/llama.cpp release b12599: hip: add rdna1 mmvq parameter table (1 warp per block for ncols=1) (32389) hip: add r",
+      "title": "ggml-org/llama.cpp release b12599: hip: add RDNA1 MMVQ parameter table (1 warp per block for ncols=1) (32389) hip: add RDNA1 MMVQ parameter table (1 warp per block for ncols=",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12599",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-20T23:13:20+00:00",
+      "first_seen_at": "2026-11-21T01:00:54.377881+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
