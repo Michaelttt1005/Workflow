@@ -4349,6 +4349,16 @@
       "first_seen_at": "2026-11-24T01:27:23.039381+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12670|ggml-org/llama.cpp release b12670: ggml: compact bias on the existing flashattnext (32740) compact bias on the existing ",
+      "title": "ggml-org/llama.cpp release b12670: ggml: compact bias on the existing FLASHATTNEXT (32740) compact bias on the existing FLASHATTNEXT for CUDA, ROCm and Vulkan fixup! compact",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12670",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-24T06:13:13+00:00",
+      "first_seen_at": "2026-11-24T11:54:20.648194+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
