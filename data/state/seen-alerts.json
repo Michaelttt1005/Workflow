@@ -4299,6 +4299,56 @@
       "first_seen_at": "2026-11-21T17:02:35.100526+00:00",
       "score": 8,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12659|ggml-org/llama.cpp release b12659: ggml-openvino: ci fixes, new model support, fixes and improvements",
+      "title": "ggml-org/llama.cpp release b12659: ggml-openvino: CI fixes, new model support, fixes and improvements",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12659",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-24T01:13:17+00:00",
+      "first_seen_at": "2026-11-24T01:27:23.039168+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/did-the-user-ask-for-this-securing-ai-agents-against-intent-hijacking-with-semantic-governance-policies/|did the user ask for this? securing ai agents against intent hijacking with semantic governance policies",
+      "title": "Did the user ask for this? Securing AI agents against intent hijacking with Semantic governance policies",
+      "url": "https://developers.googleblog.com/did-the-user-ask-for-this-securing-ai-agents-against-intent-hijacking-with-semantic-governance-policies/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-11-24T01:26:46.985133+00:00",
+      "first_seen_at": "2026-11-24T01:27:23.039234+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12657|ggml-org/llama.cpp release b12657: ggml-cuda : handle zero blocks in few-row mmq quantization (32566) assisted-by: chatg",
+      "title": "ggml-org/llama.cpp release b12657: ggml-cuda : handle zero blocks in few-row MMQ quantization (32566) Assisted-by: ChatGPT (GPT-6) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12657",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-24T00:38:04+00:00",
+      "first_seen_at": "2026-11-24T01:27:23.039287+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ray-project/ray/releases/tag/ray-2.60.1|ray-2.60.1",
+      "title": "Ray-2.60.1",
+      "url": "https://github.com/ray-project/ray/releases/tag/ray-2.60.1",
+      "source": "GitHub Release: ray-project/ray",
+      "published_at": "2026-11-23T18:48:03+00:00",
+      "first_seen_at": "2026-11-24T01:27:23.039335+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ray-project/ray/releases/tag/ray-2.59.2|ray-2.59.2",
+      "title": "Ray-2.59.2",
+      "url": "https://github.com/ray-project/ray/releases/tag/ray-2.59.2",
+      "source": "GitHub Release: ray-project/ray",
+      "published_at": "2026-11-23T18:45:40+00:00",
+      "first_seen_at": "2026-11-24T01:27:23.039381+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
