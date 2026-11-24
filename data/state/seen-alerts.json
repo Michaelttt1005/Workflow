@@ -4359,6 +4359,16 @@
       "first_seen_at": "2026-11-24T11:54:20.648194+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/huggingface/transformers/releases/tag/v5.24.1|huggingface/transformers: patch release v5.24.1",
+      "title": "huggingface/transformers: Patch release v5.24.1",
+      "url": "https://github.com/huggingface/transformers/releases/tag/v5.24.1",
+      "source": "GitHub Release: huggingface/transformers",
+      "published_at": "2026-11-24T16:13:08+00:00",
+      "first_seen_at": "2026-11-24T21:49:55.033099+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
