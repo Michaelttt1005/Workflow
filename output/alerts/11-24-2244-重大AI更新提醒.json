@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-11-25T04:44:15.297558Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "11-24 | Vertex AI Agent Retrieval 推出托管摄取与 SearchDocuments，一次 API 调用完成从文件到带引用答案",
+    "overview": "Google 在 Vertex AI 的 Agent Retrieval 中推出托管摄取（Managed Ingestion）与 SearchDocuments 接口，开发者无需再自建分块与嵌入流水线，即可将 Cloud Storage 中的文档和视频直接导入并查询，返回带页码引用和时间戳的结果。该更新支持混合检索、元数据过滤、重排序以及视频音频的多模态搜索，显著降低 RAG 智能体的工程门槛。",
+    "checked_sources": [
+      "Google Developers Blog"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "Vertex AI Agent Retrieval 推出托管摄取与 SearchDocuments：一次 API 调用返回带引用答案",
+        "what": "这是 Google 在 Vertex AI 的 Agent Retrieval 能力中新增的托管摄取（Managed Ingestion）与 SearchDocuments 接口。它替代了开发者过去需要自行搭建的文档分块、嵌入生成和向量索引流水线：用户可以直接从 Cloud Storage 导入文档和视频文件，然后通过一次 API 调用完成检索，并得到带页码引用或时间戳的答案。",
+        "plain_explanation": "假设你有一堆 PDF 合同和会议录像，想让 AI 助手回答“第三份合同的违约金条款在第几页”或“视频里谁提到了预算”。过去你得自己写代码把文件切块、转成向量、建索引，再拼检索逻辑。现在只要把文件放进 Cloud Storage，调用一个接口，系统就会自动完成切块和嵌入，你提问时它直接返回答案，并告诉你答案来自第几页或视频第几分几秒，就像给每份资料配了一个会自动标注出处的图书管理员。",
+        "purpose": "解决企业构建 RAG 智能体时自建摄取与检索流水线成本高、维护复杂的问题。它让开发者把精力放在业务逻辑和智能体行为上，而不是分块策略、嵌入模型选型和索引运维，同时通过引用页码和时间戳提升答案的可验证性，适合需要处理大量文档与视频资料的知识库、客服和合规审查场景。",
+        "features": "第一，托管摄取：直接从 Cloud Storage 导入文档和视频文件，自动完成分块与嵌入，无需自建流水线。第二，SearchDocuments 单次调用检索：一次 API 请求即可返回带引用页码或时间戳的检索结果。第三，混合检索与元数据过滤：支持关键词与向量结合的混合检索，并可按元数据筛选结果。第四，重排序与多模态视频音频搜索：内置重排序能力，且能对视频中的音频内容进行多模态检索。",
+        "comparison": "候选摘要未提供与自建 RAG 流水线或其他检索服务在延迟、成本、召回率等维度的量化对比，暂无可信公开对比数据。",
+        "who": "适合正在构建 RAG 智能体的应用开发者、需要处理文档与视频知识库的企业平台团队、以及希望减少检索基础设施运维投入的数据工程与 AI 工程团队；对需要答案可追溯、可引用的合规与客服场景尤其有价值。",
+        "link": "https://developers.googleblog.com/from-files-to-cited-answers-in-one-api-call-managed-ingestion-and-searchdocuments-in-agent-retrieval/",
+        "score": "7",
+        "source": "Google Developers Blog",
+        "type": "官方发布",
+        "topic": "智能体与开发者平台",
+        "published": "11-24 22:43"
+      }
+    ],
+    "footer": "本期仅一条候选，聚焦 Vertex AI Agent Retrieval 的托管摄取与 SearchDocuments 更新；性能与成本对比数据以官方后续披露为准。"
+  },
+  "candidate_count": 1
+}

@@ -4369,6 +4369,16 @@
       "first_seen_at": "2026-11-24T21:49:55.033099+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://developers.googleblog.com/from-files-to-cited-answers-in-one-api-call-managed-ingestion-and-searchdocuments-in-agent-retrieval/|from files to cited answers in one api call: managed ingestion and searchdocuments in agent retrieval",
+      "title": "From Files to Cited Answers in One API Call: Managed Ingestion and SearchDocuments in Agent Retrieval",
+      "url": "https://developers.googleblog.com/from-files-to-cited-answers-in-one-api-call-managed-ingestion-and-searchdocuments-in-agent-retrieval/",
+      "source": "Google Developers Blog",
+      "published_at": "2026-11-25T04:43:54.882938+00:00",
+      "first_seen_at": "2026-11-25T04:44:17.604005+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
