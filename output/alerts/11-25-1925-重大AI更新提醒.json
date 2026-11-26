@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-11-26T01:25:41.160429Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "11-25 | vLLM 社区在新加坡 meetup 上披露推理加速与 Agent 写内核进展",
+    "overview": "本期聚焦 vLLM 社区在新加坡 meetup 上公布的三条技术主线：流水线并行优化带来的 prefill 加速、由 Agent 自动编写的 GPU kernel，以及面向 Vera Rubin 架构的推理路线图。这些内容来自 Inferact、NVIDIA 与阿里云工程师的分享，反映了开源推理栈在性能工程与自动化内核生成上的最新动向。",
+    "checked_sources": [
+      "PyTorch Blog"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "vLLM 新加坡 Meetup：更快的 Prefill、Agent 编写的 Kernel 与通往 Vera Rubin 的路线",
+        "what": "这是 PyTorch 官方博客对 vLLM 新加坡 meetup 的技术总结。vLLM 是当前主流的开源大模型推理与服务框架，本次分享由 Inferact、NVIDIA 和阿里云工程师参与，内容覆盖流水线并行（pipeline parallelism）优化、由 Agent 自动编写 GPU kernel、实时推理相关实践，以及面向 NVIDIA 下一代 Vera Rubin 架构的演进路线。",
+        "plain_explanation": "可以把 vLLM 想成一家餐厅的后厨调度系统：模型推理分两步，prefill 是先把顾客点的整份菜单一次性读完备料，decode 是一道道出菜。这次分享的流水线并行优化，相当于把备料和出菜拆给不同工位同时干，减少等待；而 Agent 写 kernel 则是让 AI 助手自己动手写底层“厨具操作手册”，再由工程师审核，省去大量手工调优。对普通用户来说，最终感受就是同一个模型回答更快、单位算力能服务更多人。",
+        "purpose": "解决开源大模型推理中 prefill 阶段耗时高、GPU kernel 手工优化成本大、以及新硬件架构适配滞后的问题。对部署 LLM 服务的团队而言，这些优化直接关系到吞吐、延迟和单位 token 成本，也决定了开源推理栈能否跟上 NVIDIA 新架构的节奏。",
+        "features": "一是流水线并行优化，针对 prefill 阶段做更细粒度的并行切分以提升吞吐；二是 Agent 自动编写 GPU kernel，把内核生成与调优部分交给智能体完成；三是实时推理场景的工程实践分享；四是面向 Vera Rubin 架构的长期路线规划，提前布局新硬件适配。",
+        "comparison": "候选摘要未给出具体 benchmark 数字、加速比或成本对比，暂无可信公开对比数据。",
+        "who": "适合负责 LLM 推理服务部署与性能调优的后端/ML 工程师、推理框架贡献者、关注 GPU kernel 自动生成的研究者，以及需要评估新硬件架构适配节奏的云厂商与基础设施团队。",
+        "link": "https://pytorch.org/blog/vllm-singapore-meetup-faster-prefill-agent-written-kernels-and-the-road-to-vera-rubin/",
+        "score": "7",
+        "source": "PyTorch Blog",
+        "type": "官方发布",
+        "topic": "智能体与开发者平台",
+        "published": "11-25 12:03"
+      }
+    ],
+    "footer": "本期仅一条候选入选，内容基于 PyTorch 官方博客摘要，具体性能数字请以原博客与 vLLM 仓库为准。"
+  },
+  "candidate_count": 1
+}
