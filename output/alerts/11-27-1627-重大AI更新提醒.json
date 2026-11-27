@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-11-27T22:27:03.370081Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "11-27 | llama.cpp 同日两版：图执行去拷贝提速，CUDA NVFP4 量化修复越界读",
+    "overview": "llama.cpp 在 2026-11-27 连续发布 b12816 与 b12815 两个构建。b12816 从计算图层面移除循环状态拷贝，让多数后端在生成 token 时直接原地读取缓存状态，属于影响面较广的推理吞吐优化；b12815 则修复 CUDA 后端 NVFP4 量化矩阵乘在 stream-k 修正路径中的 y_scale 越界读取，属于数值正确性与稳定性修复。两条更新分别对应“更快”和“更稳”，对本地部署与量化推理用户都有直接意义。",
+    "checked_sources": [
+      "GitHub Release: ggml-org/llama.cpp b12816",
+      "GitHub Release: ggml-org/llama.cpp b12815"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b12816：计算图原地读取循环状态，去掉状态拷贝以提升 token 输出速度",
+        "what": "这是 ggml-org/llama.cpp 的官方构建 b12816，核心变更在计算图（graph）层：把循环神经网络类模型（如 RWKV 系列）在推理时需要的历史状态，从“先拷贝一份再计算”改为“尽可能直接从缓存原地读取”。同时为 RWKV6/7 调整了读取顺序，保证先读旧状态再覆盖写入，并新增图复用检查条件来跟踪状态是否被原地读取。",
+        "plain_explanation": "可以把循环状态想成一个人边听边记的笔记本：以前每说一句话，助手都要先把笔记本整本复印一份再往上写，复印很费时间；现在改成直接在原笔记本上读写，只在必须搬动时才复制。对模型来说，每生成一个 token 都要访问一次历史状态，省掉这次复制，累积起来就能让输出更快。",
+        "purpose": "解决循环状态在推理图中被反复拷贝带来的额外开销，目标是在多数后端和多数使用场景下提升 token 生成吞吐，同时不改变模型输出语义。",
+        "features": "1) 内核在可行时直接从缓存读取循环状态，替代 ggml_get_rows 的拷贝路径；2) RWKV6/7 改为先读旧状态再覆盖，避免原地读写导致的数据错误；3) 新增图复用检查条件，跟踪状态是否以原地方式读取；4) 保持图形状一致，兼顾原地读取与状态搬移两种情形，修复 Vulkan 与 Metal 在 GGML_SCHED_NO_REALLOC 下的失败。",
+        "comparison": "候选摘要称该改动在多数场景和后端上加快 token 输出，并提到需防止缓存冲突带来吞吐回退，但未给出具体 benchmark 数字或前后速度对比，暂无可信公开对比数据。",
+        "who": "适合在本地或自建服务上跑 llama.cpp 的开发者、做 RWKV 等循环结构模型推理的研究者，以及关注 Vulkan/Metal/CUDA 多后端性能与图调度实现的工程师。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b12816",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "11-27 11:02"
+      },
+      {
+        "candidate_id": "2",
+        "title": "llama.cpp b12815：修复 CUDA 后端 NVFP4 MMQ 在 stream-k 修正中的 y_scale 越界读取",
+        "what": "这是 llama.cpp 的官方构建 b12815，变更集中在 CUDA 后端：修复 NVFP4 量化格式下 MMQ（量化矩阵乘）内核在 stream-k 修正阶段对 y_scale 的越界读取问题。该版本同时按惯例提供 macOS Apple Silicon、macOS Intel、iOS XCFramework、Ubuntu x64/arm64/s390x 等平台预编译包。",
+        "plain_explanation": "量化推理会把权重压成更小的数字格式，NVFP4 就是其中一种 4 位浮点格式，计算时需要一张“缩放表”把数值还原。stream-k 是一种把矩阵乘任务切块分摊到多个线程的调度方式，收尾修正时如果索引算错，就会读到缩放表边界之外的内存，轻则结果异常，重则程序崩溃。这个修复就是把越界的那次读取纠正回合法范围。",
+        "purpose": "消除 CUDA 上 NVFP4 量化矩阵乘在特定调度路径中的越界读取，保证数值结果正确与运行稳定，避免在消费级或数据中心 GPU 上出现错误输出或崩溃。",
+        "features": "1) 针对 CUDA 后端 NVFP4 MMQ 内核修复 y_scale 越界读取；2) 修正范围限定在 stream-k 的 fixup 阶段，不影响其他量化格式路径；3) 随版本发布多平台预编译二进制，包括 Apple Silicon、Intel Mac、iOS、Ubuntu x64/arm64/s390x。",
+        "comparison": "候选摘要未提供修复前后的精度、速度或显存占用对比数据，暂无可信公开对比数据。",
+        "who": "适合在 NVIDIA GPU 上使用 llama.cpp 跑 NVFP4 量化模型的开发者与运维团队，以及维护 CUDA 量化内核、关注数值正确性的推理框架工程师。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b12815",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "推理性能与基础设施",
+        "published": "11-27 08:09"
+      }
+    ],
+    "footer": "两条均为 llama.cpp 官方 release，建议按所用后端分别评估：图执行改动影响面广，CUDA 修复针对 NVFP4 量化路径；升级前请在自己的模型与硬件上做回归验证。"
+  },
+  "candidate_count": 2
+}

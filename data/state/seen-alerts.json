@@ -4409,6 +4409,26 @@
       "first_seen_at": "2026-11-27T13:23:32.686714+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12816|ggml-org/llama.cpp release b12816: graph : read recurrent states in place instead of copying (28841) (30139) graph : rea",
+      "title": "ggml-org/llama.cpp release b12816: graph : read recurrent states in place instead of copying (28841) (30139) graph : read recurrent states in place instead of copying (28841)",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12816",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-27T17:02:01+00:00",
+      "first_seen_at": "2026-11-27T22:27:05.254894+00:00",
+      "score": 7,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12815|ggml-org/llama.cpp release b12815: cuda : fix nvfp4 mmq yscale over-read in the stream-k fixup (33136) website",
+      "title": "ggml-org/llama.cpp release b12815: cuda : fix NVFP4 MMQ yscale over-read in the stream-k fixup (33136) Website",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12815",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-27T14:09:06+00:00",
+      "first_seen_at": "2026-11-27T22:27:05.254954+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
