@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-11-27T03:54:06.077177Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "11-26 | llama.cpp v1.1.0 大版本：多模态音频模型批量接入、API 换代与自动量化",
+    "overview": "本期聚焦 llama.cpp 的 v1.1.0 大版本更新。这次发布一次性引入 Inkling 2 系列、Domyn Edge 4B、Zaya1 8B、RAON-1-mini、Hy4 flash 等多个模型家族，并把 DFlash 投机解码拆分为独立 draft 方法；同时弃用旧 llama_batch API、加入按张量自动量化与 llama-server 调度重构，是本地推理栈一次影响面较大的升级。",
+    "checked_sources": [
+      "GitHub Release: ggml-org/llama.cpp v1.1.0"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp v1.1.0 发布：新增 Inkling 2 等模型家族、拆分 DFlash 投机解码并弃用旧 llama_batch API",
+        "what": "这是 ggml-org/llama.cpp 的 v1.1.0 官方 release。llama.cpp 是用 C/C++ 实现、可在 CPU 与多种加速后端上运行大模型推理的开源框架，被大量本地部署工具当作底层引擎。该版本新增 Inkling 2 家族（base、Mini、DSpark）、Domyn Edge 4B、Zaya1 8B、RAON-1-mini 与 Hy4 flash 等模型支持，把 DFlash 投机解码拆成独立的 draft 方法，弃用旧 llama_batch API 改用 llama_batch_ext，并批量接入 Kokoro、Zonos3-Mini、tiny-voca、VoxCPM2、MiniMax-Music3、YuE2、Fish S2、Higgs v3、VibeVoice-ASR、Kyutai Hibiki 等 TTS 与音频模型，同时更新 ggml 至 v1.1.1。",
+        "plain_explanation": "可以把 llama.cpp 理解成一个“万能播放器”，只不过播放的不是视频而是大模型：同一个程序能加载不同厂商、不同大小的模型文件并在你自己的电脑上跑。这次更新相当于播放器一次性支持了一大批新格式的影片，还新增了“字幕解析”（token-aware 聊天解析）和“语音消息”能力。举个具体例子：以前你想在本地跑一个语音合成模型或语音识别模型，往往要另装一套工具；现在这些音频模型被直接纳入同一套加载与推理流程，用同一个命令行或服务就能调用。再比如自动量化：你告诉它“我要模型压到 4 bit 左右”或“文件别超过某个体积”，它会自动决定每一层张量用多少位宽，而不必手工逐层调参。",
+        "purpose": "解决本地推理用户面对的两个现实问题：一是模型生态碎片化，新模型层出不穷但引擎支持滞后，导致用户无法第一时间在本地试用；二是部署调优成本高，量化位宽、投机解码、服务端并发调度都需要手工配置。该版本通过批量接入模型、拆分投机解码方法、提供按 bpw 或体积预算的自动量化，以及重构 llama-server 的 slot 调度，降低从“拿到模型”到“跑起来并提供服务”的门槛，同时用 llama_batch_ext 替换旧 API 为后续批处理能力演进铺路。",
+        "features": "1) 模型覆盖扩展：新增 Inkling 2（base/Mini/DSpark）、Domyn Edge 4B、Zaya1 8B、RAON-1-mini、Hy4 flash，并接入 Kokoro、Zonos3-Mini、VoxCPM2、MiniMax-Music3、YuE2、Fish S2、Higgs v3、VibeVoice-ASR、Kyutai Hibiki 等 TTS/音频模型；2) 解码与量化：DFlash 投机解码拆分为独立 draft 方法，支持按目标 bpw 或体积预算自动做逐张量量化；3) API 与服务：弃用 llama_batch、改用 llama_batch_ext 与 llama_process，llama-server 重构 slot 调度；4) 交互层：token-aware 聊天解析、命名工具选择（named tool choice）、重设计的 Llama Chat Web UI 支持语音消息与 agent traces。",
+        "comparison": "候选摘要未给出与上一版本或其他推理框架的速度、显存占用、成本等量化对比数据，暂无可信公开对比数据；可确认的变化是 API 层面的破坏性调整（llama_batch 弃用）与 ggml 升级至 v1.1.1。",
+        "who": "适合在本地或私有环境部署大模型的开发者与运维团队，尤其是用 llama.cpp 作为推理后端的桌面应用、边缘设备和自建服务方；也适合需要评估新模型（Inkling 2、Domyn Edge 4B、Zaya1 8B 等）在本地可行性的研究者，以及依赖 llama-server 做多用户并发推理、需要关注 slot 调度与 API 迁移的后端工程师。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/v1.1.0",
+        "score": "8",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "11-26 03:16"
+      }
+    ],
+    "footer": "本期仅一条候选入选，其余主题暂无高可信更新；llama.cpp 升级涉及 API 破坏性变更，升级前请先核对 llama_batch 相关调用。"
+  },
+  "candidate_count": 1
+}

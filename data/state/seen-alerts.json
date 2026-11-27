@@ -4389,6 +4389,16 @@
       "first_seen_at": "2026-11-26T01:25:43.284107+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/v1.1.0|ggml-org/llama.cpp release v1.1.0: overview llama.cpp v1.1.0 adds the inkling 2 family (base, mini and dspark), domyn ed",
+      "title": "ggml-org/llama.cpp release v1.1.0: Overview llama.cpp v1.1.0 adds the Inkling 2 family (base, Mini and DSpark), Domyn Edge 4B, Zaya1 8B, RAON-1-mini and Hy4 flash, splits DFla",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/v1.1.0",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-26T09:16:47+00:00",
+      "first_seen_at": "2026-11-27T03:54:08.536787+00:00",
+      "score": 8,
+      "alert_sent": true
     }
   ]
 }
