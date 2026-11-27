@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-11-27T13:23:30.445453Z",
+  "report": {
+    "title": "重大 AI 更新提醒",
+    "subtitle": "11-27 | llama.cpp 浏览器端对话可一键分享至 Hugging Face 数据集",
+    "overview": "本期聚焦 llama.cpp 的一次重要 UI 更新：其浏览器端界面新增“使用 Hugging Face 登录”能力，并支持将对话记录作为 agent trace 直接提交到 Hugging Face 数据集。该功能让本地或浏览器内运行的对话应用无需自建后端即可完成身份认证与数据共享，对智能体轨迹收集与开源数据集建设有直接价值。",
+    "checked_sources": [
+      "GitHub Release: ggml-org/llama.cpp b12811"
+    ],
+    "entries": [
+      {
+        "candidate_id": "1",
+        "title": "llama.cpp b12811：浏览器端对话可分享至 Hugging Face 数据集作为 agent trace",
+        "what": "这是 ggml-org/llama.cpp 的 GitHub Release b12811，核心变更是为 llama.cpp 的浏览器端 UI 新增了一个名为 @ggml-org/llama-huggingface 的包。该包让没有自建服务器的纯浏览器应用也能拥有一个 Hugging Face 账号：提供“Sign in with Hugging Face”登录（基于 OAuth 与 PKCE，并支持动态客户端注册），以及查询账号信息、列出账号下的数据集、把一份 trace 文件提交到指定数据集等 Hub 调用。它同时提供 Svelte 入口，把账号状态（HfAccount）和展示账号的面板、分享 trace 的对话框做成可复用组件，构建在 Llama UI 之上。该包本身不绑定具体应用，由应用声明自己是谁并交出要分享的内容；Llama Chat 像其他包一样从源码编译它，llama-server 镜像构建与资源暂存脚本也会把它的源码复制到其他包旁边，CI 中包含检查与测试。",
+        "plain_explanation": "可以把它想成给浏览器里的聊天工具装了一个“分享到云端”的按钮。以前你在网页版 llama.cpp 里和模型聊了一段很有价值的内容，想把它保存成公开数据集给别人研究，通常得自己写后端、处理登录、再手动上传文件。现在这个包直接内置了“用 Hugging Face 账号登录”的流程，登录后应用能知道你是谁、你有哪些数据集，并允许你把这段对话（也就是 agent trace，智能体执行轨迹）一键提交到你的某个数据集里。整个过程不需要应用自己维护服务器，登录凭证和上传动作都由这个包在浏览器里完成。",
+        "purpose": "解决浏览器端 AI 应用在“身份认证 + 数据共享”上的重复建设问题。对于做智能体研究或对话数据收集的团队，过去要把用户对话沉淀为可复用的 agent trace 数据集，需要自建后端、实现 OAuth、处理文件上传与数据集权限，成本高且容易出错。该更新把登录、账号查询、数据集列举和 trace 提交封装成可复用包，让 llama.cpp 生态内的浏览器应用能以很低成本把对话转化为 Hugging Face 上的公开或私有数据集，便于后续训练、评测与复现。",
+        "features": "第一，提供“Sign in with Hugging Face”登录，采用 OAuth 与 PKCE 并支持动态客户端注册，适合没有后端的纯浏览器应用。第二，封装 Hub 调用：查询当前账号身份、列出该账号下的数据集、把 trace 文件提交到指定数据集。第三，提供 Svelte 入口，把账号状态（HfAccount）以及账号面板、分享 trace 对话框做成基于 Llama UI 的可复用组件。第四，包本身不绑定具体应用，由应用声明身份并交出待分享内容，Llama Chat 从源码编译集成，llama-server 镜像构建与资源暂存脚本会复制其源码，CI 含检查与测试。",
+        "comparison": "暂无可信公开对比数据。候选摘要未给出与其它分享方案在速度、成本或 benchmark 上的量化对比。",
+        "who": "适合在 llama.cpp 生态内开发浏览器端对话或智能体应用的开发者；需要低成本收集、沉淀 agent trace 数据集的研究者与数据团队；希望让用户一键把对话贡献到 Hugging Face 数据集的开源项目维护者；以及关注纯前端 OAuth 与 Hub 集成模式的工具链工程师。",
+        "link": "https://github.com/ggml-org/llama.cpp/releases/tag/b12811",
+        "score": "7",
+        "source": "GitHub Release",
+        "type": "GitHub Release",
+        "topic": "智能体与开发者平台",
+        "published": "11-27 05:14"
+      }
+    ],
+    "footer": "本期仅一条候选，信息均来自 llama.cpp 官方 release 说明；未引入外部 benchmark 或价格数据。"
+  },
+  "candidate_count": 1
+}
