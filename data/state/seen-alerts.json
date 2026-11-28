@@ -4429,6 +4429,26 @@
       "first_seen_at": "2026-11-27T22:27:05.254954+00:00",
       "score": 7,
       "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12823|ggml-org/llama.cpp release b12823: cuda: fix addid launch for more than 65535 tokens (33162) the grid's y dimension came",
+      "title": "ggml-org/llama.cpp release b12823: CUDA: fix ADDID launch for more than 65535 tokens (33162) The grid's y dimension came directly from the token count, so ADDID launches with",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12823",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-28T01:24:25+00:00",
+      "first_seen_at": "2026-11-28T05:51:27.913135+00:00",
+      "score": 8,
+      "alert_sent": true
+    },
+    {
+      "key": "https://github.com/ggml-org/llama.cpp/releases/tag/b12819|ggml-org/llama.cpp release b12819: cuda: cache the device type at init (33142) cuda: cache the device type at init ggmlb",
+      "title": "ggml-org/llama.cpp release b12819: CUDA: cache the device type at init (33142) CUDA: cache the device type at init ggmlbackendcudadevicegettype called cudaGetDeviceProperties",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12819",
+      "source": "GitHub Release: ggml-org/llama.cpp",
+      "published_at": "2026-11-28T00:21:16+00:00",
+      "first_seen_at": "2026-11-28T05:51:27.913188+00:00",
+      "score": 7,
+      "alert_sent": true
     }
   ]
 }
